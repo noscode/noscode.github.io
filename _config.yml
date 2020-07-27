@@ -1,6 +1,6 @@
 title: Ekaterina Noskova
 description: personal page
-remote_theme: noscode/minima-reboot
+remote_theme: noscode/minima
 minima_reboot:
   social_links:
     github: jekyll
