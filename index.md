@@ -2,8 +2,7 @@
 layout: home
 ---
 
-<center>
-<img src="assets/enoskova.png" width="40%">
+<img src="assets/enoskova.png" style="float: right;" width="20%">
 
 <h1 class="h4"> Ekaterina Noskova </h1>
 
@@ -15,4 +14,3 @@ Researcher <br>
 <a class="text-dark" href="https://en.itmo.ru/"> ITMO University </a> <br>
 </p>
 
-</center>
