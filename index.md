@@ -9,8 +9,8 @@ layout: home
 <p>
 Researcher <br>
 
-<a class="text-dark"> href="http://ctlab.ifmo.ru/en/"> Computer Technologies Laboratory </a> <br>
+<a class="text-dark" href="http://ctlab.ifmo.ru/en/"> Computer Technologies Laboratory </a> <br>
 
-<a class="text-dark"> href="https://en.itmo.ru/"> ITMO University </a> <br>
+<a class="text-dark" href="https://en.itmo.ru/"> ITMO University </a> <br>
 
 </p>
