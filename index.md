@@ -2,7 +2,8 @@
 layout: home
 ---
 
-![](assets/enoskova.png "Text to show on mouseover" =50x)
+<center>
+<img src="assets/enoskova.png" width="40%">
 
 <h1 class="h4"> Ekaterina Noskova </h1>
 
@@ -13,3 +14,5 @@ Researcher <br>
 
 <a class="text-dark" href="https://en.itmo.ru/"> ITMO University </a> <br>
 </p>
+
+</center>
