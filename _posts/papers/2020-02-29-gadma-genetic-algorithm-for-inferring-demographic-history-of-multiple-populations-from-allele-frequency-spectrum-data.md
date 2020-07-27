@@ -7,6 +7,9 @@ author: Ekaterina Noskova
 
 Paper about GADMA is published!
 
+<button onclick="https://academic.oup.com/gigascience/article/9/3/giaa005/5768731"> PDF </button>
+<button onclick="https://github.com/ctlab/GADMA">Project page </button>
+
 ### Abstract
 **Background**
 
