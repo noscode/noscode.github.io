@@ -2,8 +2,7 @@
 layout: home
 ---
 
-<div width="1000px">
-![alt text for screen readers](assets/enoskova.png "Text to show on mouseover")
+![](assets/enoskova.png "Text to show on mouseover" =50x)
 
 <h1 class="h4"> Ekaterina Noskova </h1>
 
@@ -14,12 +13,3 @@ Researcher <br>
 
 <a class="text-dark" href="https://en.itmo.ru/"> ITMO University </a> <br>
 </p>
-
-</div>
-
-<div>
-
-## About
-
-I am a researcher at ITMO university.
-</div>
