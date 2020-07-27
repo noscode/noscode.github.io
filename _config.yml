@@ -1,7 +1,3 @@
 title: Ekaterina Noskova
 description: personal page
 remote_theme: noscode/minima_reboot
-footer_icons:
-  - username: noscode
-    url: https://github.com/noscode
-    icon: assets/social_icons/github.csv
