@@ -12,10 +12,10 @@ Researcher <br>
 </p>
 
 <a href="https://github.com/noscode">
-         <img src="assets/social_icons/github.svg">
+         <img src="assets/social_icons/github.svg" width="10">
       </a>
 <a href="https://www.facebook.com/ekaterina.noskova.1675/">
-         <img src="assets/social_icons/facebook.png">
+         <img src="assets/social_icons/facebook.png" width="10">
       </a>
 
 ## About
