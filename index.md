@@ -13,14 +13,13 @@
 
 
 <a href="https://scholar.google.com/citations?user=1Mlxh7wAAAAJ&hl=en">
-         <img src="assets/social_icons/google-scholar.png" width="30">
+         <img src="assets/social_icons/google-scholar.png" width="50">
       </a>
-
 <a href="https://github.com/noscode">
-         <img src="assets/social_icons/github.png" width="30">
+         <img src="assets/social_icons/github.png" width="50">
       </a>
 <a href="https://www.facebook.com/ekaterina.noskova.1675/">
-         <img src="assets/social_icons/facebook.png" width="30">
+         <img src="assets/social_icons/facebook.png" width="40">
       </a>
 
 ## About
