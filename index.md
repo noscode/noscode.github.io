@@ -8,6 +8,6 @@ layout: home
 
 Researcher
 
-<p class="text-dark"> href="http://ctlab.ifmo.ru/en/"> Computer Technologies Laboratory </p>
+<a class="text-dark"> href="http://ctlab.ifmo.ru/en/"> Computer Technologies Laboratory </a>
 
-<p class="text-dark"> href="https://en.itmo.ru/"> ITMO University </p>
+<a class="text-dark"> href="https://en.itmo.ru/"> ITMO University </a>
