@@ -4,4 +4,4 @@ remote_theme: noscode/minima_reboot
 footer_icons:
   - username: noscode
     url: https://github.com/noscode
-    icon: https://github.com/jekyll/minima/tree/master/assets/minima-social-icons.svg#github
+    icon: assets/social_icons/github.csv
