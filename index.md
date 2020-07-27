@@ -4,7 +4,7 @@ layout: home
 
 ![alt text for screen readers](assets/enoskova.png "Text to show on mouseover")
 
-<h1> Ekaterina Noskova </h1>
+<h1 class="h4"> Ekaterina Noskova </h1>
 
 <p>
 Researcher <br>
