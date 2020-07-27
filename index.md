@@ -13,7 +13,7 @@ Researcher <br>
 
 <a href="https://github.com/noscode">
          <img src="assets/social_icons/github.svg"
-         width=10">
+         width="10">
       </a>
 
 
