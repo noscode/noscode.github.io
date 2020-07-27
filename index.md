@@ -14,7 +14,9 @@ Researcher <br>
 <a href="https://github.com/noscode">
          <img src="assets/social_icons/github.svg">
       </a>
-
+<a href="https://www.facebook.com/ekaterina.noskova.1675/">
+         <img src="assets/social_icons/facebook.png">
+      </a>
 
 ## About
 
