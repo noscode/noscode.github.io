@@ -1,8 +1,5 @@
----
-layout: home
----
 
-<img src="assets/enoskova.png" style="float: right;" width="20%">
+<img src="assets/enoskova.png" style="float: left;" width="20%">
 
 <h1 class="h4"> Ekaterina Noskova </h1>
 
