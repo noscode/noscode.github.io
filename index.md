@@ -2,7 +2,7 @@
 layout: home
 ---
 
-<div width=1000px>
+<div width="1000px">
 ![alt text for screen readers](assets/enoskova.png "Text to show on mouseover")
 
 <h1 class="h4"> Ekaterina Noskova </h1>
