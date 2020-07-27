@@ -1,3 +1,7 @@
+---
+layout: home
+---
+
 ## About
 
 I am working on different optimization problems and evolution algorithms. My base research is devoted to demographic inference - the reconstruction of the history of evolution for species and populations from their genetic data.
