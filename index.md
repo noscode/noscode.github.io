@@ -27,7 +27,7 @@ Researcher<br>
 </p>
 </center>
 </div>
-        <div class="col-sm-6">
+        <div class="col-md-6">
 <div>
 <h2 class="h2"> About </h2>
 <p>I am working on different optimization problems and evolution algorithms. My base research is devoted to demographic inference - the reconstruction of the history of evolution for species and populations from their genetic data.</p>
