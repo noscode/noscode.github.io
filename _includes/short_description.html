@@ -1,8 +1,8 @@
 <div>
-    <h1 itemprop="name headline">{{ page.title | escape }}</h1>
+    <h1 itemprop="name headline">{{ title | escape }}</h1>
     <p class="text-secondary">
-      {% if page.author %}
-        <span itemprop="author">{{ page.author }}</span>
+      {% if author %}
+        <span itemprop="author">{{ author }}</span>
         <br>
       {% endif %}
       {% if page.journal %}
@@ -19,7 +19,7 @@
       {% if page.pdf %}
         <a class="btn btn-outline-primary btn-sm" href="{{ post.pdf }}"> PDF </a>
       {% endif %}
-      {% if post.code %}
+      {% if page.code %}
         <a class="btn btn-outline-primary btn-sm" href="{{ post.code }}"> Code </a>
       {% endif %}
     </p>
