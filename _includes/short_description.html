@@ -1,0 +1,25 @@
+    <h1 itemprop="name headline">{{ page.title | escape }}</h1>
+    <p class="text-secondary">
+      {% if page.author %}
+        <span itemprop="author">{{ page.author }}</span>
+        <br>
+      {% endif %}
+      {% if page.journal %}
+        {% if page.journal_url %}
+          <a href="{{ page.journal_url }}">
+        {% endif %}
+        <span itemprop="journal">{{ page.journal }}</span>
+        {% if page.journal_url %}
+          </a>
+        {% endif %}
+      {% endif %}
+      </p>
+      <p>
+      {% if page.pdf %}
+        <a class="btn btn-outline-primary btn-sm" href="{{ post.pdf }}"> PDF </a>
+      {% endif %}
+      {% if post.code %}
+        <a class="btn btn-outline-primary btn-sm" href="{{ post.code }}"> Code </a>
+      {% endif %}
+    </p>
+

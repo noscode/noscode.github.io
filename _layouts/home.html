@@ -19,10 +19,10 @@ layout: default
     <li class="py-2">
         <span class="text-secondary">{{ post.date | date: date_format }}</span>
         {% if post.categories contains 'papers' %}
-          <h3><span class="badge badge-success">Publication</span></h3>
+          <span class="badge badge-success">Publication</span>
         {% endif %}
         {% if post.categories contains 'conferences' %}
-          <h3><span class="badge badge-info">Conference</span></h3>
+          <span class="badge badge-info">Conference</span>
         {% endif %}
 
         <h3 class="mt-1 mb-3 h3">
@@ -31,6 +31,8 @@ layout: default
 
         <div class="text-justify">
           {{ post.excerpt }}
+
+         {{ include short_description.html page=post }}
         </div>
       </li>  {% endfor %}
   </ul>
