@@ -1,25 +1,25 @@
 <div>
-    <h1 itemprop="name headline">{{ title | escape }}</h1>
+    <h1 itemprop="name headline">{{ post.title | escape }}</h1>
     <p class="text-secondary">
-      {% if author %}
-        <span itemprop="author">{{ author }}</span>
+      {% if post.author %}
+        <span itemprop="author">{{ post.author }}</span>
         <br>
       {% endif %}
-      {% if page.journal %}
-        {% if page.journal_url %}
-          <a href="{{ page.journal_url }}">
+      {% if post.journal %}
+        {% if post.journal_url %}
+          <a href="{{ post.journal_url }}">
         {% endif %}
-        <span itemprop="journal">{{ page.journal }}</span>
-        {% if page.journal_url %}
+        <span itemprop="journal">{{ post.journal }}</span>
+        {% if post.journal_url %}
           </a>
         {% endif %}
       {% endif %}
       </p>
       <p>
-      {% if page.pdf %}
+      {% if post.pdf %}
         <a class="btn btn-outline-primary btn-sm" href="{{ post.pdf }}"> PDF </a>
       {% endif %}
-      {% if page.code %}
+      {% if post.code %}
         <a class="btn btn-outline-primary btn-sm" href="{{ post.code }}"> Code </a>
       {% endif %}
     </p>
