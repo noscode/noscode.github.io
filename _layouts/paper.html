@@ -4,8 +4,8 @@ layout: default
 <article itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="pt-4 pb-3">
-    <h2 itemprop="name headline">{{ post.title | escape }}</h2>
-    {% include short_description.html post=page %}
+    <h2 itemprop="name headline">{{ page.title | escape }}</h2>
+    {% include short_description.html post_variable=page %}
       <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
         {% assign date_format = site.minima_reboot.date_format | default: "%b %-d, %Y" %}
         {{ page.date | date: date_format }}

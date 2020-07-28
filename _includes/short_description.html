@@ -12,10 +12,28 @@
           </a>
         {% endif %}
       {% endif %}
+      {% if post_variable.conference %}
+        {% if post_variable.conference_url %}
+          <a href="{{ post_variable.conference_url }}">
+        {% endif %}
+        <span itemprop="journal">{{ post_variable.conference }}</span>
+        {% if post_variable.journal_url %}
+          </a>
+        {% endif %}
+      {% endif %}
       </p>
       <p>
       {% if post_variable.pdf %}
         <a class="btn btn-outline-primary btn-sm" href="{{ post_variable.pdf }}"> PDF </a>
+      {% endif %}
+      {% if post_variable.slides %}
+        <a class="btn btn-outline-primary btn-sm" href="{{ post_variable.slides }}"> Slides </a>
+      {% endif %}
+      {% if post_variable.poster %}
+        <a class="btn btn-outline-primary btn-sm" href="{{ post_variable.poster }}"> Poster </a>
+      {% endif %}
+      {% if post_variable.video %}
+        <a class="btn btn-outline-primary btn-sm" href="{{ post_variable.video }}"> Video </a>
       {% endif %}
       {% if post_variable.code %}
         <a class="btn btn-outline-primary btn-sm" href="{{ post_variable.code }}"> Code </a>
