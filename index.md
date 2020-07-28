@@ -7,12 +7,9 @@
 <img src="assets/enoskova.png" width="250px">
 
 <h1 class="h4"> Ekaterina Noskova </h1>
-
 <p>
 Researcher<br>
-
 <a class="text-dark" href="http://ctlab.ifmo.ru/en/"> Computer Technologies Laboratory </a> <br>
-
 <a class="text-dark" href="https://en.itmo.ru/"> ITMO University </a> <br>
 <br>
 <a href="https://scholar.google.com/citations?user=1Mlxh7wAAAAJ&hl=en">
@@ -30,10 +27,15 @@ Researcher<br>
         <div class="col-sm-8">
 <div>
 <h2 class="h2"> About </h2>
-<p>I am working on different optimization problems and evolution algorithms. My base research is devoted to demographic inference - the reconstruction of the history of evolution for species and populations from their genetic data.</p>
+<p>I am working on different optimization problems and evolution algorithms. My base research is devoted to demographic inference - the reconstruction of the history of evolution for species and populations from their genetic data.<br>
+I am the developer of GADMA software for automatic demographic inference of several populations from allele frequency spectrum. Now I am improving existing method and use it for species and population analysis.</p>
 <h3 class="h3"> Education </h3>
-<p><strong>2016 – 2018 Master’s degree</strong>: Department of Mathematics and Information Technology, Algorithmic Bioinformatics. *Saint Petersburg Academic University of the Russian Academy of Sciences, Saint Petersburg, Russia.*<br>
-<strong>2012 – 2016 Bachelor’s degree</strong>: Mathematics and Mechanics Faculty, Applied Mathematics and Computer Science, Operation Research and Decision Making in Optimization, Control and Economics Problems. *Saint Petersburg State University, Saint Petersburg, Russia.*</p>
+<p><strong>2016 – 2018</strong>: Department of Mathematics and Information Technology, Algorithmic Bioinformatics. <br>
+<strong> Master’s degree </strong><br>
+<i>Saint Petersburg Academic University of the Russian Academy of Sciences, Saint Petersburg, Russia.</i><br>
+<strong>2012 – 2016</strong>: Mathematics and Mechanics Faculty, Applied Mathematics and Computer Science, Operation Research and Decision Making in Optimization, Control and Economics Problems.<br>
+<strong> Bachelor’s degree</strong><br>
+<i>Saint Petersburg State University, Saint Petersburg, Russia.</i></p>
 <h3 class="h3"> Research interest</h3>
 <p><strong>Optimization problems</strong>. Evolutionary algorithms, Bayesian optimization.<br>
 <strong>Population genetics</strong>. Demographic inference, Population structure.</p>
