@@ -21,9 +21,12 @@ layout: page
   <tr>
     <td class="text-right align-top text-truncate"><time class="text-secondary" datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date: date_format }}</time></td>
     <td class="text-center align-top px-1">|</td>
-    <td class="text-left align-top"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape }}</a>
+    <td class="text-left align-top"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape }}</a><br>
     {% if post.pdf %}
       <a class="btn btn-outline-success" href="{{post.pdf}}"> PDF </a>
+    {% endif %}
+    {% if post.code %}
+      <a class="btn btn-outline-success" href="{{post.code}}"> PDF </a>
     {% endif %}
     </td>
   </tr>
