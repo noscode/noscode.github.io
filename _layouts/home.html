@@ -19,10 +19,10 @@ layout: default
     <li class="py-2">
         <span class="text-secondary">{{ post.date | date: date_format }}</span>
  <span class="text-secondary">{{ post.categories  | date: date_format }}</span>       
-        {% if post in site.categories.papers %}
+        {% if post.categories contains 'papers' %}
           <span class="badge badge-success">Publication</span>
         {% endif %}
-        {% if post in site.categories.conferences %}
+        {% if post.categories contains 'conferences' %}
           <span class="badge badge-info">Conference</span>
         {% endif %}
 
