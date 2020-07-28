@@ -1,0 +1,4 @@
+---
+layout: allpapers
+title: Papers
+---
