@@ -1,3 +1,7 @@
 title: Ekaterina Noskova
 description: personal page
 remote_theme: noscode/minima-reboot
+minima_reboot:
+    social_links:
+        facebook: facebook.com
+
