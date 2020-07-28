@@ -28,13 +28,7 @@ layout: default
         <h3 class="mt-1 mb-3 h3">
           <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
         </h3>
-
-        <div class="text-justify">
-          {{ post.excerpt }}
-
-        {{ post.title }}
          {% include short_description.html post=post %}
-        </div>
       </li>  {% endfor %}
   </ul>
 </div>
