@@ -1,23 +1,23 @@
     <p class="text-secondary">
-      {% if post.author %}
-        <span itemprop="author">{{ post.author }}</span>
+      {% if post_variable.author %}
+        <span itemprop="author">{{ post_variable.author }}</span>
         <br>
       {% endif %}
-      {% if post.journal %}
-        {% if post.journal_url %}
-          <a href="{{ post.journal_url }}">
+      {% if post_variable.journal %}
+        {% if post_variable.journal_url %}
+          <a href="{{ post_variable.journal_url }}">
         {% endif %}
-        <span itemprop="journal">{{ post.journal }}</span>
-        {% if post.journal_url %}
+        <span itemprop="journal">{{ post_variable.journal }}</span>
+        {% if post_variable.journal_url %}
           </a>
         {% endif %}
       {% endif %}
       </p>
       <p>
-      {% if post.pdf %}
-        <a class="btn btn-outline-primary btn-sm" href="{{ post.pdf }}"> PDF </a>
+      {% if post_variable.pdf %}
+        <a class="btn btn-outline-primary btn-sm" href="{{ post_variable.pdf }}"> PDF </a>
       {% endif %}
-      {% if post.code %}
-        <a class="btn btn-outline-primary btn-sm" href="{{ post.code }}"> Code </a>
+      {% if post_variable.code %}
+        <a class="btn btn-outline-primary btn-sm" href="{{ post_variable.code }}"> Code </a>
       {% endif %}
     </p>
