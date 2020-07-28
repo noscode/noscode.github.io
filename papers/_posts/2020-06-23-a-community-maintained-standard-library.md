@@ -1,6 +1,6 @@
 ---
 layout: paper
-title: "GADMA: Genetic algorithm for inferring demographic history of multiple populations from allele frequency spectrum data"
+title: "A community-maintained standard library of population genetic models"
 author: Jeffrey R Adrion, Christopher B Cole, Noah Dukler, Jared G Galloway, Ariella L Gladstein, Graham Gower, Christopher C Kyriazis, Aaron P Ragsdale, Georgia Tsambos, Franz Baumdicker, Jedidiah Carlson, Reed A Cartwright, Arun Durvasula, Ilan Gronau, Bernard Y Kim, Patrick McKenzie, Philipp W Messer, Ekaterina Noskova, Diego Ortega Del Vecchyo, Fernando Racimo, Travis J Struck, Simon Gravel, Ryan N Gutenkunst, Kirk E Lohmueller, Peter L Ralph, Daniel R Schrider, Adam Siepel, Jerome Kelleher, Andrew D Kern
 journal: Elife
 journal_url: "https://elifesciences.org/articles/54967"
