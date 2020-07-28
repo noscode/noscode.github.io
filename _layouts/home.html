@@ -32,7 +32,7 @@ layout: default
         <div class="text-justify">
           {{ post.excerpt }}
 
-         {{ include short_description.html page=post }}
+         {% include short_description.html page=post %}
         </div>
       </li>  {% endfor %}
   </ul>
