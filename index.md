@@ -1,8 +1,9 @@
 
 <div class="container">
     <div class="row">
-        <div class="col">
+        <div class="col-sm-6">
 
+<center>
 <img src="assets/enoskova.png" width="250px">
 
 <h1 class="h4"> Ekaterina Noskova </h1>
@@ -24,6 +25,7 @@ Researcher<br>
          <img src="assets/social_icons/facebook.png" width="40">
       </a>
 </p>
+</center>
 </div>
         <div class="col-sm-6">
 <div>
