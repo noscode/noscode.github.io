@@ -29,21 +29,13 @@ Researcher<br>
 </div>
         <div class="col-xs-6">
             <h2 class="h2"> About </h2>
-
-I am working on different optimization problems and evolution algorithms. My base research is devoted to demographic inference - the reconstruction of the history of evolution for species and populations from their genetic data.
-
+<p>I am working on different optimization problems and evolution algorithms. My base research is devoted to demographic inference - the reconstruction of the history of evolution for species and populations from their genetic data.</p>
 <h3 class="h3"> Education </h3>
-
-<strong>2016 – 2018 Master’s degree</strong>: Department of Mathematics and Information Technology, Algorithmic Bioinformatics. *Saint Petersburg Academic University of the Russian Academy of Sciences, Saint Petersburg, Russia.*
-
-<strong>2012 – 2016 Bachelor’s degree</strong>: Mathematics and Mechanics Faculty, Applied Mathematics and Computer Science, Operation Research and Decision Making in Optimization, Control and Economics Problems. *Saint Petersburg State University, Saint Petersburg, Russia.*
-
-### Research interest
-
-<strong>Optimization problems</strong>. Evolutionary algorithms, Bayesian optimization.
-
-<strong>Population genetics</strong>. Demographic inference, Population structure.
-
+<p><strong>2016 – 2018 Master’s degree</strong>: Department of Mathematics and Information Technology, Algorithmic Bioinformatics. *Saint Petersburg Academic University of the Russian Academy of Sciences, Saint Petersburg, Russia.*<br>
+<strong>2012 – 2016 Bachelor’s degree</strong>: Mathematics and Mechanics Faculty, Applied Mathematics and Computer Science, Operation Research and Decision Making in Optimization, Control and Economics Problems. *Saint Petersburg State University, Saint Petersburg, Russia.*</p>
+<h3 class="h3"> Research interest</h3>
+<p><strong>Optimization problems</strong>. Evolutionary algorithms, Bayesian optimization.<br>
+<strong>Population genetics</strong>. Demographic inference, Population structure.</p>
         </div>
     </div>
 </div>
