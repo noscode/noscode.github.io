@@ -1,41 +1,41 @@
     <p class="text-secondary">
-      {% if post.author %}
-        <span itemprop="author">{{ post.author }}</span>
+      {% if include.post_variable.author %}
+        <span itemprop="author">{{ include.post_variable.author }}</span>
         <br>
       {% endif %}
-      {% if post.journal %}
-        {% if post.journal_url %}
-          <a href="{{ post.journal_url }}">
+      {% if include.post_variable.journal %}
+        {% if include.post_variable.journal_url %}
+          <a href="{{ include.post_variable.journal_url }}">
         {% endif %}
-        <span itemprop="journal">{{ post.journal }}</span>
-        {% if post.journal_url %}
+        <span itemprop="journal">{{ include.post_variable.journal }}</span>
+        {% if include.post_variable.journal_url %}
           </a>
         {% endif %}
       {% endif %}
-      {% if post.conference %}
-        {% if post.conference_url %}
-          <a href="{{ post.conference_url }}">
+      {% if include.post_variable.conference %}
+        {% if include.post_variable.conference_url %}
+          <a href="{{ include.post_variable.conference_url }}">
         {% endif %}
-        <span itemprop="journal">{{ post.conference }}</span>
-        {% if post.journal_url %}
+        <span itemprop="journal">{{ include.post_variable.conference }}</span>
+        {% if include.post_variable.journal_url %}
           </a>
         {% endif %}
       {% endif %}
       </p>
       <p>
-      {% if post.pdf %}
-        <a class="btn btn-outline-primary btn-sm" href="{{ post.pdf }}"> PDF </a>
+      {% if include.post_variable.pdf %}
+        <a class="btn btn-outline-primary btn-sm" href="{{ include.post_variable.pdf }}"> PDF </a>
       {% endif %}
-      {% if post.slides %}
-        <a class="btn btn-outline-primary btn-sm" href="{{ post.slides }}"> Slides </a>
+      {% if include.post_variable.slides %}
+        <a class="btn btn-outline-primary btn-sm" href="{{ include.post_variable.slides }}"> Slides </a>
       {% endif %}
-      {% if post.poster %}
-        <a class="btn btn-outline-primary btn-sm" href="{{ post.poster }}"> Poster </a>
+      {% if include.post_variable.poster %}
+        <a class="btn btn-outline-primary btn-sm" href="{{ include.post_variable.poster }}"> Poster </a>
       {% endif %}
-      {% if post.video %}
-        <a class="btn btn-outline-primary btn-sm" href="{{ post.video }}"> Video </a>
+      {% if include.post_variable.video %}
+        <a class="btn btn-outline-primary btn-sm" href="{{ include.post_variable.video }}"> Video </a>
       {% endif %}
-      {% if post.code %}
-        <a class="btn btn-outline-primary btn-sm" href="{{ post.code }}"> Code </a>
+      {% if include.post_variable.code %}
+        <a class="btn btn-outline-primary btn-sm" href="{{ include.post_variable.code }}"> Code </a>
       {% endif %}
     </p>
