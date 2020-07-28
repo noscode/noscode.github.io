@@ -1,0 +1,12 @@
+{% if include.post_variable.categories contains 'papers' %}
+  <span class="badge badge-success">Publication</span>
+{% endif %}
+{% if include.post_variable.categories contains 'conferences' %}
+  <span class="badge badge-secondary">Conference</span>
+{% endif %}
+{% if include.post_variable.categories contains 'news' %}
+  <span class="badge badge-info">News</span>
+{% endif %}
+{% if include.post_variable.categories contains 'blog' %}
+  <span class="badge badge-dark">Blog</span>
+{% endif %}
