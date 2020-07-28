@@ -6,7 +6,7 @@ layout: default
   {{ content }}
 </header>
 
-<div id="content">
+<div id="content" class="bg-light">
   {% if site.paginate %}
     {% assign posts = paginator.posts %}
   {% else %}
@@ -28,7 +28,7 @@ layout: default
         <h3 class="mt-1 mb-3 h3">
           <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
         </h3>
-         {% include short_description.html post=post %}
+         {% include short_description.html post_variable=post %}
       </li>  {% endfor %}
   </ul>
 </div>
