@@ -1,7 +1,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-xs-6">
+        <div class="col">
 
 <img src="assets/enoskova.png" width="250px">
 
@@ -13,9 +13,7 @@ Researcher<br>
 <a class="text-dark" href="http://ctlab.ifmo.ru/en/"> Computer Technologies Laboratory </a> <br>
 
 <a class="text-dark" href="https://en.itmo.ru/"> ITMO University </a> <br>
-</p>
-
-
+<br>
 <a href="https://scholar.google.com/citations?user=1Mlxh7wAAAAJ&hl=en">
          <img src="assets/social_icons/google-scholar.png" width="50">
       </a>
@@ -25,9 +23,9 @@ Researcher<br>
 <a href="https://www.facebook.com/ekaterina.noskova.1675/">
          <img src="assets/social_icons/facebook.png" width="40">
       </a>
-
+</p>
 </div>
-        <div class="col-xs-6">
+        <div class="col-sm-6">
 <div>
 <h2 class="h2"> About </h2>
 <p>I am working on different optimization problems and evolution algorithms. My base research is devoted to demographic inference - the reconstruction of the history of evolution for species and populations from their genetic data.</p>
