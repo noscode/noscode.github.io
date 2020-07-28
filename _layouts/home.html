@@ -17,6 +17,7 @@ layout: default
     {% assign date_format = site.minima_reboot.date_format | default: "%b %-d, %Y" %}
     {% for post in posts limit:3 %}
     <li class="py-2">
+        <div  class="bg-light">
         <span class="text-secondary">{{ post.date | date: date_format }}</span>
         {% include get_badge.html post_variable=post %} 
 
@@ -24,6 +25,7 @@ layout: default
           <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
         </h3>
          {% include short_description.html post_variable=post %}
+        </div>
       </li>
     {% endfor %}
   </ul>
