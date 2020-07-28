@@ -28,23 +28,21 @@ Researcher<br>
 
 </div>
         <div class="col-xs-6">
-            
-
-## About
+            <h2 class="h2"> About </h2>
 
 I am working on different optimization problems and evolution algorithms. My base research is devoted to demographic inference - the reconstruction of the history of evolution for species and populations from their genetic data.
 
-### Education
+<h3 class="h3"> Education </h3>
 
-**2016 – 2018 Master’s degree**: Department of Mathematics and Information Technology, Algorithmic Bioinformatics. *Saint Petersburg Academic University of the Russian Academy of Sciences, Saint Petersburg, Russia.*
+<strong>2016 – 2018 Master’s degree</strong>: Department of Mathematics and Information Technology, Algorithmic Bioinformatics. *Saint Petersburg Academic University of the Russian Academy of Sciences, Saint Petersburg, Russia.*
 
-**2012 – 2016 Bachelor’s degree**: Mathematics and Mechanics Faculty, Applied Mathematics and Computer Science, Operation Research and Decision Making in Optimization, Control and Economics Problems. *Saint Petersburg State University, Saint Petersburg, Russia.*
+<strong>2012 – 2016 Bachelor’s degree</strong>: Mathematics and Mechanics Faculty, Applied Mathematics and Computer Science, Operation Research and Decision Making in Optimization, Control and Economics Problems. *Saint Petersburg State University, Saint Petersburg, Russia.*
 
 ### Research interest
 
-**Optimization problems**. Evolutionary algorithms, Bayesian optimization.
+<strong>Optimization problems</strong>. Evolutionary algorithms, Bayesian optimization.
 
-**Population genetics**. Demographic inference, Population structure.
+<strong>Population genetics</strong>. Demographic inference, Population structure.
 
         </div>
     </div>
