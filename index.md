@@ -1,7 +1,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-4">
 
 <center>
 <img src="assets/enoskova.png" width="250px">
@@ -27,7 +27,7 @@ Researcher<br>
 </p>
 </center>
 </div>
-        <div class="col-md-6">
+        <div class="col-sm-8">
 <div>
 <h2 class="h2"> About </h2>
 <p>I am working on different optimization problems and evolution algorithms. My base research is devoted to demographic inference - the reconstruction of the history of evolution for species and populations from their genetic data.</p>
