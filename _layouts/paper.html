@@ -18,21 +18,21 @@ layout: default
         {% if page.journal_url %}
           </a>
         {% endif %}
-
-        <br>
       {% endif %}
+      </p>
+      <p>
+      {% if page.pdf %}
+        <a class="btn btn-outline-primary btn-sm" href="{{ post.pdf }}"> PDF </a>
+      {% endif %}
+      {% if post.code %}
+        <a class="btn btn-outline-primary btn-sm" href="{{ post.code }}"> Code </a>
+      {% endif %}
+    </p>
       <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
         {% assign date_format = site.minima_reboot.date_format | default: "%b %-d, %Y" %}
         {{ page.date | date: date_format }}
       </time>
-      <br>
-      {% if page.pdf %}
-        <a class="btn btn-outline-primary" href="{{post.pdf}}"> PDF </a>
-      {% endif %}
-      {% if post.code %}
-        <a class="btn btn-outline-primary" href="{{post.code}}"> Code </a>
-      {% endif %}
-    </p>
+
   </header>
 
   <div class="text-justify" itemprop="articleBody" id="content">

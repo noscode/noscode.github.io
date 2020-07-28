@@ -1,4 +1,4 @@
 ---
 layout: allpapers
-title: Papers
+title: Publications
 ---
