@@ -1,0 +1,45 @@
+---
+layout: default
+---
+<article itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="pt-4 pb-3">
+    <h1 itemprop="name headline">{{ page.title | escape }}</h1>
+    <p class="text-secondary">
+      {% if page.author %}
+        <span itemprop="author">{{ page.author }}</span>
+        <br>
+      {% endif %}
+      {% if page.journal %}
+        {% if page.journal_url %}
+          <a href="{{ page.journal_url }}">
+        {% endif %}
+        <span itemprop="journal">{{ page.journal }}</span>
+        {% if page.journal_url %}
+          </a>
+        {% endif %}
+
+        <br>
+      {% endif %}
+      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+        {% assign date_format = site.minima_reboot.date_format | default: "%b %-d, %Y" %}
+        {{ page.date | date: date_format }}
+      </time>
+      <br>
+      {% if page.pdf %}
+        <a class="btn btn-outline-primary" href="{{post.pdf}}"> PDF </a>
+      {% endif %}
+      {% if post.code %}
+        <a class="btn btn-outline-primary" href="{{post.code}}"> Code </a>
+      {% endif %}
+    </p>
+  </header>
+
+  <div class="text-justify" itemprop="articleBody" id="content">
+    {{ content }}
+  </div>
+
+  {% if site.disqus.shortname %}
+    {% include disqus_comments.html %}
+  {% endif %}
+</article>
