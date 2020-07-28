@@ -21,7 +21,8 @@ layout: page
   <tr>
     <td class="text-right align-top text-truncate"><time class="text-secondary" datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date: date_format }}</time></td>
     <td class="text-center align-top px-1">|</td>
-    <td class="text-left align-top"><p class="text-primary">{{ post.title | escape }}</p><br>
+    <td class="text-left align-top">
+    {% include get_title.html post_variable=post %} <br>
     {% include short_description.html post_variable=post %}
     </td>
   </tr>

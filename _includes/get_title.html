@@ -1,0 +1,11 @@
+{% if include.post_variable.categories contains 'conferences' %}
+  <p class="text-dark">
+{% else %}
+  <a href="{{ include.post_variable.url | relative_url }}">
+{% endif %}
+{{ include.post_variable.title | escape }}
+{% if include.post_variable.categories contains 'conferences' %}
+  </p>
+{% else %}
+  </a>
+{% endif %}

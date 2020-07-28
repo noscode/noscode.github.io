@@ -25,19 +25,8 @@ layout: page
         {% include get_badge.html post_variable=post %} 
     </td>
     <td class="text-left align-top">
-      {% if post.categories contains 'conferences' %}
-        <p class="text-primary">
-      {% else %}
-        <a href="{{ post.url | prepend: site.baseurl }}">
-      {% endif %}
-      {{ post.title | escape }}
-      {% if post.categories contains 'conferences' %}
-        </p>
-      {% else %}
-        </a>
-      {% endif %}
-
-<br>
+        {% include get_title.html post_variable=post %}
+    <br>
     {% include short_description.html post_variable=post %}
     </td>
   </tr>

@@ -11,18 +11,21 @@
         {% if include.post_variable.journal_url %}
           </a>
         {% endif %}
+        <br>
       {% endif %}
       {% if include.post_variable.conference %}
         {% if include.post_variable.conference_url %}
           <a href="{{ include.post_variable.conference_url }}">
         {% endif %}
         <span itemprop="journal">{{ include.post_variable.conference }}</span>
-        {% if include.post_variable.journal_url %}
+        {% if include.post_variable.conference_url %}
           </a>
         {% endif %}
+        <br>
       {% endif %}
       {% if include.post_variable.location %}
         <span itemprop="location">{{ include.post_variable.location }}</span>
+        <br>
       {% endif %}
 
       </p>
