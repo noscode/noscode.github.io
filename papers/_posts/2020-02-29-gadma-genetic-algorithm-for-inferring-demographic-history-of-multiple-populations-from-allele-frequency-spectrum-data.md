@@ -2,6 +2,8 @@
 layout: post
 title: "GADMA: Genetic algorithm for inferring demographic history of multiple populations from allele frequency spectrum data"
 author: Ekaterina Noskova
+pdf: "https://academic.oup.com/gigascience/article/9/3/giaa005/5768731"
+code: "https://github.com/ctlab/GADMA"
 ---
 
 <a class="btn btn-outline-success" href="https://academic.oup.com/gigascience/article/9/3/giaa005/5768731"> PDF </a>
