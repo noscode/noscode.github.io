@@ -6,6 +6,7 @@ layout: default
   {{ content }}
 </header>
 
+<hr>
 <div id="content">
   {% if site.paginate %}
     {% assign posts = paginator.posts %}
@@ -21,9 +22,9 @@ layout: default
         <span class="text-secondary">{{ post.date | date: date_format }}</span>
         {% include get_badge.html post_variable=post %} 
 
-        <h3 class="mt-1 mb-3 h3">
+        <h4 class="mt-1 mb-3 h4">
           {% include get_title.html post_variable=post %}
-        </h3>
+        </h4>
          {% include short_description.html post_variable=post %}
         </div>
       </li>
