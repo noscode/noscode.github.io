@@ -1,12 +1,12 @@
 {% if include.post_variable.categories contains 'papers' %}
-  <span class="badge badge-success">Publication</span>
+  <a href="{% link papers.md %}" class="badge badge-success-light">Publication</a>
 {% endif %}
 {% if include.post_variable.categories contains 'conferences' %}
-  <span class="badge badge-secondary">Conference</span>
+  <a href="{% link conferences.md %}"  class="badge badge-warning-light">Conference</a>
 {% endif %}
 {% if include.post_variable.categories contains 'news' %}
-  <span class="badge badge-info">News</span>
+  <a href="#" class="badge badge-info-light">News</a>
 {% endif %}
 {% if include.post_variable.categories contains 'blog' %}
-  <span class="badge badge-dark">Blog</span>
+  <a href="{% link blog.md %}" class="badge badge-danger-light">Blog</a>
 {% endif %}

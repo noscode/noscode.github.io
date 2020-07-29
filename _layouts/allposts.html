@@ -4,39 +4,22 @@ layout: page
 
 {{ content }}
 
-{% for post in site.posts %}
+<ul class="list-unstyled m-0">
+{% assign date_format = site.minima_reboot.date_format | default: "%b %-d, %Y" %}
+{% for post in site.posts%}
+<li class="py-2">
+    <div  class="bg-light">
+    <span class="text-secondary">{{ post.date | date: date_format }}</span>
+    {% include get_badge.html post_variable=post %} 
 
-  {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
-
-  {% if forloop.first %}
-    <h2 class="mt-0 h4">{{ year }}</h2>
-    <table class="ml-4">
-  {% elsif year != prev_year %}
-    </table>
-    <h2 class="h4">{{ year }}</h2>
-    <table class="ml-4">
-  {% endif %}
-
-  {% assign date_format = site.minima_reboot.date_format_short | default: "%b %-d" %}
-  <tr>
-    <td class="text-right align-top text-truncate"><time class="text-secondary" datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date: date_format }}</time></td>
-    <td class="text-center align-top px-1">|</td>
-    <td class="text-center align-top px-1"> 
-        {% include get_badge.html post_variable=post %} 
-    </td>
-    <td class="text-left align-top">
-        {% include get_title.html post_variable=post %}
-    {% include short_description.html post_variable=post %}
-    </td>
-  </tr>
-
-  {% if forloop.last %}
-    </table>
-  {% endif %}
-
-  {% capture prev_year %}{{ year }}{% endcapture %}
-
+    <h4 class="mt-1 mb-3 h4">
+      {% include get_title.html post_variable=post %}
+    </h4>
+     {% include short_description.html post_variable=post %}
+    </div>
+  </li>
 {% endfor %}
+</ul>
 
 <div class="pt-3"></div>
 
