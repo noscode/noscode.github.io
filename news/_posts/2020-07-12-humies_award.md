@@ -11,7 +11,7 @@ Human-Competitive Awards are traditionally held at GECCO conference. It is devot
 
 GADMA is the first software of its kind that could automatically infer the demographic history of populations.
 
-<video>
-  <source src="http://www.human-competitive.org/sites/default/files/noskovavideo.480p.mp4" type="video/mp4">
+<video width="500">
+  <source src="http://www.human-competitive.org/sites/default/files/noskovavideo.480p.mp4" type="video/mp4"  controls />
 Your browser does not support the video tag.
 </video>
