@@ -34,17 +34,27 @@
         <a class="btn btn-outline-secondary btn-sm" href="{{ include.post_variable.pdf }}"> PDF </a>
       {% endif %}
       {% if include.post_variable.entry %}
-        <a class="btn btn-outline-secondary btn-sm" href="{{ include.post_variable.entry }}"> Code </a>
+        <a class="btn btn-outline-secondary btn-sm" href="{{ include.post_variable.entry }}"> Entry </a>
       {% endif %}
       {% if include.post_variable.slides %}
         <a class="btn btn-outline-secondary btn-sm" href="{{ include.post_variable.slides }}"> Slides </a>
       {% endif %}
+      {% if include.post_variable.slides %}
+        <a class="btn btn-outline-secondary btn-sm" href="{{ include.post_variable.slides_in_russian }}"> Slides (in Russian)</a>
+      {% endif %}
       {% if include.post_variable.poster %}
         <a class="btn btn-outline-secondary btn-sm" href="{{ include.post_variable.poster }}"> Poster </a>
+      {% endif %}
+      {% if include.post_variable.poster %}
+        <a class="btn btn-outline-secondary btn-sm" href="{{ include.post_variable.poster_in_russian }}"> Poster (in Russian)</a>
       {% endif %}
       {% if include.post_variable.video %}
         <a class="btn btn-outline-secondary btn-sm" href="{{ include.post_variable.video }}"> Video </a>
       {% endif %}
+      {% if include.post_variable.video %}
+        <a class="btn btn-outline-secondary btn-sm" href="{{ include.post_variable.video_in_russian }}"> Video (in Russian)</a>
+      {% endif %}
+
       {% if include.post_variable.code %}
         <a class="btn btn-outline-secondary btn-sm" href="{{ include.post_variable.code }}"> Code </a>
       {% endif %}
