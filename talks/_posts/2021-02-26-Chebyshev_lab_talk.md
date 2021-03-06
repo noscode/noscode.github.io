@@ -8,6 +8,6 @@ slides: "https://drive.google.com/file/d/10QUVgNt-mJaL-07GzZgLB_C5Q2CfuKzv/view?
 ---
 
 <center>
-  <iframe class="embed _responsive" src="https://youtu.be/EskLiDXRVSA" width="560" height="349" frameborder="0" allowfullscreen>
+  <iframe class="embed _responsive" src="https://www.youtube.com/embed/EskLiDXRVSA" width="560" height="349" frameborder="0" allowfullscreen>
   </iframe>
 </center>
