@@ -3,6 +3,7 @@ layout: paper
 title: "Talk: Bayesian Optimization for Demographic History Inference"
 conference: "Probabilistic Techniques in Analysis"
 conference_url: "https://siriusmathcenter.ru/en/program/pta"
+location: Sirius, Mathematics Center, Sochi, Russia
 slides: "../download/2021-12-07_Bayesian_Optimization_for_Demographic_Inference.html"
 ---
 
