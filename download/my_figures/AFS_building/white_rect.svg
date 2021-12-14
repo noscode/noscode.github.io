@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   height="266.4pt"
+   version="1.1"
+   viewBox="0 0 288 266.4"
+   width="288pt"
+   id="svg153"
+   sodipodi:docname="white_rect.svg"
+   inkscape:version="1.0.2 (1.0.2+r75+1)">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1856"
+     inkscape:window-height="1050"
+     id="namedview155"
+     showgrid="false"
+     inkscape:zoom="2.1435833"
+     inkscape:cx="159.36677"
+     inkscape:cy="182.8608"
+     inkscape:window-x="64"
+     inkscape:window-y="30"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg153"
+     inkscape:document-rotation="0" />
+  <metadata
+     id="metadata2">
+    <rdf:RDF>
+      <cc:Work>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:date>2021-12-03T15:56:17.435640</dc:date>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Matplotlib v3.3.4, https://matplotlib.org/</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs6">
+    <style
+       type="text/css"
+       id="style4">*{stroke-linecap:butt;stroke-linejoin:round;}</style>
+    <path
+       d="M 0,0 H 3.5"
+       id="mff0491aaf9-7"
+       style="stroke:#000000;stroke-width:0.8" />
+  </defs>
+  <g
+     id="patch_1">
+    <path
+       d="M 0,266.4 H 288 V 0 H 0 Z"
+       style="fill:none"
+       id="path8" />
+  </g>
+  <g
+     id="patch_2">
+    <path
+       d="M 36,237.096 H 214.56 V 31.968 H 36 Z"
+       style="fill:none"
+       id="path11" />
+  </g>
+  <g
+     id="matplotlib.axis_3" />
+  <defs
+     id="defs151">
+    <clipPath
+       id="p3c74d53a0e">
+      <rect
+         height="205.128"
+         width="178.56"
+         x="36"
+         y="31.968"
+         id="rect145" />
+    </clipPath>
+    <clipPath
+       id="p79573d1e63">
+      <rect
+         height="205.128"
+         width="10.2564"
+         x="225.72"
+         y="31.968"
+         id="rect148" />
+    </clipPath>
+  </defs>
+  <path
+     d="M 18.64479,136.56058 V 10.428329 H 152.82432 287.00386 V 136.56058 262.69285 H 152.82432 18.64479 Z"
+     id="path51"
+     style="fill:#ffffff;stroke-width:0.349882;stroke-linecap:butt;stroke-linejoin:round" />
+</svg>

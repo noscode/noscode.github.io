@@ -1,0 +1,1344 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reset.min.css" integrity="sha512-Mjxkx+r7O/OLQeKeIBCQ2yspG1P5muhAtv/J+p2/aPnSenciZWm5Wlnt+NOUNA4SHbnBIE/R2ic0ZBiCXdQNUg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.min.css" integrity="sha512-zu0eodDPCBAZf1vnIgwZ6qchMBt1xqgGkS9vBjVmunoH8pU7cc9OQKBiSQCclpvqySupy9Y1pLZc87VB40G4Sw==" crossorigin="anonymous" />
+<link rel="stylesheet" href="simple.css"/>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.min.js" integrity="sha512-Xu/cezKABTI81MGnaBm64vdiS7XkttHeYGOgr2Mdga0bTplSBGongLq2lhK2HwL79wefKM0u4uTCLD0ha1sRzQ==" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+Reveal.initialize({
+	hash: true,
+	center: false,
+	width: 1280,
+	height: 800,
+	maxScale: 5.0,
+	slideNumber: true,
+	transition: "fade",
+	keyboard: { 27: null },
+	pdfSeparateFragments: false
+})
+Reveal.on('pdf-ready', () => 
+	document.querySelectorAll("section[data-no-print]").forEach(e => e.parentNode.remove())
+)
+renderMathInElement(document.body, {
+	delimiters: [
+		{left: "$$", right: "$$", display: true},
+		{left: "$", right: "$", display: false},
+	],
+	trust: true,
+	strict: false,
+	macros: {
+		"\\P": "\\mathbb{P}",
+		"\\E": "\\mathbb{E}",
+		"\\Cov": "\\operatorname{Cov}",
+		"\\N": "\\mathbb{N}",
+		"\\Z": "\\mathbb{Z}",
+		"\\Q": "\\mathbb{Q}",
+		"\\R": "\\mathbb{R}",
+		"\\C": "\\mathbb{C}",
+		"\\eps": "\\varepsilon",
+		"\\given": "\\mid",
+		"\\d": "{\\operatorname{d}}",
+		"\\v": "\\boldsymbol{#1}",
+		"\\m": "\\mathbf{#1}",
+		"\\f": "\\operatorname{#1}",
+		"\\s": "\\mathscr{#1}",
+		"\\c": "\\mathcal{#1}",
+		"\\bb": "\\mathbb{#1}",
+		"\\abs": "\\left|{#1}\\right|",
+		"\\del": "\\left({#1}\\right)",
+		"\\sbr": "\\left[{#1}\\right]",
+		"\\cbr": "\\left\\{ {#1} \\right\\}",
+		"\\x": "\\times",
+		"\\t": "\\mathbin{\\text{#1}}",
+		"\\norm": "\\left\\Vert{#1}\\right\\Vert",
+		"\\innerprod": "\\left\\langle{#1},{#2}\\right\\rangle",
+		"\\ubr": "\\underbrace",
+		"\\pd": "\\partial",
+		"\\o": "\\circ",
+		"\\.": "\\cdot",
+		"\\h": "\\widehat{#1}",
+		"\\~": "\\sim",
+		"\\ubr": "\\underset{\\mathclap{#2}}{\\undergroup{#1}}"
+	}
+	})
+document.querySelectorAll("*[data-class]").forEach(e => e.dataset.class.split(" ").forEach(c => e.classList.add(c)))
+})
+</script>
+
+<style>
+.w-25{width:25%!important}.w-50{width:50%!important}.w-75{width:75%!important}.w-100{width:100%!important}.w-auto{width:auto!important}.h-25{height:25%!important}.h-50{height:50%!important}.h-75{height:75%!important}.h-100{height:100%!important}.h-auto{height:auto!important}.mw-100{max-width:100%!important}.mh-100{max-height:100%!important}.m-0{margin:0!important}.mt-0,.my-0{margin-top:0!important}.mr-0,.mx-0{margin-right:0!important}.mb-0,.my-0{margin-bottom:0!important}.ml-0,.mx-0{margin-left:0!important}.m-1{margin:.25rem!important}.mt-1,.my-1{margin-top:.25rem!important}.mr-1,.mx-1{margin-right:.25rem!important}.mb-1,.my-1{margin-bottom:.25rem!important}.ml-1,.mx-1{margin-left:.25rem!important}.m-2{margin:.5rem!important}.mt-2,.my-2{margin-top:.5rem!important}.mr-2,.mx-2{margin-right:.5rem!important}.mb-2,.my-2{margin-bottom:.5rem!important}.ml-2,.mx-2{margin-left:.5rem!important}.m-3{margin:1rem!important}.mt-3,.my-3{margin-top:1rem!important}.mr-3,.mx-3{margin-right:1rem!important}.mb-3,.my-3{margin-bottom:1rem!important}.ml-3,.mx-3{margin-left:1rem!important}.m-4{margin:1.5rem!important}.mt-4,.my-4{margin-top:1.5rem!important}.mr-4,.mx-4{margin-right:1.5rem!important}.mb-4,.my-4{margin-bottom:1.5rem!important}.ml-4,.mx-4{margin-left:1.5rem!important}.m-5{margin:3rem!important}.mt-5,.my-5{margin-top:3rem!important}.mr-5,.mx-5{margin-right:3rem!important}.mb-5,.my-5{margin-bottom:3rem!important}.ml-5,.mx-5{margin-left:3rem!important}.p-0{padding:0!important}.pt-0,.py-0{padding-top:0!important}.pr-0,.px-0{padding-right:0!important}.pb-0,.py-0{padding-bottom:0!important}.pl-0,.px-0{padding-left:0!important}.p-1{padding:.25rem!important}.pt-1,.py-1{padding-top:.25rem!important}.pr-1,.px-1{padding-right:.25rem!important}.pb-1,.py-1{padding-bottom:.25rem!important}.pl-1,.px-1{padding-left:.25rem!important}.p-2{padding:.5rem!important}.pt-2,.py-2{padding-top:.5rem!important}.pr-2,.px-2{padding-right:.5rem!important}.pb-2,.py-2{padding-bottom:.5rem!important}.pl-2,.px-2{padding-left:.5rem!important}.p-3{padding:1rem!important}.pt-3,.py-3{padding-top:1rem!important}.pr-3,.px-3{padding-right:1rem!important}.pb-3,.py-3{padding-bottom:1rem!important}.pl-3,.px-3{padding-left:1rem!important}.p-4{padding:1.5rem!important}.pt-4,.py-4{padding-top:1.5rem!important}.pr-4,.px-4{padding-right:1.5rem!important}.pb-4,.py-4{padding-bottom:1.5rem!important}.pl-4,.px-4{padding-left:1.5rem!important}.p-5{padding:3rem!important}.pt-5,.py-5{padding-top:3rem!important}.pr-5,.px-5{padding-right:3rem!important}.pb-5,.py-5{padding-bottom:3rem!important}.pl-5,.px-5{padding-left:3rem!important}.m-n1{margin:-.25rem!important}.mt-n1,.my-n1{margin-top:-.25rem!important}.mr-n1,.mx-n1{margin-right:-.25rem!important}.mb-n1,.my-n1{margin-bottom:-.25rem!important}.ml-n1,.mx-n1{margin-left:-.25rem!important}.m-n2{margin:-.5rem!important}.mt-n2,.my-n2{margin-top:-.5rem!important}.mr-n2,.mx-n2{margin-right:-.5rem!important}.mb-n2,.my-n2{margin-bottom:-.5rem!important}.ml-n2,.mx-n2{margin-left:-.5rem!important}.m-n3{margin:-1rem!important}.mt-n3,.my-n3{margin-top:-1rem!important}.mr-n3,.mx-n3{margin-right:-1rem!important}.mb-n3,.my-n3{margin-bottom:-1rem!important}.ml-n3,.mx-n3{margin-left:-1rem!important}.m-n4{margin:-1.5rem!important}.mt-n4,.my-n4{margin-top:-1.5rem!important}.mr-n4,.mx-n4{margin-right:-1.5rem!important}.mb-n4,.my-n4{margin-bottom:-1.5rem!important}.ml-n4,.mx-n4{margin-left:-1.5rem!important}.m-n5{margin:-3rem!important}.mt-n5,.my-n5{margin-top:-3rem!important}.mr-n5,.mx-n5{margin-right:-3rem!important}.mb-n5,.my-n5{margin-bottom:-3rem!important}.ml-n5,.mx-n5{margin-left:-3rem!important}.m-auto{margin:auto!important}.mt-auto,.my-auto{margin-top:auto!important}.mr-auto,.mx-auto{margin-right:auto!important}.mb-auto,.my-auto{margin-bottom:auto!important}.ml-auto,.mx-auto{margin-left:auto!important}.embed-responsive{position:relative;display:block;width:100%;padding:0;overflow:hidden}.embed-responsive::before{display:block;content:""}.embed-responsive .embed-responsive-item,.embed-responsive embed,.embed-responsive iframe,.embed-responsive object,.embed-responsive video{position:absolute;top:0;bottom:0;left:0;width:100%;height:100%;border:0}.img-fluid{max-width:100%;height:auto;}.border{border:1px solid #dee2e6!important}.rounded{border-radius:.25rem!important}.rounded-circle{border-radius:50%!important}.text-left{text-align:left!important}.text-right{text-align:right!important}.text-center{text-align:center!important}.text-nowrap{white-space:nowrap!important}.d-none{display:none!important}.d-inline{display:inline!important}.d-inline-block{display:inline-block!important}.d-block{display:block!important}.d-table{display:table!important}.d-table-row{display:table-row!important}.d-table-cell{display:table-cell!important}.d-flex{display:flex!important}.d-inline-flex{display:inline-flex!important}
+.print-pdf .reveal{touch-action:auto!important;}
+.h1{font-size:2.5em!important}.h2{font-size:2em!important}.h3{font-size:1.75em!important}.h4{font-size:1.5em!important}.h5{font-size:1.25em!important}.h6{font-size:1em!important}.small{font-size:80%!important}.footnotesize{font-size:65%!important}.scriptsize{font-size:50%!important}
+h1,h2,h3,h4,h5,h6,p { font-size: 1em!important; margin-top: 0.75em!important; margin-bottom: 0.75em!important; }
+ol,ul { margin-left: 2em!important; width: calc(100% - 2em)!important; }
+a,li { }
+p { text-align: left; }
+section h1:first-child { text-align: left; }
+.reveal-viewport { }
+.reveal { }
+.slide-number { background-color: transparent!important; }
+article { min-height: 600px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+article p { width: 100%; }
+.text-small-caps { font-family:Helvetica, Arial, sans-serif; font-variant: small-caps; }
+section footer { position:absolute; top: 100%; width: calc(100% - 6em); padding-left: 3em; padding-right: 3em; }
+.print-pdf .d-print-none{display:none!important}
+</style>
+
+
+<style>
+#mangrtable {
+    border:none;
+    border-collapse: collapse;
+}
+
+#mangrtable th {
+    border: none;
+}
+
+#mangrtable td {
+	width: 50%;
+    border: none;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+}
+
+#mangrtable td:first-child {
+    border-left: none;
+}
+
+#mangrtable td:last-child {
+    border-right: none;
+}
+
+</style>
+
+<title>Bayesian Optimization for Demographic History Inference</title>
+</head>
+
+<body>
+
+<div class="reveal">
+<div class="slides">
+
+
+<section data-auto-animate>
+<article class="justify-between">
+
+<!--	
+<div class="r-hstack justify-center items-start w-100 fragment fade-out" data-fragment-index="0">
+<h2 class="h6">Конференция SAMPLE</h2>
+</div>
+--!>
+<div class="r-hstack justify-center items-center mt-n1 fragment fade-out" data-fragment-index="0">
+<img alt class="img-fluid my-0 px-5" src="my_figures/itmo_horiz_white_eng111.png" style="height:10rem;">
+</div>
+
+<div class="r-vstack my-4 py-5">
+<div class="r-vstack my-0">
+	<h1 class="h3 text-nowrap mb-0">Bayesian Optimization for</h1>
+    <div class="r-hstack my-0">
+        <h1 class="h4 text-nowrap my-0">Demographic History</h1><h1 class="h4 text-nowrap my-0">&nbsp;Inference</h1>
+    </div>
+</div>
+<h1 class="r-hstack text-nowrap justify-center items-center mt-3 mb-5 fragment fade-out" data-fragment-index="0">Ekaterina Noskova</h1>
+</div>
+
+<h1 class="r-hstack justify-center items-center w-100 mt-5 small fragment fade-out" data-fragment-index="0">
+07 December 2021
+</h1>
+
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section  data-auto-animate>
+<article>
+
+<div class="r-vstack mt-5 pt-5">
+<h1 class="h2">Demographic History</h1>
+</div>
+
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4">Demographic History</h1>
+<article>
+
+<video data-autoplay src="my_figures/merged.mp4"  style="height:40rem;"></video>
+
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4">Demographic History</h1>
+<article>
+
+<p>
+<strong>Demographic history</strong> is the history of evolution and development of populations. It includes such parameters as size of population, time of splits and migration rates.
+</p>
+
+<div class="r-stack my-0 mx-0 px-0 py-0">
+  <img class="fragment fade-left" src="my_figures/dem_history_example/demographic_history_example_1_base.svg" style="height:25rem;">
+  <img class="fragment fade-left" src="my_figures/dem_history_example/demographic_history_example_1_1_pops.svg" style="height:25rem;">
+  <img class="fragment fade-left" src="my_figures/dem_history_example/demographic_history_example_1_2_time.svg" style="height:25rem;">
+  <img class="fragment fade-left" src="my_figures/dem_history_example/demographic_history_example_1_3_sizes.svg" style="height:25rem;">
+  <img class="fragment fade-left" src="my_figures/dem_history_example/demographic_history_example_1_4_split.svg" style="height:25rem;">
+  <img class="fragment fade-left" src="my_figures/dem_history_example/demographic_history_example_1_5_migs.svg" style="height:25rem;">
+</div>
+</article>
+</section>
+
+
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<div class="r-hstack" style="align-items:left;justify-content:left">
+<h1 class="h4 text-left">Why Reconstruct&nbsp;</h1><h1 class="h4 text-left">Demographic History</h1><h1 class="h4 text-left">?</h1>
+</div>
+<article>
+
+<p class="fragment">
+Understand population history
+</p>
+
+<div class="r-hstack">
+  <div class="r-stack my-0 mx-0 px-0 py-0">
+    <img  src="my_figures/dem_history_example/demographic_history_example_1_base.svg" style="height:25rem;">
+    <img  src="my_figures/dem_history_example/demographic_history_example_1_1_pops.svg" style="height:25rem;">
+    <img  src="my_figures/dem_history_example/demographic_history_example_1_2_time.svg" style="height:25rem;">
+    <img  src="my_figures/dem_history_example/demographic_history_example_1_3_sizes.svg" style="height:25rem;">
+    <img  src="my_figures/dem_history_example/demographic_history_example_1_4_split.svg" style="height:25rem;">
+    <img  src="my_figures/dem_history_example/demographic_history_example_1_5_migs.svg" style="height:25rem;">
+  </div>
+  <div class="r-stack">
+    <img class="fragment fade-left" src="my_figures/dem_history_example/demographic_history_example_2_1.svg" style="height:30rem;">
+    <img class="fragment fade-left" src="my_figures/dem_history_example/demographic_history_example_2_2.svg" style="height:30rem;">
+    <img class="fragment fade-left" src="my_figures/dem_history_example/demographic_history_example_2_3.svg" style="height:30rem;">
+  </div>
+</div>
+
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<div class="r-hstack" style="align-items:left;justify-content:left">
+<h1 class="h4 text-left">Why Reconstruct&nbsp;</h1><h1 class="h4 text-left">Demographic History</h1><h1 class="h4 text-left">?</h1>
+</div>
+<article>
+
+<p class="mt-n4">
+Conservation biology studies
+</p>
+
+<div class="r-hstack">
+  <img class="fragment fade-left mb-0 mr-5" src="my_figures/species_dama_gazelle.svg" style="height:25rem;">
+  <img class="fragment fade-left mt-0 ml-5" src="my_figures/gazelle_model.png" style="height:25rem;">
+</div>
+
+</article>
+</section>
+
+<section  data-auto-animate>
+<article>
+
+<div class="r-vstack mt-5 pt-5">
+<h1 class="h2">Demographic Inference</h1>
+</div>
+
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4">Demographic Inference</h1>
+<article>
+
+<div class="r-stack">
+  <img class="fragment fade-left" src="my_figures/dem_inference/1_1.svg" style="height:35rem;">
+  <img class="fragment fade-left" src="my_figures/dem_inference/1_2.svg" style="height:35rem;">
+  <img class="fragment fade-left" src="my_figures/dem_inference/1_3.svg" style="height:35rem;">
+</div>
+
+</article>
+</section>
+
+
+<!--=========================================================================
+
+<section  data-auto-animate>
+<article>
+
+<div class="r-vstack mt-5 pt-5">
+<div class="r-hstack">
+<h1 class="h2">Data Statistics:&nbsp;</h1><h1 class="h2">Alelle Frequency Spectrum</h1>
+</div>
+</div>
+
+</article>
+</section>
+
+=========================================================================
+
+<section data-auto-animate>
+<h1 class="h4">Allele Frequency Spectrum</h1>
+<article>
+<p class="fragment mb-0">
+<strong>Derived allele</strong> is a new allele formed by mutation.
+</p>
+<p class="fragment mb-0">
+<strong>Allele frequency spectrum (AFS) of P populations</strong> is the joint distribution of the derived allele frequencies of a given set of loci
+(SNP’s) across P populations.
+</p>
+<div class="r-hstack">
+  <img class="fragment fade-left mr-4" src="my_figures/AFS_examples/1d_plot.svg" style="height:20rem;">
+  <img class="fragment fade-left" src="my_figures/AFS_examples/2d_plot.svg" style="height:20rem;">
+  <img class="fragment fade-left" src="my_figures/AFS_examples/3d_plot.svg" style="height:20rem;">
+</div>
+
+</article>
+</section>
+
+=========================================================================
+
+<section data-auto-animate>
+<h1 class="h4">Allele Frequency Spectrum Example</h1>
+<article>
+
+<div class="r-hstack">
+    <table class="small mr-5">
+        <tr>
+            <td style="border:none;">Reference:</td>
+            <td class="text-center"  style="border:none;">ATACGTC</td>
+            <td style="border:none;"></td>
+        </tr>
+        <tr>
+            <td  style="border:none;"></td>
+            <td class="text-center" style="border:none;">1 population</td>
+            <td class="text-center" style="border:none;">2 population</td>
+        </tr>
+        <tr>
+            <td style="border:none;">1 individual</td>
+            <td class="text-center" style="border:none;">AT<span class="fragment highlight-red" data-fragment-index="0">C</span>CG<span class="fragment highlight-red" data-fragment-index="0">A</span>C</td>
+            <td class="text-center" style="border:none;">A<span class="fragment highlight-red" data-fragment-index="0">C</span>AC<span class="fragment highlight-red" data-fragment-index="0">T</span>TC</td>
+        </tr>
+        <tr>
+            <td style="border:none;">2 individual</td>
+            <td class="text-center" style="border:none;">A<span class="fragment highlight-red" data-fragment-index="0">C</span>ACGTC</td>
+            <td class="text-center" style="border:none;">A<span class="fragment highlight-red" data-fragment-index="0">C</span>ACGT<span class="fragment highlight-red" data-fragment-index="0">T</span></td>
+        </tr>
+        <tr>
+            <td style="border:none;">3 individual</td>
+            <td class="text-center" style="border:none;"><span class="fragment highlight-red" data-fragment-index="0">G</span><span class="fragment highlight-red" data-fragment-index="0">C</span>ACGTC</td>
+            <td class="text-center" style="border:none;"></td>
+        </tr>
+    </table>
+
+    <div class="r-vstack">
+        <table class="small">
+            <tr  class="fragment" data-fragment-index="1">
+                <td style="border:none;">Position</td>
+                <td style="border:none;">1</td>
+                <td style="border:none;">2</td>
+                <td style="border:none;">3</td>
+                <td style="border:none;">4</td>
+                <td style="border:none;">5</td>
+                <td style="border:none;">6</td>
+                <td style="border:none;">7</td>
+            </tr>
+            <tr  class="fragment" data-fragment-index="1">
+                <td style="border:none;">Der. allele</td>
+                <td class="fragment fade-in" data-fragment-index="3" style="border:none;">G</td>
+                <td class="fragment fade-in" data-fragment-index="4" style="border:none;">C</td>
+                <td class="fragment fade-in" data-fragment-index="5" style="border:none;">C</td>
+                <td class="fragment fade-in" data-fragment-index="6" style="border:none;">-</td>
+                <td class="fragment fade-in" data-fragment-index="7" style="border:none;">T</td>
+                <td class="fragment fade-in" data-fragment-index="8" style="border:none;">A</td>
+                <td class="fragment fade-in" data-fragment-index="9" style="border:none;">T</td>
+            </tr>
+            <tr class="fragment" data-fragment-index="1">
+                <td style="border:none;">Freq. in 1 pop.</td>
+                <td class="fragment fade-in" data-fragment-index="3" style="border:none;"><span class="fragment highlight-current-blue" data-fragment-index="3">1</span></td>
+                <td class="fragment fade-in" data-fragment-index="4" style="border:none;"><span class="fragment highlight-current-blue" data-fragment-index="4">2</span></td>
+                <td class="fragment fade-in" data-fragment-index="5" style="border:none;"><span class="fragment highlight-current-blue" data-fragment-index="5">1</span></td>
+                <td class="fragment fade-in" data-fragment-index="6" style="border:none;"><span class="fragment highlight-current-blue" data-fragment-index="6">-</span></td>
+                <td class="fragment fade-in" data-fragment-index="7" style="border:none;"><span class="fragment highlight-current-blue" data-fragment-index="7">0</span></td>
+                <td class="fragment fade-in" data-fragment-index="8" style="border:none;"><span class="fragment highlight-current-blue" data-fragment-index="8">1</span></td>
+                <td class="fragment fade-in" data-fragment-index="9" style="border:none;"><span class="fragment highlight-current-blue" data-fragment-index="9">0</span></td>
+            </tr>
+            <tr class="fragment" data-fragment-index="1">
+                <td>Freq. in 2 pop.</td>
+                <td class="fragment fade-in" data-fragment-index="3" style="border:none;"><span class="fragment highlight-current-blue" data-fragment-index="3">0</span></td>
+                <td class="fragment fade-in" data-fragment-index="4" style="border:none;"><span class="fragment highlight-current-blue" data-fragment-index="4">2</span></td>
+                <td class="fragment fade-in" data-fragment-index="5" style="border:none;"><span class="fragment highlight-current-blue" data-fragment-index="5">0</span></td>
+                <td class="fragment fade-in" data-fragment-index="6" style="border:none;"><span class="fragment highlight-current-blue" data-fragment-index="6">-</span></td>
+                <td class="fragment fade-in" data-fragment-index="7" style="border:none;"><span class="fragment highlight-current-blue" data-fragment-index="7">1</span></td>
+                <td class="fragment fade-in" data-fragment-index="8" style="border:none;"><span class="fragment highlight-current-blue" data-fragment-index="8">0</span></td>
+                <td class="fragment fade-in" data-fragment-index="9" style="border:none;"><span class="fragment highlight-current-blue" data-fragment-index="9">1</span></td>
+            </tr>
+        </table>
+
+        <div class="r-stack">
+            <div class="fragment r-stack my-0 mx-0 px-0 py-0" data-fragment-index="2" style="margin-left:10rem!important;margin-top:-4.5rem!important;">
+                <img class="fragment current-visible" data-fragment-index="2"  src="my_figures/AFS_building/afs_0.svg" style="height:20rem;">
+                <img class="fragment current-visible" data-fragment-index="3"  src="my_figures/AFS_building/afs_1.svg" style="height:20rem;">
+                <img class="fragment current-visible" data-fragment-index="4"  src="my_figures/AFS_building/afs_2.svg" style="height:20rem;">
+                <img class="fragment current-visible" data-fragment-index="5"  src="my_figures/AFS_building/afs_3.svg" style="height:20rem;">
+                <img class="fragment current-visible" data-fragment-index="6"  src="my_figures/AFS_building/afs_3.svg" style="height:20rem;">
+                <img class="fragment current-visible" data-fragment-index="7"  src="my_figures/AFS_building/afs_4.svg" style="height:20rem;">
+                <img class="fragment current-visible" data-fragment-index="8"  src="my_figures/AFS_building/afs_5.svg" style="height:20rem;">
+                <img class="fragment current-visible" data-fragment-index="9"  src="my_figures/AFS_building/afs_6.svg" style="height:20rem;">
+                <img class="fragment fade-in" data-fragment-index="2" src="my_figures/AFS_building/white_rect.svg" style="height:20rem;opacity: 0.4;">
+                <img class="fragment" data-fragment-index="10"  src="my_figures/AFS_building/afs_6.svg" style="height:20rem;">
+                <img class="fragment" data-fragment-index="10"  src="my_figures/AFS_building/afs_lines.svg" style="height:20rem;">
+            </div>
+            <div class="fragment r-stack" data-fragment-index="2">
+            <span class="fragment fade-out"  data-fragment-index="3">
+            <span class="fragment fade-in" data-fragment-index="2">
+            $$
+                A = 
+                \begin{matrix}
+                    \scriptsize 3 \\
+                    \scriptsize 2 \\
+                    \scriptsize 1 \\
+                    \scriptsize 0 \\
+                    \\
+                \end{matrix}
+                \begin{matrix}
+                    \begin{pmatrix}
+                        0 & 0 & 0 \\
+                        0 & 0 & 0 \\
+                        0 & 0 & 0 \\
+                        0 & 0 & 0
+                    \end{pmatrix} \\
+                    \begin{matrix}
+                        \scriptsize  0 & \scriptsize 1 & \scriptsize 2
+                    \end{matrix} \\
+                \end{matrix}
+            $$
+            </span>
+            </span>
+            <span class="fragment fade-out"  data-fragment-index="4">
+            <span class="fragment fade-in" data-fragment-index="3">
+            $$
+                A = 
+                \begin{matrix}
+                    \scriptsize 3 \\
+                    \scriptsize 2 \\
+                    \scriptsize \htmlData{class=fragment highlight-current-blue, fragment-index=3}{1} \\
+                    \scriptsize 0 \\
+                    \\
+                \end{matrix}
+                \begin{matrix}
+                    \begin{pmatrix}
+                        0 & 0 & 0 \\
+                        0 & 0 & 0 \\
+                        1 & 0 & 0 \\
+                        0 & 0 & 0
+                    \end{pmatrix} \\
+                    \begin{matrix}
+                        \scriptsize  \htmlData{class=fragment highlight-current-blue, fragment-index=3}{0} & \scriptsize 1 & \scriptsize 2
+                    \end{matrix} \\
+                \end{matrix}
+            $$
+            </span>
+            </span>
+            <span class="fragment fade-out"  data-fragment-index="5">
+            <span class="fragment fade-in" data-fragment-index="4">
+            $$
+                A = 
+                \begin{matrix}
+                    \scriptsize 3 \\
+                    \scriptsize \htmlData{class=fragment highlight-current-blue, fragment-index=4}{2} \\
+                    \scriptsize 1 \\
+                    \scriptsize 0 \\
+                    \\
+                \end{matrix}
+                \begin{matrix}
+                    \begin{pmatrix}
+                        0 & 0 & 0 \\
+                        0 & 0 & 1 \\
+                        1 & 0 & 0 \\
+                        0 & 0 & 0
+                    \end{pmatrix} \\
+                    \begin{matrix}
+                        \scriptsize  0 & \scriptsize 1 & \scriptsize \htmlData{class=fragment highlight-current-blue, fragment-index=4}{2}
+                    \end{matrix} \\
+                \end{matrix}
+            $$
+            </span>
+            </span>
+            <span class="fragment fade-out"  data-fragment-index="7">
+            <span class="fragment fade-in" data-fragment-index="5">
+            $$
+                A = 
+                \begin{matrix}
+                    \scriptsize 3 \\
+                    \scriptsize 2 \\
+                    \scriptsize \htmlData{class=fragment highlight-current-blue, fragment-index=5}{1} \\
+                    \scriptsize 0 \\
+                    \\
+                \end{matrix}
+                \begin{matrix}
+                    \begin{pmatrix}
+                        0 & 0 & 0 \\
+                        0 & 0 & 1 \\
+                        2 & 0 & 0 \\
+                        0 & 0 & 0
+                    \end{pmatrix} \\
+                    \begin{matrix}
+                        \scriptsize  \htmlData{class=fragment highlight-current-blue, fragment-index=5}{0} & \scriptsize 1 & \scriptsize 2
+                    \end{matrix} \\
+                \end{matrix}
+            $$
+            </span>
+            </span>
+            <span class="fragment fade-out"  data-fragment-index="8">
+            <span class="fragment fade-in" data-fragment-index="7">
+            $$
+                A = 
+                \begin{matrix}
+                    \scriptsize 3 \\
+                    \scriptsize 2 \\
+                    \scriptsize 1 \\
+                    \scriptsize \htmlData{class=fragment highlight-current-blue, fragment-index=7}{0} \\
+                    \\
+                \end{matrix}
+                \begin{matrix}
+                    \begin{pmatrix}
+                        0 & 0 & 0 \\
+                        0 & 0 & 1 \\
+                        2 & 0 & 0 \\
+                        0 & 1 & 0
+                    \end{pmatrix} \\
+                    \begin{matrix}
+                        \scriptsize 0 & \scriptsize \htmlData{class=fragment highlight-current-blue, fragment-index=7}{1} & \scriptsize 2
+                    \end{matrix} \\
+                \end{matrix}
+            $$
+            </span>
+            </span>
+            <span class="fragment fade-out"  data-fragment-index="9">
+            <span class="fragment fade-in" data-fragment-index="8">
+            $$
+                A = 
+                \begin{matrix}
+                    \scriptsize 3 \\
+                    \scriptsize 2 \\
+                    \scriptsize \htmlData{class=fragment highlight-current-blue, fragment-index=8}{1} \\
+                    \scriptsize 0 \\
+                    \\
+                \end{matrix}
+                \begin{matrix}
+                    \begin{pmatrix}
+                        0 & 0 & 0 \\
+                        0 & 0 & 1 \\
+                        3 & 0 & 0 \\
+                        0 & 1 & 0
+                    \end{pmatrix} \\
+                    \begin{matrix}
+                        \scriptsize  \htmlData{class=fragment highlight-current-blue, fragment-index=8}{0} & \scriptsize 1 & \scriptsize 2
+                    \end{matrix} \\
+                \end{matrix}
+            $$
+            </span>
+            </span>
+            <span class="fragment fade-out" data-fragment-index="10">
+            <span class="fragment fade-in" data-fragment-index="9">
+            $$
+                A = 
+                \begin{matrix}
+                    \scriptsize 3 \\
+                    \scriptsize 2 \\
+                    \scriptsize 1 \\
+                    \scriptsize \htmlData{class=fragment highlight-current-blue, fragment-index=9}{0} \\
+                    \\
+                \end{matrix}
+                \begin{matrix}
+                    \begin{pmatrix}
+                        0 & 0 & 0 \\
+                        0 & 0 & 1 \\
+                        3 & 0 & 0 \\
+                        0 & 2 & 0
+                    \end{pmatrix} \\
+                    \begin{matrix}
+                        \scriptsize 0 & \scriptsize \htmlData{class=fragment highlight-current-blue, fragment-index=9}{1} & \scriptsize 2
+                    \end{matrix} \\
+                \end{matrix}
+            $$
+            </span>
+            </span>
+            </div>
+        </div>
+</div>
+</article>
+</section>
+
+=========================================================================-->
+
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<div class="r-hstack"  style="align-items:left;justify-content:left">
+<h1 class="h4">Demographic Inference</h1><h1 class="h4">&nbsp;Pipeline</h1>
+</div>
+
+<article>
+ <div class="r-stack my-0 mx-0 px-0 py-0 mt-n3">
+    <img class="fragment" src="my_figures/dem_inf_pipeline/pipeline_1.svg" style="height:40rem;">
+    <img class="fragment" src="my_figures/dem_inf_pipeline/pipeline_2.svg" style="height:40rem;">
+    <img class="fragment" src="my_figures/dem_inf_pipeline/pipeline_3.svg" style="height:40rem;">
+    <img class="fragment" src="my_figures/dem_inf_pipeline/pipeline_4.svg" style="height:40rem;">
+    <img class="fragment" src="my_figures/dem_inf_pipeline/pipeline_5.svg" style="height:40rem;">
+    <img class="fragment" src="my_figures/dem_inf_pipeline/pipeline_6.svg" style="height:40rem;">
+    <img class="fragment" src="my_figures/dem_inf_pipeline/pipeline_7.svg" style="height:40rem;">
+    <img class="fragment" src="my_figures/dem_inf_pipeline/pipeline_8.svg" style="height:40rem;">
+  </div>
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<div class="r-hstack"  style="align-items:left;justify-content:left">
+<h1 class="h4">Demographic Inference</h1><h1 class="h4">&nbsp;Example</h1>
+</div>
+
+<p class="fragment mb-0">
+$\partial a \partial i$ — Diffusion Approximation for Demographic Inference.
+</p>
+
+<article>
+ <div class="r-stack my-0 mx-0 px-0 py-0 mt-n5">
+    <img class="fragment" src="my_figures/dadi_example/dadi_incide_1.svg" style="height:25rem;">
+    <img class="fragment" src="my_figures/dadi_example/dadi_incide_2.svg" style="height:25rem;">
+    <img class="fragment" src="my_figures/dadi_example/dadi_incide_3.svg" style="height:25rem;">
+    <img class="fragment" src="my_figures/dadi_example/dadi_incide_4.svg" style="height:25rem;">
+  </div>
+
+<p class="fragment mb-0">
+$\partial a \partial i$ uses local search optimization algorithms.
+</p>
+
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section  data-auto-animate>
+<article>
+
+<div class="r-vstack mt-5 pt-5">
+<img  src="my_figures/gadma_logo.png" style="width:30rem;">
+</div>
+
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<div class="r-hstack mt-n4" style="align-items:left;justify-content:left">
+<img  src="my_figures/gadma_logo.png" style="width:20rem;">
+</div>
+
+<article>
+<p class=" mt-0 fragment">
+GADMA — Genetic Algorithm for Demographic Model Analysis
+</p>
+<ul>
+  <li  class="mt-3 fragment">
+    Several simulation engines ($\partial a \partial i$, moments)
+  </li>
+  <li  class=" mt-3 fragment">
+    Has common interface
+  </li>
+  <li  class="mt-3 fragment">
+    Effective optimization based on the <strong>genetic algorithm</strong>
+  </li>
+  <li  class="mt-3 fragment">
+    Handles up to 3 populations
+  </li>
+</ul>
+<img class="mt-5 fragment" src="my_figures/gadma_git.png" style="width:60rem;">
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4">Simulation Engines Evaluation Complexity</h1>
+
+<article>
+<img class="mt-5 fragment" src="my_figures/moments_complexity_for_poster.svg" style="width:60rem;">
+</article>
+</section>
+
+
+<!--=========================================================================-->
+
+<section  data-auto-animate>
+<article>
+
+<div class="r-vstack mt-5 pt-5">
+<h1 class="h2">Bayesian Optimization</h1>
+</div>
+
+</article>
+</section>
+
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4">Bayesian Optimization</h1>
+
+<article>
+<p class="text-nowrap fragment">
+Goal: minimize unknown function $f$ <span class="fragment">in as few evaluations as possible.</span>
+</p>
+
+<ul>
+  <li class="fragment">
+    Black-box optimization
+  </li>
+  <li class="fragment">
+    Expensive evaluations
+  </li>
+</ul>
+<p class="fragment">
+On each iteration:
+</p>
+<ul>
+    <li class="fragment">
+    Approximate objective function $f$ with a surrogate model $M$
+    </li>
+    <li class="fragment">Choose next point as $argmax$ of the acquisition function $\alpha_M$
+$$
+\htmlClass{fragment}{
+x_{n+1} = \argmax_{x\in\c{X}} \alpha_M(x)
+}
+$$
+</ul>
+
+</article>
+</section>
+
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4">Bayesian Optimization</h1>
+
+<article>
+<video data-autoplay src="my_figures/bo_iters/iter_1.mp4"  style="height:45rem;"></video>
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section>
+<h1 class="h4">Bayesian Optimization</h1>
+
+<article>
+<video data-autoplay src="my_figures/bo_iters/iter_2.mp4"  style="height:45rem;"></video>
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section>
+<h1 class="h4">Bayesian Optimization</h1>
+
+<article>
+<video data-autoplay src="my_figures/bo_iters/iter_3.mp4"  style="height:45rem;"></video>
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section>
+<h1 class="h4">Bayesian Optimization</h1>
+
+<article>
+<video data-autoplay src="my_figures/bo_iters/iter_4.mp4"  style="height:45rem;"></video>
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section>
+<h1 class="h4">Bayesian Optimization</h1>
+
+<article>
+<video data-autoplay src="my_figures/bo_iters/iter_5.mp4"  style="height:45rem;"></video>
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section>
+<h1 class="h4">Bayesian Optimization</h1>
+
+<article>
+<video data-autoplay src="my_figures/bo_iters/iter_6.mp4"  style="height:45rem;"></video>
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section>
+<h1 class="h4">Bayesian Optimization</h1>
+
+<article>
+<video data-autoplay src="my_figures/bo_iters/iter_7.mp4"  style="height:45rem;"></video>
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section>
+<h1 class="h4">Bayesian Optimization</h1>
+
+<article>
+<video data-autoplay src="my_figures/bo_iters/iter_8.mp4"  style="height:45rem;"></video>
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section>
+<h1 class="h4">Bayesian Optimization</h1>
+
+<article>
+<video data-autoplay src="my_figures/bo_iters/iter_9.mp4"  style="height:45rem;"></video>
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section>
+<h1 class="h4">Bayesian Optimization</h1>
+
+<article>
+<video data-autoplay src="my_figures/bo_iters/iter_10.mp4"  style="height:45rem;"></video>
+</article>
+</section>
+
+<!--=========================================================================-->
+
+
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4">Surrogate model</h1>
+<article>
+
+<div class="r-hstack">
+  <div class="r-vstack fragment fade-left">
+    <h1 class="h6 mb-0 mr-5"> Gaussian Process </h1>
+    <img class="my-0 mr-5" src="my_figures/gp_model.svg" style="height:30rem;">
+  </div>
+  <div class="r-vstack fragment fade-left">
+    <h1 class="h6 mb-0 ml-5"> Random Forest </h1>
+    <img class="my-0 ml-5" src="my_figures/rf_model.svg" style="height:30rem;">
+  </div>
+</div>
+
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4">Gaussian Process</h1>
+<article>
+<p class="fragment">
+<strong>Definition.</strong> A <em>Gaussian process</em> is random function $f : X \to \R$ such that for any $x_1,..,x_n$, the vector $f(x_1),..,f(x_n)$ is multivariate Gaussian.
+</p>
+
+<p class="fragment">
+Every GP is characterized by a <em>mean</em> $\mu(\.)$ and a <em>kernel</em> $k(\.,\.)$. <span class="fragment">We have</span>
+$$
+\htmlClass{fragment}{
+f(\v{x}) \~ \f{N}(\v{\mu}_{\v{x}},\m{K}_{\v{x}\v{x}})
+}
+$$
+<span class="fragment">
+where $\v\mu_{\v{x}} = \mu(\v{x})$ and $\m{K}_{\v{x}\v{x}'} = k(\v{x},\v{x}')$.
+</span>
+</p>
+
+</p>
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4">Matérn Kernels</h1>
+<article>
+<p class="mt-0 text-center fragment" data-fragment-index="0">
+$$
+\htmlData{class=fragment fade-out,fragment-index=9}{
+\footnotesize
+\mathclap{
+k_\nu(x,x') = \sigma^2 \frac{2^{1-\nu}}{\Gamma(\nu)} \del{\sqrt{2\nu} \frac{\norm{x-x'}}{\kappa}}^\nu K_\nu \del{\sqrt{2\nu} \frac{\norm{x-x'}}{\kappa}}
+}
+}
+\htmlData{class=fragment d-print-none,fragment-index=9}{
+\footnotesize
+\mathclap{
+k_\infty(x,x') = \sigma^2 \exp\del{-\frac{\norm{x-x'}^2}{2\kappa^2}}
+}
+}
+$$
+<span class="mx-4 fragment" data-fragment-index="1">$\sigma^2$: variance</span>
+<span class="mx-4 fragment" data-fragment-index="2">$\kappa$: length scale</span>
+<span class="mx-4 fragment" data-fragment-index="3">$\nu$: smoothness</span>
+<br>
+<span class="fragment" data-fragment-index="4">$\nu\to\infty$: recovers squared exponential kernel</span>
+</p>
+
+<div class="r-hstack">
+<div class="w-25 fragment fade-left" data-fragment-index="5">
+<img class="img-fluid mt-0 mb-n4" alt src="my_figures/Exponential.svg">
+<p class="mb-0 text-center footnotesize">
+$\nu = 1/2$
+</p>
+<p class="my-0 text-center footnotesize">
+Exponential
+</p>
+</div>
+<div class="w-25 fragment fade-left" data-fragment-index="6">
+<img class="img-fluid mt-0 mb-n4" alt src="my_figures/Matern32.svg">
+<p class="mb-0 text-center footnotesize">
+$\nu = 3/2$
+</p>
+<p class="my-0 text-center footnotesize">
+Matern32
+</p>
+</div>
+<div class="w-25 fragment fade-left" data-fragment-index="7">
+<img class="img-fluid mt-0 mb-n4" alt src="my_figures/Matern52.svg">
+<p class="mb-0 text-center footnotesize">
+$\nu = 5/2$
+</p>
+<p class="my-0 text-center footnotesize">
+Matern52
+</p>
+</div>
+<div class="w-25 fragment fade-left" data-fragment-index="8">
+<img class="img-fluid mt-0 mb-n4" alt src="my_figures/RBF.svg">
+<p class="mb-0 text-center footnotesize">
+$\nu = \infty$
+</p>
+<p class="my-0 text-center footnotesize">
+RBF
+</p>
+</div>
+</div>
+
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section>
+<h1 class="h4">Acquisition Functions</h1>
+
+<article>
+
+<div class="r-hstack mx-0">
+  <ul>
+    <li  class="mt-0 fragment" data-fragment-index="1">
+      Expected Improvement:
+      <br>
+      <p  class="mt-2 text-center small">
+      $EI = \mathbb{E}[max\{0, f_{min} - f(x)\}] $
+      </p>
+    </li>
+     <li  class="mt-0 fragment" data-fragment-index="2">
+      Probability of Improvement:
+      <br>
+      <p  class="mt-2 text-center small">
+      <!--$\mathbb{E} [$ 𝟙 $_{\{f(x) \leq f_{min}\}}]$-->
+      $PI = P(f(x) \leq f_{min})$
+      </p>
+    </li>
+    <li  class="mt-0 fragment" data-fragment-index="3">
+      Lower Confidence Bound:
+      <br>
+      <p  class="mt-2 text-center small">
+      $LCB = \mu(x) - \kappa \cdot \sigma(x)$
+      </p>
+    </li>
+     <li  class="mt-0 fragment" data-fragment-index="4">
+      Log Expected Improvement:
+      <br>
+      <p  class="mt-2 text-center small">
+      $logEI = \mathbb{E}[max\{0, e^{f_{min}} - e^{f(x)}\}]$
+      </p>
+    </li>
+  </ul>
+  <div class="r-stack my-0 mx-0">
+    <img class="fragment fade-left" data-fragment-index="0" src="my_figures/acq_funs/1_base_acq_gp.svg" style="width:70rem;">
+    <img class="fragment fade-left" data-fragment-index="1" src="my_figures/acq_funs/2_ei_acq_gp.svg" style="width:70rem;">
+    <img class="fragment fade-left" data-fragment-index="2" src="my_figures/acq_funs/3_pi_acq_gp.svg" style="width:70rem;">
+    <img class="fragment fade-left" data-fragment-index="3" src="my_figures/acq_funs/4_lcb_acq_gp.svg" style="width:70rem;">
+    <img class="fragment fade-left" data-fragment-index="4" src="my_figures/acq_funs/5_logei_acq_gp.svg" style="width:70rem;">
+  </div>
+</div>
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4">Cross-Validation for Model Selection</h1>
+<article>
+
+<p class="fragment">
+The predictive log probability when leaving out training case $(x_i, y_i)$ is:
+$$
+\htmlClass{fragment}{
+\footnotesize
+\mathclap{
+\log p(y_i | X, y_{-i}, \theta) = -\frac{1}{2} \log \sigma_i^2 - \frac{(y_i - \mu_i)^2}{2\sigma^2} - \frac{1}{2}\log 2\pi,
+}
+}
+$$
+<span class="fragment mt-n5 small">where $\theta$ - parameters of Gaussian Process, $y_{-i} = Y \setminus \{y_i\}$, $\mu_i = \mu(x_i)$ and $\sigma_i = \sigma(x_i)$</span>
+</p>
+
+<p class="fragment">
+Leave-One-Out log predictive probability:
+$$
+\htmlClass{fragment}{
+L_{LOO} = \sum_{i=1}^n \log p(y_i | X, y_{-i}, \theta)
+}
+$$
+</p>
+
+</article>
+</section>
+
+
+<!--=========================================================================-->
+
+<section  data-auto-animate>
+<article>
+
+<div class="r-vstack mt-5 pt-5">
+<h1 class="h2">Bayesian Optimization</h1>
+<h1 class="h2 mt-0 fragment">for Demographic Inference</h1>
+</div>
+
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section  data-auto-animate>
+<article>
+
+<div class="r-vstack mt-5 pt-5">
+<h1 class="h2">Datasets</h1>
+</div>
+
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4">Datasets</h1>
+<article>
+<div class="r-vstack my-0 mx-0">
+    <img class="fragment fade-left" data-fragment-index="0" src="my_figures/moments_data_example.svg" style="width:70rem;">
+</div>
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4">Datasets</h1>
+<article>
+<div class="r-vstack my-n5 mx-0">
+    <img class="fragment fade-left" data-fragment-index="0" src="my_figures/eval_time_datasets_base_simple.svg" style="height:47rem;">
+</div>
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4">Cross-Validation</h1>
+<article>
+ <iframe class="fragment" src="./cross_validation_table.html" width="1000rem" height="500rem"></iframe>
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4">Bayesian Optimization Performance</h1>
+<article>
+<div class="r-stack my-n5 mx-0">
+    <img class="fragment fade-left" src="my_figures/3_YRI_CEU_CHB_13_Gut_comp_1.svg" style="height:47rem;">
+    <img class="fragment fade-left" src="my_figures/3_YRI_CEU_CHB_13_Gut_comp_2_ei.svg" style="height:47rem;">
+    <img class="fragment fade-left" src="my_figures/3_YRI_CEU_CHB_13_Gut_comp_3_exp.svg" style="height:47rem;">
+</div>
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4">Bayesian Optimization Performance</h1>
+<article>
+<div class="r-stack my-n5 mx-0">
+    <img src="my_figures/3_YRI_CEU_CHB_13_Gut_comp_all.svg" style="height:47rem;">
+</div>
+</article>
+</section>
+
+
+<!--=========================================================================-->
+
+<section  data-auto-animate>
+<article>
+
+<div class="r-vstack mt-5 pt-5">
+<h1 class="h2">Automatic Kernel Selection and Ensembling</h1>
+</div>
+
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4">Automatic Kernel Selection and Ensembling</h1>
+
+<article>
+<div class="r-stack my-n5 mx-0">
+    <img class="fragment fade-left" src="my_figures/bo_auto/4_DivNoMig_9_Sim_comp_auto_base.svg" style="height:47rem;">
+    <img class="fragment fade-left" src="my_figures/bo_auto/4_DivNoMig_9_Sim_comp_auto_logei.svg" style="height:47rem;">
+    <img class="fragment fade-left" src="my_figures/bo_auto/4_DivNoMig_9_Sim_comp_auto_pi.svg" style="height:47rem;">
+    <img class="fragment fade-left" src="my_figures/bo_auto/4_DivNoMig_9_Sim_comp_combination.svg" style="height:47rem;">
+</div>
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4">Automatic Kernel Selection and Ensembling</h1>
+
+<article>
+<div class="r-stack my-n5 mx-0">
+    <img class="fragment fade-left" src="my_figures/bo_auto/5_DivNoMig_9_Sim_comp_auto_base.svg" style="height:47rem;">
+    <img class="fragment fade-left" src="my_figures/bo_auto/5_DivNoMig_9_Sim_comp_auto_logei.svg" style="height:47rem;">
+    <img class="fragment fade-left" src="my_figures/bo_auto/5_DivNoMig_9_Sim_comp_auto_pi.svg" style="height:47rem;">
+    <img class="fragment fade-left" src="my_figures/bo_auto/5_DivNoMig_9_Sim_comp_combination.svg" style="height:47rem;">
+</div>
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section  data-auto-animate>
+<article>
+
+<div class="r-vstack mt-5 pt-5">
+<h1 class="h2">Comparison with Genetic Algorithm</h1>
+</div>
+
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4">Comparison with Genetic Algorithm</h1>
+
+<article>
+<video src="my_figures/time_comp/4_DivMig_11_Sim.mp4"  style="height:40rem;"></video>
+</article>
+</section>
+
+
+
+<!--=========================================================================-->
+
+<section  data-auto-animate>
+<article>
+
+<div class="r-vstack mt-5 pt-5">
+<h1 class="h2">Wall Clock Time</h1>
+</div>
+
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4">Wall Clock Time: 3 Populations</h1>
+
+<article>
+<video data-autoplay src="my_figures/time_comp/3_YRI_CEU_CHB_13_Gut.mp4"  style="height:40rem;"></video>
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4">Wall Clock Time: 4 Populations</h1>
+
+<article>
+<video data-autoplay src="my_figures/time_comp/4_DivMig_11_Sim.mp4"  style="height:40rem;"></video>
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4">Wall Clock Time: 5 Populations</h1>
+
+<article>
+<video data-autoplay src="my_figures/time_comp/5_DivNoMig_9_Sim.mp4"  style="height:40rem;"></video>
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-no-print data-auto-animate>
+<article class="mt-5 mb-3">
+<div class="r-hstack mb-2">
+<h1 class="h2">Conclusions</h1><h1 class="h2">&nbsp;and Future Work</h1>
+</div>
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4">Conclusions</h1>
+<article>
+<ul>
+    <li class="fragment mt-n5">
+        Performance depends on kernel and acquisition function.
+    </li>
+    <li class="fragment mt-5">
+        Leave-one-out cross-validation:
+        <ul>
+            <li class="fragment mt-4">poor for kernel selection based on large random dataset,
+            </li>
+            <li class="fragment mt-4">good for automatic kernel selection at the beginning.
+            </li>
+        </ul>
+    </li>
+    <li class="fragment mt-5">
+        Bayesian optimization with automatic kernel choice showed faster convergence than the genetic algorithm for <strong>4</strong> and <stronig>5</strong> populations.
+    </li>
+</ul>
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4">Future Work</h1>
+<article>
+<ul class="mt-n5">
+    <li class="fragment mt-n5">
+        Combine Bayesian optimization and genetic algorithm.
+    </li>
+    <li class="fragment mt-5">
+        Stop criteria for Bayesian optimization.
+    </li>
+    <li class="fragment mt-5">
+        More experiments on real data.
+    </li>
+</ul>
+</article>
+</section>
+
+<section>
+<h1 class="h4">Acknowledgements</h1>
+<article class="justify-between">
+	
+<div class="r-hstack my-4">
+<div class="r-vstack mr-25">
+<img alt class="img-fluid rounded-circle px-5" style="margin-right:7rem!important;" src="my_figures/people/viacheslav_borovitskiy.jpg">
+<h1 class="h6 text-nowrap my-0 small" style="margin-right:7rem!important">Viacheslav<br>Borovitskiy</h1>
+</div>
+<div class="r-vstack">
+<img alt class="img-fluid rounded-circle px-5"  style="margin-left:7rem!important;" src="my_figures/people/pavel_dobrynin.jpg">
+<h1 class="h6 text-nowrap my-0 small" style="margin-left:7rem!important;">Pavel<br>Dobrynin</h1>
+</div>
+<div class="r-vstack">
+<img alt class="img-fluid rounded-circle px-5" src="my_figures/people/vladimir_ulyantsev.jpg">
+<h1 class="h6 text-nowrap my-0 small">Vladimir<br>Ulyantsev</h1>
+</div>
+</div>
+
+<div class="r-vstack items-start">
+<div class="r-hstack justify-between items-center w-100">
+<img alt class="img-fluid my-0 mx-4 px-0 " src="my_figures/people/spbu.svg">
+<img class="img-fluid my-0 mx-4 px-0 ml-n5" style="width:50rem;" src="my_figures/itmo_horiz_white_eng111.png">
+</div>
+</div>
+
+<!--
+<div>
+<h1 class="h6">Systems Biology Fellowship</h1>
+</div>
+<-->
+
+</article>
+</section>
+
+
+<!--=========================================================================-->
+
+<section data-no-print data-auto-animate>
+<article class="mt-5 mb-3">
+
+<h1 class="h1 mt-5">Thank you!</h1>
+<img class="mb-n5" src="my_figures/final.gif" style="height:20rem;">
+
+</article>
+</section>
+
+
+<!--=========================================================================-->
+
+</div>
+</div>
+
+</body>
+</html>

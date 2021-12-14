@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   height="291.6pt"
+   version="1.1"
+   viewBox="0 0 293.4 291.6"
+   width="293.4pt"
+   id="svg127">
+  <metadata
+     id="metadata2">
+    <rdf:RDF>
+      <cc:Work>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:date>2021-11-27T23:32:09.906902</dc:date>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Matplotlib v3.3.4, https://matplotlib.org/</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs6">
+    <style
+       type="text/css"
+       id="style4">*{stroke-linecap:butt;stroke-linejoin:round;}</style>
+  </defs>
+  <g
+     id="figure_1">
+    <g
+       id="patch_1">
+      <path
+         d="M 0 291.6  L 293.4 291.6  L 293.4 0  L 0 0  z "
+         style="fill:none;"
+         id="path8" />
+    </g>
+    <g
+       id="axes_1">
+      <g
+         id="line2d_3">
+        <path
+           clip-path="url(#pc8c8d8362d)"
+           d="M 19.881818 248.509929  L 24.959623 249.31319  L 28.260197 249.624415  L 32.06855 249.741981  L 47.809746 249.75  L 110.520639 249.651553  L 112.551761 249.369581  L 114.075102 248.954767  L 115.598444 248.33067  L 117.121785 247.489221  L 118.899017 246.244474  L 120.930139 244.510434  L 123.215152 242.220128  L 125.754054 239.318525  L 128.292957 236.079458  L 130.831859 232.497683  L 133.370762 228.519531  L 135.655774 224.514092  L 137.686896 220.518859  L 139.718018 215.9991  L 141.49525 211.503655  L 143.272482 206.386292  L 145.049713 200.524251  L 146.573055 194.818961  L 146.826945 201.747297  L 148.604177 209.394161  L 150.635299 219.172606  L 154.697543 239.145712  L 155.713104 243.073457  L 156.728665 246.094657  L 157.490336 247.694549  L 158.252007 248.746599  L 159.013677 249.343129  L 159.775348 249.621066  L 160.790909 249.733709  L 164.853153 249.75  L 259.046437 249.641174  L 264.124242 249.349074  L 269.709828 248.789595  L 273.518182 248.326236  L 273.518182 248.326236  "
+           style="fill:none;stroke:#ff7f0e;stroke-linecap:square;stroke-width:4;"
+           id="path38" />
+      </g>
+      <g
+         id="legend_1">
+        <g
+           id="patch_3">
+          <path
+             d="M 14.2 73.9125  L 70.714062 73.9125  Q 72.714062 73.9125 72.714062 71.9125  L 72.714062 14.2  Q 72.714062 12.2 70.714062 12.2  L 14.2 12.2  Q 12.2 12.2 12.2 14.2  L 12.2 71.9125  Q 12.2 73.9125 14.2 73.9125  z "
+             style="fill:none;opacity:0;"
+             id="path47" />
+        </g>
+        <g
+           id="line2d_7" />
+        <g
+           id="line2d_8"
+           transform="translate(7.5)">
+          <path
+             d="m 16.2,34.976562 h 20"
+             style="fill:none;stroke:#ff7f0e;stroke-width:4;stroke-linecap:square"
+             id="path65" />
+        </g>
+        <g
+           id="line2d_9" />
+        <g
+           id="text_2"
+           transform="translate(7.5)">
+          <!-- PI -->
+          <g
+             transform="matrix(0.1,0,0,-0.1,44.2,38.476562)"
+             id="g76">
+            <defs
+               id="defs70">
+              <path
+                 d="M 19.671875,64.796875 V 37.40625 h 12.40625 q 6.890625,0 10.640625,3.5625 3.765625,3.5625 3.765625,10.15625 0,6.546875 -3.765625,10.109375 -3.75,3.5625 -10.640625,3.5625 z M 9.8125,72.90625 h 22.265625 q 12.265625,0 18.53125,-5.546875 6.28125,-5.546875 6.28125,-16.234375 0,-10.796875 -6.28125,-16.3125 -6.265625,-5.515625 -18.53125,-5.515625 H 19.671875 V 0 H 9.8125 Z"
+                 id="DejaVuSans-80" />
+            </defs>
+            <use
+               xlink:href="#DejaVuSans-80"
+               id="use72"
+               x="0"
+               y="0"
+               width="100%"
+               height="100%" />
+            <path
+               d="m 70.115234,72.90625 h 9.859375 V 0 h -9.859375 z"
+               id="use74" />
+          </g>
+        </g>
+        <g
+           id="line2d_11" />
+        <g
+           id="line2d_13" />
+      </g>
+    </g>
+  </g>
+  <defs
+     id="defs125">
+    <clipPath
+       id="pc8c8d8362d">
+      <rect
+         height="277.2"
+         width="279"
+         x="7.2"
+         y="7.2"
+         id="rect122" />
+    </clipPath>
+  </defs>
+</svg>
