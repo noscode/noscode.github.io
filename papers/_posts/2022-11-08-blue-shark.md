@@ -1,0 +1,11 @@
+---
+layout: paper
+title: "Stepping up to genome scan allows stock differentiation in the worldwide distributed blue shark
+Prionace glauca"
+author: Natacha Nikolic, Floriaan Devloo-Delva, Diane Bailleul, Ekaterina Noskova, Clément Rougeux, Chrystelle Delord, Philippe Borsa, Cathy Liautard-Haag, Mohamad Hassan, Amandine D. Marie, Pierre Feutry, Peter Grewe, Campbell Davies, Jessica Farley, Daniel Fernando, Sebastian Biton-Porsmoguer, François Poisson, Denham Parker, Agostino Leone, Jorden Aulich, Matt Lansdell, Francis Marsac, Sophie Arnaud-Haond
+journal: "accepted in Molucular Ecology"
+---
+
+### Abstract
+
+The blue shark Prionace glauca is a top predator with one of the widest geographic distributions of any shark species, yet classified as critically endangered in the Mediterranean Sea, and Near Threatened globally. Previous genetic studies did not reject the null hypothesis of a single global population across the worldwide species range. Blue shark situation was proposed as a possible archetype of the ‘grey zone of population differentiation’, coined to designate cases where population structure may be too recent or too faint to be detected using a limited set of markers. Here, blue shark samples collected throughout its global range were sequenced using a specific ddRAD method (DArTseq; Georges et al. 2018), which recovered 37,655 genome-wide single nucleotide polymorphisms (SNPs). Two main groups emerged, with Mediterranean Sea and Northern Atlantic samples significantly differentiated from the Indo-west Pacific samples. Significant pairwise F ST values indicated further genetic differentiation within the Atlantic Ocean, and between the Atlantic Ocean and the Mediterranean Sea. Reconstruction of recent demographic history suggested the divergence between northern and southern oceanic populations emerged about 500 generations ago and revealed a drastic reduction in effective population size from a large ancestral population. Our results illustrate the power of high-density genome scans to detect population structure and reconstruct demographic history in highly migratory marine species. As the management of the blue shark fishery, either as target or as bycatch, does not account for this delineation, we strongly recommend that the results presented here be considered in future stock assessment and management plans.
