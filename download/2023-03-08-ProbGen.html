@@ -704,14 +704,14 @@ GADMA — Global search Algorithm for Demographic Model Analysis
 </div>
 <div style="float:right;align-items:right;justify-content:right;width:100%;">
 <div class="r-hstack fragment" data-fragment-index="2" style="float:right;align-items:right;justify-content:right;">
-<p>Slides:</p>
-<div class="px-3" style="width:12rem;" id="qrcode">
+Slides:
+<div class="px-3 mr-5" style="width:12rem;" id="qrcode">
 <script type="text/javascript">
-var qrcode = new qrcode(document.getelementbyid("qrcode"), {
+var qrcode = new QRCode(document.getElementById("qrcode"), {
     text: location.protocol+'//'+location.host+location.pathname,
-    colordark : "#000000",
-    colorlight : "#ffffff",
-    correctlevel : qrcode.correctlevel.m
+    colorDark : "#000000",
+    colorLight : "#ffffff",
+    correctLevel : QRCode.CorrectLevel.M
 });
 </script>
 </div>
