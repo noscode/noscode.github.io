@@ -173,7 +173,7 @@ section footer { position:absolute; top: 100%; width: calc(100% - 6em); padding-
 </article>
 </section>
 
-<!--=========================================================================-->
+<!--=========================================================================
 
 <section data-auto-animate>
 <h1 class="h4">Demographic History</h1>
@@ -184,7 +184,6 @@ section footer { position:absolute; top: 100%; width: calc(100% - 6em); padding-
 </article>
 </section>
 
-<!--=========================================================================-->
 
 <section data-auto-animate>
 <div class="r-hstack" style="align-items:left;justify-content:left">
@@ -225,6 +224,52 @@ section footer { position:absolute; top: 100%; width: calc(100% - 6em); padding-
 </section>
 
 
+
+=========================================================================-->
+
+
+<section data-auto-animate>
+<div class="r-hstack" style="align-items:left;justify-content:left">
+<h1 class="h4 text-left">Demographic History</h1><h1 class="h4 text-left">&nbsp;Visualization</h1>
+</div>
+<article>
+<div class="r-stack my-0 mt-10n mx-0 ml-5n px-0 py-0">
+  <div class="r-hstack fragment fade-left" data-fragment-index="0">
+      <img src="my_figures/probgen23/dem_inference/dem_inf_1.svg" style="height:30rem;">
+      <div style="width:20rem;"></div>
+  </div>
+  <div  class="r-hstack fragment fade-left"  data-fragment-index="3">
+      <div style="width:15rem;"></div>
+    <img src="my_figures/probgen23/model_transform/demes_time.svg" style="height:30rem;">
+  </div>
+  <div  class="r-hstack fragment fade-left"  data-fragment-index="3">
+      <div style="width:15rem;"></div>
+      <img src="my_figures/probgen23/model_transform/demes_time_labels.svg" style="height:30rem;">
+  </div>
+  <div  class="r-hstack fragment fade-left"  data-fragment-index="1">
+      <div style="width:15rem;"></div>
+      <img src="my_figures/probgen23/model_transform/demes_1pop_col_mig.svg" style="height:30rem;">
+  </div>
+  <div  class="r-hstack fragment fade-left"  data-fragment-index="1">
+      <div style="width:15rem;"></div>
+      <img src="my_figures/probgen23/model_transform/demes_2pop_col.svg" style="height:30rem;">
+  </div>
+  <div  class="r-hstack fragment fade-left"  data-fragment-index="1">
+      <div style="width:15rem;"></div>
+      <img src="my_figures/probgen23/model_transform/demes_anc.svg" style="height:30rem;">
+  </div>
+  <div  class="r-hstack fragment fade-left"  data-fragment-index="2">
+      <div style="width:15rem;"></div>
+      <img src="my_figures/probgen23/model_transform/populations_below.svg" style="height:30rem;">
+  </div>
+</div>
+  <div class="r-hstack fragment fade-left" data-fragment-index="4">
+      <div style="width:15rem;"></div>
+    <p>drawn by <em>demes</em> [Gower et al. 2022]</p>
+  </div>
+
+</article>
+</section>
 
 <!--=========================================================================-->
 
@@ -318,7 +363,9 @@ GADMA — Global search Algorithm for Demographic Model Analysis
 <article>
 
 <div class="r-vstack mt-5 pt-5">
-<h1 class="h2">New model specification</h1>
+<div class="r-hstack">
+    <h1 class="h2">GADMA's useful&nbsp;feature:&nbsp;</h1><h1 class="h2">New Model Specification</h1>
+</div>
 </div>
 
 </article>
@@ -327,12 +374,12 @@ GADMA — Global search Algorithm for Demographic Model Analysis
 <!--=========================================================================-->
 
 <section data-auto-animate>
-<div class="r-hstack mt-n4" style="align-items:left;justify-content:left">
-<h1 class="h4">New model specification</h1>
+<div class="r-hstack"  style="align-items:left;justify-content:left">
+<h1 class="h4">GADMA's useful&nbsp;feature:&nbsp;</h1><h1 class="h4">New Model Specification</h1>
 </div>
 
 <article>
- <p class="fragment"  data-fragment-index="1">New model in GADMA that can be specified by the number of epochs.</p>
+ <p class="fragment"  data-fragment-index="1">New model in GADMA that is specified only by the number of epochs.</p>
  <div class="r-stack my-0 mx-0 px-0 py-0 mt-n5">
     <img class="fragment fade-left"  data-fragment-index="2" src="my_figures/probgen23/dem_inference/gadma_1.svg" style="height:40rem;">
     <img class="fragment fade-left"  data-fragment-index="3" src="my_figures/probgen23/dem_inference/gadma_2.svg" style="height:40rem;">
@@ -509,7 +556,59 @@ GADMA — Global search Algorithm for Demographic Model Analysis
 <article>
 
 <div class="r-vstack mt-5 pt-5">
-<h1 class="h2">Well-specified Models</h1>
+<h1 class="h2">Results</h1>
+</div>
+
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4">Results</h1>
+
+<article>
+<p class="mt-5n fragment">
+    We performed a series of experiments for different models and data.
+</p>
+<p  class="mt-5 fragment">
+    Three the most interesting examples:
+</p>
+    <ul>
+      <li class="mt-0 fragment">
+        <div class="r-hstack my-0"  style="align-items:left;justify-content:left">
+        Well-specified model&nbsp;&nbsp;&nbsp;&nbsp;
+            <img class="my-1" src="my_figures/probgen23/drosophila_log.svg" style="height:5rem;">
+        </div>
+      </li>
+      <li  class="mt-0 fragment">
+        <div class="r-hstack my-0"  style="align-items:left;justify-content:left">
+        Misspecified model with flexible dynamics&nbsp;&nbsp;&nbsp;&nbsp;
+            <img class="my-1" src="my_figures/probgen23/drosophila_log.svg" style="height:5rem;">
+        </div>
+      </li>
+      <li  class="mt-0 fragment">
+        <div class="r-hstack my-0"  style="align-items:left;justify-content:left">
+        Misspecified models for&nbsp;<em>momi2</em>&nbsp;&nbsp;&nbsp;&nbsp;
+            <img class="my-1" src="my_figures/probgen23/orangutan_log.svg" style="height:5rem;">
+        </div>
+      </li>
+    </ul>
+    <p></p>
+</article>
+</section>
+
+
+<!--=========================================================================-->
+
+<section  data-auto-animate>
+<article>
+
+<div class="r-vstack mt-5 pt-5">
+<div class="r-hstack"  style="align-items:left;justify-content:left">
+<h1 class="h2">Well-specified Model</h1>&nbsp;&nbsp;&nbsp;&nbsp;
+<img class="my-1" src="my_figures/probgen23/drosophila_log.svg" style="height:10rem;">
+</div>
 </div>
 
 
@@ -521,9 +620,9 @@ GADMA — Global search Algorithm for Demographic Model Analysis
 
 <section data-auto-animate>
 <div class="r-hstack mb-5n"  style="align-items:left;justify-content:left">
-<h1 class="h4">Well-specified Models</h1>
+<h1 class="h4">Well-specified Model</h1>
 <div class="r-hstack"  style="float:right;align-items:right;justify-content:right;height:10rem;flex-grow:1">
-    <img class="fragment fade-left"  data-fragment-index="1" src="my_figures/probgen23/drosophila_log.svg" style="height:10rem;">
+    <img src="my_figures/probgen23/drosophila_log.svg" style="height:10rem;">
 </div>
 </div>
 <article>
@@ -577,10 +676,10 @@ GADMA — Global search Algorithm for Demographic Model Analysis
 
 <div class="r-vstack mt-5 pt-5">
 <div class="r-hstack"  style="align-items:left;justify-content:left">
-<h1 class="h2">Misspecified Model</h1><h1 class="h2">s</h1>
+<h1 class="h2">Misspecified Model</h1>&nbsp;&nbsp;&nbsp;&nbsp;
+<img class="my-1" src="my_figures/probgen23/drosophila_log.svg" style="height:10rem;">
 </div>
 </div>
-
 
 </article>
 </section>
@@ -594,7 +693,7 @@ GADMA — Global search Algorithm for Demographic Model Analysis
 <h1 class="h4">Misspecified Model</h1><h1 class="h4">&nbsp;with Flexible Dynamics</h1>
 </div>
 <div class="r-hstack"  style="float:right;align-items:right;justify-content:right;height:10rem;flex-grow:1">
-    <img class="fragment fade-left"  data-fragment-index="1" src="my_figures/probgen23/drosophila_log.svg" style="height:10rem;">
+    <img src="my_figures/probgen23/drosophila_log.svg" style="height:10rem;">
 </div>
 </div>
 
@@ -622,13 +721,28 @@ GADMA — Global search Algorithm for Demographic Model Analysis
 
 <!--=========================================================================-->
 
+<section  data-auto-animate>
+<article>
+
+<div class="r-vstack mt-5 pt-5">
+<div class="r-hstack"  style="align-items:left;justify-content:left">
+<h1 class="h2">Misspecified Models for <em>momi2</em></h1>&nbsp;&nbsp;&nbsp;&nbsp;
+<img class="my-1" src="my_figures/probgen23/orangutan_log.svg" style="height:10rem;">
+</div>
+</div>
+
+</article>
+</section>
+
+<!--=========================================================================-->
+
 <section data-auto-animate>
 <div class="r-hstack mb-5n"  style="align-items:left;justify-content:left">
 <div class="r-hstack"  style="align-items:left;justify-content:left">
-    <h1 class="h4">Misspecified Model</h1><h1 class="h4">s for <em>momi2</em></h1>
+    <h1 class="h4">Misspecified Models for <em>momi2</em></h1>
 </div>
 <div class="r-hstack"  style="float:right;align-items:right;justify-content:right;height:10rem;flex-grow:1">
-    <img class="fragment fade-left"  data-fragment-index="1" src="my_figures/probgen23/orangutan_log.svg" style="height:10rem;">
+    <img src="my_figures/probgen23/orangutan_log.svg" style="height:10rem;">
 </div>
 </div>
 
