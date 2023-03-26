@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 23.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg
+   version="1.1"
+   id="svg24089"
+   inkscape:version="1.2.2 (1:1.2.2+202212051552+b0a8486541)"
+   sodipodi:docname="arrow_mig_on.svg"
+   x="0px"
+   y="0px"
+   viewBox="0 0 610 250"
+   style="enable-background:new 0 0 610 250;"
+   xml:space="preserve"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+   id="defs164621"><marker
+     style="overflow:visible"
+     id="Arrow1L"
+     refX="0"
+     refY="0"
+     orient="auto-start-reverse"
+     inkscape:stockid="Arrow1L"
+     markerWidth="8.75"
+     markerHeight="5"
+     viewBox="0 0 8.75 5"
+     inkscape:isstock="true"
+     inkscape:collect="always"
+     preserveAspectRatio="xMidYMid"><path
+       style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+       d="M 0,0 5,-5 -12.5,0 5,5 Z"
+       id="arrow1L-7"
+       transform="scale(-0.5)" /></marker><marker
+     style="overflow:visible"
+     id="Arrow1L-9"
+     refX="0"
+     refY="0"
+     orient="auto-start-reverse"
+     inkscape:stockid="Arrow1L"
+     markerWidth="8.75"
+     markerHeight="5"
+     viewBox="0 0 8.75 5"
+     inkscape:isstock="true"
+     inkscape:collect="always"
+     preserveAspectRatio="xMidYMid"><path
+       style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+       d="M 0,0 5,-5 -12.5,0 5,5 Z"
+       id="arrow1L-7-6"
+       transform="scale(-0.5)" /></marker></defs>
+<style
+   type="text/css"
+   id="style164601">
+	.st0{fill-rule:evenodd;clip-rule:evenodd;fill-opacity:0;}
+	.st1{fill-rule:evenodd;clip-rule:evenodd;fill:#38761D;}
+	.st2{fill:none;stroke:#000000;stroke-width:2;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st3{fill:none;}
+</style>
+<sodipodi:namedview
+   bordercolor="#000000"
+   borderopacity="0.25"
+   id="namedview24091"
+   inkscape:current-layer="svg24089"
+   inkscape:cx="99.543839"
+   inkscape:cy="187.91585"
+   inkscape:deskcolor="#d1d1d1"
+   inkscape:pagecheckerboard="0"
+   inkscape:pageopacity="0.0"
+   inkscape:showpageshadow="2"
+   inkscape:window-height="778"
+   inkscape:window-maximized="1"
+   inkscape:window-width="1221"
+   inkscape:window-x="59"
+   inkscape:window-y="22"
+   inkscape:zoom="3.4909242"
+   pagecolor="#ffffff"
+   showgrid="false">
+	</sodipodi:namedview>
+<path
+   id="path23485"
+   class="st0"
+   d="M38.4,262h300.4v369.4H38.4V262z" />
+<path
+   id="path23551"
+   class="st0"
+   d="M64.6,305h259v36.2h-259V305z" />
+<path
+   id="path23557"
+   class="st0"
+   d="M65,352.4h258.5v36.2H65V352.4z" />
+<path
+   id="path23700"
+   class="st0"
+   d="M338.7,346.5h73.1" />
+<path
+   id="path23704"
+   class="st0"
+   d="M411.8,347.3v-73.1" />
+<path
+   id="path23766"
+   class="st0"
+   d="M59.1,323.1L59.1,323.1c0-4.4-3.5-7.9-7.9-7.9l0,0c-2.1,0-4.1,0.8-5.6,2.3  c-1.5,1.5-2.3,3.5-2.3,5.6l0,0c0,4.4,3.5,7.9,7.9,7.9l0,0C55.5,331,59.1,327.4,59.1,323.1z" />
+<path
+   id="path23784"
+   class="st0"
+   d="M59.1,370.5L59.1,370.5c0-4.4-3.5-7.9-7.9-7.9l0,0c-2.1,0-4.1,0.8-5.6,2.3  c-1.5,1.5-2.3,3.5-2.3,5.6l0,0c0,4.4,3.5,7.9,7.9,7.9l0,0C55.5,378.4,59.1,374.8,59.1,370.5z" />
+<g
+   id="PolyCollection_1"
+   transform="matrix(1.7082137,0,0,1.7311798,-413.20483,-35.465825)">
+</g>
+
+
+<path
+   class="st3"
+   d=""
+   id="path164614" />
+<path
+   id="arrow1L"
+   class="st3"
+   d="M59.5,190.4l-2.5,2.5l8.7-2.5l-8.7-2.5L59.5,190.4z" />
+<path
+   class="st3"
+   d="M150.8,190.4l-2.5,2.5l8.8-2.5l-8.8-2.5L150.8,190.4z"
+   id="path164617" />
+<path
+   id="path128738"
+   class="st3"
+   d="M150.8,190.4" />
+<path
+   style="fill:#000000;stroke:#000000;stroke-width:1;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow1L)"
+   d="m 62.75418,186.41393 h 91.32797"
+   id="path128738-5" /><path
+   style="fill:#000000;stroke:#000000;stroke-width:1;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1L-9)"
+   d="m 56.75418,194.41393 h 91.32797"
+   id="path128738-5-2" /></svg>
