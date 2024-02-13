@@ -1,0 +1,908 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reset.min.css" integrity="sha512-Mjxkx+r7O/OLQeKeIBCQ2yspG1P5muhAtv/J+p2/aPnSenciZWm5Wlnt+NOUNA4SHbnBIE/R2ic0ZBiCXdQNUg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.min.css" integrity="sha512-zu0eodDPCBAZf1vnIgwZ6qchMBt1xqgGkS9vBjVmunoH8pU7cc9OQKBiSQCclpvqySupy9Y1pLZc87VB40G4Sw==" crossorigin="anonymous" />
+<link rel="stylesheet" href="simple.css"/>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.min.js" integrity="sha512-Xu/cezKABTI81MGnaBm64vdiS7XkttHeYGOgr2Mdga0bTplSBGongLq2lhK2HwL79wefKM0u4uTCLD0ha1sRzQ==" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+<script src="include/qrcode.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+Reveal.initialize({
+	hash: true,
+	center: false,
+	width: 1280,
+	height: 800,
+	maxScale: 5.0,
+	slideNumber: true,
+	transition: "fade",
+	keyboard: { 27: null },
+	pdfSeparateFragments: false
+})
+Reveal.on('pdf-ready', () => 
+	document.querySelectorAll("section[data-no-print]").forEach(e => e.parentNode.remove())
+)
+renderMathInElement(document.body, {
+	delimiters: [
+		{left: "$$", right: "$$", display: true},
+		{left: "$", right: "$", display: false},
+	],
+	trust: true,
+	strict: false,
+	macros: {
+		"\\P": "\\mathbb{P}",
+		"\\E": "\\mathbb{E}",
+		"\\Cov": "\\operatorname{Cov}",
+		"\\N": "\\mathbb{N}",
+		"\\Z": "\\mathbb{Z}",
+		"\\Q": "\\mathbb{Q}",
+		"\\R": "\\mathbb{R}",
+		"\\C": "\\mathbb{C}",
+		"\\eps": "\\varepsilon",
+		"\\given": "\\mid",
+		"\\d": "{\\operatorname{d}}",
+		"\\v": "\\boldsymbol{#1}",
+		"\\m": "\\mathbf{#1}",
+		"\\f": "\\operatorname{#1}",
+		"\\s": "\\mathscr{#1}",
+		"\\c": "\\mathcal{#1}",
+		"\\bb": "\\mathbb{#1}",
+		"\\abs": "\\left|{#1}\\right|",
+		"\\del": "\\left({#1}\\right)",
+		"\\sbr": "\\left[{#1}\\right]",
+		"\\cbr": "\\left\\{ {#1} \\right\\}",
+		"\\x": "\\times",
+		"\\t": "\\mathbin{\\text{#1}}",
+		"\\norm": "\\left\\Vert{#1}\\right\\Vert",
+		"\\innerprod": "\\left\\langle{#1},{#2}\\right\\rangle",
+		"\\ubr": "\\underbrace",
+		"\\pd": "\\partial",
+		"\\o": "\\circ",
+		"\\.": "\\cdot",
+		"\\h": "\\widehat{#1}",
+		"\\~": "\\sim",
+		"\\ubr": "\\underset{\\mathclap{#2}}{\\undergroup{#1}}"
+	}
+	})
+document.querySelectorAll("*[data-class]").forEach(e => e.dataset.class.split(" ").forEach(c => e.classList.add(c)))
+})
+</script>
+
+<style>
+.w-25{width:25%!important}.w-50{width:50%!important}.w-75{width:75%!important}.w-100{width:100%!important}.w-auto{width:auto!important}.h-25{height:25%!important}.h-50{height:50%!important}.h-75{height:75%!important}.h-100{height:100%!important}.h-auto{height:auto!important}.mw-100{max-width:100%!important}.mh-100{max-height:100%!important}.m-0{margin:0!important}.mt-0,.my-0{margin-top:0!important}.mr-0,.mx-0{margin-right:0!important}.mb-0,.my-0{margin-bottom:0!important}.ml-0,.mx-0{margin-left:0!important}.m-1{margin:.25rem!important}.mt-1,.my-1{margin-top:.25rem!important}.mr-1,.mx-1{margin-right:.25rem!important}.mb-1,.my-1{margin-bottom:.25rem!important}.ml-1,.mx-1{margin-left:.25rem!important}.m-2{margin:.5rem!important}.mt-2,.my-2{margin-top:.5rem!important}.mr-2,.mx-2{margin-right:.5rem!important}.mb-2,.my-2{margin-bottom:.5rem!important}.ml-2,.mx-2{margin-left:.5rem!important}.m-3{margin:1rem!important}.mt-3,.my-3{margin-top:1rem!important}.mr-3,.mx-3{margin-right:1rem!important}.mb-3,.my-3{margin-bottom:1rem!important}.ml-3,.mx-3{margin-left:1rem!important}.m-4{margin:1.5rem!important}.mt-4,.my-4{margin-top:1.5rem!important}.mr-4,.mx-4{margin-right:1.5rem!important}.mb-4,.my-4{margin-bottom:1.5rem!important}.ml-4,.mx-4{margin-left:1.5rem!important}.m-5{margin:3rem!important}.mt-5,.my-5{margin-top:3rem!important}.mr-5,.mx-5{margin-right:3rem!important}.mb-5,.my-5{margin-bottom:3rem!important}.ml-5,.mx-5{margin-left:3rem!important}.p-0{padding:0!important}.pt-0,.py-0{padding-top:0!important}.pr-0,.px-0{padding-right:0!important}.pb-0,.py-0{padding-bottom:0!important}.pl-0,.px-0{padding-left:0!important}.p-1{padding:.25rem!important}.pt-1,.py-1{padding-top:.25rem!important}.pr-1,.px-1{padding-right:.25rem!important}.pb-1,.py-1{padding-bottom:.25rem!important}.pl-1,.px-1{padding-left:.25rem!important}.p-2{padding:.5rem!important}.pt-2,.py-2{padding-top:.5rem!important}.pr-2,.px-2{padding-right:.5rem!important}.pb-2,.py-2{padding-bottom:.5rem!important}.pl-2,.px-2{padding-left:.5rem!important}.p-3{padding:1rem!important}.pt-3,.py-3{padding-top:1rem!important}.pr-3,.px-3{padding-right:1rem!important}.pb-3,.py-3{padding-bottom:1rem!important}.pl-3,.px-3{padding-left:1rem!important}.p-4{padding:1.5rem!important}.pt-4,.py-4{padding-top:1.5rem!important}.pr-4,.px-4{padding-right:1.5rem!important}.pb-4,.py-4{padding-bottom:1.5rem!important}.pl-4,.px-4{padding-left:1.5rem!important}.p-5{padding:3rem!important}.pt-5,.py-5{padding-top:3rem!important}.pr-5,.px-5{padding-right:3rem!important}.pb-5,.py-5{padding-bottom:3rem!important}.pl-5,.px-5{padding-left:3rem!important}.m-n1{margin:-.25rem!important}.mt-n1,.my-n1{margin-top:-.25rem!important}.mr-n1,.mx-n1{margin-right:-.25rem!important}.mb-n1,.my-n1{margin-bottom:-.25rem!important}.ml-n1,.mx-n1{margin-left:-.25rem!important}.m-n2{margin:-.5rem!important}.mt-n2,.my-n2{margin-top:-.5rem!important}.mr-n2,.mx-n2{margin-right:-.5rem!important}.mb-n2,.my-n2{margin-bottom:-.5rem!important}.ml-n2,.mx-n2{margin-left:-.5rem!important}.m-n3{margin:-1rem!important}.mt-n3,.my-n3{margin-top:-1rem!important}.mr-n3,.mx-n3{margin-right:-1rem!important}.mb-n3,.my-n3{margin-bottom:-1rem!important}.ml-n3,.mx-n3{margin-left:-1rem!important}.m-n4{margin:-1.5rem!important}.mt-n4,.my-n4{margin-top:-1.5rem!important}.mr-n4,.mx-n4{margin-right:-1.5rem!important}.mb-n4,.my-n4{margin-bottom:-1.5rem!important}.ml-n4,.mx-n4{margin-left:-1.5rem!important}.m-n5{margin:-3rem!important}.mt-n5,.my-n5{margin-top:-3rem!important}.mr-n5,.mx-n5{margin-right:-3rem!important}.mb-n5,.my-n5{margin-bottom:-3rem!important}.ml-n5,.mx-n5{margin-left:-3rem!important}.m-auto{margin:auto!important}.mt-auto,.my-auto{margin-top:auto!important}.mr-auto,.mx-auto{margin-right:auto!important}.mb-auto,.my-auto{margin-bottom:auto!important}.ml-auto,.mx-auto{margin-left:auto!important}.embed-responsive{position:relative;display:block;width:100%;padding:0;overflow:hidden}.embed-responsive::before{display:block;content:""}.embed-responsive .embed-responsive-item,.embed-responsive embed,.embed-responsive iframe,.embed-responsive object,.embed-responsive video{position:absolute;top:0;bottom:0;left:0;width:100%;height:100%;border:0}.img-fluid{max-width:100%;height:auto;}.border{border:1px solid #dee2e6!important}.rounded{border-radius:.25rem!important}.rounded-circle{border-radius:50%!important}.text-left{text-align:left!important}.text-right{text-align:right!important}.text-center{text-align:center!important}.text-nowrap{white-space:nowrap!important}.d-none{display:none!important}.d-inline{display:inline!important}.d-inline-block{display:inline-block!important}.d-block{display:block!important}.d-table{display:table!important}.d-table-row{display:table-row!important}.d-table-cell{display:table-cell!important}.d-flex{display:flex!important}.d-inline-flex{display:inline-flex!important}
+.print-pdf .reveal{touch-action:auto!important;}
+.h1{font-size:2.5em!important}.h2{font-size:2em!important}.h3{font-size:1.75em!important}.h4{font-size:1.5em!important}.h5{font-size:1.25em!important}.h6{font-size:1em!important}.small{font-size:80%!important}.smalll{font-size:70%!important}.footnotesize{font-size:65%!important}.scriptsize{font-size:50%!important}
+h1,h2,h3,h4,h5,h6,p { font-size: 1em!important; margin-top: 0.75em!important; margin-bottom: 0.75em!important; }
+ol,ul { margin-left: 2em!important; width: calc(100% - 2em)!important; }
+a,li { }
+p { text-align: left; }
+section h1:first-child { text-align: left; }
+.reveal-viewport { }
+.reveal { }
+.slide-number { background-color: transparent!important; }
+article { min-height: 600px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+article p { width: 100%; }
+.text-small-caps { font-family:Helvetica, Arial, sans-serif; font-variant: small-caps; }
+section footer { position:absolute; top: 100%; width: calc(100% - 6em); padding-left: 3em; padding-right: 3em; }
+.print-pdf .d-print-none{display:none!important}
+</style>
+
+
+<style>
+#mangrtable {
+    border:none;
+    border-collapse: collapse;
+}
+
+#mangrtable th {
+    border: none;
+}
+
+#mangrtable td {
+	width: 50%;
+    border: none;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+}
+
+#mangrtable td:first-child {
+    border-left: none;
+}
+
+#mangrtable td:last-child {
+    border-right: none;
+}
+
+</style>
+
+<title>ApproxWF2: Hidden Diffusion Model</title>
+</head>
+
+<body>
+
+<div class="reveal">
+<div class="slides">
+
+
+<section data-auto-animate>
+<article class="justify-between">
+
+<!--	
+<div class="r-hstack justify-center items-start w-100 fragment fade-out" data-fragment-index="0">
+<h2 class="h6">Конференция SAMPLE</h2>
+</div>
+--!>
+<div class="r-hstack justify-center items-center mt-5 fragment fade-out" data-fragment-index="0">
+
+</div>
+
+<div class="r-vstack my-4 mt-1 py-5">
+<div class="r-vstack my-0">
+    <h1 class="h3 text-nowrap mb-0">ApproxWF2: Hidden Diffusion Model</h1>
+</div>
+<h1 class="r-hstack text-nowrap justify-center items-center mt-3 mb-5 fragment fade-out" data-fragment-index="0">Ekaterina (Katya) Noskova</h1>
+</div>
+
+<h1 class="r-hstack justify-center items-center w-100 mt-5 small fragment fade-out" data-fragment-index="0">
+14 August 2023
+</h1>
+
+</article>
+</section>
+
+
+<!--=========================================================================-->
+
+<section  data-auto-animate>
+<article>
+
+<div class="r-vstack mt-5 pt-5">
+<h1 class="h2">Data and Model</h1>
+</div>
+
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4 mb-5n">Data and Model</h1>
+<article>
+
+<div class="r-stack mt-n5 mx-0 ml-n5 px-0 py-0">
+  <img class="fragment fade-in" data-fragment-index="0" src="my_figures/ApproxWF/data/1.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="1" src="my_figures/ApproxWF/data/2.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="2" src="my_figures/ApproxWF/data/3.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="3" src="my_figures/ApproxWF/data/4.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="4" src="my_figures/ApproxWF/data/5.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="5" src="my_figures/ApproxWF/data/6.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="6" src="my_figures/ApproxWF/data/7.svg" style="height:35rem;">
+</div>
+<p class="mt-3 fragment" data-fragment-index="7"> Find $\theta^\star: P(Data \big|\, \theta) \to \max$, where $\theta=(N_p, m_{pq}, s_p)$ </li>
+</article>
+</section>
+
+
+<!--=========================================================================
+
+<section data-auto-animate>
+<h1 class="h4 mb-5n">Data and Model</h1>
+<article>
+
+<ul class="mt-n3">
+    <li class="fragment" data-fragment-index="0">
+        Time series data (consider one locus for simlicity):
+        <ul>
+            <li class="fragment" data-fragment-index="1"> $P$ populations </li>
+            <li class="fragment" data-fragment-index="2"> data is given at times $t_0 < t_1 < \ldots < t_K$ </li>
+            <li class="fragment" data-fragment-index="3"> $n_{pk}$ samples for population $p$ at time $t_k$ </li>
+            <li class="fragment" data-fragment-index="4"> $c_{pk} \in [0, n_{pk}]$ — allele counts for population $p$ at time $t_k$ </li>
+        </ul>
+    </li>
+    <li class="mt-3 fragment" data-fragment-index="5"> 
+        Wright-Fisher model with mutation rate $\mu$ and parameters $\theta$:
+        <ul>
+            <li class="fragment" data-fragment-index="6"> population sizes $N_p$ </li>
+            <li class="fragment" data-fragment-index="7"> migration rates $m_{pq}$ </li>
+            <li class="fragment" data-fragment-index="8"> selection rates $s_p$ </li>
+        </ul>
+    </li>
+    <li class="mt-3 fragment" data-fragment-index="9"> Find $\theta^\star: P(\{c_{pk}, n_{pk}\} |\, \theta) \to \max$ </li>
+</ul>
+</article>
+</section>
+
+=========================================================================-->
+
+<section  data-auto-animate>
+<article>
+
+<div class="r-vstack mt-5 pt-5">
+<h1 class="h2">Wright-Fisher Diffusion</h1>
+</div>
+
+</article>
+</section>
+
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4 mb-5n">Wright-Fisher Diffusion</h1>
+<article>
+
+<ul class="mt-n3">
+    <li class="fragment" data-fragment-index="0">
+        Two alleles in considered locus: $A$ and $a$
+    </li>
+    <li class="mt-3 fragment" data-fragment-index="1"> 
+        X(t) — the rel. frequency of allele $A$ in populations at generation $t$
+    </li>
+    <li class="mt-3 fragment" data-fragment-index="2"> Wright-Fisher model: $X(t)$ — Markov chain </li>
+    <li class="mt-3 fragment" data-fragment-index="3"> If $N \to \infty$ then $X(t)$ $\to$ Markov process </li>
+    <li class="mt-3 fragment" data-fragment-index="4"> Consider transition probability density $p(\tau, x, y)$ to go from state $x$ to state $y$ in time step of $\tau$  </li>
+</ul>
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4 mb-5n">Wright-Fisher Diffusion</h1>
+<article>
+
+<ul>
+    <li class="mt-n3"> Consider transition probability density $p(\tau, x, y)$ to go from state $x$ to state $y$ in time step of $\tau$ </li>
+    <li class="mt-3 fragment" data-fragment-index="1">
+        <p class="mb-n4">then $p(\tau, x, y)$ satisfies <strong>Kolmogorov forward equation</strong>: </p>
+        <span class="small">
+        $$\frac{\partial}{\partial \tau}p(\tau, x, y) = \frac{1}{2}\sum_{p=1}^P \frac{\partial^2}{{\partial y_p}^2} \left[b_{pp}(y)p(\tau, x, y)\right] - \sum_{p=1}^P \frac{\partial}{\partial y_p} \left[a_p(y) p(\tau, x, y)\right]$$
+        </span>
+    </li>
+    <li class="mt-3 fragment" data-fragment-index="2">
+        <p class="mb-n4">and $p(\tau, x, y)$ satisfies <strong>Kolmogorov backward equation</strong>: </p>
+        <span class="small">
+        $$\frac{\partial}{\partial \tau}p(\tau, x, y) = \frac{1}{2}\sum_{p=1}^P b_{pp}(x) \frac{\partial^2}{\partial {x_p}^2}\left[p(\tau, x, y)\right] + \sum_{p=1}^P a_p(x) \frac{\partial}{\partial x_p} \left[p(\tau, x, y)\right]$$
+        </span>
+        <p class="mt-n3 fragment" data-fragment-index="3"> where $a_p(x)$ and $b_{pp}(x)$ — infinitesimal mean and variance
+    </li>
+</ul>
+</article>
+</section>
+
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4 mb-5n">Wright-Fisher Diffusion</h1>
+<article>
+
+<div class="r-stack mt-n5 mx-0 ml-n5 px-0 py-0">
+  <img class="fragment fade-in" data-fragment-index="0" src="my_figures/ApproxWF/hmm/WF_1.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="1" src="my_figures/ApproxWF/hmm/WF_2.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="2" src="my_figures/ApproxWF/hmm/WF_3.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="3" src="my_figures/ApproxWF/hmm/WF_4.svg" style="height:35rem;">
+</div>
+</article>
+</section>
+
+
+<!--=========================================================================-->
+
+<section  data-auto-animate>
+<article>
+
+<div class="r-vstack mt-5 pt-5">
+<h1 class="h2">Hidden Markov Model</h1>
+</div>
+
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4 mb-5n">Hidden Markov Model</h1>
+<article>
+
+<p>The pair $(X(t), C(t))$ is a hidden Markov model if:</p>
+<ul class="mt-n3">
+    <li class="fragment" data-fragment-index="0">
+        $X(t)$ is a Markov process that is considered to be <strong>hidden</strong>
+    </li>
+    <li class="mt-3 fragment" data-fragment-index="1"> 
+        $C(t)$ is <strong>observable</strong> process whose outcomes are "influenced" by the outcomes of $X$ in a known way
+    </li>
+    <li class="mt-3 fragment" data-fragment-index="2"> 
+        <p class="mb-n4 mt-0">Outcome $C(t_k)$ is "influenced" exclusively by the outcome $X(t_k)$:</p>
+        <span class="small">
+        $$P(C_k = c \,|\, X_1=x_1, \ldots, X_k=x_k) = P(C_k = c \,|\, X_k=x_k)$$
+        </span>
+    </li>
+</ul>
+<p class="fragment mt-0" data-fragment-index="3">$P(C(t_k) = c \, |\, X(t_k)=x_k)$ is called <strong>emission probability</strong></p>
+<p class="fragment mt-0" data-fragment-index="4"><strong>Goal</strong>: learn about $X(t)$ by observing $C(t)$</p>
+</article>
+</section>
+
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4 mb-5n">Hidden Markov Model</h1>
+<article>
+
+<div class="r-stack mt-n5 mx-0 ml-n5 px-0 py-0">
+  <img class="fragment fade-in" data-fragment-index="0" src="my_figures/ApproxWF/hmm/1.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="1" src="my_figures/ApproxWF/hmm/3.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="2" src="my_figures/ApproxWF/hmm/5_1.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="3" src="my_figures/ApproxWF/hmm/time.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="4" src="my_figures/ApproxWF/hmm/2_1.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="5" src="my_figures/ApproxWF/hmm/5_2.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="6" src="my_figures/ApproxWF/hmm/4_1.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="7" src="my_figures/ApproxWF/hmm/2_2.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="8" src="my_figures/ApproxWF/hmm/5_3.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="9" src="my_figures/ApproxWF/hmm/4_2.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="10" src="my_figures/ApproxWF/hmm/2_3.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="11" src="my_figures/ApproxWF/hmm/5_4.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="12" src="my_figures/ApproxWF/hmm/4_3.svg" style="height:35rem;">
+</div>
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section  data-auto-animate>
+<article>
+
+<div class="r-vstack mt-5 pt-5">
+<h1 class="h2">Hidden Diffusion Model</h1>
+</div>
+
+</article>
+</section>
+
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4 mb-5n">Hidden Diffusion Model</h1>
+<article>
+
+<div class="r-stack mt-n5 mx-0 ml-n5 px-0 py-0">
+  <img class="fragment fade-in" data-fragment-index="0" src="my_figures/ApproxWF/hmm/1.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="0" src="my_figures/ApproxWF/hmm/3.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="0" src="my_figures/ApproxWF/hmm/5_1.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="0" src="my_figures/ApproxWF/hmm/time.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="0" src="my_figures/ApproxWF/hmm/2_1.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="0" src="my_figures/ApproxWF/hmm/5_2.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="0" src="my_figures/ApproxWF/hmm/4_1.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="0" src="my_figures/ApproxWF/hmm/2_2.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="0" src="my_figures/ApproxWF/hmm/5_3.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="0" src="my_figures/ApproxWF/hmm/4_2.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="0" src="my_figures/ApproxWF/hmm/2_3.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="0" src="my_figures/ApproxWF/hmm/5_4.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="0" src="my_figures/ApproxWF/hmm/4_3.svg" style="height:35rem;">
+
+  <img class="fragment fade-in" data-fragment-index="1" src="my_figures/ApproxWF/hmm/6.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="2" src="my_figures/ApproxWF/hmm/7.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="3" src="my_figures/ApproxWF/hmm/8.svg" style="height:35rem;">
+</div>
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section  data-auto-animate>
+<article>
+
+<div class="r-vstack mt-5 pt-5">
+<h1 class="h2">Forward and Backward Recursion</h1>
+</div>
+
+</article>
+</section>
+
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4 mb-5n">Forward Recursion</h1>
+<article>
+
+<div class="r-hstack mx-0 my-0">
+    <div class="mx-0 my-0 mr-4">
+    <p class="my-0 small fragment mb-n3" data-fragment-index="0">Consider:</p>
+    <span class="my-0 mt-n3 smalll fragment" data-fragment-index="0">
+        $$\alpha_k(\tau,y) := P\left[ X(t_k+\tau)=y, C(t_0)=c_0, \ldots, C(t_k)=c_k \right]$$
+    </span>
+
+    <p class="my-0 small fragment mb-n3" data-fragment-index="2">The $\alpha_k$ satisfy the <strong>forward recursion</strong>:</p>
+    <span class="my-0 mt-n3 small fragment" data-fragment-index="2">
+        $$\alpha_k(\tau,y) = \int \alpha_{k-1}(\Delta t_{k-1},x) \mathcal{B}(c_k | x) p(\tau,x,y) \,dx,$$
+    </span>
+    <p class="my-0 small fragment mt-n3" data-fragment-index="3"><nobr>where $\Delta t_{k-1}=t_k - t_{k-1}$ and $\mathcal{B}(c_k | x)$ — emission probability.</nobr> </p>
+
+    <p  class="mt-5 small mb-n3 fragment" data-fragment-index="4"> Note: </p>
+    <span class="my-0 mt-n3 small fragment" data-fragment-index="4">
+        $$P\left[C(t_0) = c_0,\ldots, C(t_K)=c_K\right] = \int \alpha_{K}(0,y) \,dy$$
+    </span>
+    </div>
+
+    <div class="my-0 mx-0 ml-5">
+        <img class="fragment fade-left" data-fragment-index="1" src="my_figures/ApproxWF/forward.svg" style="width:70rem;">
+    </div>
+</div>
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4 mb-5n">Forward Recursion</h1>
+<article>
+
+    <p class="my-0 small mb-n3">The $\alpha_k$ satisfy the <strong>forward recursion</strong>:</p>
+    <span class="my-0 mt-n3 small fade-bottom">
+        $$\alpha_k(\tau,y) = \int \alpha_{k-1}(\Delta t_{k-1},x) \mathcal{B}(c_k | x) p(\tau,x,y) \,dx,$$
+    </span>
+    <p class="my-0 small fragment mb-n3" data-fragment-index="0"> Transition probability density $p(\tau, x, y)$  satisfies <strong>Kolmogorov forward equation</strong>:</p>
+    <span class="small mt-n3 fragment" data-fragment-index="0">
+        $$\frac{\partial}{\partial \tau}p(\tau, x, y) = \frac{1}{2}\sum_{p=1}^P \frac{\partial^2}{{\partial y_p}^2} \left[b_{pp}(y)p(\tau, x, y)\right] - \sum_{p=1}^P \frac{\partial}{\partial y_p} \left[a_p(y) p(\tau, x, y)\right]$$
+    </span>
+    <p class="my-0 small fragment mb-n3" data-fragment-index="1"> Hence, $\alpha_k$ satisfies <strong>Kolmogorov forward equation</strong>:</p>
+    <span class="small mt-n3 fragment" data-fragment-index="1">
+        $$\frac{\partial}{\partial \tau}\alpha_k(\tau, y) = \frac{1}{2}\sum_{p=1}^P \frac{\partial^2}{{\partial y_p}^2} \left[b_{pp}(y)\alpha_k(\tau, y)\right] - \sum_{p=1}^P \frac{\partial}{\partial y_p} \left[a_p(y) \alpha_k(\tau, y)\right]$$
+    </span>
+</article>
+</section>
+
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4 mb-5n">Backward Recursion</h1>
+<article>
+
+
+<div class="r-hstack mx-0 my-0">
+    <div class="mx-0 my-0 mr-3">
+    <p class="my-0 small fragment mb-n3" data-fragment-index="0">Consider:</p>
+    <span class="my-0 mt-n3 smalll fragment" data-fragment-index="0">
+        $$\beta_k(\tau,x) := P\left[ C(t_{k+1})=c_{k+1}, \ldots, C(t_K)=c_K \big| X(t_{k+1}-\tau)=x \right]$$
+    </span>
+
+    <p class="my-0 small fragment mb-n3" data-fragment-index="2">The $\beta_k$ satisfy the <strong>backward recursion</strong>:</p>
+    <span class="my-0 mt-n3 small fragment" data-fragment-index="2">
+        $$\beta_k(\tau,x) = \int p(\tau,x,y) \mathcal{B}(c_{k+1} | y) \beta_{k+1}(\Delta t_{k+1},y) \, dy,$$
+    </span>
+    <p class="my-0 small fragment mt-n3" data-fragment-index="3">where $\Delta t_{k+1}=t_{k+2} - t_{k+1}$ and $\mathcal{B}(c_k | x)$ — emission probability. </p>
+
+    <p  class="mt-5 small mb-n3 fragment" data-fragment-index="4"> Note: </p>
+    <span class="my-0 mt-n3 small fragment" data-fragment-index="4">
+        $$P\left[C(t_0) = c_0,\ldots, C(t_K)=c_K\right] = \int \beta_{-1}(0,x) \,dx$$
+    </span>
+    </div>
+
+    <div class="my-0 mx-0 ml-3">
+        <img class="fragment fade-left" data-fragment-index="1" src="my_figures/ApproxWF/backward.svg" style="width:70rem;">
+    </div>
+</div>
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4 mb-5n">Backward Recursion</h1>
+<article>
+
+    <p class="my-0 small mb-n3">The $\beta_k$ satisfy the <strong>backward recursion</strong>:</p>
+    <span class="my-0 mt-n3 small fade-bottom">
+        $$\beta_k(\tau,x) = \int p(\tau,x,y) \mathcal{B}(c_{k+1} | y) \beta_{k+1}(\Delta t_{k+1},y) \, dy,$$
+    </span>
+    <p class="my-0 small fragment mb-n3" data-fragment-index="0"> Transition probability density $p(\tau, x, y)$  satisfies <strong>Kolmogorov backward equation</strong>:</p>
+    <span class="small mt-n3 fragment" data-fragment-index="0">
+        $$\frac{\partial}{\partial \tau}p(\tau, x, y) = \frac{1}{2}\sum_{p=1}^P b_{pp}(x) \frac{\partial^2}{\partial {x_p}^2}\left[p(\tau, x, y)\right] + \sum_{p=1}^P a_p(x) \frac{\partial}{\partial x_p} \left[p(\tau, x, y)\right]$$
+    </span>
+    <p class="my-0 small fragment mb-n3" data-fragment-index="1"> Hence, $\beta_k$ satisfies <strong>Kolmogorov backward equation</strong>:</p>
+    <span class="small mt-n3 fragment" data-fragment-index="1">
+        $$\frac{\partial}{\partial \tau}\beta_k(\tau, x) = \frac{1}{2}\sum_{p=1}^P b_{pp}(x) \frac{\partial^2}{\partial {x_p}^2}\left[\beta_k(\tau, x)\right] + \sum_{p=1}^P a_p(x) \frac{\partial}{\partial x_p} \left[\beta_k(\tau, x)\right]$$
+    </span>
+</article>
+</section>
+
+
+<!--=========================================================================-->
+
+<section  data-auto-animate>
+<article>
+
+<div class="r-vstack mt-5 pt-5">
+<h1 class="h2">Approach Overview</h1>
+</div>
+
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4 mb-5n">Approach Overview</h1>
+<article>
+
+<div class="r-stack mt-n5 mx-0 ml-n5 px-0 py-0">
+  <img class="fragment fade-in" data-fragment-index="0" src="my_figures/ApproxWF/data/1.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="0" src="my_figures/ApproxWF/data/2.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="0" src="my_figures/ApproxWF/data/3.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="0" src="my_figures/ApproxWF/data/4.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="0" src="my_figures/ApproxWF/data/5.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="0" src="my_figures/ApproxWF/data/6.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="0" src="my_figures/ApproxWF/data/7.svg" style="height:35rem;">
+</div>
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<div class="r-hstack"  style="align-items:left;justify-content:left">
+<h1 class="h4">Approach Overview</h1><h1 class="h4">: Mean and Variance</h1>
+</div>
+<article>
+
+    <p class="mt-n3 small fragment" data-fragment-index="0">We consider population sizes $2N_p$, migration rates $m_{pq} \in [0,1]$ and fitness coefficients:</p>
+    <span class="small mt-n5 mb-n3 fragment" data-fragment-index="0">
+    $$w_{AA} = 1 + s_q, \quad w_{Aa} = 1 + h s_q, \quad w_{aa} = 1.$$
+    </span>
+    <p class="mt-0 small fragment" data-fragment-index="1">If $X(t)=x$, then mean $X(t+1)$ can be expressed:</p>
+    <span class="smalll mt-n5 mb-n3 fragment" data-fragment-index="1">
+    $$x_p' = \sum\limits_{q=1}^I m_{qp}\frac{w_{AA}x_q^2+w_{Aa}x_q(1-x_q)}{w_{AA}x_q^2+2w_{Aa}x_q(1-x_q)+w_{aa}(1-x_q)^2}$$
+    </span>
+    <p class="mt-0 small fragment" data-fragment-index="2">We allow the two alleles $A$ and $a$ to mutate into each other:</p>
+    <span class="smalll mt-n5 mb-n3 fragment" data-fragment-index="2">
+    $$x_i'' = x_i' + \mu_{a \to A} (1 - x_i') - \mu_{A \to a} x_i'$$
+    </span>
+
+    <p class="mt-0 small fragment" data-fragment-index="3">Then infinitesimal mean and variance:</p>
+    <span class="smalll mt-n5 mb-n3 fragment" data-fragment-index="3">
+        $$a_p(x) = x_p''-x_p$$
+        $$b_{pp}(x) = \frac{x_p(1-x_p)}{2N_p}$$
+    </span>
+
+</article>
+</section>
+
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<div class="r-hstack"  style="align-items:left;justify-content:left">
+<h1 class="h4">Approach Overview</h1><h1 class="h4">: Forward</h1>
+</div>
+
+<article>
+
+    <p class="mt-n3 small fragment"  data-fragment-index="0">In order to compute $P\left(\{c_k\}_{k=0}^K \big| \theta\right)$ in condition of hidden Wright-Fisher model with parameters $\theta=[N_p, m_{pq}, s_p]_{p,q=1,..,P}$:</p>
+<ul class="mt-0">
+    <li class="fragment small" data-fragment-index="1">
+        Build infinitesimal mean $a_p(x)$ and variance $b_{pp}(x)$ according to $\theta$
+    </li>
+    <li class="mt-3 small fragment" data-fragment-index="2"> 
+        For each $k=1,\ldots,K-1$ do:
+        <ul>
+            <li class=" mt-0 fragment" data-fragment-index="3">
+                <p class="mx-0 my-0  mb-n3">Obtain $\alpha_k(t_{k+1} - t_k,y)$ by solving forward equation:</p>
+                <span class="small mt-n3 mb-n3" >
+                $$\frac{\partial}{\partial \tau}\alpha_k(\tau, y) = \frac{1}{2}\sum_{p=1}^P \frac{\partial^2}{{\partial y_p}^2} \left[b_{pp}(y)\alpha_k(\tau, y)\right] - \sum_{p=1}^P \frac{\partial}{\partial y_p} \left[a_p(y) \alpha_k(\tau, y)\right]$$
+                </span>
+                <span class="small mt-n5 mx-0 my-0" >
+                $$\text{subject to: }\alpha_k(0, y) = \alpha_{k-1}(t_{k} - t_{k-1}, y) \mathcal{B}(c_{k} | y)$$
+                </span>
+            </li>
+        </ul>
+    </li>
+    <li class="mt-n3 fragment" data-fragment-index="4"> 
+        <p class="mb-n4 mt-0 small">Evaluate:</p>
+        <span class="small">
+        $$P\left[C(t_0) = c_0,\ldots, C(t_K)=c_K \, \big| \, \theta\right] = \int \alpha_{K}(0,y) \,dy$$
+        </span>
+    </li>
+</ul>
+</article>
+</section>
+
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<div class="r-hstack"  style="align-items:left;justify-content:left">
+<h1 class="h4">Approach Overview</h1><h1 class="h4">: Backward</h1>
+</div>
+<article>
+
+    <p class="mt-n3 small">In order to compute $P\left(\{c_k\}_{k=0}^K \big| \theta\right)$ in condition of hidden Wright-Fisher model with parameters $\theta=[N_p, m_{pq}, s_p]_{p,q=1,..,P}$:</p>
+<ul class="mt-0">
+    <li class="fragment small" data-fragment-index="0">
+        Build infinitesimal mean $a_p(x)$ and variance $b_{pp}(x)$ according to $\theta$
+    </li>
+    <li class="mt-3 small fragment" data-fragment-index="1"> 
+        For each $k=K-1,\ldots,0$ do:
+        <ul>
+            <li class=" mt-0 fragment" data-fragment-index="1">
+                <p class="mx-0 my-0  mb-n3">Obtain $\beta_k(t_{k+1} - t_k,x)$ by solving backward equation:</p>
+                <span class="small mt-n3 mb-n3" >
+                $$\frac{\partial}{\partial \tau}\beta_k(\tau, x) = \frac{1}{2}\sum_{p=1}^P b_{pp}(x) \frac{\partial^2}{\partial {x_p}^2}\left[\beta_k(\tau, x)\right] + \sum_{p=1}^P a_p(x) \frac{\partial}{\partial x_p} \left[\beta_k(\tau, x)\right]$$
+                </span>
+                <span class="small mt-n5 mx-0 my-0" >
+                $$\text{subject to: }\beta_k(0, x) = \beta_{k+1}(t_{k+2} - t_{k+1}, x)\mathcal{B}(c_{k+1} | x)$$
+                </span>
+            </li>
+        </ul>
+    </li>
+    <li class="mt-n3 fragment" data-fragment-index="2"> 
+        <p class="mb-n4 mt-0 small">Evaluate:</p>
+        <span class="small">
+        $$P\left[C(t_0) = c_0,\ldots, C(t_K)=c_K \, \big| \, \theta\right] = \int \beta_{0}(\Delta t_0,x)\mathcal{B}(c_{0} | x) \,dx$$
+        </span>
+    </li>
+</ul>
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<div class="r-hstack"  style="align-items:left;justify-content:left">
+<h1 class="h4">Approach Overview</h1><h1 class="h4">: Reflecting Boundaries</h1>
+</div>
+<article>
+
+    <p class="mt-n3 small fragment" data-fragment-index="0">We propose reflecting boundary conditions for both forward and backward equations</p>
+<ul class="mt-0">
+    <li class="mt-3 small fragment" data-fragment-index="1"> 
+        <p class="mx-0 my-0  mb-n3"> Forward equation</p>
+                <span class="small mt-n3 mb-n3" >
+                $$\frac{\partial}{\partial \tau}\alpha(\tau, y) = \frac{1}{2}\sum_{p=1}^P \frac{\partial^2}{{\partial y_p}^2} \left[b_{pp}(y)\alpha(\tau, y)\right] - \sum_{p=1}^P \frac{\partial}{\partial y_p} \left[a_p(y) \alpha(\tau, y)\right]$$
+                 $$\text{subject to: } J_p(\tau,y) = \frac{1}{2}\frac{\partial}{\partial y_p} \left[b_{pp}(y)\alpha(\tau, y)\right] - a_p(y) \alpha(\tau, y)=0, \quad \text{for } y \in \{0, 1\}^P$$
+                </span>
+    </li>
+    <li class="mt-3 small fragment" data-fragment-index="2"> 
+        <p class="mx-0 my-0  mb-n3"> Backward equation</p>
+                <span class="small mt-n3 mb-n3" >
+                $$\frac{\partial}{\partial \tau}\beta_k(\tau, x) = \frac{1}{2}\sum_{p=1}^P b_{pp}(x) \frac{\partial^2}{\partial {x_p}^2}\left[\beta_k(\tau, x)\right] + \sum_{p=1}^P a_p(x) \frac{\partial}{\partial x_p} \left[\beta_k(\tau, x)\right]$$
+                $$\text{subject to: } \frac{\partial}{\partial x_p} \left[\beta(\tau, x)\right] =0, \quad \text{for } x \in \{0, 1\}^P$$
+                </span>
+    </li>
+</ul>
+</article>
+</section>
+
+
+<!--=========================================================================-->
+
+<section  data-auto-animate>
+<article>
+
+<div class="r-vstack mt-5 pt-5">
+<h1 class="h2">Boundary Conditions</h1>
+</div>
+
+</article>
+</section>
+
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4 mb-5n">Boundary Conditions</h1>
+<article>
+
+<ul class="mt-0">
+    <li class="fragment small mt-n3" data-fragment-index="0">
+        <strong>Regular</strong>: process can both enter and leave from the boundary
+        <ul class="fragment small mt-3" data-fragment-index="1">
+            <li><strong>Reflecting</strong>: the process cannot stay on the boundary?</li>
+        </ul>
+    </li>
+    <li class="fragment small mt-3" data-fragment-index="2">
+        <strong>Absorbing</strong>: if the particle reach the boundary it is removed from the system
+    </li>
+    <li class="fragment small mt-3" data-fragment-index="3">
+        <strong>Periodic</strong>: two boundaries are identified with each other, if process enter one boundary it can pop out from another one
+    </li>
+    <li class="fragment small mt-3" data-fragment-index="4">
+        <strong>Entrance</strong>: process cannot get to boundary, but it can start from it
+    </li>
+    <li class="fragment small mt-3" data-fragment-index="5">
+        <strong>Natural</strong>: the process can neither get to nor start at boundary
+    </li>
+    <li class="fragment small mt-3" data-fragment-index="6">
+        <strong>Exit</strong>: starting close to the boundary it is impossible to reach intermediate state close to the boundary?
+    </li>
+</ul>
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section  data-auto-animate>
+<article>
+
+<div class="r-vstack mt-5 pt-5">
+<h1 class="h2">Examples</h1>
+</div>
+
+</article>
+</section>
+
+
+<!--=========================================================================-->
+
+
+<section data-auto-animate>
+<h1 class="h4 mb-5n">Examples: Gardiner 1985, pp. 118-123</h1>
+<article>
+
+
+<p class="small">Boundary conditions for Fokker Plank equation on $[a, b]^d$</p>
+<span class="footnotesize mt-n3 mb-n3" >
+    $$\frac{\partial}{\partial t}p(t, x) = \frac{1}{2}\sum_{i,j}\frac{\partial^2}{{\partial x_i \partial x_j}} \left[B_{ij}(t, x)p(t, x)\right] - \sum_{i} \frac{\partial}{\partial x_i} \left[A_i(t, x) p(t, x)\right] = \sum_{i} \frac{\partial}{\partial x_i} \left[ J_i(t, x) \right]$$
+</span>
+
+<ul class="mt-0">
+    <li class="fragment small mt-n3 mb-0" data-fragment-index="0">
+        <div class="r-hstack mx-0 my-0" style="align-items:left;justify-content:left">
+        <div class="mr-5"><strong>Reflecting</strong>:</div>
+        <span class="small" >
+            $$ J(t, x) = 0, \ \text{for } x \in \{a, b\}^d$$
+        </span>
+        </div>
+    </li>
+    <li class="fragment small mt-n4" data-fragment-index="2">
+        <div class="r-hstack mx-0 my-0" style="align-items:left;justify-content:left">
+        <div class="mr-5"><strong>Absorbing</strong>:</div>
+        <span class="small" >
+            $$p(t, x) = 0,\ \text{for } x \in \{a, b\}^d$$
+        </span>
+        </div>
+    </li>
+    <li class="fragment small mt-n4" data-fragment-index="3">
+        <div class="r-hstack mx-0 my-0" style="align-items:left;justify-content:left">
+        <div class="mr-5"><strong>Periodic</strong>:</div>
+        <span class="small" >
+            $$\lim_{x\to b-} p(t, x) = \lim_{x\to a+} p(t, x) \quad \lim_{x\to b-} J(t, x) = \lim_{x\to a+} J(t, x)$$
+        </span>
+        </div>
+    </li>
+    <li class="fragment small mt-n4" data-fragment-index="4">
+        <div class="r-hstack mx-0 my-0" style="align-items:left;justify-content:left">
+        <div class="mr-5"><strong>Entrance</strong>:</div>
+        <span class="small" >
+            $$A(t, a) > 0$$
+        </span>
+        </div>
+    </li>
+    <li class="fragment small mt-n4" data-fragment-index="5">
+        <div class="r-hstack mx-0 my-0" style="align-items:left;justify-content:left">
+        <div class="mr-5"><strong>Natural</strong>:</div>
+        <span class="small" >
+            $$A(t, a) = 0$$
+        </span>
+        </div>
+    </li>
+    <li class="fragment small mt-n4" data-fragment-index="6">
+        <div class="r-hstack mx-0 my-0" style="align-items:left;justify-content:left">
+        <div class="mr-5"><strong>Exit</strong>:</div>
+        <span class="small" >
+            $$A(t, a) < 0$$
+        </span>
+        </div>
+    </li>
+</ul>
+</article>
+</section>
+
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4 mb-5n">Examples: Kimura 1964, pp. 185-187</h1>
+<article>
+
+<p class="small fragment" data-fragment-index="0">Boundary conditions for Fokker Plank equation in population genetics</p>
+<p class="small fragment mt-n3" data-fragment-index="0">Conditional probability density $\phi(t, x)$ that allele freq. is $x$ at time $t$ given initial freq.</p>
+<span class="footnotesize mt-n3 mb-n3 fragment" data-fragment-index="0">
+    $$\frac{\partial}{\partial t}\phi(t, x) = \frac{1}{2}\frac{\partial^2}{{\partial x^2}} \left[B(x)\phi(t, x)\right] - \frac{\partial}{\partial x} \left[A(x) \phi(t, x)\right] = \frac{\partial}{\partial x} \left[ J(t, x) \right]$$
+</span>
+
+<p class="small fragment" data-fragment-index="1">Proposed <strong>"absorbing" barriers</strong> (3.16, 3.17, 3.18 and 3.19):</p>
+<span class="footnotesize mt-n3 mb-n3 fragment" data-fragment-index="1" >
+    $$\frac{\partial}{\partial t}f(t, 0) = J(t, 0)$$
+    $$\frac{\partial}{\partial t}f(t, 1) = -J(t, 1)$$
+</span>
+    <p class="small fragment" data-fragment-index="1">where $f(t,x) = \frac{1}{2N}\phi(t, x)$</p>
+
+</article>
+</section>
+
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4 mb-5n">Examples: Gutenkunst 2009, Supp. p. 4</h1>
+<article>
+
+<p class="small fragment" data-fragment-index="0">Boundary conditions for Fokker Plank equation in population genetics</p>
+<p class="small fragment mt-n3" data-fragment-index="0">$\phi(t, x)$ — "density" of derived mutations (no mutation in A(x))</p>
+<span class="footnotesize mt-n3 mb-n3 fragment" data-fragment-index="0">
+    $$\frac{\partial}{\partial t}\phi(t, x) = \frac{1}{2}\frac{\partial^2}{{\partial x^2}} \left[B(x)\phi(t, x)\right] - \frac{\partial}{\partial x} \left[A(x) \phi(t, x)\right] = \frac{\partial}{\partial x} \left[ J(t, x) \right]$$
+</span>
+
+<p class="small fragment" data-fragment-index="1">Using <strong>"absorbing" barriers</strong> from Kimura 1964:</p>
+<span class="footnotesize mt-n3 mb-n3 fragment" data-fragment-index="1" >
+    $$\frac{\phi_0^{t+1} - \phi^t_0}{\Delta t} = \frac{1}{(x_1 - x_0)/2} \left(-\frac{1}{2}\left.\frac{\partial B}{{\partial x}}\right|_{x=0} + A(0)\right)\phi^{t+1}_0$$
+    $$\frac{\phi_G^{t+1} - \phi^t_G}{\Delta t} = \frac{1}{(x_G - x_{G-1})/2} \left(\frac{1}{2}\left.\frac{\partial B}{{\partial x}}\right|_{x=1} - A(1)\right)\phi^{t+1}_G$$
+</span>
+<p class="small fragment" data-fragment-index="1">However, code is different? Mutation is injected at freq $x_1$ of the solution</p>
+
+</article>
+</section>
+
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4 mb-5n">Examples: Durett 2008, pp. 293-296</h1>
+<article>
+
+<p class="small fragment" data-fragment-index="0">Boundary conditions for backward equation with migrations</p>
+<span class="footnotesize mt-n3 mb-n3 fragment" data-fragment-index="0">
+    $$\frac{\partial}{\partial t}f(t, x) = \frac{1}{2}\frac{\partial^2}{{\partial x^2}} \left[f(t, x)\right] + (\mu_{a \to A}(1-x) + \mu_{A \to a}x)\frac{\partial}{\partial x} \left[f(t, x)\right] $$
+</span>
+
+<p class="small fragment" data-fragment-index="1">The behaviour on $x=0$ depends on the value of $\mu_{a \to A}$:</p>
+<span class="footnotesize mt-n3 mb-n3 fragment" data-fragment-index="1" >
+    $$\mu_{a \to A}=0 \quad \text{absorbing}$$
+    $$\mu_{a \to A}\in \left(0, \frac{1}{2}\right) \quad \text{regular}$$
+    $$\mu_{a \to A}\geq \frac{1}{2} \quad \text{entrance}$$
+</span>
+
+</article>
+</section>
+
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4 mb-5n">Examples: He 2020</h1>
+<article>
+
+<p class="small fragment mt-n3" data-fragment-index="0">1) Probability that allele will survive at time $\tau$ if its frequency at time $t$ was equal to $x$</p>
+<span class="footnotesize mt-n4 mb-n3 fragment" data-fragment-index="0">
+    $$P_\tau(t, x) = P(X(\tau) > 0 \, \big|\, X(t) = x)$$
+    $$\frac{\partial}{\partial t}P_\tau(t, x) = \frac{1}{2}b(t, x)\frac{\partial^2}{{\partial x^2}} \left[P_\tau(t, x)\right] + a(t, x)\frac{\partial}{\partial x} \left[P_\tau(t, x)\right]$$
+    $$\text{subject to: } P_\tau(t, 0) = 0 \text{ and } P_\tau(t, 1) = 1$$
+</span>
+
+
+<p class="small fragment" data-fragment-index="1">2) Backward probability (conditioned to selection coef. and allele age)</p>
+<span class="footnotesize mt-n3 mb-n3 fragment" data-fragment-index="1" >
+    $$\beta_k(t, x) = P(C(t_{k+1}) = c_{k+1}, \ldots, C(t_{K}) = c_{K}\, \big| \, X(t) = x),\quad t \geq t_k$$
+    $$\frac{\partial}{\partial t}\beta_k(t, x) = \frac{1}{2}b(t, x)\frac{\partial^2}{{\partial x^2}} \left[\beta_k(t, x)\right] + a(t, x)\frac{\partial}{\partial x} \left[\beta_k(t, x)\right]$$
+    $$\text{subject to entrance boundary at } x=0 \text{: } \int_{0}^1 \beta_0(t, x)\, dx \to 0?$$
+</span>
+
+</article>
+</section>
+
+
+</body>
+</html>
