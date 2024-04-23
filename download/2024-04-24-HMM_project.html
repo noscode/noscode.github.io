@@ -1,0 +1,1461 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reset.min.css" integrity="sha512-Mjxkx+r7O/OLQeKeIBCQ2yspG1P5muhAtv/J+p2/aPnSenciZWm5Wlnt+NOUNA4SHbnBIE/R2ic0ZBiCXdQNUg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.min.css" integrity="sha512-zu0eodDPCBAZf1vnIgwZ6qchMBt1xqgGkS9vBjVmunoH8pU7cc9OQKBiSQCclpvqySupy9Y1pLZc87VB40G4Sw==" crossorigin="anonymous" />
+<link rel="stylesheet" href="simple.css"/>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.min.js" integrity="sha512-Xu/cezKABTI81MGnaBm64vdiS7XkttHeYGOgr2Mdga0bTplSBGongLq2lhK2HwL79wefKM0u4uTCLD0ha1sRzQ==" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+<script src="include/qrcode.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+Reveal.initialize({
+	hash: true,
+	center: false,
+	width: 1280,
+	height: 800,
+	maxScale: 5.0,
+	slideNumber: true,
+	transition: "fade",
+	keyboard: { 27: null },
+	pdfSeparateFragments: false
+})
+Reveal.on('pdf-ready', () => 
+	document.querySelectorAll("section[data-no-print]").forEach(e => e.parentNode.remove())
+)
+renderMathInElement(document.body, {
+	delimiters: [
+		{left: "$$", right: "$$", display: true},
+		{left: "$", right: "$", display: false},
+	],
+	trust: true,
+	strict: false,
+	macros: {
+		"\\P": "\\mathbb{P}",
+		"\\E": "\\mathbb{E}",
+		"\\Cov": "\\operatorname{Cov}",
+		"\\N": "\\mathbb{N}",
+		"\\Z": "\\mathbb{Z}",
+		"\\Q": "\\mathbb{Q}",
+		"\\R": "\\mathbb{R}",
+		"\\C": "\\mathbb{C}",
+		"\\eps": "\\varepsilon",
+		"\\given": "\\mid",
+		"\\d": "{\\operatorname{d}}",
+		"\\v": "\\boldsymbol{#1}",
+		"\\m": "\\mathbf{#1}",
+		"\\f": "\\operatorname{#1}",
+		"\\s": "\\mathscr{#1}",
+		"\\c": "\\mathcal{#1}",
+		"\\bb": "\\mathbb{#1}",
+		"\\abs": "\\left|{#1}\\right|",
+		"\\del": "\\left({#1}\\right)",
+		"\\sbr": "\\left[{#1}\\right]",
+		"\\cbr": "\\left\\{ {#1} \\right\\}",
+		"\\x": "\\times",
+		"\\t": "\\mathbin{\\text{#1}}",
+		"\\norm": "\\left\\Vert{#1}\\right\\Vert",
+		"\\innerprod": "\\left\\langle{#1},{#2}\\right\\rangle",
+		"\\ubr": "\\underbrace",
+		"\\pd": "\\partial",
+		"\\o": "\\circ",
+		"\\.": "\\cdot",
+		"\\h": "\\widehat{#1}",
+		"\\~": "\\sim",
+		"\\ubr": "\\underset{\\mathclap{#2}}{\\undergroup{#1}}"
+	}
+	})
+document.querySelectorAll("*[data-class]").forEach(e => e.dataset.class.split(" ").forEach(c => e.classList.add(c)))
+})
+</script>
+
+<style>
+.w-25{width:25%!important}.w-50{width:50%!important}.w-75{width:75%!important}.w-100{width:100%!important}.w-auto{width:auto!important}.h-25{height:25%!important}.h-50{height:50%!important}.h-75{height:75%!important}.h-100{height:100%!important}.h-auto{height:auto!important}.mw-100{max-width:100%!important}.mh-100{max-height:100%!important}.m-0{margin:0!important}.mt-0,.my-0{margin-top:0!important}.mr-0,.mx-0{margin-right:0!important}.mb-0,.my-0{margin-bottom:0!important}.ml-0,.mx-0{margin-left:0!important}.m-1{margin:.25rem!important}.mt-1,.my-1{margin-top:.25rem!important}.mr-1,.mx-1{margin-right:.25rem!important}.mb-1,.my-1{margin-bottom:.25rem!important}.ml-1,.mx-1{margin-left:.25rem!important}.m-2{margin:.5rem!important}.mt-2,.my-2{margin-top:.5rem!important}.mr-2,.mx-2{margin-right:.5rem!important}.mb-2,.my-2{margin-bottom:.5rem!important}.ml-2,.mx-2{margin-left:.5rem!important}.m-3{margin:1rem!important}.mt-3,.my-3{margin-top:1rem!important}.mr-3,.mx-3{margin-right:1rem!important}.mb-3,.my-3{margin-bottom:1rem!important}.ml-3,.mx-3{margin-left:1rem!important}.m-4{margin:1.5rem!important}.mt-4,.my-4{margin-top:1.5rem!important}.mr-4,.mx-4{margin-right:1.5rem!important}.mb-4,.my-4{margin-bottom:1.5rem!important}.ml-4,.mx-4{margin-left:1.5rem!important}.m-5{margin:3rem!important}.mt-5,.my-5{margin-top:3rem!important}.mr-5,.mx-5{margin-right:3rem!important}.mb-5,.my-5{margin-bottom:3rem!important}.ml-5,.mx-5{margin-left:3rem!important}.p-0{padding:0!important}.pt-0,.py-0{padding-top:0!important}.pr-0,.px-0{padding-right:0!important}.pb-0,.py-0{padding-bottom:0!important}.pl-0,.px-0{padding-left:0!important}.p-1{padding:.25rem!important}.pt-1,.py-1{padding-top:.25rem!important}.pr-1,.px-1{padding-right:.25rem!important}.pb-1,.py-1{padding-bottom:.25rem!important}.pl-1,.px-1{padding-left:.25rem!important}.p-2{padding:.5rem!important}.pt-2,.py-2{padding-top:.5rem!important}.pr-2,.px-2{padding-right:.5rem!important}.pb-2,.py-2{padding-bottom:.5rem!important}.pl-2,.px-2{padding-left:.5rem!important}.p-3{padding:1rem!important}.pt-3,.py-3{padding-top:1rem!important}.pr-3,.px-3{padding-right:1rem!important}.pb-3,.py-3{padding-bottom:1rem!important}.pl-3,.px-3{padding-left:1rem!important}.p-4{padding:1.5rem!important}.pt-4,.py-4{padding-top:1.5rem!important}.pr-4,.px-4{padding-right:1.5rem!important}.pb-4,.py-4{padding-bottom:1.5rem!important}.pl-4,.px-4{padding-left:1.5rem!important}.p-5{padding:3rem!important}.pt-5,.py-5{padding-top:3rem!important}.pr-5,.px-5{padding-right:3rem!important}.pb-5,.py-5{padding-bottom:3rem!important}.pl-5,.px-5{padding-left:3rem!important}.m-n1{margin:-.25rem!important}.mt-n1,.my-n1{margin-top:-.25rem!important}.mr-n1,.mx-n1{margin-right:-.25rem!important}.mb-n1,.my-n1{margin-bottom:-.25rem!important}.ml-n1,.mx-n1{margin-left:-.25rem!important}.m-n2{margin:-.5rem!important}.mt-n2,.my-n2{margin-top:-.5rem!important}.mr-n2,.mx-n2{margin-right:-.5rem!important}.mb-n2,.my-n2{margin-bottom:-.5rem!important}.ml-n2,.mx-n2{margin-left:-.5rem!important}.m-n3{margin:-1rem!important}.mt-n3,.my-n3{margin-top:-1rem!important}.mr-n3,.mx-n3{margin-right:-1rem!important}.mb-n3,.my-n3{margin-bottom:-1rem!important}.ml-n3,.mx-n3{margin-left:-1rem!important}.m-n4{margin:-1.5rem!important}.mt-n4,.my-n4{margin-top:-1.5rem!important}.mr-n4,.mx-n4{margin-right:-1.5rem!important}.mb-n4,.my-n4{margin-bottom:-1.5rem!important}.ml-n4,.mx-n4{margin-left:-1.5rem!important}.m-n5{margin:-3rem!important}.mt-n5,.my-n5{margin-top:-3rem!important}.mr-n5,.mx-n5{margin-right:-3rem!important}.mb-n5,.my-n5{margin-bottom:-3rem!important}.ml-n5,.mx-n5{margin-left:-3rem!important}.m-auto{margin:auto!important}.mt-auto,.my-auto{margin-top:auto!important}.mr-auto,.mx-auto{margin-right:auto!important}.mb-auto,.my-auto{margin-bottom:auto!important}.ml-auto,.mx-auto{margin-left:auto!important}.embed-responsive{position:relative;display:block;width:100%;padding:0;overflow:hidden}.embed-responsive::before{display:block;content:""}.embed-responsive .embed-responsive-item,.embed-responsive embed,.embed-responsive iframe,.embed-responsive object,.embed-responsive video{position:absolute;top:0;bottom:0;left:0;width:100%;height:100%;border:0}.img-fluid{max-width:100%;height:auto;}.border{border:1px solid #dee2e6!important}.rounded{border-radius:.25rem!important}.rounded-circle{border-radius:50%!important}.text-left{text-align:left!important}.text-right{text-align:right!important}.text-center{text-align:center!important}.text-nowrap{white-space:nowrap!important}.d-none{display:none!important}.d-inline{display:inline!important}.d-inline-block{display:inline-block!important}.d-block{display:block!important}.d-table{display:table!important}.d-table-row{display:table-row!important}.d-table-cell{display:table-cell!important}.d-flex{display:flex!important}.d-inline-flex{display:inline-flex!important}
+.print-pdf .reveal{touch-action:auto!important;}
+.h1{font-size:2.5em!important}.h2{font-size:2em!important}.h3{font-size:1.75em!important}.h4{font-size:1.5em!important}.h5{font-size:1.25em!important}.h6{font-size:1em!important}.small{font-size:80%!important}.smalll{font-size:70%!important}.footnotesize{font-size:65%!important}.scriptsize{font-size:50%!important}
+h1,h2,h3,h4,h5,h6,p { font-size: 1em!important; margin-top: 0.75em!important; margin-bottom: 0.75em!important; }
+ol,ul { margin-left: 2em!important; width: calc(100% - 2em)!important; }
+a,li { }
+p { text-align: left; }
+section h1:first-child { text-align: left; }
+.reveal-viewport { }
+.reveal { }
+.slide-number { background-color: transparent!important; }
+article { min-height: 600px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+article p { width: 100%; }
+.text-small-caps { font-family:Helvetica, Arial, sans-serif; font-variant: small-caps; }
+section footer { position:absolute; top: 100%; width: calc(100% - 6em); padding-left: 3em; padding-right: 3em; }
+.print-pdf .d-print-none{display:none!important}
+</style>
+
+
+<style>
+#mangrtable {
+    border:none;
+    border-collapse: collapse;
+}
+
+#mangrtable th {
+    border: none;
+}
+
+#mangrtable td {
+	width: 50%;
+    border: none;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+}
+
+#mangrtable td:first-child {
+    border-left: none;
+}
+
+#mangrtable td:last-child {
+    border-right: none;
+}
+
+</style>
+
+<title>ApproxWF2: Hidden Diffusion Model</title>
+</head>
+
+<body>
+
+<div class="reveal">
+<div class="slides">
+
+
+<section data-auto-animate>
+<article class="justify-between">
+
+<!--	
+<div class="r-hstack justify-center items-start w-100 fragment fade-out" data-fragment-index="0">
+<h2 class="h6">Конференция SAMPLE</h2>
+</div>
+--!>
+<div class="r-hstack justify-center items-center mt-3 mb-0 fragment fade-out  px-5 mt-5" data-fragment-index="0">
+    <img alt class="img-fluid my-0" src="my_figures/logos/Arizona_Wildcats_logo.svg" style="height:5rem;">
+</div>
+
+<div class="r-vstack my-4 mt-1 py-5">
+<div class="r-vstack my-0">
+<h1 class="h3 text-nowrap mb-0">Hidden Markov Models for Joint</h1>
+<h1 class="h3 text-nowrap mt-0 mb-3">Inference of Demography and Selection</h1>
+</div>
+<h1 class="r-hstack text-nowrap justify-center items-center mt-3 mb-5 fragment fade-out" data-fragment-index="0">Ekaterina (Katya) Noskova</h1>
+</div>
+
+<h1 class="r-hstack justify-center items-center w-100 mt-5 small fragment fade-out" data-fragment-index="0">
+24 April 2024
+</h1>
+
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section  data-auto-animate>
+<article>
+
+<div class="r-vstack mt-5 pt-5">
+<h1 class="h2">Introduction to HMM</h1>
+</div>
+
+</article>
+</section>
+
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4 mb-5n">Markov Chain</h1>
+<article class="">
+
+<p class="fragment mt-1">A sequence of random variables $X(t_k)$ is called <strong>Markov chain</strong> if:</p>
+<ul class="fragment mt-n3 mb-5">
+    <li class="fragment" data-fragment-index="2">
+        $X(t_k)$ depends only on the state $X(t_{k-1})$ of the prev. time point:
+        <span class="small">
+            $$\small P(X(t_k) = j \,|\, X(t_0)=x_0, ..., X(t_{k-1})=i) = P(X(t_k)=j \,|\, X(t_{k-1})=i) = P_{i,j}$$
+        </span>
+        $P_{i,j}$ is called a <strong>transition matrix</strong>.
+    </li>
+</ul>
+<p class="fragment mt-5"> The future state of the system depends only on its current state. </p>
+</article>
+</section>
+
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4 mb-5n">Markov Chain</h1>
+<article class="small">
+<div class="r-hstack mt-n5 my-0 ml-0 mr-5">
+    <div class="r-stack mx-0 fragment" data-fragment-index="0" style="width:30rem;">
+        <div class="r-hstack mx-0 my-0 ml-n5 mr-5">
+            $\text{States} = \Big\{$
+            <img src="my_figures/ApproxWF/markov_chain/state_1.svg" style="height:4rem;">
+            $,\ $
+            <img src="my_figures/ApproxWF/markov_chain/state_2.svg" style="height:4rem;">
+            $\Big\}$
+        </div>
+    </div>
+    <div style="width:5rem;"></div>
+    <div class="r-stack mx-0 ml-5 fragment" data-fragment-index="1" style="width:30rem;">
+        <img class="mt-n3" src="my_figures/ApproxWF/markov_chain/matrix.svg" style="height:15rem;">
+        $$\text{Transition}\ P = \begin{pmatrix} 0.3 & 0.7 \\ 0.4 & 0.6\end{pmatrix}\ \ \ \ \ \ \ $$
+    </div>
+</div>
+<div class="r-stack mt-n5 mx-0 px-0 py-0 ml-3">
+  <span>
+  <img class="fragment fade-in" data-fragment-index="3" src="my_figures/ApproxWF/markov_chain/markov_chain_5.svg" style="height:30rem;">
+  </span>
+
+  <span>
+  <img class="fragment fade-in" data-fragment-index="4" src="my_figures/ApproxWF/markov_chain/markov_chain_1.svg" style="height:30rem;">
+  </span>
+  <span>
+  <img class="fragment fade-in" data-fragment-index="4" src="my_figures/ApproxWF/markov_chain/state_sign.svg" style="height:30rem;">
+  </span>
+
+  <span class="fragment fade-out mx-0 my-0" data-fragment-index="6">
+    <img class="fragment fade-in" data-fragment-index="5" src="my_figures/ApproxWF/markov_chain/markov_chain_2_1.svg" style="height:30rem;">
+  </span>
+
+  <span>
+  <img class="fragment fade-in" data-fragment-index="6" src="my_figures/ApproxWF/markov_chain/markov_chain_3_1_1.svg" style="height:30rem;">
+  </span>
+
+  <span class="fragment fade-out" data-fragment-index="8">
+    <img class="fragment fade-in" data-fragment-index="7" src="my_figures/ApproxWF/markov_chain/markov_chain_2_2.svg" style="height:30rem;">
+  </span>
+
+  <span>
+  <img class="fragment fade-in" data-fragment-index="8" src="my_figures/ApproxWF/markov_chain/markov_chain_3_2_1.svg" style="height:30rem;">
+  </span>
+
+  <span class="fragment fade-out" data-fragment-index="10">
+    <img class="fragment fade-in" data-fragment-index="9" src="my_figures/ApproxWF/markov_chain/markov_chain_2_3.svg" style="height:30rem;">
+  </span>
+
+  <span>
+  <img class="fragment fade-in" data-fragment-index="10" src="my_figures/ApproxWF/markov_chain/markov_chain_3_3_1.svg" style="height:30rem;">
+  </span>
+
+  <span class="fragment fade-out" data-fragment-index="12">
+    <img class="fragment fade-in" data-fragment-index="11" src="my_figures/ApproxWF/markov_chain/markov_chain_2_4.svg" style="height:30rem;">
+  </span>
+
+  <span>
+  <img class="fragment fade-in" data-fragment-index="12" src="my_figures/ApproxWF/markov_chain/markov_chain_3_4_1.svg" style="height:30rem;">
+  </span>
+
+  <span class="fragment fade-out" data-fragment-index="6">
+    <img class="fragment fade-in" data-fragment-index="5" src="my_figures/ApproxWF/markov_chain/markov_chain_6.svg" style="height:30rem;">
+  </span>
+  
+  <span class="fragment fade-out" data-fragment-index="8">
+    <img class="fragment fade-in" data-fragment-index="7" src="my_figures/ApproxWF/markov_chain/markov_chain_7.svg" style="height:30rem;">
+  </span>
+  
+  <span class="fragment fade-out" data-fragment-index="8">
+    <img class="fragment fade-in" data-fragment-index="7" src="my_figures/ApproxWF/markov_chain/markov_chain_8.svg" style="height:30rem;">
+  </span>
+  
+  <span class="fragment fade-out" data-fragment-index="10">
+    <img class="fragment fade-in" data-fragment-index="9" src="my_figures/ApproxWF/markov_chain/markov_chain_7.svg" style="height:30rem;">
+  </span>
+  
+  <span class="fragment fade-out" data-fragment-index="10">
+    <img class="fragment fade-in" data-fragment-index="9" src="my_figures/ApproxWF/markov_chain/markov_chain_8.svg" style="height:30rem;">
+  </span>
+  
+  <span class="fragment fade-out" data-fragment-index="12">
+    <img class="fragment fade-in" data-fragment-index="11" src="my_figures/ApproxWF/markov_chain/markov_chain_7.svg" style="height:30rem;">
+  </span>
+  
+  <span class="fragment fade-out" data-fragment-index="12">
+    <img class="fragment fade-in" data-fragment-index="11" src="my_figures/ApproxWF/markov_chain/markov_chain_9.svg" style="height:30rem;">
+  </span>
+
+  <!-- Arrows -->
+  <span class="fragment fade-out" data-fragment-index="8">
+    <img class="fragment fade-in" data-fragment-index="7" src="my_figures/ApproxWF/markov_chain/markov_chain_10_1_1.svg" style="height:30rem;">
+  </span>
+  <span>
+    <img class="fragment fade-in" data-fragment-index="7" src="my_figures/ApproxWF/markov_chain/markov_chain_10_1_2.svg" style="height:30rem;">
+  </span>
+
+  <span class="fragment fade-out" data-fragment-index="10">
+    <img class="fragment fade-in" data-fragment-index="9" src="my_figures/ApproxWF/markov_chain/markov_chain_10_2_2.svg" style="height:30rem;">
+  </span>
+  <span>
+    <img class="fragment fade-in" data-fragment-index="9" src="my_figures/ApproxWF/markov_chain/markov_chain_10_2_1.svg" style="height:30rem;">
+  </span>
+
+  <span class="fragment fade-out" data-fragment-index="12">
+    <img class="fragment fade-in" data-fragment-index="11" src="my_figures/ApproxWF/markov_chain/markov_chain_10_3_1.svg" style="height:30rem;">
+  </span>
+  <span>
+    <img class="fragment fade-in" data-fragment-index="11" src="my_figures/ApproxWF/markov_chain/markov_chain_10_3_2.svg" style="height:30rem;">
+  </span>
+
+  <!-- fade previous steps -->
+  <span class="fragment fade-out" data-fragment-index="13">
+    <img class="fragment fade-in" data-fragment-index="9" src="my_figures/ApproxWF/markov_chain/markov_chain_4_1.svg" style="height:30rem;">
+  </span>
+  
+  <span class="fragment fade-out" data-fragment-index="13">
+    <img class="fragment fade-in" data-fragment-index="11" src="my_figures/ApproxWF/markov_chain/markov_chain_4_2.svg" style="height:30rem;">
+  </span>
+</div>
+</article>
+</section>
+
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4 mb-5n">Wright-Fisher Model</h1>
+<article>
+
+<div class="r-hstack mx-0 my-0">
+  <div class="r-stack mx-0 my-0" style="width:70rem">
+  <div class="fragment mx-0 my-0 fade-out" data-fragment-index=23">
+  <ul class="mx-0 my-0 mr-4 small">
+    <li class="fragment" data-fragment-index="0">
+        Generations are non-overlapping
+    </li>
+    <li class="mt-3 fragment" data-fragment-index="1">
+        Two alleles in considered locus: $A$ and $a$
+    </li>
+    <li class="mt-3 fragment" data-fragment-index="2"> 
+        $X(t)$ — the rel. frequency of allele $A$ in population at generation $t$
+    </li>
+    <li class="mt-3 fragment" data-fragment-index="3"> 
+        <p> $\psi_i$ — the probability to choose $A$ if its frequency is $i$ </p>
+        <p class="mt-n3">
+        $$\footnotesize \text{e.g.}\quad \psi_i = \frac{i}{2N}, \quad \text{for constant pop. size } 2N$$
+        </p>
+    </li>
+    <li class="mt-3 fragment" data-fragment-index="4">
+        <p><strong>Wright-Fisher model</strong>: $X(t)$ — Markov chain with binomial transition:</p>
+        <p class="mt-n3">
+        $$\footnotesize P\left(X(t+1) = \frac{j}{2N} \biggr\rvert X(t) = \frac{i}{2N}\right) = \binom{2N}{j} (\psi_i)^j (1-\psi_i)^{2N - j} $$
+        </p>
+    </li>
+  </ul>
+  </div>
+
+  <div class="small fragment mx-0 my-0 fade-in mt-5" data-fragment-index=23>
+      <ul class="mt-3">
+    <li class="mt-0 fragment" data-fragment-index="23"> If $N \to \infty$ then $X(t)$ $\to$ continuous-time continuous-space Markov chain (Markov process) </li>
+    <li class="mt-3 fragment" data-fragment-index="24"> This process is defined by <strong>transition probability density</strong> $p(\tau, x, y)$ to go from state $x$ to state $y$ in time step of $\tau$  </li>
+    <li class="mt-3 fragment" data-fragment-index="25">
+        <p class="mb-n4">$p(\tau, x, y)$ satisfies <strong>Kolmogorov forward equation</strong>: </p>
+        <span class="small">
+            $$\frac{\partial}{\partial \tau}p(\tau, x, y) = \frac{1}{2} \frac{\partial^2}{{\partial y}^2} \left[b(y)p(\tau, x, y)\right] - \frac{\partial}{\partial y} \left[a(y) p(\tau, x, y)\right]$$
+        </span>
+        <p class="mt-n3 fragment" data-fragment-index="25"> where $a(y)$ and $b(y)$ — infinitesimal mean and variance
+    </li>
+    <li class="mt-0 fragment" data-fragment-index="26"> This process is called <strong>Wright-Fisher diffusion</strong> </li>
+    </ul>
+  </div>
+  </div>
+
+  <div class="my-0 mx-0 ml-3 mt-n5 mr-0">
+      <div class="r-stack mx-0 my-0">
+        <span class="fragment mx-0 my-0 fade-in" data-fragment-index="5">
+            <img src="my_figures/ApproxWF/wright-fisher/model_1.svg" style="width:25rem;">
+        </span>
+        <span class="fragment mx-0 my-0 fade-in" data-fragment-index="5">
+            <img class="fragment fade-out" data-fragment-index="23" src="my_figures/ApproxWF/wright-fisher/model_1_1.svg" style="width:25rem;">
+        </span>
+        <span class="fragment mx-0 my-0 fade-in" data-fragment-index="5">
+            <img class="fragment fade-out" data-fragment-index="23" src="my_figures/ApproxWF/wright-fisher/model_1_2.svg" style="width:25rem;">
+        </span>
+        <span class="fragment mx-0 my-0 fade-in" data-fragment-index="6">
+            <img src="my_figures/ApproxWF/wright-fisher/model_2.svg" style="width:25rem;">
+        </span>
+        <span class="fragment mx-0 my-0 fade-in" data-fragment-index="6">
+            <img class="fragment fade-out" data-fragment-index="23" src="my_figures/ApproxWF/wright-fisher/model_2_2.svg" style="width:25rem;">
+        </span>
+        <span class="fragment mx-0 my-0 fade-in" data-fragment-index="6">
+            <img src="my_figures/ApproxWF/wright-fisher/model_3.svg" style="width:25rem;">
+        </span>
+        <span class="fragment mx-0 my-0 fade-in" data-fragment-index="6">
+            <img class="fragment fade-out" data-fragment-index="23" src="my_figures/ApproxWF/wright-fisher/model_4.svg" style="width:25rem;">
+        </span>
+        <span class="fragment mx-0 my-0 fade-in" data-fragment-index="6">
+            <img src="my_figures/ApproxWF/wright-fisher/model_5.svg" style="width:25rem;">
+        </span>
+        <span class="fragment mx-0 my-0 fade-in" data-fragment-index="6">
+            <img class="fragment fade-out" data-fragment-index="23" src="my_figures/ApproxWF/wright-fisher/model_6.svg" style="width:25rem;">
+        </span>
+        <!-- all states in chain -->
+        <span class="fragment mx-0 my-0 fade-in" data-fragment-index="7">
+            <img src="my_figures/ApproxWF/wright-fisher/model_7_1.svg" style="width:25rem;">
+        </span>
+        <span class="fragment mx-0 my-0 fade-in" data-fragment-index="7">
+            <img src="my_figures/ApproxWF/wright-fisher/model_7_2.svg" style="width:25rem;">
+        </span>
+        <span class="fragment mx-0 my-0 fade-in" data-fragment-index="7">
+            <img src="my_figures/ApproxWF/wright-fisher/model_7_3.svg" style="width:25rem;">
+        </span>
+        <span class="fragment mx-0 my-0 fade-in" data-fragment-index="7">
+            <img src="my_figures/ApproxWF/wright-fisher/model_7_4.svg" style="width:25rem;">
+        </span>
+        <span class="fragment mx-0 my-0 fade-in" data-fragment-index="7">
+            <img src="my_figures/ApproxWF/wright-fisher/model_7_5.svg" style="width:25rem;">
+        </span>
+        <span class="fragment mx-0 my-0 fade-in" data-fragment-index="7">
+            <img src="my_figures/ApproxWF/wright-fisher/model_7_6.svg" style="width:25rem;">
+        </span>
+        <span class="fragment mx-0 my-0 fade-in" data-fragment-index="7">
+            <img src="my_figures/ApproxWF/wright-fisher/model_7_7.svg" style="width:25rem;">
+        </span>
+        <span class="fragment mx-0 my-0 fade-in" data-fragment-index="7">
+            <img src="my_figures/ApproxWF/wright-fisher/model_7_8.svg" style="width:25rem;">
+        </span>
+        <!-- Simulation of states -->
+        <span class="fragment mx-0 my-0 fade-in" data-fragment-index="15">
+            <img src="my_figures/ApproxWF/wright-fisher/model_8_1.svg" style="width:25rem;">
+        </span>
+        <span class="fragment mx-0 my-0 fade-in" data-fragment-index="16">
+            <img src="my_figures/ApproxWF/wright-fisher/model_8_2.svg" style="width:25rem;">
+        </span>
+        <span class="fragment mx-0 my-0 fade-in" data-fragment-index="17">
+            <img src="my_figures/ApproxWF/wright-fisher/model_8_3.svg" style="width:25rem;">
+        </span>
+        <span class="fragment mx-0 my-0 fade-in" data-fragment-index="18">
+            <img src="my_figures/ApproxWF/wright-fisher/model_8_4.svg" style="width:25rem;">
+        </span>
+        <span class="fragment mx-0 my-0 fade-in" data-fragment-index="19">
+            <img src="my_figures/ApproxWF/wright-fisher/model_8_5.svg" style="width:25rem;">
+        </span>
+        <span class="fragment mx-0 my-0 fade-in" data-fragment-index="20">
+            <img src="my_figures/ApproxWF/wright-fisher/model_8_6.svg" style="width:25rem;">
+        </span>
+        <span class="fragment mx-0 my-0 fade-in" data-fragment-index="21">
+            <img src="my_figures/ApproxWF/wright-fisher/model_8_7.svg" style="width:25rem;">
+        </span>
+        <span class="fragment mx-0 my-0 fade-in" data-fragment-index="22">
+            <img src="my_figures/ApproxWF/wright-fisher/model_8_8.svg" style="width:25rem;">
+        </span>
+        <!-- White rectangle -->
+        <span class="fragment mx-0 my-0 fade-in" data-fragment-index="23">
+            <img src="my_figures/ApproxWF/wright-fisher/model_12.svg" style="width:25rem;">
+        </span>
+        <!-- continous case -->
+        <span class="fragment mx-0 my-0 fade-in" data-fragment-index="23">
+            <img src="my_figures/ApproxWF/wright-fisher/model_5_2.svg" style="width:25rem;">
+        </span>
+        <span class="fragment mx-0 my-0 fade-in" data-fragment-index="23">
+            <img src="my_figures/ApproxWF/wright-fisher/model_4_2.svg" style="width:25rem;">
+        </span>
+        <span class="fragment mx-0 my-0 fade-in" data-fragment-index="23">
+            <img src="my_figures/ApproxWF/wright-fisher/model_1_3.svg" style="width:25rem;">
+        </span>
+        <span class="fragment mx-0 my-0 fade-in" data-fragment-index="23">
+            <img src="my_figures/ApproxWF/wright-fisher/model_9.svg" style="width:25rem;">
+        </span>
+        <span class="fragment mx-0 my-0 fade-in" data-fragment-index="24">
+            <img src="my_figures/ApproxWF/wright-fisher/model_10.svg" style="width:25rem;">
+        </span>
+  </div>
+</div>
+</article>
+</section>
+
+
+<!--=========================================================================-->
+
+<section  data-auto-animate>
+<article>
+
+<div class="r-vstack mt-5 pt-5">
+<h1 class="h2">Hidden Markov Model</h1>
+</div>
+
+</article>
+</section>
+
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4 mb-5n">Hidden Markov Model</h1>
+<article>
+
+<p>The pair $[X(t_k), C_k]$ is a hidden Markov model if:</p>
+<ul class="mt-n3">
+    <li class="fragment" data-fragment-index="0">
+        $X(t_k)$ is a Markov process that is considered to be <strong>hidden</strong>
+    </li>
+    <li class="mt-3 fragment" data-fragment-index="1"> 
+        $C_k$ are called <strong>observations</strong>
+    </li>
+    <li class="mt-3 fragment" data-fragment-index="2"> 
+        <p class="mb-n4 mt-0">Outcome $C_k$ is "influenced" exclusively by the outcome $X(t_k)$:</p>
+        <span class="small">
+        $$P\left(C_k \,|\, X(t_1), ..., X(t_k)\right) = P\left(C_k \,|\, X(t_k)\right)$$
+        </span>
+    </li>
+</ul>
+<p class="fragment mt-0" data-fragment-index="3">$P(C_k \, |\, X(t_k))$ is called <strong>emission probability</strong></p>
+<p class="fragment mt-0" data-fragment-index="4"><strong>Goal</strong>: learn about $X(t)$ by observing $C_k$</p>
+</article>
+</section>
+
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4 mb-5n">Hidden Markov Model</h1>
+<article class="small">
+<div class="r-hstack mt-n3 my-0 ml-0 mr-0">
+    <div class="r-stack mx-0 fragment" data-fragment-index="0" style="width:30rem;">
+        <div class="small r-hstack mx-0 my-0 ml-0 mr-n5">
+            $\text{States} = \Big\{$
+            <img src="my_figures/ApproxWF/markov_chain/state_1.svg" style="height:4rem;">
+            $,\ $
+            <img src="my_figures/ApproxWF/markov_chain/state_2.svg" style="height:4rem;">
+            $\Big\}$
+        </div>
+    </div>
+    <div class="small r-stack mx-0 ml-n5 fragment" data-fragment-index="0" style="width:30rem;">
+        <img class="mt-n2" src="my_figures/ApproxWF/markov_chain/matrix_2.svg" style="height:9rem;">
+        $$\text{Transition}\ P = \begin{pmatrix} 0.3 & 0.7 \\ 0.4 & 0.6\end{pmatrix}\ \ \ \ $$
+    </div>
+    <div class="small r-stack mx-0 ml-0 fragment" data-fragment-index="1" style="width:30rem;">
+        <img class="mt-n2" src="my_figures/ApproxWF/markov_chain/matrix_emission.svg" style="height:9rem;">
+        $$\text{Emission}\ \mathcal{B} = \begin{pmatrix} 0.9 & 0.1 \\ 0.2 & 0.8\end{pmatrix}\ \ \ \ $$
+    </div>
+</div>
+<div class="r-stack mt-n1 mx-0 px-0 py-0 ml-3">
+  <span>
+  <img class="fragment fade-in" data-fragment-index="0" src="my_figures/ApproxWF/markov_chain/markov_chain_5.svg" style="height:30rem;">
+  </span>
+
+  <span>
+  <img class="fragment fade-in" data-fragment-index="0" src="my_figures/ApproxWF/markov_chain/markov_chain_1.svg" style="height:30rem;">
+  </span>
+  <span>
+  <img class="fragment fade-in" data-fragment-index="0" src="my_figures/ApproxWF/markov_chain/hidden_sign.svg" style="height:30rem;">
+  </span>
+
+  <span> <!-- observation label -->
+  <img class="fragment fade-in" data-fragment-index="1" src="my_figures/ApproxWF/markov_chain/markov_chain_1_2.svg" style="height:30rem;">
+  </span>
+
+  <span class="fragment fade-out mx-0 my-0" data-fragment-index="6">
+    <img class="fragment fade-in" data-fragment-index="5" src="my_figures/ApproxWF/markov_chain/markov_chain_2_1.svg" style="height:30rem;">
+  </span>
+
+  <span>
+  <img class="fragment fade-in" data-fragment-index="6" src="my_figures/ApproxWF/markov_chain/markov_chain_3_1.svg" style="height:30rem;">
+  </span>
+
+  <span class="fragment fade-out" data-fragment-index="9">
+    <img class="fragment fade-in" data-fragment-index="8" src="my_figures/ApproxWF/markov_chain/markov_chain_2_2.svg" style="height:30rem;">
+  </span>
+
+  <span>
+  <img class="fragment fade-in" data-fragment-index="9" src="my_figures/ApproxWF/markov_chain/markov_chain_3_2.svg" style="height:30rem;">
+  </span>
+
+  <span class="fragment fade-out" data-fragment-index="12">
+    <img class="fragment fade-in" data-fragment-index="11" src="my_figures/ApproxWF/markov_chain/markov_chain_2_3.svg" style="height:30rem;">
+  </span>
+
+  <span>
+  <img class="fragment fade-in" data-fragment-index="12" src="my_figures/ApproxWF/markov_chain/markov_chain_3_3.svg" style="height:30rem;">
+  </span>
+
+  <span class="fragment fade-out" data-fragment-index="15">
+    <img class="fragment fade-in" data-fragment-index="14" src="my_figures/ApproxWF/markov_chain/markov_chain_2_4.svg" style="height:30rem;">
+  </span>
+
+  <span>
+  <img class="fragment fade-in" data-fragment-index="15" src="my_figures/ApproxWF/markov_chain/markov_chain_3_4.svg" style="height:30rem;">
+  </span>
+
+  <!--Fade arrows of HMM-->
+
+  <span class="fragment fade-out" data-fragment-index="6">
+    <img class="fragment fade-in" data-fragment-index="5" src="my_figures/ApproxWF/markov_chain/markov_chain_6.svg" style="height:30rem;">
+  </span>
+  
+
+
+  <!-- Arrows -->
+  <span class="fragment fade-out" data-fragment-index="9">
+    <img class="fragment fade-in" data-fragment-index="8" src="my_figures/ApproxWF/markov_chain/central_arrows_1.svg" style="height:30rem;">
+  </span>
+  <span>
+    <img class="fragment fade-in" data-fragment-index="9" src="my_figures/ApproxWF/markov_chain/central_arrow_1.svg" style="height:30rem;">
+  </span>
+
+  <span class="fragment fade-out" data-fragment-index="12">
+    <img class="fragment fade-in" data-fragment-index="11" src="my_figures/ApproxWF/markov_chain/central_arrows_2.svg" style="height:30rem;">
+  </span>
+  <span>
+    <img class="fragment fade-in" data-fragment-index="12" src="my_figures/ApproxWF/markov_chain/central_arrow_2.svg" style="height:30rem;">
+  </span>
+
+  <span class="fragment fade-out" data-fragment-index="15">
+    <img class="fragment fade-in" data-fragment-index="14" src="my_figures/ApproxWF/markov_chain/central_arrows_3.svg" style="height:30rem;">
+  </span>
+  <span>
+    <img class="fragment fade-in" data-fragment-index="15" src="my_figures/ApproxWF/markov_chain/central_arrow_3.svg" style="height:30rem;">
+  </span>
+
+  <!-- fade previous steps -->
+  <span class="fragment fade-out" data-fragment-index="17">
+    <img class="fragment fade-in" data-fragment-index="11" src="my_figures/ApproxWF/markov_chain/markov_chain_4_1_2.svg" style="height:30rem;">
+  </span>
+  
+  <span class="fragment fade-out" data-fragment-index="17">
+    <img class="fragment fade-in" data-fragment-index="14" src="my_figures/ApproxWF/markov_chain/markov_chain_4_2_2.svg" style="height:30rem;">
+  </span>
+
+  <!-- HMM stuff -->
+  <span>
+    <img class="fragment fade-in" data-fragment-index="1" src="my_figures/ApproxWF/markov_chain/hmm_emission_1.svg" style="height:30rem;">
+  </span>
+
+  <!-- Emission -->
+  <span>
+  <img class="fragment fade-in" data-fragment-index="7" src="my_figures/ApproxWF/markov_chain/hmm_emission_2_1.svg" style="height:30rem;">
+  </span>
+  <span>
+  <img class="fragment fade-in" data-fragment-index="10" src="my_figures/ApproxWF/markov_chain/hmm_emission_2_2.svg" style="height:30rem;">
+  </span>
+  <span>
+  <img class="fragment fade-in" data-fragment-index="13" src="my_figures/ApproxWF/markov_chain/hmm_emission_2_3.svg" style="height:30rem;">
+  </span>
+  <span>
+  <img class="fragment fade-in" data-fragment-index="16" src="my_figures/ApproxWF/markov_chain/hmm_emission_2_4.svg" style="height:30rem;">
+  </span>
+  <!--  -->
+  <span class="fragment fade-out" data-fragment-index="6">
+  <img class="fragment fade-in" data-fragment-index="5" src="my_figures/ApproxWF/markov_chain/hmm_emission_3_1.svg" style="height:30rem;">
+  </span>
+  <span class="fragment fade-out" data-fragment-index="8">
+  <img class="fragment fade-in" data-fragment-index="6" src="my_figures/ApproxWF/markov_chain/markov_chain_6.svg" style="height:30rem;">
+  </span>
+  <span class="fragment fade-out" data-fragment-index="8">
+  <img class="fragment fade-in" data-fragment-index="6" src="my_figures/ApproxWF/markov_chain/markov_chain_7.svg" style="height:30rem;">
+  </span>
+  <span class="fragment fade-out" data-fragment-index="8">
+  <img class="fragment fade-in" data-fragment-index="6" src="my_figures/ApproxWF/markov_chain/hmm_emission_3_3.svg" style="height:30rem;">
+  </span>
+
+  <!-- step 2 go from cloud -->
+  <span class="fragment fade-out" data-fragment-index="9">
+  <img class="fragment fade-in" data-fragment-index="8" src="my_figures/ApproxWF/markov_chain/markov_chain_7.svg" style="height:30rem;">
+  </span>
+  <span class="fragment fade-out" data-fragment-index="9">
+  <img class="fragment fade-in" data-fragment-index="8" src="my_figures/ApproxWF/markov_chain/markov_chain_8.svg" style="height:30rem;">
+  </span>
+  <span class="fragment fade-out" data-fragment-index="9">
+  <img class="fragment fade-in" data-fragment-index="8" src="my_figures/ApproxWF/markov_chain/hmm_emission_3_1.svg" style="height:30rem;">
+  </span>
+  <!-- step 2 emission from cloud -->
+  <span class="fragment fade-out" data-fragment-index="11">
+  <img class="fragment fade-in" data-fragment-index="9" src="my_figures/ApproxWF/markov_chain/markov_chain_6.svg" style="height:30rem;">
+  </span>
+  <span class="fragment fade-out" data-fragment-index="11">
+  <img class="fragment fade-in" data-fragment-index="9" src="my_figures/ApproxWF/markov_chain/markov_chain_7.svg" style="height:30rem;">
+  </span>
+  <span class="fragment fade-out" data-fragment-index="11">
+  <img class="fragment fade-in" data-fragment-index="9" src="my_figures/ApproxWF/markov_chain/hmm_emission_3_3.svg" style="height:30rem;">
+  </span>
+
+  <!-- step 3 go from cloud -->
+  <span class="fragment fade-out" data-fragment-index="12">
+  <img class="fragment fade-in" data-fragment-index="11" src="my_figures/ApproxWF/markov_chain/markov_chain_7.svg" style="height:30rem;">
+  </span>
+  <span class="fragment fade-out" data-fragment-index="12">
+  <img class="fragment fade-in" data-fragment-index="11" src="my_figures/ApproxWF/markov_chain/markov_chain_8.svg" style="height:30rem;">
+  </span>
+  <span class="fragment fade-out" data-fragment-index="12">
+  <img class="fragment fade-in" data-fragment-index="11" src="my_figures/ApproxWF/markov_chain/hmm_emission_3_1.svg" style="height:30rem;">
+  </span>
+  <!-- step 3 emission from sun -->
+  <span class="fragment fade-out" data-fragment-index="14">
+  <img class="fragment fade-in" data-fragment-index="12" src="my_figures/ApproxWF/markov_chain/markov_chain_6.svg" style="height:30rem;">
+  </span>
+  <span class="fragment fade-out" data-fragment-index="14">
+  <img class="fragment fade-in" data-fragment-index="12" src="my_figures/ApproxWF/markov_chain/markov_chain_7.svg" style="height:30rem;">
+  </span>
+  <span class="fragment fade-out" data-fragment-index="14">
+  <img class="fragment fade-in" data-fragment-index="12" src="my_figures/ApproxWF/markov_chain/hmm_emission_3_2.svg" style="height:30rem;">
+  </span>
+
+  <!-- step 4 go from sun -->
+  <span class="fragment fade-out" data-fragment-index="15">
+  <img class="fragment fade-in" data-fragment-index="14" src="my_figures/ApproxWF/markov_chain/markov_chain_7.svg" style="height:30rem;">
+  </span>
+  <span class="fragment fade-out" data-fragment-index="15">
+  <img class="fragment fade-in" data-fragment-index="14" src="my_figures/ApproxWF/markov_chain/markov_chain_9.svg" style="height:30rem;">
+  </span>
+  <span class="fragment fade-out" data-fragment-index="15">
+  <img class="fragment fade-in" data-fragment-index="14" src="my_figures/ApproxWF/markov_chain/hmm_emission_3_1.svg" style="height:30rem;">
+  </span>
+  <!-- step 4 emission from cloud -->
+  <span class="fragment fade-out" data-fragment-index="17">
+  <img class="fragment fade-in" data-fragment-index="15" src="my_figures/ApproxWF/markov_chain/markov_chain_6.svg" style="height:30rem;">
+  </span>
+  <span class="fragment fade-out" data-fragment-index="17">
+  <img class="fragment fade-in" data-fragment-index="15" src="my_figures/ApproxWF/markov_chain/markov_chain_7.svg" style="height:30rem;">
+  </span>
+  <span class="fragment fade-out" data-fragment-index="17">
+  <img class="fragment fade-in" data-fragment-index="15" src="my_figures/ApproxWF/markov_chain/hmm_emission_3_2.svg" style="height:30rem;">
+  </span>
+
+  <!-- HMM frames -->
+  <span>
+  <img class="fragment fade-in" data-fragment-index="0" src="my_figures/ApproxWF/markov_chain/hmm_frames_1.svg" style="height:30rem;">
+  </span>
+  <span>
+  <img class="fragment fade-in" data-fragment-index="1" src="my_figures/ApproxWF/markov_chain/hmm_frames_2.svg" style="height:30rem;">
+  </span>
+</div>
+</article>
+</section>
+
+
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4 mb-5n">Hidden Markov Model Classical Algorithms</h1>
+<article>
+
+<div class="r-hstack">
+<div>
+<p  class="fragment mt-n3" data-fragment-index="0">Given: sequence of observations </p>
+<ul class="mt-n1">
+    <li class="fragment" data-fragment-index="1">
+        <strong>Viterbi algorithm</strong> finds most likely sequence of hidden states
+    </li>
+    <li class="mt-4 fragment" data-fragment-index="2"> 
+        <strong>Forward-Backward algorithm</strong> finds the probability of a hidden state of interest at step $t$
+    </li>
+    <li class="mt-4 fragment" data-fragment-index="3"> 
+        Learn parameters of HMM:
+        <ul>
+            <li class="mt-2 fragment" data-fragment-index="4">
+                <strong>Baum-Welch algorithm</strong> (maximum likelihood)
+            </li>
+            <li class="mt-2 fragment" data-fragment-index="5">
+                <strong>MCMC</strong> (samples from likelihood function)
+            </li>
+    </li>
+</ul>
+</div>
+<div class="r-stack ml-4 mr-n3">
+    <img class="fragment current-visible" data-fragment-index="1" src="my_figures/ApproxWF/hmm_alg/viterbi.svg" style="width:30rem;">
+    <img class="fragment current-visible" data-fragment-index="2" src="my_figures/ApproxWF/hmm_alg/f-b.svg" style="width:30rem;">
+    <img class="fragment fade-in" data-fragment-index="3" src="my_figures/ApproxWF/hmm_alg/baum-welch.svg" style="width:30rem;">
+</div>
+
+</div>
+</article>
+</section>
+
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4 mb-5n">MCMC and Forward Recursion<span class="fragment"  data-fragment-index="6">: continuous case</span></h1>
+<article>
+
+<div class="r-hstack mx-0 my-0">
+    <div class="mx-0 my-0 mr-4" style="width:70rem;">
+    <p class="my-0 small fragment mb-n4" data-fragment-index="0">Consider:</p>
+    <span class="my-0 mt-n5 small fragment" data-fragment-index="0">
+        $$
+        \htmlData{class=fragment fade-out,fragment-index=6}{
+            \small
+            \mathclap{
+                \alpha_k(y) := P\left[ X(t_k)=y, C(t_0)=c_0, \ldots, C(t_k)=c_k \right]
+            }
+        }
+        \htmlData{class=fragment d-print-none,fragment-index=6}{
+            \small
+            \mathclap{
+                \alpha_k(\tau,y) := P\left[ X(t_k+\tau)=y, C(t_0)=c_0, \ldots, C(t_k)=c_k \right]
+            }
+        }
+        $$
+    </span>
+
+    <p class="my-0 mt-5 small fragment mb-n4" data-fragment-index="2">The $\alpha_k$ satisfy the <strong>forward recursion</strong>:</p>
+    <span class="my-0 mt-n3 small fragment" data-fragment-index="2">
+        $$
+        \htmlData{class=fragment fade-out,fragment-index=6}{
+            \small
+            \mathclap{
+                 \alpha_k(y) = \sum_x \alpha_{k-1}(x) P(X(t_k)=y | X(t_{k-1})=x) \mathcal{B}(c_k | x),
+            }
+        }
+        \htmlData{class=fragment d-print-none,fragment-index=6}{
+            \small
+            \mathclap{
+                \alpha_k(\tau,y) = \int \alpha_{k-1}(\Delta t_{k-1},x) \mathcal{B}(c_k | x) p(\tau,x,y) \,dx,
+            }
+        }
+        $$
+    </span>
+    <p class="my-0 small fragment mt-n5 mb-5" data-fragment-index="3">
+        <nobr>where $\mathcal{B}(c_k | x)$ — emission probability</nobr>
+        <span class="fragment"  data-fragment-index="6"> and $\Delta t_{k-1}=t_k - t_{k-1}$ </span>
+    </p>
+
+    <p  class="mt-5 small mb-n5 fragment" data-fragment-index="4"> <strong>Likelihood of data given HMM parameters $\theta$</strong>: </p>
+    <span class="my-0 mt-n5 small fragment" data-fragment-index="4">
+        $$
+        \htmlData{class=fragment fade-out,fragment-index=6}{
+            \small
+            \mathclap{
+                  P\left[C(t_0) = c_0,\ldots, C(t_K)=c_K | \theta \right] = \sum_y \alpha_{K}(y) \bigg\rvert_{\theta}
+            }
+        }
+        \htmlData{class=fragment d-print-none,fragment-index=6}{
+            \small
+            \mathclap{
+                 P\left[C(t_0) = c_0,\ldots, C(t_K)=c_K | \theta \right] = \int \alpha_{K}(0,y) \,dy \bigg\rvert_{\theta}
+            }
+        }
+        $$
+    </span>
+    <p  class="mt-0 small fragment" data-fragment-index="5"> Using MCMC we can sample from $P(Data | \theta)$ </p>
+    </div>
+
+    <div class="r-stack my-0 mx-0 ml-5 mt-n5 mr-n5 fragment fade-in" data-fragment-index="1">
+        <img class="fragment fade-out" data-fragment-index="6" src="my_figures/ApproxWF/forward_discrete.svg" style="width:25rem;">
+        <img class="fragment fade-in" data-fragment-index="6" src="my_figures/ApproxWF/forward_continuous.svg" style="width:25rem;">
+    </div>
+</div>
+</article>
+</section>
+
+
+
+
+
+
+
+<!--=========================================================================-->
+
+<section  data-auto-animate>
+<article>
+
+<div class="r-vstack mt-5 pt-5">
+<h1 class="h2">HMM for Joint Inference of Demography and Selection</h1>
+</div>
+
+</article>
+</section>
+
+
+<!--=========================================================================-->
+
+<section  data-auto-animate>
+<article>
+
+<div class="r-vstack mt-5 pt-5">
+<h1 class="h2">Data and Model</h1>
+</div>
+
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4 mb-5n">Data and Model</h1>
+<article>
+
+<div class="r-stack mt-n5 mx-0 ml-n5 px-0 py-0">
+  <img class="fragment fade-in" data-fragment-index="0" src="my_figures/ApproxWF/data/1.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="1" src="my_figures/ApproxWF/data/2.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="2" src="my_figures/ApproxWF/data/3.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="3" src="my_figures/ApproxWF/data/4.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="4" src="my_figures/ApproxWF/data/5.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="5" src="my_figures/ApproxWF/data/6.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="6" src="my_figures/ApproxWF/data/7_2.svg" style="height:35rem;">
+</div>
+<p class="mt-3 fragment" data-fragment-index="7"> Find $\theta^\star: P(Data \big|\, \theta) \to \max$, where $\theta=(N_p, m_{pq}, s^p_l)$ </li>
+</article>
+</section>
+
+
+<!--=========================================================================-->
+
+<section  data-auto-animate>
+<article>
+
+<div class="r-vstack mt-5 pt-5">
+<h1 class="h2">Step 1: Independent Loci</h1>
+</div>
+
+</article>
+</section>
+
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4 mb-5n">Hidden Diffusion Model</h1>
+<article>
+
+<div class="r-stack mt-n5 mx-0 ml-n5 px-0 py-0">
+  <img class="fragment fade-in" data-fragment-index="0" src="my_figures/ApproxWF/hmm/1.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="0" src="my_figures/ApproxWF/hmm/3.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="0" src="my_figures/ApproxWF/hmm/5_1.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="0" src="my_figures/ApproxWF/hmm/time.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="0" src="my_figures/ApproxWF/hmm/2_1.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="0" src="my_figures/ApproxWF/hmm/5_2.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="0" src="my_figures/ApproxWF/hmm/4_1.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="0" src="my_figures/ApproxWF/hmm/2_2.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="0" src="my_figures/ApproxWF/hmm/5_3.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="0" src="my_figures/ApproxWF/hmm/4_2.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="0" src="my_figures/ApproxWF/hmm/2_3.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="0" src="my_figures/ApproxWF/hmm/5_4.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="0" src="my_figures/ApproxWF/hmm/4_3.svg" style="height:35rem;">
+
+  <img class="fragment fade-in" data-fragment-index="1" src="my_figures/ApproxWF/hmm/6.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="2" src="my_figures/ApproxWF/hmm/7.svg" style="height:35rem;">
+  <img class="fragment fade-in" data-fragment-index="3" src="my_figures/ApproxWF/hmm/8.svg" style="height:35rem;">
+</div>
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4 mb-5n">Wright-Fisher Diffusion</h1>
+<article>
+
+<div class="r-hstack mx-0 my-0">
+
+  <div class="small mx-0 my-0 fade-in mt-n5" data-fragment-index=23 style="width:70rem;">
+      <ul class="mt-3">
+    <li class="mt-0 " data-fragment-index="23"> If $N \to \infty$ then $X(t)$ $\to$ continuous-time continuous-space Markov chain (Markov process) </li>
+    <li class="mt-3 " data-fragment-index="24"> This process is defined by <strong>transition probability density</strong> $p(\tau, x, y)$ to go from state $x$ to state $y$ in time step of $\tau$  </li>
+    <li class="mt-3 " data-fragment-index="25">
+        <p class="mb-n4">$p(\tau, x, y)$ satisfies <strong>Kolmogorov forward equation</strong>: </p>
+        <span class="small">
+            $$\frac{\partial}{\partial \tau}p(\tau, x, y) = \frac{1}{2} \frac{\partial^2}{{\partial y}^2} \left[b(y)p(\tau, x, y)\right] - \frac{\partial}{\partial y} \left[a(y) p(\tau, x, y)\right]$$
+        </span>
+        <p class="mt-n3 " data-fragment-index="25"> where $a(y)$ and $b(y)$ — infinitesimal mean and variance
+    </li>
+    <li class="mt-0 " data-fragment-index="26"> This process is called <strong>Wright-Fisher diffusion</strong> </li>
+    </ul>
+  </div>
+
+  <div class="my-0 mx-0 ml-3 mt-n5 mr-0">
+      <div class="r-stack mx-0 my-0">
+          <span class=" mx-0 my-0 fade-in" data-fragment-index="5">
+            <img src="my_figures/ApproxWF/wright-fisher/model_1.svg" style="width:25rem;">
+        </span>
+        <span class=" mx-0 my-0 fade-in" data-fragment-index="6">
+            <img src="my_figures/ApproxWF/wright-fisher/model_2.svg" style="width:25rem;">
+        </span>
+        <span class=" mx-0 my-0 fade-in" data-fragment-index="6">
+            <img src="my_figures/ApproxWF/wright-fisher/model_3.svg" style="width:25rem;">
+        </span>
+        <span class=" mx-0 my-0 fade-in" data-fragment-index="6">
+            <img src="my_figures/ApproxWF/wright-fisher/model_5.svg" style="width:25rem;">
+        </span>
+        <!-- all states in chain -->
+        <span class=" mx-0 my-0 fade-in" data-fragment-index="7">
+            <img src="my_figures/ApproxWF/wright-fisher/model_7_1.svg" style="width:25rem;">
+        </span>
+        <span class=" mx-0 my-0 fade-in" data-fragment-index="7">
+            <img src="my_figures/ApproxWF/wright-fisher/model_7_2.svg" style="width:25rem;">
+        </span>
+        <span class=" mx-0 my-0 fade-in" data-fragment-index="7">
+            <img src="my_figures/ApproxWF/wright-fisher/model_7_3.svg" style="width:25rem;">
+        </span>
+        <span class=" mx-0 my-0 fade-in" data-fragment-index="7">
+            <img src="my_figures/ApproxWF/wright-fisher/model_7_4.svg" style="width:25rem;">
+        </span>
+        <span class=" mx-0 my-0 fade-in" data-fragment-index="7">
+            <img src="my_figures/ApproxWF/wright-fisher/model_7_5.svg" style="width:25rem;">
+        </span>
+        <span class=" mx-0 my-0 fade-in" data-fragment-index="7">
+            <img src="my_figures/ApproxWF/wright-fisher/model_7_6.svg" style="width:25rem;">
+        </span>
+        <span class=" mx-0 my-0 fade-in" data-fragment-index="7">
+            <img src="my_figures/ApproxWF/wright-fisher/model_7_7.svg" style="width:25rem;">
+        </span>
+        <span class=" mx-0 my-0 fade-in" data-fragment-index="7">
+            <img src="my_figures/ApproxWF/wright-fisher/model_7_8.svg" style="width:25rem;">
+        </span>
+        <!-- Simulation of states -->
+        <span class=" mx-0 my-0 fade-in" data-fragment-index="15">
+            <img src="my_figures/ApproxWF/wright-fisher/model_8_1.svg" style="width:25rem;">
+        </span>
+        <span class=" mx-0 my-0 fade-in" data-fragment-index="16">
+            <img src="my_figures/ApproxWF/wright-fisher/model_8_2.svg" style="width:25rem;">
+        </span>
+        <span class=" mx-0 my-0 fade-in" data-fragment-index="17">
+            <img src="my_figures/ApproxWF/wright-fisher/model_8_3.svg" style="width:25rem;">
+        </span>
+        <span class=" mx-0 my-0 fade-in" data-fragment-index="18">
+            <img src="my_figures/ApproxWF/wright-fisher/model_8_4.svg" style="width:25rem;">
+        </span>
+        <span class=" mx-0 my-0 fade-in" data-fragment-index="19">
+            <img src="my_figures/ApproxWF/wright-fisher/model_8_5.svg" style="width:25rem;">
+        </span>
+        <span class=" mx-0 my-0 fade-in" data-fragment-index="20">
+            <img src="my_figures/ApproxWF/wright-fisher/model_8_6.svg" style="width:25rem;">
+        </span>
+        <span class=" mx-0 my-0 fade-in" data-fragment-index="21">
+            <img src="my_figures/ApproxWF/wright-fisher/model_8_7.svg" style="width:25rem;">
+        </span>
+        <span class=" mx-0 my-0 fade-in" data-fragment-index="22">
+            <img src="my_figures/ApproxWF/wright-fisher/model_8_8.svg" style="width:25rem;">
+        </span>
+        <!-- White rectangle -->
+        <span class=" mx-0 my-0 fade-in" data-fragment-index="23">
+            <img src="my_figures/ApproxWF/wright-fisher/model_12.svg" style="width:25rem;">
+        </span>
+        <!-- continous case -->
+        <span class=" mx-0 my-0 fade-in" data-fragment-index="23">
+            <img src="my_figures/ApproxWF/wright-fisher/model_5_2.svg" style="width:25rem;">
+        </span>
+        <span class=" mx-0 my-0 fade-in" data-fragment-index="23">
+            <img src="my_figures/ApproxWF/wright-fisher/model_4_2.svg" style="width:25rem;">
+        </span>
+        <span class=" mx-0 my-0 fade-in" data-fragment-index="23">
+            <img src="my_figures/ApproxWF/wright-fisher/model_1_3.svg" style="width:25rem;">
+        </span>
+        <span class=" mx-0 my-0 fade-in" data-fragment-index="23">
+            <img src="my_figures/ApproxWF/wright-fisher/model_9.svg" style="width:25rem;">
+        </span>
+        <span class=" mx-0 my-0 fade-in" data-fragment-index="24">
+            <img src="my_figures/ApproxWF/wright-fisher/model_10.svg" style="width:25rem;">
+        </span>
+  </div>
+</div>
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<div class="r-hstack"  style="align-items:left;justify-content:left">
+<h1 class="h4">Wright Fisher Diffusion Model</h1>
+</div>
+<article>
+
+    <p class="mt-n3 small fragment" data-fragment-index="0">We consider population sizes $2N_p$, migration rates $m_{pq} \in [0,1]$ and fitness coefficients:</p>
+    <span class="small mt-n5 mb-n3 fragment" data-fragment-index="0">
+    $$w_{AA} = 1 + s_q, \quad w_{Aa} = 1 + h s_q, \quad w_{aa} = 1.$$
+    </span>
+    <p class="mt-0 small fragment" data-fragment-index="1">If $X(t)=x$, then probability $\psi_x$ to choose $A$ can be expressed:</p>
+    <span class="smalll mt-n5 mb-n3 fragment" data-fragment-index="1">
+    $$x_p' = \sum\limits_{q=1}^I m_{qp}\frac{w_{AA}x_q^2+w_{Aa}x_q(1-x_q)}{w_{AA}x_q^2+2w_{Aa}x_q(1-x_q)+w_{aa}(1-x_q)^2}$$
+    </span>
+    <p class="mt-0 small fragment" data-fragment-index="2">We allow the two alleles $A$ and $a$ to mutate into each other:</p>
+    <span class="smalll mt-n5 mb-n3 fragment" data-fragment-index="2">
+    $$x_i'' = \mu_{a \to A} (1 - x_i') + (1 - \mu_{A \to a}) x_i'$$
+    </span>
+
+    <p class="mt-0 small fragment" data-fragment-index="3">Then infinitesimal mean and variance:</p>
+    <span class="smalll mt-n5 mb-n3 fragment" data-fragment-index="3">
+        $$a_p(x) = x_p''-x_p$$
+        $$b_{p}(x) = \frac{x_p(1-x_p)}{2N_p}$$
+    </span>
+
+</article>
+</section>
+
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<div class="r-hstack"  style="align-items:left;justify-content:left">
+<h1 class="h4">MCMC and Forward Recursion</h1>
+</div>
+
+<article>
+
+    <p class="mt-n3 small fragment"  data-fragment-index="0">In order to compute $P\left(\{c_k\}_{k=0}^K \big| \theta\right)$ in condition of hidden Wright-Fisher model with parameters $\theta=[N_p, m_{pq}, s_p]_{p,q=1,..,P}$:</p>
+<ul class="mt-0">
+    <li class="fragment small" data-fragment-index="1">
+        Build infinitesimal mean $a_p(x)$ and variance $b_{p}(x)$ according to $\theta$
+    </li>
+    <li class="mt-3 small fragment" data-fragment-index="2"> 
+        For each $k=1,\ldots,K-1$ do:
+        <ul>
+            <li class=" mt-0 fragment" data-fragment-index="3">
+                <p class="mx-0 my-0  mb-n3">Obtain $\alpha_k(t_{k+1} - t_k,y)$ by solving forward equation:</p>
+                <span class="small mt-n3 mb-n3" >
+                $$\frac{\partial}{\partial \tau}\alpha_k(\tau, y) = \frac{1}{2}\sum_{p=1}^P \frac{\partial^2}{{\partial y_p}^2} \left[b_{p}(y)\alpha_k(\tau, y)\right] - \sum_{p=1}^P \frac{\partial}{\partial y_p} \left[a_p(y) \alpha_k(\tau, y)\right]$$
+                </span>
+                <span class="small mt-n5 mx-0 my-0" >
+                $$\text{subject to: }\alpha_k(0, y) = \alpha_{k-1}(t_{k} - t_{k-1}, y) \mathcal{B}(c_{k} | y)$$
+                </span>
+            </li>
+        </ul>
+    </li>
+    <li class="mt-n3 fragment" data-fragment-index="4"> 
+        <p class="mb-n4 mt-0 small">Evaluate:</p>
+        <span class="small">
+        $$P\left[C(t_0) = c_0,\ldots, C(t_K)=c_K \, \big| \, \theta\right] = \int \alpha_{K}(0,y) \,dy$$
+        </span>
+    </li>
+</ul>
+</article>
+</section>
+
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4 mb-5n">Example Result for One Population</h1>
+<article>
+
+<div class="mt-n5 mb-n4 ml-5">
+  <img class="fragment fade-in" data-fragment-index="0" src="my_figures/ApproxWF/results/result_independent_pop_size.svg" style="height:20rem;">
+</div>
+<div class="mt-n5">
+  <img class="fragment fade-in" data-fragment-index="1" src="my_figures/ApproxWF/results/result_independent_sel.svg" style="height:25rem;">
+</div>
+</article>
+</section>
+
+
+<!--=========================================================================-->
+
+<section  data-auto-animate>
+<article>
+
+<div class="r-vstack mt-5 pt-5">
+<h1 class="h2">Step 2: Linkage Concern</h1>
+</div>
+
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4 mb-5n">Second-Layer HMM over Genome</h1>
+<article>
+
+<div class="r-stack mt-0 mx-0 ml-n5 px-0 py-0">
+<img class="fragment fade-in" data-fragment-index="0" src="my_figures/ApproxWF/selection_hmm/sel_hmm_1.svg" style="height:40rem;">
+<img class="fragment fade-in" data-fragment-index="1" src="my_figures/ApproxWF/selection_hmm/sel_hmm_2.svg" style="height:40rem;">
+<img class="fragment fade-in" data-fragment-index="2" src="my_figures/ApproxWF/selection_hmm/sel_hmm_3.svg" style="height:40rem;">
+<img class="fragment fade-in" data-fragment-index="3" src="my_figures/ApproxWF/selection_hmm/sel_hmm_4.svg" style="height:40rem;">
+<img class="fragment fade-in" data-fragment-index="4" src="my_figures/ApproxWF/selection_hmm/sel_hmm_5.svg" style="height:40rem;">
+<img class="fragment fade-in" data-fragment-index="5" src="my_figures/ApproxWF/selection_hmm/sel_hmm_6.svg" style="height:40rem;">
+<img class="fragment fade-in" data-fragment-index="6" src="my_figures/ApproxWF/selection_hmm/sel_hmm_7.svg" style="height:40rem;">
+<img class="fragment fade-in" data-fragment-index="7" src="my_figures/ApproxWF/selection_hmm/sel_hmm_8.svg" style="height:40rem;">
+<img class="fragment fade-in" data-fragment-index="8" src="my_figures/ApproxWF/selection_hmm/sel_hmm_9.svg" style="height:40rem;">
+<img class="fragment fade-in" data-fragment-index="9" src="my_figures/ApproxWF/selection_hmm/sel_hmm_10.svg" style="height:40rem;">
+</div>
+</article>
+</section>
+
+
+
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4 mb-5n">Proposed Transition Matrix</h1>
+<article>
+
+    <p class="mt-n3">Ideas:</p>
+    <ul class="mt-n3">
+        <li class="fragment">
+            Most positions in genome are neutral
+        </li>
+        <li class="fragment">
+            Selection coefficients of neighbour loci should be close on the grid
+        </li>
+    </ul>
+
+    <p class="fragment">Existing solution (Galimberti et al. 2020): $Q = \exp(d_l \cdot \Lambda)$, where</p>
+    <span class="footnotesize mt-n4 fragment">
+    
+    $$\footnotesize
+    \Lambda = \kappa
+    \begin{pmatrix}
+    -1 & 1 & 0 & 0 & \ldots & 0 & 0 & 0 & 0 \\
+    \mu & -1-\mu & 1 & 0 & \ldots & 0 & 0 & 0 & 0 \\
+    0 & \mu & -1-\mu & 1 & \ldots & 0 & 0 & 0 & 0 \\
+    \vdots & \vdots & \vdots & \vdots & & \vdots & \vdots & \vdots & \vdots \\
+    0 & \vdots & 0 & \nu \mu & -2 \nu \mu & \nu \mu & 0 & \vdots & 0 \\
+    \vdots & \vdots & \vdots & \vdots & & \vdots & \vdots & \vdots & \vdots \\
+    0 & 0 & 0 & 0 & \ldots & 1 & -1-\mu & \mu & 0 \\
+    0 & 0 & 0 & 0 & \ldots & 0 & 1 & -1-\mu & \mu \\
+    0 & 0 & 0 & 0 & \ldots & 0& 0 & 1 & -1 \\
+    \end{pmatrix}
+
+    \begin{matrix}
+    \leftarrow s=s_{\max} \phantom{-} \phantom{-} \phantom{-} \phantom{-}\\
+    \\
+    \\
+    \\
+    \\
+    \leftarrow \text{attractor (} s=0\text{)}\\
+    \\
+    \\
+    \\
+    \\
+    \leftarrow s=-s_{\max} \phantom{-} \phantom{-} \phantom{-}  \\
+    \end{matrix}
+    $$
+    </span>
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4 mb-5n">Issue with Negative Selection</h1>
+<article>
+<div class="r-hstack">
+    <div class="" style="width:80rem;">
+        <p class="fragment"> Neighboring loci can show selection of different signs, although similar absolute values</p>
+        <div style="height:1rem;"></div>
+        <p class="fragment"> According to our Wright-Fisher model: 
+        $$\small s \text{ for allele } a = -\frac{s}{1+s} \text{ for allele } A$$
+        </p>
+        <div style="height:0.5rem;"></div>
+        <p  class="fragment mt-5">
+        Solution: infer positive selection $|s|$ and sign $\sigma$
+        </p>
+    </div>
+    
+    <div class="mt-0 mb-n5 ml-5 mr-n5 mt-n5">
+      <img class="fragment fade-in" data-fragment-index="0" src="my_figures/ApproxWF/issue_with_negative_selection/beneficial.png" style="width:40rem;">
+    </div>
+</div>
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4 mb-5n">Proposed Transition Matrix</h1>
+<article>
+
+    <p class="mt-n3">Ideas:</p>
+    <ul class="mt-n3">
+        <li>
+            Most positions in genome are neutral
+        </li>
+        <li>
+            Selection coefficients of neighbour loci should be close on the grid
+        </li>
+        <li>
+            Infer positive selection $|s|$ and sign $\sigma$
+        </li>
+    </ul>
+
+    <p class="fragment">Proposed transition matrix: $Q = \exp(d_l \cdot \Lambda)$, where</p>
+    <span class="footnotesize mt-n4 fragment">
+    
+    $$\footnotesize
+    \Lambda = \kappa
+    \begin{pmatrix}
+    -1 & 1 & 0 & 0 & \ldots & 0 & 0 & 0\\
+    \mu & -1-\mu & 1 & 0 & \ldots & 0 & 0 & 0 \\
+    0 & \mu & -1-\mu & 1 & \ldots & 0 & 0 & 0 \\
+    \vdots & \vdots & \vdots & \vdots & & \vdots & \vdots & \vdots\\
+    0 & 0 & 0 & 0 & \ldots & \mu & -1-\mu & 1\\
+    0 & 0 & 0 & 0 & \ldots & 0 & \nu \mu & -\nu \mu\\
+    \end{pmatrix}
+
+    \begin{matrix}
+    \leftarrow s=s_{\max} \phantom{-} \phantom{-} \phantom{-} \phantom{.}\\
+    \\
+    \\
+    \phantom{\ldots}\\
+    \\
+    \leftarrow s=s_0 \phantom{-} \phantom{-} \phantom{-} \phantom{-} \phantom{.}\\
+    \leftarrow \text{attractor (} s=0\text{)}\\
+    \end{matrix}
+    $$
+    </span>
+</article>
+</section>
+
+
+
+
+<!--=========================================================================-->
+
+<section  data-auto-animate>
+<article>
+
+<div class="r-vstack mt-5 pt-5">
+<h1 class="h2">Preliminary Results for One Population</h1>
+</div>
+
+</article>
+</section>
+
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4 mb-5n">Selection Inference Comparison</h1>
+<article class="small">
+    <p class="fragment"> We simulated a chromosome with length of 1 Mbp using SLiM:</p>
+    <ul class="mt-n3 mb-5">
+        <li class="fragment">
+            Population size is equal to 1,000 individuals
+        </li>
+        <li class="mt-2 fragment">
+            Recombination rate and mutation rate are equal to $10^{-8}$
+        </li>
+        <li class="mt-2 fragment">
+            Beneficial mutation is introduced in the middle of the chromosome
+        </li>
+        <li class="mt-2 fragment">
+            Sampling is initiated after the frequency of beneficial allele reaches the value of $30\%$
+        </li>
+        <li class="mt-2 fragment">
+            10 time points, 10 generations apart, 100 individuals each
+        </li>
+    </ul>
+
+    <p class="fragment"> We compared the performance with existing solutions for one population:</p>
+    <ul class="mt-n3 mb-5 fragment">
+        <li class="">
+            ApproxWF [Ferrer-Admetlla et al. 2016]
+        </li>
+        <li class="mt-2 fragment">
+            TimeSweeper [Whitehouse & Schrider 2023]
+        </li>
+    </ul>
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4 mb-5n">Selection Inference Comparison</h1>
+<article>
+
+<div class="r-stack mt-n5 mx-0 ml-n5 px-0 py-0">
+<img class="fragment fade-in" data-fragment-index="0" src="my_figures/ApproxWF/results/selection_inference_1.svg" style="height:45rem;">
+<img class="fragment fade-in" data-fragment-index="1" src="my_figures/ApproxWF/results/selection_inference_2.svg" style="height:45rem;">
+<img class="fragment fade-in" data-fragment-index="2" src="my_figures/ApproxWF/results/selection_inference_3.svg" style="height:45rem;">
+</div>
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4 mb-5n">Confusion Matrix</h1>
+<article>
+
+<div class="r-stack mt-n5 mx-0 ml-n5 px-0 py-0">
+<img class="fragment fade-in" data-fragment-index="0" src="my_figures/ApproxWF/results/confusion_matrix.svg" style="height:45rem;">
+</div>
+</article>
+</section>
+
+
+<!--=========================================================================-->
+
+<section  data-auto-animate>
+<article>
+
+<div class="r-vstack mt-5 pt-5">
+<h1 class="h2">Conclusions and Future Work</h1>
+</div>
+
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4 mb-5n">Conclusions and Future Work</h1>
+<article>
+
+<ul>
+    <li class="fragment mt-0">
+        Wright-Fisher HMM is a powerful tool
+    </li>
+    <li class="fragment mt-3">
+        Hidden Diffusion is faster than existing HMM solutions (ApproxWF)
+    </li>
+    <li class="fragment mt-3 mb-5">
+        Hidden Diffusion captures linkage between loci
+    </li>
+</ul>
+
+<p class="fragment mt-5"> Future work: </p>
+<ul>
+    <li class="fragment mt-0">
+        More experiments
+    </li>
+    <li class="fragment mt-3">
+        Multiple populations
+    </li>
+</ul>
+</article>
+</section>
+
+
+
+<!--=========================================================================-->
+
+<section data-no-print data-auto-animate>
+<article class="mt-5 mb-3">
+
+<h1 class="h1 mt-5 mb-4">Thank you!</h1>
+<div class="r-stack mt-5n" style="flex-grow:1;width:100%">
+<div>    
+<img class="mt-5n" src="my_figures/final.gif" style="height:20rem;">
+</div>
+<div style="float:right;align-items:right;justify-content:right;width:100%;">
+<div class="r-hstack fragment" data-fragment-index="2" style="float:right;align-items:right;justify-content:right;">
+Slides:
+<div class="px-3 mr-5" style="width:12rem;" id="qrcode">
+<script type="text/javascript">
+var qrcode = new QRCode(document.getElementById("qrcode"), {
+    text: location.protocol+'//'+location.host+location.pathname,
+    colorDark : "#000000",
+    colorLight : "#ffffff",
+    correctLevel : QRCode.CorrectLevel.M
+});
+</script>
+</div>
+</div>
+</div>
+</div>
+
+<span class="small my-5 fragment" align="center" style="font-weight: bold;" data-fragment-index="2">
+ekaterina.e.noskova@gmail.com
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://enoskova.me">enoskova.me</a>
+</span>
+
+</article>
+</section>
+
+</body>
+</html>

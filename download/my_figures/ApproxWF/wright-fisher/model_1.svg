@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 97 197.65"
+   version="1.1"
+   id="svg178"
+   sodipodi:docname="model_1.svg"
+   inkscape:version="1.3.2 (1:1.3.2+202311252150+091e20ef0f)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     id="namedview178"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="2.0499291"
+     inkscape:cx="15.610296"
+     inkscape:cy="95.613063"
+     inkscape:window-width="1223"
+     inkscape:window-height="779"
+     inkscape:window-x="57"
+     inkscape:window-y="21"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Layer_1" />
+  <defs
+     id="defs1">
+    <style
+       id="style1">.cls-1{fill:#fff;}.cls-2,.cls-3,.cls-7{fill:none;}.cls-2,.cls-3,.cls-5,.cls-6,.cls-7{stroke:#231f20;stroke-linecap:round;}.cls-2,.cls-5,.cls-6,.cls-7{stroke-miterlimit:10;}.cls-3{stroke-linejoin:round;}.cls-4{fill:#231f20;}.cls-5{fill:#d4ebf9;}.cls-5,.cls-6{stroke-width:0.75px;}.cls-6{fill:red;}.cls-7{stroke-width:0.25px;}</style>
+  </defs>
+  <title
+     id="title1">wright_fisher</title>
+  <g
+     id="Layer_1"
+     data-name="Layer 1">
+    <path
+       class="cls-1"
+       d="M20.13,40.56,25,39.94Z"
+       transform="translate(0.29 0.11)"
+       id="path1" />
+    <line
+       class="cls-2"
+       x1="24.82"
+       y1="40.05"
+       x2="21.1"
+       y2="40.67"
+       id="line1" />
+    <path
+       class="cls-2"
+       d="M15.45,39.23a11,11,0,0,0,.33,3.7,2.64,2.64,0,0,0,2.87-1.51,3.3,3.3,0,0,0-.52-3.1,1.24,1.24,0,0,0-.78-.58,1.28,1.28,0,0,0-.69.16C15.66,38.4,15,39.4,15.45,39.23Z"
+       transform="translate(0.29 0.11)"
+       id="path8" />
+    <path
+       class="cls-2"
+       d="M22.58,40.24c0,54.3.27,129.26.27,156.79"
+       transform="translate(0.29 0.11)"
+       id="path22" />
+  </g>
+  <metadata
+     id="metadata178">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>wright_fisher</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>

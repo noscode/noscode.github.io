@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 300 103"
+   version="1.1"
+   id="svg346"
+   sodipodi:docname="hmm_frames_1.svg"
+   width="300"
+   height="103"
+   inkscape:version="1.3.2 (1:1.3.2+202311252150+091e20ef0f)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     id="namedview346"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.9145316"
+     inkscape:cx="92.97313"
+     inkscape:cy="38.12943"
+     inkscape:window-width="1223"
+     inkscape:window-height="779"
+     inkscape:window-x="57"
+     inkscape:window-y="21"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Layer_1"
+     showguides="true" />
+  <defs
+     id="defs1">
+    <style
+       id="style1">.cls-1,.cls-18,.cls-19{fill:#fff;}.cls-10,.cls-11,.cls-12,.cls-13,.cls-14,.cls-15,.cls-16,.cls-17,.cls-2,.cls-3,.cls-4,.cls-5,.cls-6,.cls-7,.cls-8,.cls-9{fill:none;stroke-linecap:round;}.cls-2,.cls-3{stroke:#231f20;}.cls-2{stroke-miterlimit:10;}.cls-10,.cls-11,.cls-12,.cls-13,.cls-14,.cls-15,.cls-16,.cls-17,.cls-3,.cls-4,.cls-5,.cls-6,.cls-7,.cls-8,.cls-9{stroke-linejoin:round;}.cls-10,.cls-11,.cls-12,.cls-4,.cls-5,.cls-6,.cls-7,.cls-9{stroke:#fff200;}.cls-4{stroke-width:4px;}.cls-5{stroke-width:5px;}.cls-6{stroke-width:2px;}.cls-15,.cls-7,.cls-8{stroke-width:1.5px;}.cls-13,.cls-8{stroke:#ff883d;}.cls-9{stroke-width:2.12px;}.cls-10{stroke-width:2.65px;}.cls-11{stroke-width:1.06px;}.cls-12,.cls-13,.cls-17{stroke-width:0.8px;}.cls-14,.cls-16{stroke:#c6cdce;}.cls-14{stroke-width:3px;}.cls-15,.cls-17{stroke:gray;}.cls-16{stroke-width:1.59px;}.cls-18{opacity:0.5;}.cls-19{opacity:0.75;}.cls-20{font-size:6px;font-family:TimesNewRomanPSMT, Times New Roman;}.cls-21{fill:#231f20;}</style>
+  </defs>
+  <title
+     id="title1">markov_chain</title>
+  <g
+     id="Layer_1"
+     data-name="Layer 1">
+    <rect
+       style="fill:none;fill-opacity:0.75;stroke:#000000;stroke-width:0.0999995;stroke-linecap:square;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+       id="rect1"
+       width="45.341942"
+       height="87.553925"
+       x="29.565426"
+       y="1.5078785"
+       rx="2.2461028"
+       ry="2.4249761" />
+  </g>
+  <metadata
+     id="metadata346">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>markov_chain</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>

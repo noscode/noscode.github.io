@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 300 103"
+   version="1.1"
+   id="svg346"
+   sodipodi:docname="hmm_emission_2_1.svg"
+   width="300"
+   height="103"
+   inkscape:version="1.3.2 (1:1.3.2+202311252150+091e20ef0f)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     id="namedview346"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="2.8989089"
+     inkscape:cx="98.657809"
+     inkscape:cy="17.937783"
+     inkscape:window-width="1223"
+     inkscape:window-height="779"
+     inkscape:window-x="57"
+     inkscape:window-y="21"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Layer_1" />
+  <defs
+     id="defs1">
+    <style
+       id="style1">.cls-1,.cls-18,.cls-19{fill:#fff;}.cls-10,.cls-11,.cls-12,.cls-13,.cls-14,.cls-15,.cls-16,.cls-17,.cls-2,.cls-3,.cls-4,.cls-5,.cls-6,.cls-7,.cls-8,.cls-9{fill:none;stroke-linecap:round;}.cls-2,.cls-3{stroke:#231f20;}.cls-2{stroke-miterlimit:10;}.cls-10,.cls-11,.cls-12,.cls-13,.cls-14,.cls-15,.cls-16,.cls-17,.cls-3,.cls-4,.cls-5,.cls-6,.cls-7,.cls-8,.cls-9{stroke-linejoin:round;}.cls-10,.cls-11,.cls-12,.cls-4,.cls-5,.cls-6,.cls-7,.cls-9{stroke:#fff200;}.cls-4{stroke-width:4px;}.cls-5{stroke-width:5px;}.cls-6{stroke-width:2px;}.cls-15,.cls-7,.cls-8{stroke-width:1.5px;}.cls-13,.cls-8{stroke:#ff883d;}.cls-9{stroke-width:2.12px;}.cls-10{stroke-width:2.65px;}.cls-11{stroke-width:1.06px;}.cls-12,.cls-13,.cls-17{stroke-width:0.8px;}.cls-14,.cls-16{stroke:#c6cdce;}.cls-14{stroke-width:3px;}.cls-15,.cls-17{stroke:gray;}.cls-16{stroke-width:1.59px;}.cls-18{opacity:0.5;}.cls-19{opacity:0.75;}.cls-20{font-size:6px;font-family:TimesNewRomanPSMT, Times New Roman;}.cls-21{fill:#231f20;}</style>
+  </defs>
+  <title
+     id="title1">markov_chain</title>
+  <g
+     id="Layer_1"
+     data-name="Layer 1">
+    <g
+       id="g2"
+       transform="translate(-4)">
+      <ellipse
+         class="cls-24"
+         cx="119.68349"
+         cy="9.6313257"
+         rx="5.4828973"
+         ry="5.3609262"
+         id="ellipse405"
+         style="fill:#e85300;stroke:#333333;stroke-width:0.290408px;stroke-linecap:round;stroke-linejoin:round" />
+      <path
+         class="cls-23"
+         d="m 117.86553,7.7146359 a 0.74925188,0.74925188 0 0 0 0.34849,0.9525371 c 0.41238,0.22071 0.66213,-0.203285 0.7086,-0.545967 a 1.5914342,1.5914342 0 0 0 -0.27879,-1.1616301 c -0.30203,-0.313641 -0.58082,0.05808 -0.66794,0.360105 a 1.0803167,1.0803167 0 0 0 0.26137,1.0454681 c 0.33687,0.2846 0.61566,-0.08131 0.62728,-0.4123791 0.0116,-0.331065 -0.11617,-0.865415 -0.58082,-0.714403 -0.46465,0.151012 -0.3543,0.743444 -0.22071,1.0454681 0.13359,0.302024 0.65051,0.04646 0.4995,-0.2962161 a 0.48207679,0.48207679 0 0 1 0,-0.261367 l -0.20909,0.08131 c -0.12197,-0.139396 -0.15682,-0.121971 -0.10455,0.04066 0.0523,0.1626291 0,0.133588 0.0639,0.07551 h 0.22652 c 0.0639,0 -0.0407,-0.168436 -0.0465,-0.243942 a 0.37753002,0.37753002 0 0 1 0.0755,-0.313641 l -0.2846,0.07551 c -0.16263,-0.06389 -0.029,0.09293 0,0.168437 a 1.091933,1.091933 0 0 1 0.0523,0.331065 1.1209737,1.1209737 0 0 1 0,0.1393951 c -0.0523,0.09293 0,0.133588 0.0639,0.121972 0.18586,0.127779 -0.0407,-0.162629 -0.0465,-0.145204 0.14521,-0.3368731 -0.3543,-0.6330891 -0.50531,-0.2904081 z"
+         id="path406"
+         style="fill:#333333;stroke-width:0.580815" />
+      <path
+         class="cls-23"
+         d="m 120.75799,7.7378679 a 0.69697849,0.69697849 0 0 0 0.31365,0.7260201 0.53435018,0.53435018 0 0 0 0.69697,-0.121972 c 0.33107,-0.4239951 0.0813,-1.3358751 -0.27298,-1.6843641 a 0.36591371,0.36591371 0 0 0 -0.58082,0.0697 1.5856261,1.5856261 0 0 0 -0.0929,0.969962 c 0.0523,0.255559 0.16263,0.5808161 0.47046,0.5808161 0.30784,0 0.41238,-0.3949551 0.45304,-0.6621301 0.0581,-0.365914 -0.4995,-0.522734 -0.58081,-0.15682 0,0.05227 -0.0349,0.307832 -0.0407,0.31364 l 0.20909,-0.08712 c 0.10455,0 0.0639,0.151012 0.0639,0 0,-0.151012 -0.0407,-0.180053 -0.0465,-0.272983 a 0.81314157,0.81314157 0 0 1 0.0813,-0.453036 l -0.24975,0.145204 h 0.0581 l -0.20329,-0.08132 a 0.86541496,0.86541496 0 0 1 0.26137,0.580816 c 0,0.09874 0,0.191669 0,0.290407 0,0.2265181 0,-0.07551 0,-0.139395 0.0465,-0.365914 -0.53435,-0.365914 -0.58082,0 z"
+         id="path407"
+         style="fill:#333333;stroke-width:0.580815" />
+      <path
+         class="cls-23"
+         d="m 117.56351,12.86066 a 2.8518037,2.8518037 0 0 1 2.61367,-1.905074 c 1.16163,0 1.74245,1.260369 2.37553,2.061894 0.16844,0.22071 0.47627,-0.09293 0.30784,-0.307832 -0.85961,-1.115165 -1.44623,-2.35811 -3.02605,-2.166441 a 3.3222641,3.3222641 0 0 0 -2.69499,2.20129 c -0.0987,0.267175 0.32526,0.37753 0.424,0.116163 z"
+         id="path408"
+         style="fill:#333333;stroke-width:0.580815" />
+    </g>
+    <g
+       id="g3"
+       transform="translate(-10)">
+      <path
+         class="cls-25"
+         d="m 87.35568,9.842476 c 6.99632,0 13.99264,0 20.98896,0 a 0.19763616,0.25 0 0 0 0,-0.5 c -6.99632,0 -13.99264,0 -20.98896,0 -0.252974,0 -0.252974,0.51 0,0.5 z"
+         id="path411"
+         style="fill:#010b7f;stroke-width:0.889126" />
+      <path
+         class="cls-25"
+         d="m 105.31122,11.253706 a 6.24,6.24 0 0 1 2.92409,-1.3603613 c 0.32195,-0.057061 0.1296,-0.5448011 -0.14372,-0.4761744 a 6.53,6.53 0 0 0 -3.1316,1.4549157 c -0.245,0.208984 0.11548,0.55169 0.36048,0.342706 z"
+         id="path415"
+         style="fill:#010b7f" />
+      <path
+         class="cls-25"
+         d="m 108.38349,9.3192967 a 7,7 0 0 1 -3.12,-1.5 c -0.24,-0.21 -0.6,0.14 -0.35,0.35 a 7.37,7.37 0 0 0 3.34,1.63 c 0.31,0.07 0.45,-0.42 0.13,-0.48 z"
+         id="path416"
+         style="fill:#010b7f" />
+    </g>
+  </g>
+  <metadata
+     id="metadata346">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>markov_chain</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>
