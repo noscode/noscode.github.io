@@ -6,7 +6,7 @@
    sodipodi:docname="hmm_emission_1.svg"
    width="300"
    height="103"
-   inkscape:version="1.3.2 (1:1.3.2+202311252150+091e20ef0f)"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -23,14 +23,14 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="1.8282431"
-     inkscape:cx="134.00844"
-     inkscape:cy="-47.586669"
-     inkscape:window-width="1223"
-     inkscape:window-height="779"
-     inkscape:window-x="57"
-     inkscape:window-y="21"
-     inkscape:window-maximized="1"
+     inkscape:zoom="4.7028941"
+     inkscape:cx="208.80759"
+     inkscape:cy="52.308216"
+     inkscape:window-width="1312"
+     inkscape:window-height="449"
+     inkscape:window-x="62"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
      inkscape:current-layer="Layer_1" />
   <defs
      id="defs1">
@@ -92,64 +92,64 @@
        class="cls-25"
        d="m 193.65,47.564504 a 77.18,77.18 0 0 0 0.47,12 33.68,33.68 0 0 1 0.72,4.81 c 0,1.2 0.15,-0.25 -0.6,-0.65 -0.29,-0.57 -0.39,-0.49 -0.3,0.26 a 7.42,7.42 0 0 1 0.9,1.91 0.25,0.25 0 0 0 0.48,0 9.37,9.37 0 0 1 2,-3.22 c 0.21,-0.24 -0.14,-0.59 -0.36,-0.35 a 17.26,17.26 0 0 0 -1.86,2.7 c -0.19,0 -1.38,-2.15 -1.69,-2.5 -0.31,-0.35 -0.56,0.07 -0.4,0.3 l 2.13,3 a 0.25,0.25 0 0 0 0.46,-0.19 78.69,78.69 0 0 1 -1.45,-18.06 c 0,-0.32 -0.49,-0.32 -0.5,0 z"
        id="path409"
-       style="fill:#010b7f" />
+       style="fill:#0000ff" />
     <path
        class="cls-25"
        d="m 196.91,47.394504 q 24.4,8.88 48.3,19.05 c 0.3,0.12 0.55,-0.31 0.26,-0.43 q -24,-10.2 -48.42,-19.1 c -0.31,-0.11 -0.44,0.37 -0.14,0.48 z"
        id="path410"
-       style="fill:#010b7f" />
+       style="fill:#0000ff" />
     <path
        class="cls-25"
        d="m 250.77,39.254504 c 0,8.85 0,17.7 0,26.55 a 0.25,0.25 0 0 0 0.5,0 c 0,-8.85 0,-17.7 0,-26.55 0,-0.32 -0.51,-0.32 -0.5,0 z"
        id="path411"
-       style="fill:#010b7f" />
+       style="fill:#0000ff" />
     <path
        class="cls-25"
        d="m 248.23,39.024504 -48.26,27.16 a 0.25303162,0.25303162 0 0 0 0.25,0.44 l 48.26,-27.16 c 0.28,-0.15 0,-0.59 -0.25,-0.43 z"
        id="path412"
-       style="fill:#010b7f" />
+       style="fill:#0000ff" />
     <path
        class="cls-25"
        d="m 201.02,63.774504 a 11.34,11.34 0 0 1 -1.4,2.86 c -0.14,0.2 0.14,0.48 0.34,0.34 1,-0.69 2.29,-0.26 3.36,-0.75 0.29,-0.13 0,-0.56 -0.25,-0.43 -1.08,0.49 -2.35,0 -3.36,0.75 l 0.34,0.34 a 12.27,12.27 0 0 0 1.45,-3 c 0.1,-0.3 -0.38,-0.44 -0.48,-0.13 z"
        id="path413"
-       style="fill:#010b7f" />
+       style="fill:#0000ff" />
     <path
        class="cls-25"
        d="m 242.09,66.464504 a 4.52,4.52 0 0 1 3.18,-0.08 c 0.23,0.08 0.44,-0.26 0.25,-0.42 a 6.92,6.92 0 0 1 -1.91,-2.48 c -0.14,-0.3 -0.57,0 -0.44,0.25 a 7.44,7.44 0 0 0 2,2.59 l 0.25,-0.42 a 4.94,4.94 0 0 0 -3.45,0.08 c -0.3,0.11 -0.17,0.6 0.13,0.48 z"
        id="path414"
-       style="fill:#010b7f" />
+       style="fill:#0000ff" />
     <path
        class="cls-25"
        d="m 249.14,62.894504 a 6.24,6.24 0 0 1 2,2.53 c 0.13,0.3 0.56,0 0.43,-0.25 a 6.53,6.53 0 0 0 -2.14,-2.71 c -0.26,-0.19 -0.51,0.24 -0.25,0.43 z"
        id="path415"
-       style="fill:#010b7f" />
+       style="fill:#0000ff" />
     <path
        class="cls-25"
        d="m 251.55,65.724504 a 7,7 0 0 1 1.5,-3.12 c 0.21,-0.24 -0.14,-0.6 -0.35,-0.35 a 7.37,7.37 0 0 0 -1.63,3.34 c -0.07,0.31 0.42,0.45 0.48,0.13 z"
        id="path416"
-       style="fill:#010b7f" />
+       style="fill:#0000ff" />
     <text
        class="cls-26"
        id="text416"
-       style="font-size:6px;font-family:TimesNewRomanPSMT, 'Times New Roman';fill:#010b7f"
+       style="font-size:6px;font-family:TimesNewRomanPSMT, 'Times New Roman';fill:#0000ff"
        x="184.92"
        y="52.084503">0.9</text>
     <text
        class="cls-26"
        id="text417"
-       style="font-size:6px;font-family:TimesNewRomanPSMT, 'Times New Roman';fill:#010b7f"
+       style="font-size:6px;font-family:TimesNewRomanPSMT, 'Times New Roman';fill:#0000ff"
        x="203.48"
        y="47.744507">0.1</text>
     <text
        class="cls-26"
        id="text418"
-       style="font-size:6px;font-family:TimesNewRomanPSMT, 'Times New Roman';fill:#010b7f"
+       style="font-size:6px;font-family:TimesNewRomanPSMT, 'Times New Roman';fill:#0000ff"
        x="228.92001"
        y="45.084503">0.2</text>
     <text
        class="cls-26"
        id="text419"
-       style="font-size:6px;font-family:TimesNewRomanPSMT, 'Times New Roman';fill:#010b7f"
+       style="font-size:6px;font-family:TimesNewRomanPSMT, 'Times New Roman';fill:#0000ff"
        x="251.92001"
        y="46.084503">0.8</text>
   </g>
