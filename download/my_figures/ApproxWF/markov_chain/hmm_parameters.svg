@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 300 103"
+   version="1.1"
+   id="svg346"
+   sodipodi:docname="hmm_parameters.svg"
+   width="300"
+   height="103"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     id="namedview346"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="2.8749262"
+     inkscape:cx="160.69978"
+     inkscape:cy="38.957521"
+     inkscape:window-width="1312"
+     inkscape:window-height="449"
+     inkscape:window-x="63"
+     inkscape:window-y="125"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="g1" />
+  <defs
+     id="defs1">
+    <style
+       id="style1">.cls-1,.cls-18,.cls-19{fill:#fff;}.cls-10,.cls-11,.cls-12,.cls-13,.cls-14,.cls-15,.cls-16,.cls-17,.cls-2,.cls-3,.cls-4,.cls-5,.cls-6,.cls-7,.cls-8,.cls-9{fill:none;stroke-linecap:round;}.cls-2,.cls-3{stroke:#231f20;}.cls-2{stroke-miterlimit:10;}.cls-10,.cls-11,.cls-12,.cls-13,.cls-14,.cls-15,.cls-16,.cls-17,.cls-3,.cls-4,.cls-5,.cls-6,.cls-7,.cls-8,.cls-9{stroke-linejoin:round;}.cls-10,.cls-11,.cls-12,.cls-4,.cls-5,.cls-6,.cls-7,.cls-9{stroke:#fff200;}.cls-4{stroke-width:4px;}.cls-5{stroke-width:5px;}.cls-6{stroke-width:2px;}.cls-15,.cls-7,.cls-8{stroke-width:1.5px;}.cls-13,.cls-8{stroke:#ff883d;}.cls-9{stroke-width:2.12px;}.cls-10{stroke-width:2.65px;}.cls-11{stroke-width:1.06px;}.cls-12,.cls-13,.cls-17{stroke-width:0.8px;}.cls-14,.cls-16{stroke:#c6cdce;}.cls-14{stroke-width:3px;}.cls-15,.cls-17{stroke:gray;}.cls-16{stroke-width:1.59px;}.cls-18{opacity:0.5;}.cls-19{opacity:0.75;}.cls-20{font-size:6px;font-family:TimesNewRomanPSMT, Times New Roman;}.cls-21{fill:#231f20;}</style>
+  </defs>
+  <title
+     id="title1">markov_chain</title>
+  <g
+     id="Layer_1"
+     data-name="Layer 1">
+    <text
+       class="cls-26"
+       id="text419-9"
+       style="font-size:6px;font-family:TimesNewRomanPSMT, 'Times New Roman';fill:#0000ff"
+       x="267.00665"
+       y="50.031578" />
+    <g
+       id="g1"
+       transform="translate(4.0834847,6.8207241)">
+      <g
+         id="g1-3"
+         transform="translate(1.86319,0.970184)">
+        <text
+           class="cls-26"
+           id="text419-8"
+           style="font-size:6px;font-family:TimesNewRomanPSMT, 'Times New Roman';fill:#0000ff"
+           x="251.92001"
+           y="46.084503" />
+      </g>
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+         id="rect2"
+         width="5.5111222"
+         height="3.8674541"
+         x="225.25655"
+         y="33.207424" />
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+         id="rect2-2"
+         width="5.5111222"
+         height="3.8674541"
+         x="249.18343"
+         y="35.477734" />
+      <text
+         class="cls-26"
+         id="text419-5"
+         style="font-size:6px;line-height:0;font-family:TimesNewRomanPSMT, 'Times New Roman';fill:#0000ff"
+         x="225.62273"
+         y="37.476719"
+         inkscape:transform-center-x="2.7306045"><tspan
+           sodipodi:role="line"
+           id="tspan3"
+           x="225.62273"
+           y="37.476719">θ</tspan><tspan
+           style="font-size:4px;line-height:0"
+           id="tspan2"
+           dy="1">2</tspan></text>
+      <text
+         class="cls-26"
+         id="text419-5-5"
+         style="font-size:6px;font-family:TimesNewRomanPSMT, 'Times New Roman';fill:#0000ff"
+         x="247.69344"
+         y="39.30093">1-θ<tspan
+   style="font-size:4px"
+   id="tspan4"
+   dy="1">2</tspan></text>
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:3;stroke-linecap:round;stroke-opacity:1"
+         id="rect2-19"
+         width="5.5111222"
+         height="3.8674541"
+         x="216.16365"
+         y="21.732414" />
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:2.47807;stroke-linecap:round;stroke-opacity:1"
+         id="rect2-2-8"
+         width="5.4807134"
+         height="2.6534672"
+         x="266.81833"
+         y="18.819061" />
+      <text
+         class="cls-26"
+         id="text419-5-6"
+         style="font-size:6px;line-height:0;font-family:TimesNewRomanPSMT, 'Times New Roman';fill:#000000;fill-opacity:1"
+         x="267.97601"
+         y="22.301605"
+         inkscape:transform-center-x="2.7306045"><tspan
+           sodipodi:role="line"
+           id="tspan3-9"
+           x="267.97601"
+           y="22.301605">θ</tspan><tspan
+           style="font-size:4px;line-height:0;fill:#000000;fill-opacity:1"
+           id="tspan2-01"
+           dy="1">1</tspan></text>
+      <text
+         class="cls-26"
+         id="text419-5-5-6"
+         style="font-size:6px;font-family:TimesNewRomanPSMT, 'Times New Roman';fill:#000000;fill-opacity:1"
+         x="214.69226"
+         y="26.879055">1-θ<tspan
+   style="font-size:4px;fill:#000000;fill-opacity:1"
+   id="tspan4-4"
+   dy="1">1</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:10.6667px;fill:none;stroke:#d50000;stroke-width:3;stroke-linecap:round;stroke-opacity:0.847059"
+       x="271.10965"
+       y="54.009296"
+       id="text1"><tspan
+         sodipodi:role="line"
+         id="tspan1"></tspan></text>
+  </g>
+  <metadata
+     id="metadata346">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>markov_chain</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>

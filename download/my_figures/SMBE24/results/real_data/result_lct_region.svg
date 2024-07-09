@@ -4,8 +4,8 @@
    height="180pt"
    viewBox="0 0 750 180"
    version="1.1"
-   id="svg242"
-   sodipodi:docname="result_mhc_region.svg"
+   id="svg232"
+   sodipodi:docname="result_lct_region.svg"
    inkscape:version="1.3.2 (091e20e, 2023-11-25)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -15,7 +15,7 @@
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:dc="http://purl.org/dc/elements/1.1/">
   <sodipodi:namedview
-     id="namedview242"
+     id="namedview232"
      pagecolor="#ffffff"
      bordercolor="#000000"
      borderopacity="0.25"
@@ -24,9 +24,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="pt"
-     inkscape:zoom="0.62106398"
-     inkscape:cx="355.84096"
-     inkscape:cy="167.45457"
+     inkscape:zoom="4.6391503"
+     inkscape:cx="456.54913"
+     inkscape:cy="196.15661"
      inkscape:window-width="1312"
      inkscape:window-height="449"
      inkscape:window-x="62"
@@ -39,7 +39,7 @@
       <cc:Work>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:date>2024-07-05T20:13:48.926080</dc:date>
+        <dc:date>2024-07-05T20:51:09.096844</dc:date>
         <dc:format>image/svg+xml</dc:format>
         <dc:creator>
           <cc:Agent>
@@ -55,95 +55,134 @@
        type="text/css"
        id="style1">*{stroke-linejoin: round; stroke-linecap: butt}</style>
     <path
-       id="path4371"
+       id="path242"
        d="M 1831,0 50,4666 H 709 L 2188,738 3669,4666 h 656 L 2547,0 Z"
        transform="scale(0.015625)" />
     <path
-       id="path4372"
+       id="path243"
        d="M 3809,666 V 1919 H 2778 v 519 H 4434 V 434 Q 4069,175 3628,42 3188,-91 2688,-91 1594,-91 976,548 359,1188 359,2328 q 0,1144 617,1783 618,639 1712,639 456,0 867,-113 411,-112 758,-331 v -672 q -350,297 -744,447 -394,150 -828,150 -857,0 -1287,-478 -429,-478 -429,-1425 0,-944 429,-1422 430,-478 1287,-478 334,0 596,58 263,58 472,180 z"
        transform="scale(0.015625)" />
     <path
-       id="path4373"
+       id="path244"
        d="m 213,4666 h 637 l 981,-3944 978,3944 h 710 l 981,-3944 978,3944 h 641 L 4947,0 H 4153 L 3169,4050 2175,0 h -794 z"
        transform="scale(0.015625)" />
     <path
-       id="path4374"
+       id="path245"
        d="m 3425,4513 v -616 q -359,172 -678,256 -319,85 -616,85 -515,0 -795,-200 -280,-200 -280,-569 0,-310 186,-468 186,-157 705,-254 l 381,-78 q 706,-135 1042,-474 336,-339 336,-907 0,-679 -455,-1029 -454,-350 -1332,-350 -331,0 -705,75 -373,75 -773,222 v 650 q 384,-215 753,-325 369,-109 725,-109 540,0 834,212 294,213 294,607 0,343 -211,537 -211,194 -692,291 l -385,75 q -706,140 -1022,440 -315,300 -315,835 0,619 436,975 436,356 1201,356 329,0 669,-60 341,-59 697,-177 z"
        transform="scale(0.015625)" />
     <path
-       id="path4375"
+       id="path246"
        d="M 628,4666 H 3309 V 4134 H 1259 V 2759 H 3109 V 2228 H 1259 V 0 H 628 Z"
        transform="scale(0.015625)" />
     <path
-       id="path4376"
+       id="path247"
        d="m 2906,2969 v 1894 h 575 V 0 H 2906 V 525 Q 2725,213 2448,61 2172,-91 1784,-91 1150,-91 751,415 353,922 353,1747 q 0,825 398,1331 399,506 1033,506 388,0 664,-152 277,-151 458,-463 z M 947,1747 q 0,-634 261,-995 261,-361 717,-361 456,0 718,361 263,361 263,995 0,634 -263,995 -262,361 -718,361 -456,0 -717,-361 -261,-361 -261,-995 z"
        transform="scale(0.015625)" />
     <path
-       id="path4377"
+       id="path248"
        d="m 1556,2509 q -284,-253 -417,-505 -133,-251 -133,-526 0,-456 331,-759 332,-303 832,-303 297,0 556,98 259,99 488,299 z m 441,350 1587,-1625 q 185,279 288,596 103,317 122,673 h 581 Q 4538,2091 4375,1687 4213,1284 3922,891 L 4794,0 H 4006 L 3559,459 Q 3234,181 2878,45 2522,-91 2113,-91 1359,-91 881,339 403,769 403,1441 q 0,400 209,751 210,352 629,661 -150,197 -229,392 -78,196 -78,383 0,506 347,814 347,308 922,308 260,0 517,-56 258,-56 524,-169 v -569 q -272,147 -519,223 -247,77 -459,77 -328,0 -533,-174 -205,-173 -205,-448 0,-159 92,-320 93,-161 377,-455 z"
        transform="scale(0.015625)" />
     <path
-       id="path4378"
+       id="path249"
        d="M -19,4666 H 3928 V 4134 H 2272 V 0 H 1638 V 4134 H -19 Z"
        transform="scale(0.015625)" />
     <path
-       id="path4379"
+       id="path250"
        d="m 628,4666 h 631 V 0 H 628 Z"
        transform="scale(0.015625)" />
     <path
-       id="path4380"
+       id="path251"
        d="m 2906,1791 q 0,625 -258,968 -257,344 -723,344 -462,0 -720,-344 -258,-343 -258,-968 0,-622 258,-966 258,-344 720,-344 466,0 723,344 258,344 258,966 z M 3481,434 q 0,-893 -397,-1329 -396,-436 -1215,-436 -303,0 -572,45 -269,45 -522,139 v 559 q 253,-137 500,-202 247,-66 503,-66 566,0 847,295 281,295 281,892 V 616 Q 2728,306 2450,153 2172,0 1784,0 1141,0 747,490 353,981 353,1791 q 0,812 394,1302 394,491 1037,491 388,0 666,-153 278,-153 456,-462 v 531 h 575 z"
        transform="scale(0.015625)" />
     <path
-       id="path4381"
+       id="path252"
        d="M 313,2009 H 1997 V 1497 H 313 Z"
        transform="scale(0.015625)" />
     <path
-       id="path4382"
+       id="path253"
        d="M 1259,4147 V 2394 h 794 q 441,0 681,228 241,228 241,650 0,419 -241,647 -240,228 -681,228 z m -631,519 h 1425 q 785,0 1186,-355 402,-355 402,-1039 0,-691 -402,-1044 -401,-353 -1186,-353 H 1259 V 0 H 628 Z"
        transform="scale(0.015625)" />
     <path
-       id="path4383"
+       id="path254"
        d="m 703,97 v 575 q 238,-113 481,-172 244,-59 479,-59 625,0 954,420 330,420 377,1277 -181,-269 -460,-413 -278,-144 -615,-144 -700,0 -1108,423 -408,424 -408,1159 0,718 425,1152 425,435 1131,435 810,0 1236,-621 427,-620 427,-1801 Q 3622,1225 3098,567 2575,-91 1691,-91 1453,-91 1209,-44 966,3 703,97 Z m 1256,1978 q 425,0 673,290 249,291 249,798 0,503 -249,795 -248,292 -673,292 -425,0 -673,-292 -248,-292 -248,-795 0,-507 248,-798 248,-290 673,-290 z"
        transform="scale(0.015625)" />
     <clipPath
-       id="pfb8b03f2d0">
+       id="p822394c0ff">
       <rect
          x="62.48"
          y="26.16"
-         width="563.60498"
+         width="560.4325"
          height="111.88"
-         id="rect249" />
+         id="rect240" />
+    </clipPath>
+    <clipPath
+       id="clipPath1">
+      <rect
+         x="62.48"
+         y="26.16"
+         width="560.4325"
+         height="111.88"
+         id="rect1" />
+    </clipPath>
+    <clipPath
+       id="p822394c0ff-4">
+      <rect
+         x="62.48"
+         y="26.16"
+         width="560.4325"
+         height="111.88"
+         id="rect240-6" />
+    </clipPath>
+    <clipPath
+       id="clipPath1-7">
+      <rect
+         x="62.48"
+         y="26.16"
+         width="560.4325"
+         height="111.88"
+         id="rect1-5" />
     </clipPath>
   </defs>
   <g
      id="figure_1">
     <g
+       id="patch_1" />
+    <g
        id="axes_1">
       <g
-         id="line2d_19" />
+         id="patch_2" />
+      <g
+         id="line2d_24">
+        <path
+           clip-path="url(#p0268068d8f)"
+           style="fill:none;stroke:#0000ff;stroke-width:2;stroke-linecap:square"
+           id="path212" />
+      </g>
+      <g
+         id="line2d_25">
+        <path
+           clip-path="url(#p0268068d8f)"
+           style="fill:none;stroke:#0000ff;stroke-width:2;stroke-linecap:square"
+           id="path213" />
+      </g>
+      <path
+         d="m 306.30176,133.42132 h 3.94977"
+         clip-path="url(#p822394c0ff-4)"
+         style="fill:none;stroke:#000000;stroke-width:4;stroke-linecap:square;stroke-linejoin:round"
+         id="path226"
+         transform="translate(0,4.727248)" />
     </g>
   </g>
   <defs
-     id="defs242">
+     id="defs232">
     <clipPath
-       id="p915040bf89">
+       id="p0268068d8f">
       <rect
          x="54.110001"
          y="26.16"
-         width="571.97498"
+         width="568.80249"
          height="111.88"
-         id="rect242" />
+         id="rect232" />
     </clipPath>
   </defs>
-  <g
-     id="line2d_35"
-     style="stroke-linecap:butt;stroke-linejoin:round"
-     transform="translate(0,5.073713)">
-    <path
-       d="m 141.20732,132.95454 h 400.2044"
-       clip-path="url(#pfb8b03f2d0)"
-       style="fill:none;stroke:#000000;stroke-width:4;stroke-linecap:square;stroke-linejoin:round"
-       id="path236" />
-  </g>
 </svg>
