@@ -24,7 +24,7 @@ Reveal.initialize({
 	slideNumber: true,
 	transition: "fade",
 	keyboard: { 27: null },
-	pdfSeparateFragments: false
+	pdfSeparateFragments: true
 })
 Reveal.on('pdf-ready', () => 
 	document.querySelectorAll("section[data-no-print]").forEach(e => e.parentNode.remove())
@@ -172,7 +172,7 @@ section footer { position:absolute; top: 100%; width: calc(100% - 6em); padding-
 <p class="fragment mt-3 mb-0"><strong>A population</strong> is a group of individuals of the same species that live in the same geographic area.</p>
 
 <div class="my-0 mt-10n mx-0 ml-5n px-0 py-0 fragment">
-    <img src="my_figures/GADMA_presentation/populations_and_species.svg" style="height:25rem;">
+    <img src="my_figures/GADMA_presentation/populations_and_species.svg" style="height:20rem;">
 </div>
 
 </article>
@@ -1240,7 +1240,7 @@ Enables demographic inference for <strong>4</strong> and <strong>5</strong> popu
 
 <!--=========================================================================-->
 
-<section data-no-print data-auto-animate>
+<section data-auto-animate>
 <article class="mt-5 mb-3">
 
 <h1 class="h1 mt-5 mb-4">Thank you!</h1>
