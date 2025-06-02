@@ -1,0 +1,1097 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reset.min.css"
+          integrity="sha512-Mjxkx+r7O/OLQeKeIBCQ2yspG1P5muhAtv/J+p2/aPnSenciZWm5Wlnt+NOUNA4SHbnBIE/R2ic0ZBiCXdQNUg=="
+          crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.min.css"
+          integrity="sha512-zu0eodDPCBAZf1vnIgwZ6qchMBt1xqgGkS9vBjVmunoH8pU7cc9OQKBiSQCclpvqySupy9Y1pLZc87VB40G4Sw=="
+          crossorigin="anonymous"/>
+    <link rel="stylesheet" href="simple.css"/>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.min.js"
+            integrity="sha512-Xu/cezKABTI81MGnaBm64vdiS7XkttHeYGOgr2Mdga0bTplSBGongLq2lhK2HwL79wefKM0u4uTCLD0ha1sRzQ=="
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css"
+          integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw=="
+          crossorigin="anonymous"/>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js"
+            integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg=="
+            crossorigin="anonymous"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js"
+            integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg=="
+            crossorigin="anonymous"></script>
+    <script src="include/qrcode.min.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            Reveal.initialize({
+                hash: true,
+                center: false,
+                width: 1280,
+                height: 800,
+                maxScale: 5.0,
+                slideNumber: true,
+                transition: "fade",
+                keyboard: {27: null},
+                pdfSeparateFragments: true
+            })
+            Reveal.on('pdf-ready', () =>
+                document.querySelectorAll("section[data-no-print]").forEach(e => e.parentNode.remove())
+            )
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                ],
+                trust: true,
+                strict: false,
+                macros: {
+                    "\\P": "\\mathbb{P}",
+                    "\\E": "\\mathbb{E}",
+                    "\\Cov": "\\operatorname{Cov}",
+                    "\\N": "\\mathbb{N}",
+                    "\\Z": "\\mathbb{Z}",
+                    "\\Q": "\\mathbb{Q}",
+                    "\\R": "\\mathbb{R}",
+                    "\\C": "\\mathbb{C}",
+                    "\\eps": "\\varepsilon",
+                    "\\given": "\\mid",
+                    "\\d": "{\\operatorname{d}}",
+                    "\\v": "\\boldsymbol{#1}",
+                    "\\m": "\\mathbf{#1}",
+                    "\\f": "\\operatorname{#1}",
+                    "\\s": "\\mathscr{#1}",
+                    "\\c": "\\mathcal{#1}",
+                    "\\bb": "\\mathbb{#1}",
+                    "\\abs": "\\left|{#1}\\right|",
+                    "\\del": "\\left({#1}\\right)",
+                    "\\sbr": "\\left[{#1}\\right]",
+                    "\\cbr": "\\left\\{ {#1} \\right\\}",
+                    "\\x": "\\times",
+                    "\\t": "\\mathbin{\\text{#1}}",
+                    "\\norm": "\\left\\Vert{#1}\\right\\Vert",
+                    "\\innerprod": "\\left\\langle{#1},{#2}\\right\\rangle",
+                    "\\ubr": "\\underbrace",
+                    "\\pd": "\\partial",
+                    "\\o": "\\circ",
+                    "\\.": "\\cdot",
+                    "\\h": "\\widehat{#1}",
+                    "\\~": "\\sim",
+                    "\\ubr": "\\underset{\\mathclap{#2}}{\\undergroup{#1}}"
+                }
+            })
+            document.querySelectorAll("*[data-class]").forEach(e => e.dataset.class.split(" ").forEach(c => e.classList.add(c)))
+        })
+    </script>
+
+    <style>
+        .w-25 {
+            width: 25% !important
+        }
+
+        .w-50 {
+            width: 50% !important
+        }
+
+        .w-75 {
+            width: 75% !important
+        }
+
+        .w-100 {
+            width: 100% !important
+        }
+
+        .w-auto {
+            width: auto !important
+        }
+
+        .h-25 {
+            height: 25% !important
+        }
+
+        .h-50 {
+            height: 50% !important
+        }
+
+        .h-75 {
+            height: 75% !important
+        }
+
+        .h-100 {
+            height: 100% !important
+        }
+
+        .h-auto {
+            height: auto !important
+        }
+
+        .mw-100 {
+            max-width: 100% !important
+        }
+
+        .mh-100 {
+            max-height: 100% !important
+        }
+
+        .m-0 {
+            margin: 0 !important
+        }
+
+        .mt-0, .my-0 {
+            margin-top: 0 !important
+        }
+
+        .mr-0, .mx-0 {
+            margin-right: 0 !important
+        }
+
+        .mb-0, .my-0 {
+            margin-bottom: 0 !important
+        }
+
+        .ml-0, .mx-0 {
+            margin-left: 0 !important
+        }
+
+        .m-1 {
+            margin: .25rem !important
+        }
+
+        .mt-1, .my-1 {
+            margin-top: .25rem !important
+        }
+
+        .mr-1, .mx-1 {
+            margin-right: .25rem !important
+        }
+
+        .mb-1, .my-1 {
+            margin-bottom: .25rem !important
+        }
+
+        .ml-1, .mx-1 {
+            margin-left: .25rem !important
+        }
+
+        .m-2 {
+            margin: .5rem !important
+        }
+
+        .mt-2, .my-2 {
+            margin-top: .5rem !important
+        }
+
+        .mr-2, .mx-2 {
+            margin-right: .5rem !important
+        }
+
+        .mb-2, .my-2 {
+            margin-bottom: .5rem !important
+        }
+
+        .ml-2, .mx-2 {
+            margin-left: .5rem !important
+        }
+
+        .m-3 {
+            margin: 1rem !important
+        }
+
+        .mt-3, .my-3 {
+            margin-top: 1rem !important
+        }
+
+        .mr-3, .mx-3 {
+            margin-right: 1rem !important
+        }
+
+        .mb-3, .my-3 {
+            margin-bottom: 1rem !important
+        }
+
+        .ml-3, .mx-3 {
+            margin-left: 1rem !important
+        }
+
+        .m-4 {
+            margin: 1.5rem !important
+        }
+
+        .mt-4, .my-4 {
+            margin-top: 1.5rem !important
+        }
+
+        .mr-4, .mx-4 {
+            margin-right: 1.5rem !important
+        }
+
+        .mb-4, .my-4 {
+            margin-bottom: 1.5rem !important
+        }
+
+        .ml-4, .mx-4 {
+            margin-left: 1.5rem !important
+        }
+
+        .m-5 {
+            margin: 3rem !important
+        }
+
+        .mt-5, .my-5 {
+            margin-top: 3rem !important
+        }
+
+        .mr-5, .mx-5 {
+            margin-right: 3rem !important
+        }
+
+        .mb-5, .my-5 {
+            margin-bottom: 3rem !important
+        }
+
+        .ml-5, .mx-5 {
+            margin-left: 3rem !important
+        }
+
+        .p-0 {
+            padding: 0 !important
+        }
+
+        .pt-0, .py-0 {
+            padding-top: 0 !important
+        }
+
+        .pr-0, .px-0 {
+            padding-right: 0 !important
+        }
+
+        .pb-0, .py-0 {
+            padding-bottom: 0 !important
+        }
+
+        .pl-0, .px-0 {
+            padding-left: 0 !important
+        }
+
+        .p-1 {
+            padding: .25rem !important
+        }
+
+        .pt-1, .py-1 {
+            padding-top: .25rem !important
+        }
+
+        .pr-1, .px-1 {
+            padding-right: .25rem !important
+        }
+
+        .pb-1, .py-1 {
+            padding-bottom: .25rem !important
+        }
+
+        .pl-1, .px-1 {
+            padding-left: .25rem !important
+        }
+
+        .p-2 {
+            padding: .5rem !important
+        }
+
+        .pt-2, .py-2 {
+            padding-top: .5rem !important
+        }
+
+        .pr-2, .px-2 {
+            padding-right: .5rem !important
+        }
+
+        .pb-2, .py-2 {
+            padding-bottom: .5rem !important
+        }
+
+        .pl-2, .px-2 {
+            padding-left: .5rem !important
+        }
+
+        .p-3 {
+            padding: 1rem !important
+        }
+
+        .pt-3, .py-3 {
+            padding-top: 1rem !important
+        }
+
+        .pr-3, .px-3 {
+            padding-right: 1rem !important
+        }
+
+        .pb-3, .py-3 {
+            padding-bottom: 1rem !important
+        }
+
+        .pl-3, .px-3 {
+            padding-left: 1rem !important
+        }
+
+        .p-4 {
+            padding: 1.5rem !important
+        }
+
+        .pt-4, .py-4 {
+            padding-top: 1.5rem !important
+        }
+
+        .pr-4, .px-4 {
+            padding-right: 1.5rem !important
+        }
+
+        .pb-4, .py-4 {
+            padding-bottom: 1.5rem !important
+        }
+
+        .pl-4, .px-4 {
+            padding-left: 1.5rem !important
+        }
+
+        .p-5 {
+            padding: 3rem !important
+        }
+
+        .pt-5, .py-5 {
+            padding-top: 3rem !important
+        }
+
+        .pr-5, .px-5 {
+            padding-right: 3rem !important
+        }
+
+        .pb-5, .py-5 {
+            padding-bottom: 3rem !important
+        }
+
+        .pl-5, .px-5 {
+            padding-left: 3rem !important
+        }
+
+        .m-n1 {
+            margin: -.25rem !important
+        }
+
+        .mt-n1, .my-n1 {
+            margin-top: -.25rem !important
+        }
+
+        .mr-n1, .mx-n1 {
+            margin-right: -.25rem !important
+        }
+
+        .mb-n1, .my-n1 {
+            margin-bottom: -.25rem !important
+        }
+
+        .ml-n1, .mx-n1 {
+            margin-left: -.25rem !important
+        }
+
+        .m-n2 {
+            margin: -.5rem !important
+        }
+
+        .mt-n2, .my-n2 {
+            margin-top: -.5rem !important
+        }
+
+        .mr-n2, .mx-n2 {
+            margin-right: -.5rem !important
+        }
+
+        .mb-n2, .my-n2 {
+            margin-bottom: -.5rem !important
+        }
+
+        .ml-n2, .mx-n2 {
+            margin-left: -.5rem !important
+        }
+
+        .m-n3 {
+            margin: -1rem !important
+        }
+
+        .mt-n3, .my-n3 {
+            margin-top: -1rem !important
+        }
+
+        .mr-n3, .mx-n3 {
+            margin-right: -1rem !important
+        }
+
+        .mb-n3, .my-n3 {
+            margin-bottom: -1rem !important
+        }
+
+        .ml-n3, .mx-n3 {
+            margin-left: -1rem !important
+        }
+
+        .m-n4 {
+            margin: -1.5rem !important
+        }
+
+        .mt-n4, .my-n4 {
+            margin-top: -1.5rem !important
+        }
+
+        .mr-n4, .mx-n4 {
+            margin-right: -1.5rem !important
+        }
+
+        .mb-n4, .my-n4 {
+            margin-bottom: -1.5rem !important
+        }
+
+        .ml-n4, .mx-n4 {
+            margin-left: -1.5rem !important
+        }
+
+        .m-n5 {
+            margin: -3rem !important
+        }
+
+        .mt-n5, .my-n5 {
+            margin-top: -3rem !important
+        }
+
+        .mr-n5, .mx-n5 {
+            margin-right: -3rem !important
+        }
+
+        .mb-n5, .my-n5 {
+            margin-bottom: -3rem !important
+        }
+
+        .ml-n5, .mx-n5 {
+            margin-left: -3rem !important
+        }
+
+        .m-auto {
+            margin: auto !important
+        }
+
+        .mt-auto, .my-auto {
+            margin-top: auto !important
+        }
+
+        .mr-auto, .mx-auto {
+            margin-right: auto !important
+        }
+
+        .mb-auto, .my-auto {
+            margin-bottom: auto !important
+        }
+
+        .ml-auto, .mx-auto {
+            margin-left: auto !important
+        }
+
+        .embed-responsive {
+            position: relative;
+            display: block;
+            width: 100%;
+            padding: 0;
+            overflow: hidden
+        }
+
+        .embed-responsive::before {
+            display: block;
+            content: ""
+        }
+
+        .embed-responsive .embed-responsive-item, .embed-responsive embed, .embed-responsive iframe, .embed-responsive object, .embed-responsive video {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0
+        }
+
+        .img-fluid {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .border {
+            border: 1px solid #dee2e6 !important
+        }
+
+        .rounded {
+            border-radius: .25rem !important
+        }
+
+        .rounded-circle {
+            border-radius: 50% !important
+        }
+
+        .text-left {
+            text-align: left !important
+        }
+
+        .text-right {
+            text-align: right !important
+        }
+
+        .text-center {
+            text-align: center !important
+        }
+
+        .text-nowrap {
+            white-space: nowrap !important
+        }
+
+        .d-none {
+            display: none !important
+        }
+
+        .d-inline {
+            display: inline !important
+        }
+
+        .d-inline-block {
+            display: inline-block !important
+        }
+
+        .d-block {
+            display: block !important
+        }
+
+        .d-table {
+            display: table !important
+        }
+
+        .d-table-row {
+            display: table-row !important
+        }
+
+        .d-table-cell {
+            display: table-cell !important
+        }
+
+        .d-flex {
+            display: flex !important
+        }
+
+        .d-inline-flex {
+            display: inline-flex !important
+        }
+
+        .print-pdf .reveal {
+            touch-action: auto !important;
+        }
+
+        .h1 {
+            font-size: 2.5em !important
+        }
+
+        .h2 {
+            font-size: 2em !important
+        }
+
+        .h3 {
+            font-size: 1.75em !important
+        }
+
+        .h4 {
+            font-size: 1.5em !important
+        }
+
+        .h5 {
+            font-size: 1.25em !important
+        }
+
+        .h6 {
+            font-size: 1em !important
+        }
+
+        .small {
+            font-size: 80% !important
+        }
+
+        .smalll {
+            font-size: 70% !important
+        }
+
+        .footnotesize {
+            font-size: 65% !important
+        }
+
+        .scriptsize {
+            font-size: 50% !important
+        }
+
+        h1, h2, h3, h4, h5, h6, p {
+            font-size: 1em !important;
+            margin-top: 0.75em !important;
+            margin-bottom: 0.75em !important;
+        }
+
+        ol, ul {
+            margin-left: 2em !important;
+            width: calc(100% - 2em) !important;
+        }
+
+        a, li {
+        }
+
+        p {
+            text-align: left;
+        }
+
+        section h1:first-child {
+            text-align: left;
+        }
+
+        .reveal-viewport {
+        }
+
+        .reveal {
+        }
+
+        .slide-number {
+            background-color: transparent !important;
+        }
+
+        article {
+            min-height: 600px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        article p {
+            width: 100%;
+        }
+
+        .text-small-caps {
+            font-family: Helvetica, Arial, sans-serif;
+            font-variant: small-caps;
+        }
+
+        section footer {
+            position: absolute;
+            top: 100%;
+            width: calc(100% - 6em);
+            padding-left: 3em;
+            padding-right: 3em;
+        }
+
+        .print-pdf .d-print-none {
+            display: none !important
+        }
+    </style>
+
+
+    <style>
+        #mangrtable {
+            border: none;
+            border-collapse: collapse;
+        }
+
+        #mangrtable th {
+            border: none;
+        }
+
+        #mangrtable td {
+            width: 50%;
+            border: none;
+            border-left: 1px solid #000;
+            border-right: 1px solid #000;
+        }
+
+        #mangrtable td:first-child {
+            border-left: none;
+        }
+
+        #mangrtable td:last-child {
+            border-right: none;
+        }
+
+    </style>
+
+    <title>Uncovering Non-Identifiable Demographic Histories with Generative AI</title>
+</head>
+<body>
+
+<div class="reveal">
+    <div class="slides">
+
+        <section data-auto-animate>
+            <article class="justify-between">
+                <div class="r-hstack justify-center items-start w-100 fragment
+                  fade-out mt-5 mb-5" data-fragment-index="0">
+               
+                </div>
+
+                <div class="r-vstack text-nowrap justify-left items-left my-4 mt-0 py-5">
+                    <div class="r-vstack my-0">
+                        <h1 class="h3 text-nowrap mb-0 mt-3">Uncovering </h1>
+                        <h1 class="h3 text-nowrap mt-0 mb-3"> Non-Identifiable Demographic Histories</h1>
+                        <h1 class="h3 text-nowrap mt-0 mb-3"> with Generative AI</h1>
+                    </div>
+                    <h1 class="h5 r-hstack text-nowrap justify-left items-left
+                        mt-5 mb-3 fragment fade-out"
+                        data-fragment-index="0">Ekaterina (Katya) Noskova</h1>
+                    <h2 class="r-hstack text-nowrap justify-center items-center
+                        mt-3 mb-3 fragment fade-out small"
+                         data-fragment-index="0">
+                    PI: Dr. Konrad Lohse</h2>
+                </div>
+
+                <h1 class="r-hstack justify-center items-center w-100 mt-0 small fragment fade-out mb-4"
+                    data-fragment-index="0">
+                    3 June 2025
+                </h1>
+
+            </article>
+        </section>
+<!--=========================================================================-->
+
+<section  data-auto-animate>
+<article>
+
+    <div class="r-vstack mt-5 pt-5">
+        <h1 class="h2">Demographic History</h1>
+    </div>
+
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4">Demographic History</h1>
+<article>
+
+    <video data-autoplay src="my_figures/merged_fast.mp4"  style="height:40rem;"></video>
+
+</article>
+</section>
+
+
+<section data-auto-animate>
+<div class="r-hstack" style="align-items:left;justify-content:left">
+<h1 class="h4">Demographic History</h1>
+</div>
+<article>
+    <p class="mt-n5">Demographic history describes how populations evolved over time.</p>
+<div class="r-hstack my-0 mx-0" style="align-items:left;justify-content:left">
+
+<div class="r-stack my-0 mt-0 mx-0 ml-0 px-0 py-0 ml-0" style="width:55rem" >
+  <img class="fragment fade-left"  data-fragment-index="0" src="my_figures/PopGenAI/dem_history.png" style="width:70rem;">
+</div>
+
+<div class="small" style="width:30rem;">
+    <p>It includes events such as:</p>
+    <ul>
+        <li>population size changes</li>
+        <li>splits</li>
+        <li>migrations</li>
+        <li>admixture</li>
+        <li>selection</li>
+     </ul>
+</div>
+
+</div>
+</article>
+</section>
+
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<div class="r-hstack" style="align-items:left;justify-content:left">
+<h1 class="h4 text-left">Why Reconstruct&nbsp;</h1><h1 class="h4 text-left">Demographic History</h1><h1 class="h4 text-left">?</h1>
+</div>
+<article>
+
+<p class="fragment" data-fragment-index="0">
+Understand population history
+</p>
+
+<div class="r-hstack">
+  <div class="r-stack ml-5">
+    <img class="fragment fade-left" data-fragment-index="1" src="my_figures/GADMA_presentation/human.svg" style="width:15rem;">
+  </div>
+  <div class="r-stack my-0 mx-5 px-0 py-0">
+    <img class="fragment fade-left" data-fragment-index="1" src="my_figures/GADMA_presentation/homo_sapiens_gut2009.svg" style="height:30rem;">
+  </div>
+  <div class="r-stack">
+    <img class="fragment fade-left" data-fragment-index="3" src="my_figures/dem_history_example/demographic_history_example_2_1.svg" style="height:30rem;">
+    <img class="fragment fade-left" data-fragment-index="3" src="my_figures/dem_history_example/demographic_history_example_2_2.svg" style="height:30rem;">
+    <img class="fragment fade-left" data-fragment-index="3" src="my_figures/dem_history_example/demographic_history_example_2_3.svg" style="height:30rem;">
+  </div>
+</div>
+
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<div class="r-hstack" style="align-items:left;justify-content:left">
+<h1 class="h4 text-left">Why Reconstruct&nbsp;</h1><h1 class="h4 text-left">Demographic History</h1><h1 class="h4 text-left">?</h1>
+</div>
+<article>
+
+<p class="mt-n4">
+Conservation biology studies
+</p>
+
+<div class="r-hstack fragment">
+  <img class="fade-left mb-0 mr-5" src="my_figures/species_dama_gazelle.svg" style="width:13rem;">
+  <div style="width:10rem;"></div>
+  <img class="fade-left my-n3 mb-n5 ml-5" src="my_figures/GADMA_presentation/gazelle_fixed.svg" style="width:35rem;">
+</div>
+
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<!--=========================================================================-->
+
+<section  data-auto-animate>
+<article>
+<div class="r-vstack mt-5 pt-5">
+<h1 class="h2">Demographic Inference</h1>
+</div>
+
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4">Demographic Inference</h1>
+<article>
+
+<div class="r-stack">
+  <img class=" fade-left" data-fragment-index="0" src="my_figures/probgen23/dem_inference/dem_inf_1.svg" style="height:35rem;">
+  <img class="fragment fade-left" data-fragment-index="1" src="my_figures/probgen23/dem_inference/dem_inf_2.svg" style="height:35rem;">
+  <img class="fragment fade-left" data-fragment-index="2" src="my_figures/probgen23/dem_inference/dem_inf_3.svg" style="height:35rem;">
+</div>
+
+<div class="r-hstack" style="align-items:right;justify-content:right">
+<div style="width:40rem"></div>
+<div class="r-vstack mx-0 my-0 mt-n5">
+<p class="fragment mx-0 my-0 mr-0" data-fragment-index="2">Maximum-likelihood</p>
+<p class="fragment mx-0 my-0 mr-0" data-fragment-index="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;estimation</p>
+</div>
+</div>
+</article>
+</section>
+
+
+<!--=========================================================================-->
+
+<section  data-auto-animate>
+<article>
+<div class="r-vstack mt-5 pt-5">
+<h1 class="h2">Model Non-identifiability Problem</h1>
+</div>
+
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4">Model Non-identifiability Problem</h1>
+<article>
+
+
+<div class="r-stack my-0 mt-10n mx-0 ml-5n px-0 py-0" style="width:80rem" >
+  <img class=" fade-left"  data-fragment-index="0" src="my_figures/PopGenAI/model_non_id_problem/sets_dem_hist.svg" style="height:40rem;">
+  <img class=" fade-in"  data-fragment-index="1" src="my_figures/PopGenAI/model_non_id_problem/sets_dem_hist_set.svg" style="height:40rem;">
+  <img class="fragment fade-left"  data-fragment-index="3" src="my_figures/PopGenAI/model_non_id_problem/sets_gen_data.svg" style="height:40rem;">
+  <img class="fragment fade-left"  data-fragment-index="4" src="my_figures/PopGenAI/model_non_id_problem/sets_gen_data_bunnies.svg" style="height:40rem;">
+  <img class="fragment fade-left"  data-fragment-index="5" src="my_figures/PopGenAI/model_non_id_problem/sets_gen_data_genomes.svg" style="height:40rem;">
+  <img class="fragment fade-left"  data-fragment-index="2" src="my_figures/PopGenAI/model_non_id_problem/sets_infinity.svg" style="height:40rem;">
+  <img class="fragment fade-left"  data-fragment-index="3" src="my_figures/PopGenAI/model_non_id_problem/sets_finity.svg" style="height:40rem;">
+  <img class="fragment fade-left"  data-fragment-index="7" src="my_figures/PopGenAI/model_non_id_problem/sets_order.svg" style="height:40rem;">
+  <img class="fragment fade-left"  data-fragment-index="8" src="my_figures/PopGenAI/model_non_id_problem/sets_arrows.svg" style="height:40rem;">
+</div>
+
+</article>
+</section>
+
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4">Model Non-identifiability Problem</h1>
+<article>
+
+    <p class="fragment mx-0 my-0" data-fragment-index="0">There are some known examples of non-identifiable models:</p>
+
+    <div class="r-stack">
+        <img class="fragment fade-left"  data-fragment-index="0" src="my_figures/PopGenAI/same_sfs/same_sfs_1.svg" style="height:30rem;">
+        <img class="fragment fade-left"  data-fragment-index="1" src="my_figures/PopGenAI/same_sfs/same_sfs_2.svg" style="height:30rem;">
+    </div>
+    <p class="fragment mx-0 my-0" data-fragment-index="2">However, generally classes are unknown</p>
+
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section  data-auto-animate>
+<article>
+<div class="r-vstack mt-5 pt-5">
+<h1 class="h2">Generative AI</h1>
+</div>
+
+</article>
+</section>
+
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4">Generative AI</h1>
+<article>
+
+    <p class=" mx-0 my-0 small" data-fragment-index="0">Generative AI models learn the underlying probability distribution of the training data, enabling them to <strong>generate new samples with similar characteristics</strong>.</p>
+
+    <div class="r-hstack">
+
+        <div class="r-stack mr-5">
+        <img class="fragment fade-in"  data-fragment-index="1" src="my_figures/PopGenAI/generation/generation_1.svg" style="height:35rem;">
+        <img class="fragment fade-in"  data-fragment-index="2" src="my_figures/PopGenAI/generation/generation_2.svg" style="height:35rem;">
+        <img class="fragment fade-in"  data-fragment-index="3" src="my_figures/PopGenAI/generation/generation_3.svg" style="height:35rem;">
+    </div>
+        <img class="fragment fade-left mt-5 ml-5"  data-fragment-index="4" src="my_figures/PopGenAI/Generative models.svg" style="height:30rem;">
+
+
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4">Exisitng Applications</h1>
+<article>
+    <ul>
+    <li class="fragment mx-0 my-0" data-fragment-index="0">Variational autoencoder for drug design [Gangwal et al. 2024]:
+
+        <img class="fragment fade-in mt-3"  data-fragment-index="0" data-src="my_figures/PopGenAI/drug_design.jpg" style="height:25rem;"></li>
+    <li class="fragment mt-3"  data-fragment-index="1">Discrete diffusion-like model for Bayesian sampling of phylogenetic trees [Zhou et al. 2024]</li>
+    </ul>
+
+</article>
+</section>
+
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4">Proposed Approach</h1>
+<article>
+    <p class="fragment mt-0" data-fragment-index="0">Train generative AI model to explore classes of non-identifiable demographic histories.</p>
+
+    <div class="r-hstack">
+
+        <div class="r-stack mr-5">
+        <img class="fragment fade-in"  data-fragment-index="1" src="my_figures/PopGenAI/approach/proposed_approach_1.svg" style="height:30rem;">
+        <img class="fragment fade-in"  data-fragment-index="2" src="my_figures/PopGenAI/approach/proposed_approach_2.svg" style="height:30rem;">
+        <img class="fragment fade-in"  data-fragment-index="3" src="my_figures/PopGenAI/approach/proposed_approach_3.svg" style="height:30rem;">
+        <img class="fragment fade-in"  data-fragment-index="4" src="my_figures/PopGenAI/approach/proposed_approach_4.svg" style="height:30rem;">
+        <img class="fragment fade-in"  data-fragment-index="5" src="my_figures/PopGenAI/approach/proposed_approach_5.svg" style="height:30rem;">
+        <img class="fragment fade-in"  data-fragment-index="6" src="my_figures/PopGenAI/approach/proposed_approach_6.svg" style="height:30rem;">
+    </div>
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4">Applications</h1>
+<article>
+    <p class="fragment mt-n5">Once trained, a generative AI model enables a fast sampling procedure.</p>
+    <p class="fragment mt-2">It allows to address various problems: </p>
+    <ul>
+        <li class="fragment mt-2">Unravel complex admixture history of domesticated species (cattle)</li>
+        <li class="fragment mt-2">Investigate the regions that act as barriers to gene flow in recently diverged species (butterfly)</li>
+    </ul>
+</article>
+</section>
+
+<section>
+<h1 class="h4">Team</h1>
+<article class="justify-between">
+	
+<div class="r-hstack mt-5">
+<div class="r-vstack">
+<img alt class="img-fluid rounded-circle px-5" style="margin-right:2rem!important;" src="my_figures/people/konrad_lohse.jpeg">
+<h1 class="h6 text-nowrap my-0 small" style="margin-right:2rem!important">Konrad<br>Lohse</h1>
+</div>
+<div class="r-vstack">
+<img alt class="img-fluid rounded-circle px-5"  style="margin-left:2rem!important;" src="my_figures/people/nikolay_malkin.jpeg">
+<h1 class="h6 text-nowrap my-0 small" style="margin-left:2rem!important;">Nikolay<br>Malkin</h1>
+</div>
+<div class="r-vstack">
+<img alt class="img-fluid rounded-circle px-5"  style="margin-left:2rem!important;" src="my_figures/people/gregory_gorjanc.jpeg">
+<h1 class="h6 text-nowrap my-0 small" style="margin-left:2rem!important;">Gregory<br>Gorjanc</h1>
+</div>
+</div>
+
+<img alt class="img-fluid mb-5" style="height:7rem;" src="my_figures/logos/University_of_Edinburgh.webp">
+
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<article class="mt-5 mb-3">
+
+<h1 class="h1 mt-5 mb-4">Thank you!</h1>
+<div class="r-stack mt-5n" style="flex-grow:1;width:100%">
+<div>
+<img class="mt-5n" src="my_figures/final.gif" style="height:20rem;">
+</div>
+<div style="float:right;align-items:right;justify-content:right;width:100%;">
+<div class="r-hstack fragment" data-fragment-index="2" style="float:right;align-items:right;justify-content:right;">
+Slides:
+<div class="px-3 mr-5" style="width:12rem;" id="qrcode">
+<script type="text/javascript">
+var qrcode = new QRCode(document.getElementById("qrcode"), {
+    text: location.protocol+'//'+location.host+location.pathname,
+    colorDark : "#000000",
+    colorLight : "#ffffff",
+    correctLevel : QRCode.CorrectLevel.M
+});
+</script>
+</div>
+</div>
+</div>
+</div>
+
+<span class="small my-5 fragment" align="center" style="font-weight: bold;" data-fragment-index="2">
+ekaterina.e.noskova@gmail.com
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://enoskova.me">enoskova.me</a>
+</span>
+
+</article>
+</section>
+
+</div>
+</div>
+
+</body>
+</html>
