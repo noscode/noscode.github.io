@@ -1,0 +1,1107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reset.min.css" integrity="sha512-Mjxkx+r7O/OLQeKeIBCQ2yspG1P5muhAtv/J+p2/aPnSenciZWm5Wlnt+NOUNA4SHbnBIE/R2ic0ZBiCXdQNUg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.min.css" integrity="sha512-zu0eodDPCBAZf1vnIgwZ6qchMBt1xqgGkS9vBjVmunoH8pU7cc9OQKBiSQCclpvqySupy9Y1pLZc87VB40G4Sw==" crossorigin="anonymous" />
+<link rel="stylesheet" href="simple.css"/>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.min.js" integrity="sha512-Xu/cezKABTI81MGnaBm64vdiS7XkttHeYGOgr2Mdga0bTplSBGongLq2lhK2HwL79wefKM0u4uTCLD0ha1sRzQ==" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+<script src="include/qrcode.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+Reveal.initialize({
+	hash: true,
+	center: false,
+	width: 1280,
+	height: 800,
+	maxScale: 5.0,
+	slideNumber: true,
+	transition: "fade",
+	keyboard: { 27: null },
+	pdfSeparateFragments: false
+})
+Reveal.on('pdf-ready', () => 
+	document.querySelectorAll("section[data-no-print]").forEach(e => e.parentNode.remove())
+)
+renderMathInElement(document.body, {
+	delimiters: [
+		{left: "$$", right: "$$", display: true},
+		{left: "$", right: "$", display: false},
+	],
+	trust: true,
+	strict: false,
+	macros: {
+		"\\P": "\\mathbb{P}",
+		"\\E": "\\mathbb{E}",
+		"\\Cov": "\\operatorname{Cov}",
+		"\\N": "\\mathbb{N}",
+		"\\Z": "\\mathbb{Z}",
+		"\\Q": "\\mathbb{Q}",
+		"\\R": "\\mathbb{R}",
+		"\\C": "\\mathbb{C}",
+		"\\eps": "\\varepsilon",
+		"\\given": "\\mid",
+		"\\d": "{\\operatorname{d}}",
+		"\\v": "\\boldsymbol{#1}",
+		"\\m": "\\mathbf{#1}",
+		"\\f": "\\operatorname{#1}",
+		"\\s": "\\mathscr{#1}",
+		"\\c": "\\mathcal{#1}",
+		"\\bb": "\\mathbb{#1}",
+		"\\abs": "\\left|{#1}\\right|",
+		"\\del": "\\left({#1}\\right)",
+		"\\sbr": "\\left[{#1}\\right]",
+		"\\cbr": "\\left\\{ {#1} \\right\\}",
+		"\\x": "\\times",
+		"\\t": "\\mathbin{\\text{#1}}",
+		"\\norm": "\\left\\Vert{#1}\\right\\Vert",
+		"\\innerprod": "\\left\\langle{#1},{#2}\\right\\rangle",
+		"\\ubr": "\\underbrace",
+		"\\pd": "\\partial",
+		"\\o": "\\circ",
+		"\\.": "\\cdot",
+		"\\h": "\\widehat{#1}",
+		"\\~": "\\sim",
+		"\\ubr": "\\underset{\\mathclap{#2}}{\\undergroup{#1}}"
+	}
+	})
+document.querySelectorAll("*[data-class]").forEach(e => e.dataset.class.split(" ").forEach(c => e.classList.add(c)))
+})
+</script>
+
+<style>
+.w-25{width:25%!important}.w-50{width:50%!important}.w-75{width:75%!important}.w-100{width:100%!important}.w-auto{width:auto!important}.h-25{height:25%!important}.h-50{height:50%!important}.h-75{height:75%!important}.h-100{height:100%!important}.h-auto{height:auto!important}.mw-100{max-width:100%!important}.mh-100{max-height:100%!important}.m-0{margin:0!important}.mt-0,.my-0{margin-top:0!important}.mr-0,.mx-0{margin-right:0!important}.mb-0,.my-0{margin-bottom:0!important}.ml-0,.mx-0{margin-left:0!important}.m-1{margin:.25rem!important}.mt-1,.my-1{margin-top:.25rem!important}.mr-1,.mx-1{margin-right:.25rem!important}.mb-1,.my-1{margin-bottom:.25rem!important}.ml-1,.mx-1{margin-left:.25rem!important}.m-2{margin:.5rem!important}.mt-2,.my-2{margin-top:.5rem!important}.mr-2,.mx-2{margin-right:.5rem!important}.mb-2,.my-2{margin-bottom:.5rem!important}.ml-2,.mx-2{margin-left:.5rem!important}.m-3{margin:1rem!important}.mt-3,.my-3{margin-top:1rem!important}.mr-3,.mx-3{margin-right:1rem!important}.mb-3,.my-3{margin-bottom:1rem!important}.ml-3,.mx-3{margin-left:1rem!important}.m-4{margin:1.5rem!important}.mt-4,.my-4{margin-top:1.5rem!important}.mr-4,.mx-4{margin-right:1.5rem!important}.mb-4,.my-4{margin-bottom:1.5rem!important}.ml-4,.mx-4{margin-left:1.5rem!important}.m-5{margin:3rem!important}.mt-5,.my-5{margin-top:3rem!important}.mr-5,.mx-5{margin-right:3rem!important}.mb-5,.my-5{margin-bottom:3rem!important}.ml-5,.mx-5{margin-left:3rem!important}.p-0{padding:0!important}.pt-0,.py-0{padding-top:0!important}.pr-0,.px-0{padding-right:0!important}.pb-0,.py-0{padding-bottom:0!important}.pl-0,.px-0{padding-left:0!important}.p-1{padding:.25rem!important}.pt-1,.py-1{padding-top:.25rem!important}.pr-1,.px-1{padding-right:.25rem!important}.pb-1,.py-1{padding-bottom:.25rem!important}.pl-1,.px-1{padding-left:.25rem!important}.p-2{padding:.5rem!important}.pt-2,.py-2{padding-top:.5rem!important}.pr-2,.px-2{padding-right:.5rem!important}.pb-2,.py-2{padding-bottom:.5rem!important}.pl-2,.px-2{padding-left:.5rem!important}.p-3{padding:1rem!important}.pt-3,.py-3{padding-top:1rem!important}.pr-3,.px-3{padding-right:1rem!important}.pb-3,.py-3{padding-bottom:1rem!important}.pl-3,.px-3{padding-left:1rem!important}.p-4{padding:1.5rem!important}.pt-4,.py-4{padding-top:1.5rem!important}.pr-4,.px-4{padding-right:1.5rem!important}.pb-4,.py-4{padding-bottom:1.5rem!important}.pl-4,.px-4{padding-left:1.5rem!important}.p-5{padding:3rem!important}.pt-5,.py-5{padding-top:3rem!important}.pr-5,.px-5{padding-right:3rem!important}.pb-5,.py-5{padding-bottom:3rem!important}.pl-5,.px-5{padding-left:3rem!important}.m-n1{margin:-.25rem!important}.mt-n1,.my-n1{margin-top:-.25rem!important}.mr-n1,.mx-n1{margin-right:-.25rem!important}.mb-n1,.my-n1{margin-bottom:-.25rem!important}.ml-n1,.mx-n1{margin-left:-.25rem!important}.m-n2{margin:-.5rem!important}.mt-n2,.my-n2{margin-top:-.5rem!important}.mr-n2,.mx-n2{margin-right:-.5rem!important}.mb-n2,.my-n2{margin-bottom:-.5rem!important}.ml-n2,.mx-n2{margin-left:-.5rem!important}.m-n3{margin:-1rem!important}.mt-n3,.my-n3{margin-top:-1rem!important}.mr-n3,.mx-n3{margin-right:-1rem!important}.mb-n3,.my-n3{margin-bottom:-1rem!important}.ml-n3,.mx-n3{margin-left:-1rem!important}.m-n4{margin:-1.5rem!important}.mt-n4,.my-n4{margin-top:-1.5rem!important}.mr-n4,.mx-n4{margin-right:-1.5rem!important}.mb-n4,.my-n4{margin-bottom:-1.5rem!important}.ml-n4,.mx-n4{margin-left:-1.5rem!important}.m-n5{margin:-3rem!important}.mt-n5,.my-n5{margin-top:-3rem!important}.mr-n5,.mx-n5{margin-right:-3rem!important}.mb-n5,.my-n5{margin-bottom:-3rem!important}.ml-n5,.mx-n5{margin-left:-3rem!important}.m-auto{margin:auto!important}.mt-auto,.my-auto{margin-top:auto!important}.mr-auto,.mx-auto{margin-right:auto!important}.mb-auto,.my-auto{margin-bottom:auto!important}.ml-auto,.mx-auto{margin-left:auto!important}.embed-responsive{position:relative;display:block;width:100%;padding:0;overflow:hidden}.embed-responsive::before{display:block;content:""}.embed-responsive .embed-responsive-item,.embed-responsive embed,.embed-responsive iframe,.embed-responsive object,.embed-responsive video{position:absolute;top:0;bottom:0;left:0;width:100%;height:100%;border:0}.img-fluid{max-width:100%;height:auto;}.border{border:1px solid #dee2e6!important}.rounded{border-radius:.25rem!important}.rounded-circle{border-radius:50%!important}.text-left{text-align:left!important}.text-right{text-align:right!important}.text-center{text-align:center!important}.text-nowrap{white-space:nowrap!important}.d-none{display:none!important}.d-inline{display:inline!important}.d-inline-block{display:inline-block!important}.d-block{display:block!important}.d-table{display:table!important}.d-table-row{display:table-row!important}.d-table-cell{display:table-cell!important}.d-flex{display:flex!important}.d-inline-flex{display:inline-flex!important}
+.print-pdf .reveal{touch-action:auto!important;}
+.h1{font-size:2.5em!important}.h2{font-size:2em!important}.h3{font-size:1.75em!important}.h4{font-size:1.5em!important}.h5{font-size:1.25em!important}.h6{font-size:1em!important}.small{font-size:80%!important}.footnotesize{font-size:65%!important}.scriptsize{font-size:50%!important}
+h1,h2,h3,h4,h5,h6,p { font-size: 1em!important; margin-top: 0.75em!important; margin-bottom: 0.75em!important; }
+ol,ul { margin-left: 2em!important; width: calc(100% - 2em)!important; }
+a,li { }
+p { text-align: left; }
+section h1:first-child { text-align: left; }
+.reveal-viewport { }
+.reveal { }
+.slide-number { background-color: transparent!important; }
+article { min-height: 600px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+article p { width: 100%; }
+.text-small-caps { font-family:Helvetica, Arial, sans-serif; font-variant: small-caps; }
+section footer { position:absolute; top: 100%; width: calc(100% - 6em); padding-left: 3em; padding-right: 3em; }
+.print-pdf .d-print-none{display:none!important}
+</style>
+
+
+<style>
+#mangrtable {
+    border:none;
+    border-collapse: collapse;
+}
+
+#mangrtable th {
+    border: none;
+}
+
+#mangrtable td {
+	width: 50%;
+    border: none;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+}
+
+#mangrtable td:first-child {
+    border-left: none;
+}
+
+#mangrtable td:last-child {
+    border-right: none;
+}
+
+</style>
+
+<title>Demographic inference from Genetic Data using GADMA</title>
+</head>
+
+<body>
+
+<div class="reveal">
+<div class="slides">
+
+
+<section data-auto-animate>
+<article class="justify-between">
+
+<!--	
+<div class="r-hstack justify-center items-start w-100 fragment fade-out" data-fragment-index="0">
+<h2 class="h6">Конференция SAMPLE</h2>
+</div>
+--!>
+<div class="r-hstack justify-center items-center mt-5 mb-3 fragment fade-out  px-5 mt-5" data-fragment-index="0">
+    <img alt class="img-fluid my-0" src="my_figures/logos/University_of_Edinburgh.webp"
+    style="height:8rem;">
+</div>
+
+<div class="r-vstack mb-4 mt-n2 py-5">
+<div class="r-vstack my-0">
+    <h1 class="h3 text-nowrap mb-0">Demographic Inference</h1>
+    <div class="r-hstack my-0">
+        <h1 class="h3 text-nowrap my-0">from Genetic Data using GADMA</h1>
+    </div>
+</div>
+<h1 class="r-hstack text-nowrap justify-center items-center mt-3 mb-5 fragment fade-out" data-fragment-index="0">Ekaterina (Katya) Noskova</h1>
+</div>
+
+<h1 class="r-hstack justify-center items-center w-100 mt-5 small fragment fade-out" data-fragment-index="0">
+6 October 2025
+</h1>
+
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section  data-auto-animate>
+<article>
+<h1 class="h4 text-left">About myself</h1>
+<div class="r-hstack my-0">
+<div class="r-vstack my-0 mr-5">
+<img src="my_figures/enoskova.png" style="width:15rem;">
+</div>
+<div class="r-vstack my-0 ml-5"  style="width:55rem;">
+<h3 class="h6 my-0"> Education </h3>
+<p class="small">
+<strong>2016</strong> - <strong> BSc</strong>, Applied Mathematics, <i>St. Petersburg, Russia.</i><br>
+<strong>2018</strong> - <strong>MSc</strong>, Algorithmic Bioinformatics, St. Petersburg, Russia.</i><br>
+<strong>2023</strong> - <strong> PhD</strong>, Engineering, <i>St. Petersburg, Russia.</i></p>
+<h3 class="h6 my-0"> Current research </h3>
+<p class="small my-1"><strong> MSCA fellow:</strong> Generative AI in population genetics
+<p class="small my-1"><a href="https://github.com/popsim-consortium"> PopSim consortium </a></p>
+</div>
+</div>
+
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<div class="r-hstack"  style="align-items:left;justify-content:left">
+<h1 class="h4">Agenda</h1>
+</div>
+
+<article>
+    <ul class="my-0">
+        <li  class="mt-n3 fragment small" data-fragment-index="2">
+            Demographic history, why reconstruct demographic history?
+        </li>
+        <li  class="mt-4 fragment small" data-fragment-index="4">
+            Demographic inference tools:
+            <ul>
+                <li> Pipeline overview </li>
+                <li> Three issues of existing tools </li>
+                <li> One challenge of existing tools </li>
+             </ul>
+        </li>
+        <li class="mt-4 fragment small" data-fragment-index="5">
+            GADMA
+            <ul>
+                <li> New model specification </li>
+                <li> Genetic algorithm </li>
+                <li> Bayesian optimization </li>
+             </ul>
+        </li>
+        <li class="mt-4 fragment small" data-fragment-index="6">
+            Usecases:
+            <ul>
+                <li> Usecase 1: Human Out-Of-Africa History </li>
+                <li> Usecase 2: Using Different Likelihood Engines </li>
+                <li> Usecase 3: Four Population Demographic Inference </li>
+             </ul>
+        </li>
+    </ul>
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section  data-auto-animate>
+<article>
+
+<div class="r-vstack mt-5 pt-5">
+<h1 class="h2">Demographic History</h1>
+</div>
+
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4">Demographic History</h1>
+<article>
+
+<video data-autoplay src="my_figures/merged_fast.mp4"  style="height:40rem;"></video>
+
+</article>
+</section>
+
+
+<section data-auto-animate>
+<div class="r-hstack" style="align-items:left;justify-content:left">
+<h1 class="h4 text-left">Demographic History</h1><h1 class="h4 text-left">&nbsp;Visualization</h1>
+</div>
+<article>
+<div class="r-stack my-0 mt-10n mx-0 ml-5n px-0 py-0">
+  <span class="fragment fade-left" data-fragment-index="0">
+    <img class="fragment fade-out" data-fragment-index="2" src="my_figures/probgen23/model_transform/moments_alone.svg" style="height:30rem;">
+  </span>
+  <span class="fragment fade-left" data-fragment-index="0">
+    <img class="fragment fade-out"  data-fragment-index="1" src="my_figures/probgen23/model_transform/moments_axis.svg" style="height:30rem;">
+  </span>
+  <span class="fragment fade-in" data-fragment-index="2">
+    <img class="fragment fade-out"  data-fragment-index="6" src="my_figures/probgen23/model_transform/moments_rotated_anc.svg" style="height:30rem;">
+  </span>
+  <span class="fragment fade-in" data-fragment-index="2">
+    <img class="fragment fade-out"  data-fragment-index="7" src="my_figures/probgen23/model_transform/moments_rotated_pops.svg" style="height:30rem;">
+  </span>
+  <img class="fragment fade-left"  data-fragment-index="4" src="my_figures/probgen23/model_transform/demes_time.svg" style="height:30rem;">
+  <img class="fragment fade-left"  data-fragment-index="5" src="my_figures/probgen23/model_transform/demes_time_labels.svg" style="height:30rem;">
+  <span class="fragment fade-in" data-fragment-index="7">
+    <img class="fragment fade-out"  data-fragment-index="8" src="my_figures/probgen23/model_transform/demes_1pop.svg" style="height:30rem;">
+  </span>
+  <span class="fragment fade-in" data-fragment-index="7">
+    <img class="fragment fade-out"  data-fragment-index="8" src="my_figures/probgen23/model_transform/demes_migs.svg" style="height:30rem;">
+  </span>
+  <span class="fragment fade-in" data-fragment-index="7">
+    <img class="fragment fade-out"  data-fragment-index="9" src="my_figures/probgen23/model_transform/demes_2pop.svg" style="height:30rem;">
+  </span>
+  <img class="fragment fade-in"  data-fragment-index="8" src="my_figures/probgen23/model_transform/demes_1pop_col_mig.svg" style="height:30rem;">
+  <img class="fragment fade-in"  data-fragment-index="9" src="my_figures/probgen23/model_transform/demes_2pop_col.svg" style="height:30rem;">
+  <img class="fragment fade-in"  data-fragment-index="6" src="my_figures/probgen23/model_transform/demes_anc.svg" style="height:30rem;">
+  <img class="fragment fade-left"  data-fragment-index="3" src="my_figures/probgen23/model_transform/populations_below.svg" style="height:30rem;">
+</div>
+<p  class="fragment fade-left"  data-fragment-index="10">drawn by <em>demes</em> [Gower et al. 2022]</p>
+</article>
+</section>
+
+
+
+<!--=========================================================================
+
+
+<section data-auto-animate>
+<div class="r-hstack" style="align-items:left;justify-content:left">
+<h1 class="h4 text-left">Demographic History</h1><h1 class="h4 text-left">&nbsp;Visualization</h1>
+</div>
+<article>
+<div class="r-stack my-0 mt-10n mx-0 ml-5n px-0 py-0">
+  <div class="r-hstack fragment fade-left" data-fragment-index="0">
+      <img src="my_figures/probgen23/dem_inference/dem_inf_1.svg" style="height:30rem;">
+      <div style="width:20rem;"></div>
+  </div>
+  <div  class="r-hstack fragment fade-left"  data-fragment-index="3">
+      <div style="width:15rem;"></div>
+    <img src="my_figures/probgen23/model_transform/demes_time.svg" style="height:30rem;">
+  </div>
+  <div  class="r-hstack fragment fade-left"  data-fragment-index="3">
+      <div style="width:15rem;"></div>
+      <img src="my_figures/probgen23/model_transform/demes_time_labels.svg" style="height:30rem;">
+  </div>
+  <div  class="r-hstack fragment fade-left"  data-fragment-index="1">
+      <div style="width:15rem;"></div>
+      <img src="my_figures/probgen23/model_transform/demes_1pop_col_mig.svg" style="height:30rem;">
+  </div>
+  <div  class="r-hstack fragment fade-left"  data-fragment-index="1">
+      <div style="width:15rem;"></div>
+      <img src="my_figures/probgen23/model_transform/demes_2pop_col.svg" style="height:30rem;">
+  </div>
+  <div  class="r-hstack fragment fade-left"  data-fragment-index="1">
+      <div style="width:15rem;"></div>
+      <img src="my_figures/probgen23/model_transform/demes_anc.svg" style="height:30rem;">
+  </div>
+  <div  class="r-hstack fragment fade-left"  data-fragment-index="2">
+      <div style="width:15rem;"></div>
+      <img src="my_figures/probgen23/model_transform/populations_below.svg" style="height:30rem;">
+  </div>
+</div>
+  <div class="r-hstack fragment fade-left" data-fragment-index="4">
+      <div style="width:15rem;"></div>
+    <p>drawn by <em>demes</em> [Gower et al. 2022]</p>
+  </div>
+
+</article>
+</section>
+
+=========================================================================-->
+
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<div class="r-hstack" style="align-items:left;justify-content:left">
+<h1 class="h4 text-left">Why Reconstruct&nbsp;</h1><h1 class="h4 text-left">Demographic History</h1><h1 class="h4 text-left">?</h1>
+</div>
+<article>
+
+<p class="fragment">
+Understand population history
+</p>
+
+<div class="r-hstack">
+  <div class="r-stack ml-5">
+    <img class="fragment fade-left" src="my_figures/GADMA_presentation/human.svg" style="width:15rem;">
+  </div>
+  <div class="r-stack my-0 mx-5 px-0 py-0">
+    <img class="fragment fade-left"  src="my_figures/GADMA_presentation/homo_sapiens_gut2009.svg" style="height:30rem;">
+  </div>
+  <div class="r-stack">
+    <img class="fragment fade-left" src="my_figures/dem_history_example/demographic_history_example_2_1.svg" style="height:30rem;">
+    <img class="fragment fade-left" src="my_figures/dem_history_example/demographic_history_example_2_2.svg" style="height:30rem;">
+    <img class="fragment fade-left" src="my_figures/dem_history_example/demographic_history_example_2_3.svg" style="height:30rem;">
+  </div>
+</div>
+
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<div class="r-hstack" style="align-items:left;justify-content:left">
+<h1 class="h4 text-left">Why Reconstruct&nbsp;</h1><h1 class="h4 text-left">Demographic History</h1><h1 class="h4 text-left">?</h1>
+</div>
+<article>
+
+<p class="mt-n4">
+Conservation biology studies
+</p>
+
+<div class="r-hstack">
+  <img class="fragment fade-left mb-0 mr-5" src="my_figures/species_dama_gazelle.svg" style="width:13rem;">
+  <div style="width:10rem;"></div>
+  <img class="fragment fade-left my-n3 mb-n5 ml-5" src="my_figures/GADMA_presentation/gazelle_fixed.svg" style="width:35rem;">
+</div>
+
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section  data-auto-animate>
+<article>
+<div class="r-vstack mt-5 pt-5">
+<h1 class="h2">Demographic Inference</h1>
+</div>
+
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4">Demographic Inference</h1>
+<article>
+
+<div class="r-stack">
+  <img class="fragment fade-left" src="my_figures/probgen23/dem_inference/dem_inf_1.svg" style="height:35rem;">
+  <img class="fragment fade-left" src="my_figures/probgen23/dem_inference/dem_inf_2.svg" style="height:35rem;">
+  <img class="fragment fade-left" src="my_figures/probgen23/dem_inference/dem_inf_3.svg" style="height:35rem;">
+</div>
+
+</article>
+</section>
+
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<div class="r-hstack"  style="align-items:left;justify-content:left">
+<h1 class="h4">Demographic Inference</h1><h1 class="h4">&nbsp;Tools</h1>
+</div>
+
+<article>
+ <div class="r-stack my-0 mx-0 px-0 py-0 mt-n5">
+    <span class="fragment fade-in my-0 mx-0 px-0 py-0" data-fragment-index="1">
+      <img class="fragment fade-out"  data-fragment-index="5" src="my_figures/probgen23/dem_inference/dem_inf_tool_1.svg" style="height:40rem;">
+    </span>
+    <img class="fragment fade-left"  data-fragment-index="2" src="my_figures/probgen23/dem_inference/dem_inf_tool_2.svg" style="height:40rem;">
+    <img class="fragment fade-left"  data-fragment-index="3" src="my_figures/probgen23/dem_inference/dem_inf_tool_3.svg" style="height:40rem;">
+    <img class="fragment fade-left"  data-fragment-index="4" src="my_figures/probgen23/dem_inference/dem_inf_tool_4.svg" style="height:40rem;">
+    <img class="fragment fade-in"  data-fragment-index="5" src="my_figures/probgen23/dem_inference/dem_inf_tool_5.svg" style="height:40rem;">
+  </div>
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<div class="r-hstack"  style="align-items:left;justify-content:left">
+<h1 class="h4">Demographic Inference</h1><h1 class="h4">&nbsp;Tools</h1>
+</div>
+
+<article>
+<p class="mt-n3">Examples:</p>
+<ul>
+  <li class="mt-0 fragment">
+      $\partial a \partial i$  [Gutenkunst et al. 2009]
+  </li>
+  <li  class="mt-3 fragment">
+    <em>moments</em>  [Jouganous et al. 2017]
+  </li>
+  <li  class="mt-3 fragment">
+    <em>momentsLD</em>  [Ragsdale and Gravel 2019, 2020]
+  </li>
+  <li  class="mt-3 fragment">
+    <em>momi2</em>  [Kamm et al. 2020]
+  </li>
+  <li  class="mt-3 fragment">
+    <em>fastsimcoal2</em>  [Excoffier et al. 2013, 2021]
+  </li>
+  <li  class="mt-3 fragment">
+    <em>Dical2</em>  [Steinrücken et al. 2019]
+  </li>
+</ul>
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section  data-auto-animate>
+<article>
+<div class="r-vstack mt-5 pt-5">
+<h1 class="h2">Issues of Existing Tools</h1>
+</div>
+
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4">Issue 1: Model Specification</h1>
+<article>
+
+<p></p>
+<div class="r-hstack mt-n5">
+<img class="fragment fade-left mr-5" src="my_figures/GADMA_presentation/example_2pops_model.svg" style="width:25rem;">
+<div class="fragment fade-left r-hstack mt-n5 ml-5"  style="align-items:top;justify-content:top">
+    <img class="mt-0" src="my_figures/GADMA_presentation/example_2pops_model_dadi.png" style="width:32rem;">
+    <div class="r-vstack">
+        <p class="footnotesize ml-5">Specification<br>for $\partial a \partial i$</p>
+    <div style="height:35rem;"></div>
+    </div>
+</div>
+</div>
+
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4">Issue 2: Model Selection</h1>
+<article>
+
+<div class="r-stack">
+  <img class="fragment fade-left" src="my_figures/GADMA_presentation/model_selection/models_1.svg" style="height:35rem;">
+  <img class="fragment fade-left" src="my_figures/GADMA_presentation/model_selection/models_2.svg" style="height:35rem;">
+  <img class="fragment fade-left" src="my_figures/GADMA_presentation/model_selection/models_3.svg" style="height:35rem;">
+  <img class="fragment fade-left" src="my_figures/GADMA_presentation/model_selection/models_4.svg" style="height:35rem;">
+  <img class="fragment fade-left" src="my_figures/GADMA_presentation/model_selection/models_5.svg" style="height:35rem;">
+  <img class="fragment fade-left" src="my_figures/GADMA_presentation/model_selection/models_6.svg" style="height:35rem;">
+  <img class="fragment fade-left" src="my_figures/GADMA_presentation/model_selection/models_7.svg" style="height:35rem;">
+  <img class="fragment fade-left" src="my_figures/GADMA_presentation/model_selection/models_8.svg" style="height:35rem;">
+</div>
+
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4" style="z-index:10;position:relative">Issue 3: Optimization</h1>
+<article>
+
+<div class="r-stack mt-n5">
+    <div class="r-hstack fragment fade-in" data-fragment-index="2">
+        <div style="width:5rem;"></div>
+    <span class="fragment fade-out" data-fragment-index="3">
+        <img class="mx-n5 mt-n5" src="my_figures/GADMA_presentation/example_opt_function.gif"  style="width:150rem;margin-right:-40rem!important;margin-top:-5rem!important;z-index:0;position: relative" />
+    </span>
+    </div>
+<div class="r-hstack">
+    <div class="r-vstack fragment" data-fragment-index="1">
+    <p class=" my-0 mt-n4">Most tools use local search optimization algorithms:</p>
+    <ul class="my-0">
+        <li class="mt-0">
+            BFGS
+        </li>
+        <li  class="mt-3">
+            Nelder–Mead method
+        </li>
+        <li  class="mt-3">
+            Powell's method
+        </li>
+        <li  class="mt-3">
+            EM, ECM
+        </li>
+    </ul>
+    <p>They require initial estimation and perform search for local optimum.</p>
+    </div>
+    <div class="mx-5 mt-n5 fragment" data-fragment-index="2">
+        <h1 class="h6" class="fragment mb-n5 mx-0" data-fragment-index="2" style="text-align:center;">Local vs Global Optimization</h1>
+        <div class="r-stack mt-n4 ml-n5">
+            <span class="fragment" data-fragment-index="3">
+            <video data-autoplay src="my_figures/GADMA_presentation/local_search_steps/local_search_0.mp4"  style="width:60rem;"></video>
+            </span>
+            <span class="fragment" data-fragment-index="4">
+            <video data-autoplay src="my_figures/GADMA_presentation/local_search_steps/local_search_1.mp4"  style="width:60rem;"></video>
+            </span>
+            <span class="fragment" data-fragment-index="5">
+            <video data-autoplay src="my_figures/GADMA_presentation/local_search_steps/local_search_2.mp4"  style="width:60rem;"></video>
+            </span>
+            <span class="fragment" data-fragment-index="6">
+            <video data-autoplay src="my_figures/GADMA_presentation/local_search_steps/local_search_3.mp4"  style="width:60rem;"></video>
+            </span>
+            <span class="fragment" data-fragment-index="7">
+            <video data-autoplay src="my_figures/GADMA_presentation/local_search_steps/local_search_4.mp4"  style="width:60rem;"></video>
+            </span>
+            <span class="fragment" data-fragment-index="8">
+            <img src="my_figures/GADMA_presentation/local_search_steps/result.svg" style="width:60rem;">
+            </span>
+            <span class="fragment" data-fragment-index="3">
+            <img src="my_figures/GADMA_presentation/local_search_steps/result_2.svg" style="width:60rem;">
+            </span>
+        </div>
+    </div>
+</div>
+</div>
+
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section  data-auto-animate>
+<article>
+
+<div class="r-vstack mt-5 pt-5">
+<h1 class="h2 my-0">Demographic Inference&nbsp;</h1><h1 class="h2 my-0">for Four and Five Populations</h1>
+
+</div>
+
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<div class="r-hstack"  style="align-items:left;justify-content:left">
+<h1 class="h4">Demographic Inference&nbsp;</h1><h1 class="h4">for Four and Five Populations</h1>
+</div>
+
+<article>
+<div class="r-hstack">
+    <div class="r-vstack">
+    <p class=" my-0 mt-n3" data-fragment-index="1">Challenges:</p>
+    <ul class="my-0">
+        <li  class="mt-4 fragment" data-fragment-index="2">
+            Time-expensive likelihood&nbsp;evaluations
+        </li>
+        <li class="mt-4 fragment" data-fragment-index="3">
+            Many phylogenetic tree topologies
+        </li>
+        <li  class="mt-4 fragment" data-fragment-index="4">
+            Great number of model parameters
+        </li>
+    </ul>
+    </div>
+    <div  class="fragment fade-left ml-5"  data-fragment-index="2">
+        <img src="my_figures/GADMA_presentation/moments_complexity_for_poster.svg" style="width:80rem;">
+    </div>
+</div>
+</article>
+</section>
+
+
+<!--=========================================================================-->
+
+<section  data-auto-animate>
+<article>
+
+<div class="r-vstack mt-5 pt-5">
+<img  src="my_figures/gadma_logo.png" style="width:30rem;">
+</div>
+
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<div class="r-hstack mt-n4" style="align-items:left;justify-content:left">
+<img  src="my_figures/gadma_logo.png" style="width:20rem;">
+</div>
+
+<article>
+<p class=" mt-0 fragment">
+GADMA — Global search Algorithm for Demographic Model Analysis
+</p>
+<ul>
+  <li class="mt-3 fragment">
+      Several likelihood engines ($\partial a \partial i$, <em>moments</em>,  <em>momi2</em>,  <em>momentsLD</em>)
+  </li>
+  <li  class=" mt-3 fragment">
+    Common interface
+  </li>
+  <li  class=" mt-3 fragment">
+    New model specification
+  </li>
+  <li  class="mt-3 fragment">
+    Effective <strong>global</strong> optimization
+  </li>
+</ul>
+<img class="mt-5 fragment" src="my_figures/gadma_git.png" style="width:50rem;">
+<p  class="fragment fade-left mt-n2 small">[Noskova et al. 2020] &nbsp;&nbsp;&nbsp;&nbsp;[Noskova et al. 2023]</p>
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section  data-auto-animate>
+<article>
+
+<div class="r-vstack mt-5 pt-5">
+<h1 class="h2">New Model Specification</h1>
+</div>
+
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4">New Model Specification</h1>
+
+<article>
+ <p class="fragment mb-n1 mt-n3"  data-fragment-index="1">New model in GADMA that is specified only by the number of epochs.</p>
+ <div class="r-stack my-0 mx-0 px-0 py-0 mt-n5 mb-n5">
+    <img class="fragment fade-left"  data-fragment-index="2" src="my_figures/probgen23/dem_inference/gadma_1.svg" style="height:40rem;">
+    <img class="fragment fade-left"  data-fragment-index="3" src="my_figures/probgen23/dem_inference/gadma_2.svg" style="height:40rem;">
+    <img class="fragment fade-left"  data-fragment-index="4" src="my_figures/probgen23/dem_inference/gadma_3.svg" style="height:40rem;">
+    <img class="fragment fade-left"  data-fragment-index="5" src="my_figures/probgen23/dem_inference/gadma_4.svg" style="height:40rem;">
+    <img class="fragment fade-left"  data-fragment-index="6" src="my_figures/probgen23/dem_inference/gadma_5.svg" style="height:40rem;">
+  </div>
+ <p class="fragment mt-n4">Available up to three populations</p>
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<div class="r-hstack mt-n4" style="align-items:left;justify-content:left">
+<h1 class="h4">Flexible Dynamics</h1>
+</div>
+
+<article>
+<div class="r-hstack my-0 mx-0 px-0 py-0 mt-n5">
+ <div class="my-0 mx-0 px-0 py-0 mt-n5">
+     <p class="fragment fade-in" data-fragment-index="1">New model in GADMA has flexible dynamics of population size change.</p>
+     <p class="fragment fade-in" data-fragment-index="2">Population dynamic can be:</p>
+     <ul>
+         <li class="mt-3 fragment" data-fragment-index="3">
+      Constant (sudden change)
+  </li>
+  <li  class=" mt-3 fragment"  data-fragment-index="4">
+    Linear
+  </li>
+  <li  class="mt-3 fragment"  data-fragment-index="5">
+    Exponential
+  </li>
+</ul>
+ </div>
+ <div class="r-stack my-0 mx-0 px-0 py-0 mt-n5">
+  <span class="fragment fade-left" data-fragment-index="2">
+    <img class="fragment fade-out"  data-fragment-index="6" src="my_figures/probgen23/dynamics/pop1_const.svg" style="width:70rem;">
+  </span>
+  <span class="fragment fade-left" data-fragment-index="2">
+    <img class="fragment fade-out"  data-fragment-index="7" src="my_figures/probgen23/dynamics/pop2_const.svg" style="width:70rem;">
+  </span>
+  <span class="fragment fade-left" data-fragment-index="2">
+    <img class="fragment fade-out"  data-fragment-index="3" src="my_figures/probgen23/dynamics/anc_exp.svg" style="width:70rem;">
+  </span>
+
+  <span class="fragment fade-in" data-fragment-index="3">
+    <img class="fragment fade-out"  data-fragment-index="4" src="my_figures/probgen23/dynamics/anc_const.svg" style="width:70rem;">
+  </span>
+  <span class="fragment fade-in" data-fragment-index="4">
+    <img class="fragment fade-out"  data-fragment-index="5" src="my_figures/probgen23/dynamics/anc_lin.svg" style="width:70rem;">
+  </span>
+  <span>
+  <img class="fragment fade-in"  data-fragment-index="5" src="my_figures/probgen23/dynamics/anc_exp.svg" style="width:70rem;">
+  </span>
+
+  <span>
+  <img class="fragment fade-in"  data-fragment-index="6" src="my_figures/probgen23/dynamics/pop1_lin.svg" style="width:70rem;">
+  </span>
+  <span>
+  <img class="fragment fade-in"  data-fragment-index="7" src="my_figures/probgen23/dynamics/pop2_exp.svg" style="width:70rem;">
+  </span>
+  <span>
+  <img class="fragment fade-left"  data-fragment-index="2" src="my_figures/probgen23/dynamics/ticks.svg" style="width:70rem;">
+  </span>
+  </div>
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4">Additional controls</h1>
+
+<article>
+ <div class="r-stack my-0 mx-0 px-0 py-0 mt-n5 mb-n5">
+     <span  class="fragment fade-left"  data-fragment-index="1"><img src="my_figures/GADMA_presentation/structure_model/model.svg" style="height:30rem;"></span>
+     <span class="fragment fade-left"  data-fragment-index="2"><img src="my_figures/GADMA_presentation/structure_model/model_2.svg" style="height:30rem;"></span>
+     <span class="fragment fade-out"  data-fragment-index="3"><img class="fragment fade-left"  data-fragment-index="2" src="my_figures/GADMA_presentation/structure_model/mig_off.svg" style="height:30rem;"></span>
+     <span class="fragment fade-out"  data-fragment-index="4"><img class="fragment fade-left"  data-fragment-index="2" src="my_figures/GADMA_presentation/structure_model/symmig_off.svg" style="height:30rem;"></span>
+     <span><img class="fragment fade-right"  data-fragment-index="3" src="my_figures/GADMA_presentation/structure_model/mig_on.svg" style="height:30rem;"></span>
+     <span class="fragment fade-out"  data-fragment-index="4"><img class="fragment fade-in"  data-fragment-index="3" src="my_figures/GADMA_presentation/structure_model/arrow_mig_on.svg" style="height:30rem;"></span>
+     <span><img class="fragment fade-right"  data-fragment-index="4" src="my_figures/GADMA_presentation/structure_model/symmig_on.svg" style="height:30rem;"></span>
+  </div>
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section  data-auto-animate>
+<article>
+
+<div class="r-vstack mt-5 pt-5">
+<div class="r-hstack">
+    <h1 class="h2">Global Optimization:&nbsp;</h1><h1 class="h2">Genetic Algorithm</h1>
+</div>
+</div>
+
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<div class="r-hstack"  style="align-items:left;justify-content:left">
+<h1 class="h4">Global Optimization:&nbsp;</h1><h1 class="h4">Genetic Algorithm</h1>
+</div>
+
+<article>
+    <div class="r-vstack fragment" data-fragment-index="1">
+    <p class=" my-0 mt-n4">Genetic algorithm:</p>
+    <ul class="my-0">
+        <li  class="mt-3">
+            Widely used global optimization.
+        </li>
+        <li class="mt-3">
+            Uses ideas of evolution and natural selection.
+        </li>
+        <li  class="mt-3">
+            Can discover solutions in large search space.
+        </li>
+    </ul>
+    <p class="fragment my-0 mt-5">GADMA implements a combination of the genetic algorithm followed by a local search method.</p>
+    <p class="fragment my-0 mt-5">Hyperparameters of the genetic algorithm are optimized (SMAC).</p>
+    </div>
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section  data-auto-animate>
+<article>
+
+<div class="r-vstack mt-5 pt-5">
+<div class="r-hstack">
+    <h1 class="h3">Global Optimization:&nbsp;</h1><h1 class="h3">Bayesian Optimization</h1>
+</div>
+</div>
+
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4">Bayesian Optimization</h1>
+
+<article>
+<p class="text-nowrap fragment mt-n1">
+Machine learning-based technique for optimizing expensive functions.</span>
+</p>
+<p  class="fragment mt-n2">
+Enables demographic inference for <strong>4</strong> and <strong>5</strong> populations in GADMA.
+</p>
+<div class="fragment mt-n4 mb-0">
+<video data-autoplay src="my_figures/time_comp/5_DivNoMig_9_Sim.mp4"  style="height:30rem;"></video>
+</div>
+<p  class="fragment fade-left mt-n4 small">[Noskova and Borovitskiy, 2023]</p>
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section  data-auto-animate>
+<article>
+
+<div class="r-hstack mt-5 pt-5">
+<div class="r-hstack"  style="align-items:left;justify-content:left">
+<h1 class="h4">Usecase 1:&nbsp;</h1><h1 class="h4">Human Out-Of-Africa History</h1>
+</div>
+
+</div>
+
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<div class="r-hstack mb-5n"  style="align-items:left;justify-content:left">
+<h1 class="h4">Human Out-Of-Africa History</h1>
+<div class="r-hstack"  style="float:right;align-items:right;justify-content:right;height:10rem;flex-grow:1">
+    <img src="my_figures/GADMA_presentation/human_logo.svg" style="height:10rem;">
+</div>
+</div>
+<article>
+ <div class="r-stack my-0 mx-0 px-0 py-0 mt-n5">
+    <img class="fragment fade-left"  data-fragment-index="1" src="my_figures/GADMA_presentation/picture_3pops_base.svg" style="height:38rem;">
+    <img class="fragment fade-left"  data-fragment-index="2" src="my_figures/GADMA_presentation/picture_3pops_GADMA.svg" style="height:38rem;">
+  </div>
+  <p class="fragment mt-n3">History obtained by GADMA has better likelihood and CLAIC.</P>
+</article>
+</section>
+
+
+<!--=========================================================================-->
+
+<section  data-auto-animate>
+<article>
+
+<div class="r-hstack mt-5 pt-5">
+<h1 class="h2">Usecase 2:<br>Using Different Likelihood Engines</h1>
+
+</div>
+
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<div class="r-hstack"  style="align-items:left;justify-content:left">
+<h1 class="h4">Stdpopsim</h1><h1 class="h4">: Easy Data Simulation</h1>
+</div>
+<article>
+ <div class="r-stack my-0 mx-0 px-0 py-0 mt-n5">
+    <img class="fragment fade-left"  data-fragment-index="1" src="my_figures/GADMA_presentation/stdpopsim/stdpopsim_1.svg" style="height:40rem;">
+    <img class="fragment fade-left"  data-fragment-index="2" src="my_figures/GADMA_presentation/stdpopsim/stdpopsim_2.svg" style="height:40rem;">
+    <img class="fragment fade-left"  data-fragment-index="3" src="my_figures/GADMA_presentation/stdpopsim/stdpopsim_3.svg" style="height:40rem;">
+  </div>
+</article>
+</section>
+
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<div class="r-hstack mb-5n"  style="align-items:left;justify-content:left">
+<h1 class="h4">Likelihood Engines Comparison</h1>
+<div class="r-hstack"  style="float:right;align-items:right;justify-content:right;height:10rem;flex-grow:1">
+    <img src="my_figures/probgen23/drosophila_log.svg" style="height:10rem;">
+</div>
+</div>
+<article>
+
+<div class="r-hstack"  style="my-0 mx-0 px-0 py-0 mt-n5">
+    <div class="r-vstack"  style="my-0 mx-0 px-0 py-0 mt-n5">
+        <p class="fragment fade-in mb-5"  data-fragment-index="2" style="text-align:center">$\partial a \partial i$</p>
+        <div class="r-stack my-0 mx-0 px-0 py-0 mt-n5">
+                <img class="fragment fade-in"  data-fragment-index="2" src="my_figures/probgen23/results/dros_base.svg" style="width:45rem;">
+                <img class="fragment fade-left"  data-fragment-index="6" src="my_figures/probgen23/results/dros_well/dadi.svg" style="width:45rem;">
+                <img class="fragment fade-left"  data-fragment-index="10" src="my_figures/probgen23/results/dros_arrow.svg" style="width:45rem;">
+                <img class="fragment fade-left"  data-fragment-index="11" src="my_figures/probgen23/results/dros_well/dadi_number.svg" style="width:45rem;">
+         </div>
+    </div>
+    <div class="r-vstack"  style="my-0 mx-0 px-0 py-0 mt-n5">
+        <p class="fragment fade-in mb-5"  data-fragment-index="3" style="text-align:center"><em>moments</em></p>
+        <div class="r-stack my-0 mx-0 px-0 py-0 mt-n5">
+                <img class="fragment fade-in"  data-fragment-index="3" src="my_figures/probgen23/results/dros_base.svg" style="width:45rem;">
+                <img class="fragment fade-left"  data-fragment-index="7" src="my_figures/probgen23/results/dros_well/moments.svg" style="width:45rem;">
+                <img class="fragment fade-left"  data-fragment-index="10" src="my_figures/probgen23/results/dros_arrow.svg" style="width:45rem;">
+                <img class="fragment fade-left"  data-fragment-index="11" src="my_figures/probgen23/results/dros_well/moments_number.svg" style="width:45rem;">
+         </div>
+    </div>
+    <div class="r-vstack"  style="my-0 mx-0 px-0 py-0 mt-n5">
+        <p class="fragment fade-in mb-5"  data-fragment-index="4" style="text-align:center"><em>momi2</em></p>
+        <div class="r-stack my-0 mx-0 px-0 py-0 mt-n5">
+                <img class="fragment fade-in"  data-fragment-index="4" src="my_figures/probgen23/results/dros_base.svg" style="width:45rem;">
+                <img class="fragment fade-left"  data-fragment-index="8" src="my_figures/probgen23/results/dros_well/momi2.svg" style="width:45rem;">
+                <img class="fragment fade-left"  data-fragment-index="10" src="my_figures/probgen23/results/dros_arrow.svg" style="width:45rem;">
+                <img class="fragment fade-left"  data-fragment-index="11" src="my_figures/probgen23/results/dros_well/momi2_number.svg" style="width:45rem;">
+         </div>
+    </div>
+    <div class="r-vstack"  style="my-0 mx-0 px-0 py-0 mt-n5">
+        <p class="fragment fade-in mb-5"  data-fragment-index="5" style="text-align:center"><em>momentsLD</em></p>
+        <div class="r-stack my-0 mx-0 px-0 py-0 mt-n5">
+                <img class="fragment fade-in"  data-fragment-index="5" src="my_figures/probgen23/results/dros_base.svg" style="width:45rem;">
+                <img class="fragment fade-left"  data-fragment-index="9" src="my_figures/probgen23/results/dros_well/momentsLD.svg" style="width:45rem;">
+                <img class="fragment fade-left"  data-fragment-index="10" src="my_figures/probgen23/results/dros_arrow.svg" style="width:45rem;">
+                <img class="fragment fade-left"  data-fragment-index="11" src="my_figures/probgen23/results/dros_well/momentsLD_number.svg" style="width:45rem;">
+         </div>
+    </div>
+</div>
+<p class="fragment small"  data-fragment-index="11">Ground truth: 2,200</p>
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section  data-auto-animate>
+<article>
+
+<div class="r-hstack mt-5 pt-5">
+<div class="r-hstack"  style="align-items:left;justify-content:left">
+<h1 class="h4">Usecase 3:&nbsp;</h1><h1 class="h4">Four Population Demographic Inference</h1>
+</div>
+
+</div>
+
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<div class="r-hstack mb-5n"  style="align-items:left;justify-content:left">
+<h1 class="h4">Four Population Demographic Inference</h1>
+<div class="r-hstack"  style="float:right;align-items:right;justify-content:right;height:10rem;flex-grow:1">
+    <img src="my_figures/GADMA_presentation/human_logo.svg" style="height:10rem;">
+</div>
+</div>
+<article>
+ <div class="r-stack my-0 mx-0 px-0 py-0 mt-n5">
+    <img class="fragment fade-left"  data-fragment-index="1" src="my_figures/GADMA_presentation/4pops_base.svg" style="height:38rem;">
+    <img class="fragment fade-left"  data-fragment-index="2" src="my_figures/GADMA_presentation/4pops_gadma.svg" style="height:38rem;">
+  </div>
+  <p class="fragment mt-n3">History obtained by GADMA has better likelihood.</P>
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section  data-auto-animate>
+<article>
+
+<div class="r-vstack mt-5 pt-5">
+<h1 class="h2">Conclusions and Future Work</h1>
+</div>
+
+</article>
+</section>
+
+<!--=========================================================================-->
+
+<section data-auto-animate>
+<h1 class="h4">Conclusions and Future Work</h1>
+<article>
+<p class="fragment mt-n5">GADMA:</p>
+<ul>
+    <li class="fragment mt-n2">
+        Addresses issues of classical demographic inference tools.
+    </li>
+    <li class="fragment mt-3">
+        Outperformes existing tools.
+    </li>
+    <li class="fragment mt-3">
+        Provides interface to use different likelihood engines easily.
+    </li>
+    <li class="fragment mt-3">
+        Enables demographic inference for 4 and 5 populations.
+    </li>
+</ul>
+<p class="fragment mt-5">Future work:</p>
+<ul>
+    <li class="fragment mt-n2">
+        Include new likelihood engines and optimizations.
+    </li>
+    <li class="fragment mt-3">
+        Develop method for automatic model construction.
+    </li>
+</ul>
+</article>
+</section>
+
+
+
+        <!--=========================================================================-->
+
+        <section data-auto-animate>
+  <article class="mt-5 mb-3">
+    <h1 class="h1 mt-3 mb-5">Thank you!</h1>
+    <div class="r-stack mt-5n" style="flex-grow:1;width:100%">
+      <div>
+        <img class="mt-5n" src="my_figures/final.gif" style="height:20rem;">
+      </div>
+      <div class="ml-3">
+        <div class="r-hstack fragment" data-fragment-index="2" style="float:right;align-items:right;justify-content:right;">
+          Slides:
+          <div class="px-3 mr-5" style="width:12rem;" id="qrcode-slides"></div>
+        </div>
+      </div>
+      <div style="float:right;align-items:right;justify-content:right;width:100%;">
+        <div style="float:right;align-items:right;justify-content:right;">
+          <div class="r-vstack fragment"
+               data-fragment-index="2"
+               style="align-items:center;justify-content:center;">
+            <h1 class="h6 mr-5  mt-n5 mb-0"
+                style="text-align:center;">Workshop on<br>Demographic Inference</h1>
+            <div class="px-3 mr-5 mt-0" style="width:12rem;" id="qrcode-workshop"></div>
+            <p class="footnotesize mt-0 mb-0 mr-5"
+               style="text-align:center;">16-17 October 2025</p>
+            <p class="footnotesize mt-0 mr-5"
+               style="text-align:center;">IEE, University of Edinburgh</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <span class="small my-5 fragment" align="center" style="font-weight: bold;" data-fragment-index="2">
+      ekaterina.e.noskova@gmail.com
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="http://enoskova.me">enoskova.me</a>
+    </span>
+    <script type="text/javascript">
+      var qrcodeSlides = new QRCode(document.getElementById("qrcode-slides"), {
+        text: location.protocol+'//'+location.host+location.pathname,
+        colorDark : "#000000",
+        colorLight : "#ffffff",
+        correctLevel : QRCode.CorrectLevel.M
+      });
+      var qrcodeWorkshop = new QRCode(document.getElementById("qrcode-workshop"), {
+        text: 'https://gadmaworkshop.github.io/workshops/2025-10-16-17/',
+        colorDark: "#000000",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.M
+      });
+    </script>
+  </article>
+</section>
+
+
+<!--=========================================================================-->
+
+</div>
+</div>
+
+</body>
+</html>
