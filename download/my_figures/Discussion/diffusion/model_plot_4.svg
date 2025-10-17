@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 97 215"
+   version="1.1"
+   id="svg178"
+   sodipodi:docname="model_plot_4.svg"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
+   width="97"
+   height="215"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     id="namedview178"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="4.1080219"
+     inkscape:cx="12.901587"
+     inkscape:cy="75.218684"
+     inkscape:window-width="1384"
+     inkscape:window-height="847"
+     inkscape:window-x="56"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Layer_1" />
+  <defs
+     id="defs1">
+    <style
+       id="style1">.cls-1{fill:#fff;}.cls-2,.cls-3,.cls-7{fill:none;}.cls-2,.cls-3,.cls-5,.cls-6,.cls-7{stroke:#231f20;stroke-linecap:round;}.cls-2,.cls-5,.cls-6,.cls-7{stroke-miterlimit:10;}.cls-3{stroke-linejoin:round;}.cls-4{fill:#231f20;}.cls-5{fill:#d4ebf9;}.cls-5,.cls-6{stroke-width:0.75px;}.cls-6{fill:red;}.cls-7{stroke-width:0.25px;}</style>
+  </defs>
+  <title
+     id="title1">wright_fisher</title>
+  <g
+     id="Layer_1"
+     data-name="Layer 1">
+    <circle
+       class="cls-6"
+       cx="46.936134"
+       cy="61.702301"
+       r="1.21"
+       id="circle126"
+       style="fill:#001976;fill-opacity:1;stroke:#231f20;stroke-width:1;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:none" />
+    <circle
+       class="cls-6"
+       cx="40.035995"
+       cy="82.850174"
+       r="1.21"
+       id="circle127"
+       style="fill:#001976;fill-opacity:1;stroke:#231f20;stroke-width:1;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:none" />
+    <line
+       class="cls-7"
+       x1="46.783195"
+       y1="63.678795"
+       x2="40.314991"
+       y2="80.837936"
+       id="line153"
+       style="fill:none;stroke:#231f20;stroke-width:1;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:none" />
+    <circle
+       class="cls-6"
+       cx="54.140968"
+       cy="103.57217"
+       r="1.21"
+       id="circle128"
+       style="fill:#001976;fill-opacity:1;stroke:#231f20;stroke-width:1;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:none" />
+    <line
+       class="cls-7"
+       x1="40.458931"
+       y1="84.991867"
+       x2="53.986839"
+       y2="101.58058"
+       id="line154"
+       style="fill:none;stroke:#231f20;stroke-width:1;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:none" />
+    <line
+       class="cls-7"
+       x1="47.496658"
+       y1="127.34799"
+       x2="67.73616"
+       y2="142.82367"
+       id="line154-3"
+       style="fill:none;stroke:#231f20;stroke-width:1;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:none" />
+    <line
+       class="cls-7"
+       x1="67.954285"
+       y1="146.93915"
+       x2="61.290726"
+       y2="162.77933"
+       id="line154-9"
+       style="fill:none;stroke:#231f20;stroke-width:1;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:none" />
+    <line
+       class="cls-7"
+       x1="60.476032"
+       y1="167.04253"
+       x2="47.537159"
+       y2="183.71246"
+       id="line154-5"
+       style="fill:none;stroke:#231f20;stroke-width:1;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:none" />
+    <line
+       class="cls-7"
+       x1="47.150909"
+       y1="187.8037"
+       x2="40.189507"
+       y2="204.84094"
+       id="line154-8"
+       style="fill:none;stroke:#231f20;stroke-width:1;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:none" />
+    <circle
+       class="cls-6"
+       cx="46.967136"
+       cy="125.0448"
+       r="1.21"
+       id="circle129"
+       style="fill:#001976;fill-opacity:1;stroke:#231f20;stroke-width:1;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:none" />
+    <line
+       class="cls-7"
+       x1="53.687237"
+       y1="105.67303"
+       x2="47.361156"
+       y2="123.07613"
+       id="line155"
+       style="fill:none;stroke:#231f20;stroke-width:1;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:none" />
+    <circle
+       class="cls-6"
+       cx="67.82135"
+       cy="144.9886"
+       r="1.21"
+       id="circle130"
+       style="fill:#001976;fill-opacity:1;stroke:#231f20;stroke-width:1;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:none" />
+    <circle
+       class="cls-6"
+       cx="61.042549"
+       cy="164.85698"
+       r="1.21"
+       id="circle131"
+       style="fill:#001976;fill-opacity:1;stroke:#231f20;stroke-width:1;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:none" />
+    <circle
+       class="cls-6"
+       cx="47.346439"
+       cy="185.88847"
+       r="1.21"
+       id="circle141"
+       style="fill:#001976;fill-opacity:1;stroke:#231f20;stroke-width:1;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:none" />
+    <circle
+       class="cls-6"
+       cx="40.425404"
+       cy="206.70911"
+       r="1.21"
+       id="circle151"
+       style="fill:#001976;fill-opacity:1;stroke:#231f20;stroke-width:1;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:none" />
+    <circle
+       class="cls-6"
+       cx="40.049381"
+       cy="40.669998"
+       r="1.21"
+       id="circle126-2"
+       style="fill:#001976;fill-opacity:1;stroke:#231f20;stroke-width:1;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:none" />
+    <line
+       class="cls-7"
+       x1="39.983891"
+       y1="42.690063"
+       x2="46.908272"
+       y2="60.009979"
+       id="line153-1"
+       style="fill:none;stroke:#231f20;stroke-width:1;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:none" />
+  </g>
+  <metadata
+     id="metadata178">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>wright_fisher</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>

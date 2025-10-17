@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 97 215"
+   version="1.1"
+   id="svg178"
+   sodipodi:docname="model_plot_2.svg"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
+   width="97"
+   height="215"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     id="namedview178"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="4.2525361"
+     inkscape:cx="22.809918"
+     inkscape:cy="128.15882"
+     inkscape:window-width="1384"
+     inkscape:window-height="847"
+     inkscape:window-x="56"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Layer_1" />
+  <defs
+     id="defs1">
+    <style
+       id="style1">.cls-1{fill:#fff;}.cls-2,.cls-3,.cls-7{fill:none;}.cls-2,.cls-3,.cls-5,.cls-6,.cls-7{stroke:#231f20;stroke-linecap:round;}.cls-2,.cls-5,.cls-6,.cls-7{stroke-miterlimit:10;}.cls-3{stroke-linejoin:round;}.cls-4{fill:#231f20;}.cls-5{fill:#d4ebf9;}.cls-5,.cls-6{stroke-width:0.75px;}.cls-6{fill:red;}.cls-7{stroke-width:0.25px;}</style>
+  </defs>
+  <title
+     id="title1">wright_fisher</title>
+  <g
+     id="Layer_1"
+     data-name="Layer 1">
+    <circle
+       class="cls-5"
+       cx="40.060001"
+       cy="61.702301"
+       r="1.21"
+       id="circle72"
+       style="fill:#d4ebf9;stroke:#231f20;stroke-width:0.75px;stroke-linecap:round;stroke-miterlimit:10" />
+    <circle
+       class="cls-5"
+       cx="40.060001"
+       cy="61.702301"
+       r="1.21"
+       id="circle125"
+       style="fill:#d4ebf9;stroke:#231f20;stroke-width:0.75px;stroke-linecap:round;stroke-miterlimit:10" />
+    <circle
+       class="cls-5"
+       cx="47.060001"
+       cy="82.702301"
+       r="1.21"
+       id="circle82"
+       style="fill:#d4ebf9;stroke:#231f20;stroke-width:0.75px;stroke-linecap:round;stroke-miterlimit:10" />
+    <circle
+       class="cls-5"
+       cx="61.060001"
+       cy="164.7023"
+       r="1.21"
+       id="circle120"
+       style="fill:#d4ebf9;stroke:#231f20;stroke-width:0.75px;stroke-linecap:round;stroke-miterlimit:10" />
+    <circle
+       class="cls-6"
+       cx="40.060001"
+       cy="61.702301"
+       r="1.21"
+       id="circle126"
+       style="fill:#001976;fill-opacity:1;stroke:#231f20;stroke-width:1;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:none" />
+    <circle
+       class="cls-6"
+       cx="47.060001"
+       cy="82.702301"
+       r="1.21"
+       id="circle127"
+       style="fill:#001976;fill-opacity:1;stroke:#231f20;stroke-width:1;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:none" />
+    <line
+       class="cls-7"
+       x1="41.259998"
+       y1="64.032303"
+       x2="46.060001"
+       y2="80.632301"
+       id="line153"
+       style="fill:none;stroke:#231f20;stroke-width:1;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:none" />
+    <circle
+       class="cls-6"
+       cx="54.15649"
+       cy="103.92146"
+       r="1.21"
+       id="circle128"
+       style="fill:#001976;fill-opacity:1;stroke:#231f20;stroke-width:1;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:none" />
+    <line
+       class="cls-7"
+       x1="47.746117"
+       y1="84.421379"
+       x2="53.678837"
+       y2="101.9828"
+       id="line154"
+       style="fill:none;stroke:#231f20;stroke-width:1;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:none" />
+    <circle
+       class="cls-6"
+       cx="68.195755"
+       cy="124.7023"
+       r="1.21"
+       id="circle129"
+       style="fill:#001976;fill-opacity:1;stroke:#231f20;stroke-width:1;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:none" />
+    <line
+       class="cls-7"
+       x1="55.410076"
+       y1="105.75945"
+       x2="67.918388"
+       y2="122.73473"
+       id="line155"
+       style="fill:none;stroke:#231f20;stroke-width:1;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:none" />
+    <circle
+       class="cls-6"
+       cx="75.112358"
+       cy="144.92146"
+       r="1.21"
+       id="circle130"
+       style="fill:#001976;fill-opacity:1;stroke:#231f20;stroke-width:1;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:none" />
+    <line
+       class="cls-7"
+       x1="68.34021"
+       y1="126.72157"
+       x2="74.957893"
+       y2="142.93094"
+       id="line156"
+       style="fill:none;stroke:#231f20;stroke-width:1;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:none" />
+    <circle
+       class="cls-6"
+       cx="61.060001"
+       cy="164.7023"
+       r="1.21"
+       id="circle131"
+       style="fill:#001976;fill-opacity:1;stroke:#231f20;stroke-width:1;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:none" />
+    <line
+       class="cls-7"
+       x1="74.095337"
+       y1="147.13147"
+       x2="62.505337"
+       y2="162.71147"
+       id="line157"
+       style="fill:none;stroke:#231f20;stroke-width:1;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:none" />
+    <circle
+       class="cls-6"
+       cx="67.647858"
+       cy="185.59273"
+       r="1.21"
+       id="circle141"
+       style="fill:#001976;fill-opacity:1;stroke:#231f20;stroke-width:1;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:none" />
+    <line
+       class="cls-7"
+       x1="61.944347"
+       y1="166.9919"
+       x2="66.534348"
+       y2="183.39189"
+       id="line158"
+       style="fill:none;stroke:#231f20;stroke-width:1;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:none" />
+    <circle
+       class="cls-6"
+       cx="54.252979"
+       cy="206.7023"
+       r="1.21"
+       id="circle151"
+       style="fill:#001976;fill-opacity:1;stroke:#231f20;stroke-width:1;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:none" />
+    <line
+       class="cls-7"
+       x1="66.849998"
+       y1="187.97231"
+       x2="55.259998"
+       y2="204.47231"
+       id="line159"
+       style="fill:none;stroke:#231f20;stroke-width:1;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:none" />
+    <circle
+       class="cls-6"
+       cx="40.10693"
+       cy="40.669998"
+       r="1.21"
+       id="circle126-2"
+       style="fill:#001976;fill-opacity:1;stroke:#231f20;stroke-width:1;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:none" />
+    <line
+       class="cls-7"
+       x1="40.019035"
+       y1="42.522346"
+       x2="40.130478"
+       y2="59.802032"
+       id="line153-1"
+       style="fill:none;stroke:#231f20;stroke-width:1;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:none" />
+  </g>
+  <metadata
+     id="metadata178">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>wright_fisher</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>

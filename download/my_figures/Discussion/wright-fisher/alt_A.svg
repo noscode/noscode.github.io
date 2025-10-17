@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 7 7"
+   version="1.1"
+   id="svg178"
+   sodipodi:docname="A.svg"
+   width="7"
+   height="7"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     id="namedview178"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="6.5046878"
+     inkscape:cx="12.452558"
+     inkscape:cy="-14.451116"
+     inkscape:window-width="1312"
+     inkscape:window-height="449"
+     inkscape:window-x="56"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="Layer_1" />
+  <defs
+     id="defs1">
+    <style
+       id="style1">.cls-1{fill:#fff;}.cls-2,.cls-3,.cls-7{fill:none;}.cls-2,.cls-3,.cls-5,.cls-6,.cls-7{stroke:#231f20;stroke-linecap:round;}.cls-2,.cls-5,.cls-6,.cls-7{stroke-miterlimit:10;}.cls-3{stroke-linejoin:round;}.cls-4{fill:#231f20;}.cls-5{fill:#d4ebf9;}.cls-5,.cls-6{stroke-width:0.75px;}.cls-6{fill:red;}.cls-7{stroke-width:0.25px;}</style>
+  </defs>
+  <title
+     id="title1">wright_fisher</title>
+  <g
+     id="Layer_1"
+     data-name="Layer 1">
+    <circle
+       class="cls-5"
+       cx="3.4934914"
+       cy="3.439137"
+       r="2.7355232"
+       id="circle71-9-7-68-0-5"
+       style="fill:#d40000;fill-opacity:1;stroke:#231f20;stroke-width:0.75;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:none" />
+    <circle
+       class="cls-5"
+       cx="-1.8302"
+       cy="-18.869379"
+       r="2.7355235"
+       id="circle125-0-9-5-4-9"
+       style="fill:#d40000;fill-opacity:1;stroke:#231f20;stroke-width:0.75;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:none" />
+  </g>
+  <metadata
+     id="metadata178">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>wright_fisher</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>
