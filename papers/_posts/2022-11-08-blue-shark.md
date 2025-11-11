@@ -3,7 +3,9 @@ layout: paper
 title: "Stepping up to genome scan allows stock differentiation in the worldwide distributed blue shark
 Prionace glauca"
 author: Natacha Nikolic, Floriaan Devloo-Delva, Diane Bailleul, Ekaterina Noskova, Clément Rougeux, Chrystelle Delord, Philippe Borsa, Cathy Liautard-Haag, Mohamad Hassan, Amandine D. Marie, Pierre Feutry, Peter Grewe, Campbell Davies, Jessica Farley, Daniel Fernando, Sebastian Biton-Porsmoguer, François Poisson, Denham Parker, Agostino Leone, Jorden Aulich, Matt Lansdell, Francis Marsac, Sophie Arnaud-Haond
-journal: "accepted in Molucular Ecology"
+journal: "Molucular Ecology"
+journal_url: "https://doi.org/10.1111/mec.16822"
+pdf: "https://onlinelibrary.wiley.com/doi/epdf/10.1111/mec.16822"
 ---
 
 ### Abstract

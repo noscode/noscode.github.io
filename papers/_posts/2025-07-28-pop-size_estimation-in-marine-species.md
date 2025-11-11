@@ -1,0 +1,12 @@
+---
+layout: paper
+title: "Effective Population Size Estimation in Large Marine Populations: Considering Current Challenges and Opportunities When Simulating Large Data Sets With High-Density Genomic Information"
+author: Chrystelle Delord, Sophie Arnaud-Haond, Agostino Leone, Ekaterina Noskova, Rémi Tournebize, Patrick Jacques, Francis Marsac, Natacha Nikolic
+journal: "Evolutionary Applications"
+journal_url: "https://doi.org/10.1111/eva.70121"
+pdf: "https://onlinelibrary.wiley.com/doi/epdf/10.1111/eva.70121"
+---
+
+### Abstract
+
+Next-generation-sequencing has broadened perspectives regarding the estimation of the effective population size (Ne) by providing high-density genomic information. These technologies have expanded data collection and analytical tools in population genetics, increasing understanding of populations with high abundance, such as marine species with high commercial or conservation priority. Several common methods for estimating Ne are based on allele frequency spectra or linkage disequilibrium between loci. However, their specific constraints make it difficult to apply them to large populations, especially with confounding factors such as migration rates, complex sampling schemes or non-independence between loci. Computer simulations have long represented invaluable tools to explore the influence of biological or logistical factors on Ne estimation and to assess the robustness of dedicated methods. Here, we outline several Ne estimation methods and their foundational principles, requirements and likely caveats regarding application to populations of high abundance. Thereafter, we present a simulation framework built upon recent computational genomic tools that combine the possibility to generate biologically realistic data sets with realistic patterns of long-term neutral genetic diversity. This framework aims at reproducing and tracking the main critical features of data derived from a large natural population when running a simulation-based population genetics study, for example, evaluating the strengths and limitations of various Ne estimation methods. We illustrate this framework by generating genotype data sets with varying sample sizes and locus numbers and analysing them with three software tools (NeEstimator2, GONE and GADMA). Detailed and annotated simulation scripts are provided to ensure reproducibility and to support future research on Ne estimation. These resources can support method comparisons and validations, particularly for non-specialists, such as conservation practitioners and students.
