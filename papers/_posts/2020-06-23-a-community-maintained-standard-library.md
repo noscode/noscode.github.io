@@ -1,9 +1,12 @@
 ---
 layout: paper
+news_title: "The first PopSim Consortium paper is out!"
 title: "A community-maintained standard library of population genetic models"
-author: Jeffrey R Adrion, Christopher B Cole, Noah Dukler, Jared G Galloway, Ariella L Gladstein, Graham Gower, Christopher C Kyriazis, Aaron P Ragsdale, Georgia Tsambos, Franz Baumdicker, Jedidiah Carlson, Reed A Cartwright, Arun Durvasula, Ilan Gronau, Bernard Y Kim, Patrick McKenzie, Philipp W Messer, Ekaterina Noskova, Diego Ortega Del Vecchyo, Fernando Racimo, Travis J Struck, Simon Gravel, Ryan N Gutenkunst, Kirk E Lohmueller, Peter L Ralph, Daniel R Schrider, Adam Siepel, Jerome Kelleher, Andrew D Kern
+authors: Jeffrey R Adrion, Christopher B Cole, Noah Dukler, Jared G Galloway, Ariella L Gladstein, Graham Gower, Christopher C Kyriazis, Aaron P Ragsdale, Georgia Tsambos, Franz Baumdicker, Jedidiah Carlson, Reed A Cartwright, Arun Durvasula, Ilan Gronau, Bernard Y Kim, Patrick McKenzie, Philipp W Messer, Ekaterina Noskova, Diego Ortega Del Vecchyo, Fernando Racimo, Travis J Struck, Simon Gravel, Ryan N Gutenkunst, Kirk E Lohmueller, Peter L Ralph, Daniel R Schrider, Adam Siepel, Jerome Kelleher, Andrew D Kern
+short_authors: J.R. Adrion, ..., <strong>E. Noskova</strong>, ..., A.D. Kern
 journal: Elife
-journal_url: "https://elifesciences.org/articles/54967"
+highlight: "🌍 PopSim Consortium"
+doi: "https://elifesciences.org/articles/54967"
 pdf: "https://elifesciences.org/download/aHR0cHM6Ly9jZG4uZWxpZmVzY2llbmNlcy5vcmcvYXJ0aWNsZXMvNTQ5NjcvZWxpZmUtNTQ5NjctdjIucGRmP2Nhbm9uaWNhbFVyaT1odHRwczovL2VsaWZlc2NpZW5jZXMub3JnL2FydGljbGVzLzU0OTY3/elife-54967-v2.pdf?_hash=Xi8YfveP%2BRenDc6P4sgdqG%2Bh8cQd47PZ%2BE8YCuEK8p8%3D"
 code: "https://github.com/popsim-consortium/stdpopsim"
 ---

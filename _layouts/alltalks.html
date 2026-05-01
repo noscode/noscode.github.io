@@ -1,7 +1,73 @@
 ---
 layout: page
 ---
-
 {{ content }}
 
-{% include get_table_of_posts.html post_list=site.categories.talks %}
+{% assign separator = '<span class="text-black-50 mr-0">&middot;</span>' %}
+
+<!-- Merge Talks and Conferences into one list, sort by newest first -->
+{% assign talks = site.categories.talks | default: "" %}
+{% assign conferences = site.categories.conferences | default: "" %}
+{% assign all_presentations = talks | concat: conferences | sort: "date" | reverse %}
+
+<!-- Group all presentations by Year -->
+{% assign pres_by_year = all_presentations | group_by_exp: "item", "item.date | date: '%Y'" %}
+
+{% for year in pres_by_year %}
+  <h3 class="mt-0 mb-3" style="font-weight: bold; border-bottom: 2px solid #212529; padding-bottom: 0.25rem;">
+    {{ year.name }}
+  </h3>
+  
+  <ul class="list-unstyled ml-0 mb-4">
+  {% for item in year.items %}
+    <li style="margin-bottom: 0.6rem; display: flex; align-items: baseline; line-height: 1.4;">
+      
+      <!-- Date (Aligned Right) -->
+      <div class="text-secondary text-right flex-shrink-0" style="width: 65px; font-size: 0.95em;">
+        {{ item.date | date: "%b %-d" }}
+      </div>
+
+      <div class="flex-grow-1 ml-2">
+
+      <!-- First Separator -->
+      {{ separator }}
+        
+        <!-- Type (e.g., Invited Talk, Poster) -->
+        {% if item.type %}
+          <span class="text-secondary font-weight-bold">{{ item.type }}</span>
+          {{ separator }}
+	{% endif %}
+        
+        <!-- Place and Group -->
+        {% if item.conference or item.university or item.place %}
+          <span style="color: #6c757d;">
+            <!-- Print Conference OR University -->
+            {% if item.conference %}
+              {{ item.conference }}
+            {% elsif item.university %}
+              {{ item.university }}
+            {% endif %}
+            
+            <!-- If there is a Place (city/country), add a comma before it
+	    {% if item.location %}
+              {% if item.conference or item.university %}, {% endif %}
+              {{ item.location }}
+	      {% endif %} -->
+          </span>
+          {{ separator }}
+	{% endif %}
+	
+        <!-- Title as Link (if available) -->
+	{% if item.poster %}
+          <a href="{{ item.poster | relative_url }}" target="_blank">{{ item.title }}</a>
+        {% elsif item.slides %}
+          <a href="{{ item.slides | relative_url }}" target="_blank">{{ item.title }}</a>
+	{% else %}
+          <!-- No slides or poster? Just show the text! -->
+          <span class="text-dark">{{ item.title }}</span>
+        {% endif %}
+      </div>
+    </li>
+  {% endfor %}
+  </ul>
+{% endfor %}

@@ -4,20 +4,8 @@ layout: page
 
 {{ content }}
 
-<ul class="list-unstyled m-0">
-{% assign date_format = site.minima_reboot.date_format | default: "%b %-d, %Y" %}
-{% for post in site.posts%}
-<li class="py-2">
-    <div  class="bg-light">
-    <span class="text-secondary">{{ post.date | date: date_format }}</span>
-    {% include get_badge.html post_variable=post %} 
-
-    <h4 class="mt-1 mb-3 h4">
-      {% include get_title.html post_variable=post %}
-    </h4>
-     {% include short_description.html post_variable=post %}
-    </div>
-  </li>
-{% endfor %}
+<ul class="list-unstyled m-0 mt-0">
+  {% for post in site.posts %}
+    {% include short_description.html post_variable=post %}
+  {% endfor %}
 </ul>
-

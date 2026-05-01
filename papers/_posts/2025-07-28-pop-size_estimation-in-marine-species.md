@@ -1,9 +1,12 @@
 ---
 layout: paper
+news_title: "Excited to share our collaborative review on the challenges of estimating effective population sizes in marine species"
 title: "Effective Population Size Estimation in Large Marine Populations: Considering Current Challenges and Opportunities When Simulating Large Data Sets With High-Density Genomic Information"
-author: Chrystelle Delord, Sophie Arnaud-Haond, Agostino Leone, Ekaterina Noskova, Rémi Tournebize, Patrick Jacques, Francis Marsac, Natacha Nikolic
+authors: Chrystelle Delord, Sophie Arnaud-Haond, Agostino Leone, <strong>Ekaterina Noskova</strong>, Rémi Tournebize, Patrick Jacques, Francis Marsac, Natacha Nikolic
+short_authors: C. Delord, ..., <strong>E. Noskova</strong>, ..., N. Nikolic
+highlight: "📖 Review Article"
 journal: "Evolutionary Applications"
-journal_url: "https://doi.org/10.1111/eva.70121"
+doi: "https://doi.org/10.1111/eva.70121"
 pdf: "https://onlinelibrary.wiley.com/doi/epdf/10.1111/eva.70121"
 ---
 

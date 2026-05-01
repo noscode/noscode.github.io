@@ -1,9 +1,12 @@
 ---
 layout: paper
-title: "Invited Talk: Bayesian Optimization for Demographic Inference"
-conference: "Learning & Adaptive Systems Group"
-conference_url: "https://las.inf.ethz.ch/"
-location: ETH Zurich, ML building, room F 40, Zurich, Switzerland
+type: Invited Talk
+title: "Bayesian Optimization for Demographic Inference"
+group: "Learning & Adaptive Systems Group"
+group_url: "https://las.inf.ethz.ch/"
+slides: "/download/2022_04_04_Bayesian_Optimization_for_Demographic_Inference.html"
+university: "ETH Zurich"
+location: "Zurich, Switzerland"
 ---
 
 

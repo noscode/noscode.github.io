@@ -1,9 +1,11 @@
 ---
 layout: paper
 title: "GADMA: Genetic algorithm for inferring demographic history of multiple populations from allele frequency spectrum data"
-author: Ekaterina Noskova, Vladimir Ulyantsev, Klaus-Peter Koepfli, Stephen J O’Brien, Pavel Dobrynin
+authors: Ekaterina Noskova, Vladimir Ulyantsev, Klaus-Peter Koepfli, Stephen J O’Brien, Pavel Dobrynin
+short_authors: <strong>E. Noskova</strong> et al.
 journal: GigaScience
-journal_url: "https://academic.oup.com/gigascience/article/9/3/giaa005/5768731"
+highlight: "🥇 GECCO Bronze Award"
+doi: "https://academic.oup.com/gigascience/article/9/3/giaa005/5768731"
 pdf: "https://academic.oup.com/gigascience/article-pdf/9/3/giaa005/32727370/giaa005.pdf"
 code: "https://github.com/ctlab/GADMA"
 ---

@@ -2,33 +2,30 @@
 layout: default
 ---
 
-<header class="pt-3 mb-5">
+<header class="pt-3">
   {{ content }}
 </header>
 
-<hr>
+<hr style="margin-top: 2rem; margin-bottom: 2rem;">
 <div id="content">
   {% if site.paginate %}
     {% assign posts = paginator.posts %}
   {% else %}
     {% assign posts = site.posts %}
   {% endif %}
-  <h2 class="h2"> Feed </h2>
+  
+  <!-- Filter out unimportant news -->
+  {% assign frontpage_posts = posts | where_exp: "post", "post.unimportant != true" %}
+  
+  <h3 class="mb-4">Latest News</h3>
+  
+  <!-- The Loop -->
   <ul class="list-unstyled m-0">
-    {% assign date_format = site.minima_reboot.date_format | default: "%b %-d, %Y" %}
-    {% for post in posts limit:3 %}
-    <li class="py-2">
-        <div  class="bg-light">
-        <span class="text-secondary">{{ post.date | date: date_format }}</span>
-        {% include get_badge.html post_variable=post %} 
-
-        <h4 class="mt-1 mb-3 h4">
-          {% include get_title.html post_variable=post %}
-        </h4>
-         {% include short_description.html post_variable=post %}
-        </div>
-      </li>
+    {% for post in frontpage_posts limit:3 %}
+      <!-- Call our master template! -->
+      {% include short_description.html post_variable=post %}
     {% endfor %}
   </ul>
-  <a class="btn btn-outline-primary" href="{% link feed.md %}"> Show all posts </a>
+  
+  <a class="btn btn-sm btn-outline-dark mt-2" href="{% link feed.md %}">Show all news ➔</a>
 </div>

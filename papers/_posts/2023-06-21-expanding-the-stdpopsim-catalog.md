@@ -1,9 +1,12 @@
 ---
 layout: paper
+news_title: "Happy to contribute to the PopSim Consortium's latest eLife paper expanding the stdpopsim species catalog"
 title: "Expanding the stdpopsim species catalog, and lessons learned for realistic genome simulations"
-author: M Elise Lauterbur, Mariz Izabel A Cavassim, Ariella L Gladstein, Graham Gower, Nathaniel S Pope,  Georgia Tsambos, Jeffrey Adrion, Saurabh Belsare, Arjun Biddanda, Victoria Caudill,   Jean Cury, Ignacio Echevarria,  Benjamin C. Haller,  Ahmed R. Hasan, Xin Huang, Leonardo Nicola Martin Iasi,  Ekaterina Noskova,  Jana Obšteter,  Vitor Antonio Corrêa Pavinato, Alice Pearson,  David Peede,  Manolo F. Perez,  Murillo F. Rodrigues, Chris C. R. Smith,  Jeffrey P. Spence,  Anastasia Teterina,  Silas Tittes,  Per Unneberg,  Juan Manuel Vazquez,  Ryan K. Waples,  Anthony Wilder Wohns,  Yan Wong,  Franz Baumdicker,  Reed A. Cartwright,  Gregor Gorjanc,  Ryan N. Gutenkunst,  Jerome Kelleher,  Andrew D. Kern,  Aaron P. Ragsdale,  Peter L. Ralph,  Daniel R. Schrider,  Ilan Gronau
+authors: M Elise Lauterbur, Mariz Izabel A Cavassim, Ariella L Gladstein, Graham Gower, Nathaniel S Pope,  Georgia Tsambos, Jeffrey Adrion, Saurabh Belsare, Arjun Biddanda, Victoria Caudill,   Jean Cury, Ignacio Echevarria,  Benjamin C. Haller,  Ahmed R. Hasan, Xin Huang, Leonardo Nicola Martin Iasi,  Ekaterina Noskova,  Jana Obšteter,  Vitor Antonio Corrêa Pavinato, Alice Pearson,  David Peede,  Manolo F. Perez,  Murillo F. Rodrigues, Chris C. R. Smith,  Jeffrey P. Spence,  Anastasia Teterina,  Silas Tittes,  Per Unneberg,  Juan Manuel Vazquez,  Ryan K. Waples,  Anthony Wilder Wohns,  Yan Wong,  Franz Baumdicker,  Reed A. Cartwright,  Gregor Gorjanc,  Ryan N. Gutenkunst,  Jerome Kelleher,  Andrew D. Kern,  Aaron P. Ragsdale,  Peter L. Ralph,  Daniel R. Schrider,  Ilan Gronau
+short_authors: M.E. Lauterbur, ..., <strong> E. Noskova</strong>, ...,  I. Gronau
 journal: eLife
-journal_url: "https://doi.org/10.7554/eLife.84874.3"
+highlight: "🌍 PopSim Consortium"
+doi: "https://doi.org/10.7554/eLife.84874.3"
 pdf: "https://elifesciences.org/download/aHR0cHM6Ly9jZG4uZWxpZmVzY2llbmNlcy5vcmcvYXJ0aWNsZXMvODQ4NzQvZWxpZmUtODQ4NzQtdjEucGRmP2Nhbm9uaWNhbFVyaT1odHRwczovL2VsaWZlc2NpZW5jZXMub3JnL2FydGljbGVzLzg0ODc0/elife-84874-v1.pdf?_hash=UqU8sSVW%2FJDkZlPs2uI2lZazWIGMdFYaWtmkuq3qOUs%3D"
 code: "https://github.com/popsim-consortium/stdpopsim"
 ---

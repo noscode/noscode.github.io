@@ -1,9 +1,10 @@
 ---
 layout: paper
 title: "Bayesian optimization for demographic inference"
-author: Ekaterina Noskova, Viacheslav Borovitskiy
+authors: Ekaterina Noskova, Viacheslav Borovitskiy
+short_authors: <strong>E. Noskova</strong>, V. Borovitskiy
 journal: "G3 Genes|Genomes|Genetics"
-journal_url: "https://doi.org/10.1093/g3journal/jkad080"
+doi: "https://doi.org/10.1093/g3journal/jkad080"
 pdf: "https://academic.oup.com/g3journal/article-pdf/13/7/jkad080/50819663/jkad080.pdf"
 code: "https://github.com/ctlab/GADMA"
 ---

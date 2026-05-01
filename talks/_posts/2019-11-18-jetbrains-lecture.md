@@ -1,7 +1,9 @@
 ---
 layout: paper
-title: "Open lecture: Inference of demographic history of populations from genetic data"
-location: Kantemirovskaya 2A, 2 fl., Saint Petersburg
+type: Invited Lecture
+title: "Inference of demographic history of populations from genetic data"
+university: "Computer Science Center"
+location: "Saint Petersburg, Russia"
 video: "https://youtu.be/S_cEJ5pL9IU"
 slides: "https://yadi.sk/i/N91ukjM-wpjK7A"
 permalink: /computer-science-center-lecture/

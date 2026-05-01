@@ -1,61 +1,61 @@
-    <p class="text-secondary">
-      {% if include.post_variable.author %}
-        <span itemprop="author">{{ include.post_variable.author }}</span>
-        <br>
+<!-- The Full News Entry Layout -->
+<li style="display: flex; align-items: flex-start; margin-bottom: 2rem;">
+        
+  <!-- Left Column: Date and Badge -->
+  <div style="flex-shrink: 0; width: 110px; padding-top: 3px; text-align: right; margin-right: 20px;">
+    
+    {% assign date_format = site.minima_reboot.date_format | default: "%b %-d, %Y" %}
+    
+    <!-- Date -->
+    <div class="text-secondary" style="font-size: 0.9em;">
+      {{ include.post_variable.date | date: date_format }}
+    </div>
+    
+    <!-- Badge -->
+    <div>
+      {% include get_badge.html post_variable=include.post_variable %} 
+    </div>
+
+  </div>  
+  <!-- Right Column: Content -->
+  <div style="flex-grow: 1;">
+    
+    <!-- News Headline -->
+    <div>
+      <span style="font-size: 1.05em; font-weight: 600; color: #212529;">
+        {% if include.post_variable.news_title %}
+          {{ include.post_variable.news_title }}
+        {% else %}
+          {{ include.post_variable.title }}
+        {% endif %}
+      </span>  
+    {% if include.post_variable.news_title and include.post_variable.title %}
+      <div style="font-size: 0.95em; color: #212529; font-weight: 500;">
+        <em>{{ include.post_variable.title }}</em>
+      </div>
+    {% endif %}
+    </div> 
+
+    <!-- Meta Details (Authors, Journal, Location) -->
+    <div style="color: #495057; font-size: 0.95em; margin-bottom: 0.5rem; line-height: 1.4;">
+      {% if include.post_variable.short_authors %}
+        <span style="margin-bottom: 0.15rem; color: #6c757d; font-size: 0.9em;">{{ include.post_variable.short_authors }}</span><br>
       {% endif %}
+      
       {% if include.post_variable.journal %}
-        {% if include.post_variable.journal_url %}
-          <a href="{{ include.post_variable.journal_url }}">
-        {% endif %}
-        <span itemprop="journal">{{ include.post_variable.journal }}</span>
-        {% if include.post_variable.journal_url %}
-          </a>
-        {% endif %}
-        <br>
+        {% if include.post_variable.journal_url %}<a href="{{ include.post_variable.journal_url }}" class="text-dark">{% endif %}
+        <em  style="margin-bottom: 0.6rem; color: #6c757d; font-size: 0.95em;">{{ include.post_variable.journal }}</em>
+        {% if include.post_variable.journal_url %}</a>{% endif %}<br>
       {% endif %}
-      {% if include.post_variable.conference %}
-        {% if include.post_variable.conference_url %}
-          <a href="{{ include.post_variable.conference_url }}">
-        {% endif %}
-        <span itemprop="journal">{{ include.post_variable.conference }}</span>
-        {% if include.post_variable.conference_url %}
-          </a>
-        {% endif %}
-        <br>
+      
+      <!-- Conference, University, Group, and Location (Forced to one line to prevent spacing errors) -->
+      {% if include.post_variable.conference or include.post_variable.university or include.post_variable.location or include.post_variable.place %}
+        <span>{% if include.post_variable.conference %}{% if include.post_variable.conference_url %}<a href="{{ include.post_variable.conference_url }}" class="text-dark" target="_blank">{{ include.post_variable.conference }}</a>{% else %}{{ include.post_variable.conference }}{% endif %}{% endif %}{% if include.post_variable.university %}{% if include.post_variable.conference %}, {% endif %}{{ include.post_variable.university }}{% endif %}{% if include.post_variable.group %}{% if include.post_variable.conference or include.post_variable.university %}, {% endif %}{% if include.post_variable.group_url %}<a href="{{ include.post_variable.group_url }}" class="text-dark" target="_blank">{{ include.post_variable.group }}</a>{% else %}{{ include.post_variable.group }}{% endif %}{% endif %}{% assign loc = include.post_variable.location | default: include.post_variable.place %}{% if loc %}{% if include.post_variable.conference or include.post_variable.university or include.post_variable.group %}, {% endif %}<span class="fa fa-map-marker" aria-hidden="true"></span> {{ loc }}{% endif %}</span><br>
       {% endif %}
-      {% if include.post_variable.location %}
-        <span itemprop="location">{{ include.post_variable.location }}</span>
-        <br>
-      {% endif %}
+    </div>
 
-      </p>
-      <p>
-      {% if include.post_variable.pdf %}
-        <a class="btn btn-outline-secondary btn-sm" href="{{ include.post_variable.pdf }}"> PDF </a>
-      {% endif %}
-      {% if include.post_variable.entry %}
-        <a class="btn btn-outline-secondary btn-sm" href="{{ include.post_variable.entry }}"> Entry </a>
-      {% endif %}
-      {% if include.post_variable.slides %}
-        <a class="btn btn-outline-secondary btn-sm" href="{{ include.post_variable.slides }}"> Slides </a>
-      {% endif %}
-      {% if include.post_variable.slides_in_russian %}
-        <a class="btn btn-outline-secondary btn-sm" href="{{ include.post_variable.slides_in_russian }}"> Slides (in Russian)</a>
-      {% endif %}
-      {% if include.post_variable.poster %}
-        <a class="btn btn-outline-secondary btn-sm" href="{{ include.post_variable.poster }}"> Poster </a>
-      {% endif %}
-      {% if include.post_variable.poster_in_russian %}
-        <a class="btn btn-outline-secondary btn-sm" href="{{ include.post_variable.poster_in_russian }}"> Poster (in Russian)</a>
-      {% endif %}
-      {% if include.post_variable.video %}
-        <a class="btn btn-outline-secondary btn-sm" href="{{ include.post_variable.video }}"> Video </a>
-      {% endif %}
-      {% if include.post_variable.video_in_russian %}
-        <a class="btn btn-outline-secondary btn-sm" href="{{ include.post_variable.video_in_russian }}"> Video (in Russian)</a>
-      {% endif %}
-
-      {% if include.post_variable.code %}
-        <a class="btn btn-outline-secondary btn-sm" href="{{ include.post_variable.code }}"> Code </a>
-      {% endif %}
-    </p>
+    <!-- Sleek, Minimalist Buttons -->
+    {% include action_buttons.html post_variable=include.post_variable btn_color="dark" %}
+    
+  </div>
+</li>

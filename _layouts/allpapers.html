@@ -4,4 +4,62 @@ layout: page
 
 {{ content }}
 
-{% include get_table_of_posts.html post_list=site.categories.papers %}
+  {% assign papers_by_year = site.categories.papers | group_by_exp: "post", "post.date | date: '%Y'" %}
+
+  {% for year in papers_by_year %}
+    <h3 class="mt-0 mb-3" style="font-weight: bold; border-bottom: 2px solid #212529; padding-bottom: 0.25rem;">
+      {{ year.name }}
+    </h3>
+
+    {% for post in year.items %}
+      <!-- Tightened margins: changed 1.5rem to 1rem -->
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; border-bottom: 1px solid #e9ecef; padding-bottom: 1rem;">
+        
+        <div style="flex-grow: 1; padding-right: 20px;">
+          
+          <!-- Title -->
+          <h5 style="margin-top: 0; margin-bottom: 0.25rem; font-size: 1.05em;">
+            {% if post.link %}
+              <a href="{{ post.link }}" style="font-weight: 600;" target="_blank">{{ post.title }}</a>
+            {% elsif post.doi %}
+              <a href="{{ post.doi }}" style="font-weight: 600;" target="_blank">{{ post.title }}</a>
+            {% else %}
+              <span style="font-weight: 600; color: #212529;">{{ post.title }}</span>
+            {% endif %}
+          </h5>
+          
+          <!-- Authors (Darker text, tighter spacing) -->
+          {% if post.short_authors %}
+            <p style="margin-bottom: 0.15rem; color: #6c757d; font-size: 0.8em;">
+              {{ post.short_authors }}
+            </p>
+          {% endif %}
+	  
+          <!-- Journal (Italicized for classic academic look) -->
+          {% if post.journal %}
+            <p style="margin-bottom: 0.6rem; color: #6c757d; font-size: 0.9em;">
+              <strong>{{ post.journal }}</strong>
+            </p>
+          {% else %}
+            <div style="color: #495057; font-size: 0.95em; margin-bottom: 0.6rem;">
+              {% include short_description.html post_variable=post %}
+            </div>
+          {% endif %}
+
+	  <!-- Action Buttons -->
+          <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 12px;">
+            {% include action_buttons.html post_variable=post btn_color="primary" %}
+	  </div>
+	</div>
+
+        <!-- Conditional Image -->
+        {% if post.image %}
+          <div style="flex-shrink: 0; width: 120px;">
+            <img src="{{ post.image }}" alt="Visual Abstract" style="width: 100%; border-radius: 6px; border: 1px solid #dee2e6;">
+          </div>
+        {% endif %}
+
+      </div>
+    {% endfor %}
+  {% endfor %}
+

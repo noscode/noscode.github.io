@@ -5,8 +5,21 @@
   <span class="badge badge-info">Conference</span>
 {% endif %}
 {% if include.post_variable.categories contains 'talks' %}
-  <span class="badge badge-danger">Talk</span>
+  <!-- Check if you defined a custom type (like Workshop or Tutorial) -->
+  {% if include.post_variable.type %}
+    <span class="badge badge-danger">{{ include.post_variable.type }}</span>
+  {% else %}
+    <span class="badge badge-danger">Talk</span>
+  {% endif %}
 {% endif %}
-{% if include.post_variable.categories contains 'blog' %}
-  <span class="badge badge-warning">Blog</span>
+{% if include.post_variable.categories contains 'conferences' %}
+  <!-- Check if you defined a custom type (like Poster or Conference Talk) -->
+  {% if include.post_variable.type %}
+    <span class="badge badge-info">{{ include.post_variable.type }}</span>
+  {% else %}
+    <span class="badge badge-info">Conference</span>
+  {% endif %}
+{% endif %}
+{% if include.post_variable.categories contains 'awards' %}
+  <span class="badge" style="background-color: #6f42c1; color: white;">Award</span>
 {% endif %}

@@ -1,8 +1,10 @@
 ---
 layout: paper
-title: "Invited Talk: Demographic Inference from Genetic Data using GADMA"
-conference: "Computational and Molecular Population Genetics Group"
-conference_url: "https://www.sib.swiss/laurent-excoffier-group"
-slides: "../download/2023-03-27-GADMA_presentation.html"
-location: Unversity of Bern, Bern, Switzerland
+type: Talk
+title: "Demographic Inference from Genetic Data using GADMA"
+group: "Computational and Molecular Population Genetics Group"
+group_url: "https://www.sib.swiss/laurent-excoffier-group"
+slides: "/download/2023-03-27-GADMA_presentation.html"
+university: "Unversity of Bern"
+location: "Bern, Switzerland"
 ---

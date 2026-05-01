@@ -1,9 +1,10 @@
 ---
 layout: paper
 title: "Genome-wide sequence analyses of ethnic populations across Russia"
-author:  Daria V.Zhernakova, Vladimir Brukhin, Sergey Malov, Taras K. Oleksyk, Klaus Peter-Koepfli Anna Zhuk, Pavel Dobryn, Sergei Kliver, Nikolay Cherkasov, Gaik Tamazian, Mikhail Rotkevich, Ksenia Krasheninnikova, Igor Evsyukov, Sviatoslav Sidorov, Anna Gorbunova, Ekaterina Chernyaeva, Andrey Shevchenko, Sofia Kolchanova, Alexei Komissarov, Serguei Simonov, Alexey Antonik, Anton Logachev, Dmitrii E. Polev, Olga A.Pavlova, Andrey S.Glotov, Vladimir Ulantsev, Ekaterina Noskova, Tatyana K. Davydova, Tatyana M.Sivtseva, Svetlana Limborska, Oleg Balanovsky, Vladimir Osakovsky, Alexey Novozhilov, Valery Puzyrev, Stephen J.O'Brien
+authors:  Daria V.Zhernakova, Vladimir Brukhin, Sergey Malov, Taras K. Oleksyk, Klaus Peter-Koepfli Anna Zhuk, Pavel Dobryn, Sergei Kliver, Nikolay Cherkasov, Gaik Tamazian, Mikhail Rotkevich, Ksenia Krasheninnikova, Igor Evsyukov, Sviatoslav Sidorov, Anna Gorbunova, Ekaterina Chernyaeva, Andrey Shevchenko, Sofia Kolchanova, Alexei Komissarov, Serguei Simonov, Alexey Antonik, Anton Logachev, Dmitrii E. Polev, Olga A.Pavlova, Andrey S.Glotov, Vladimir Ulantsev, Ekaterina Noskova, Tatyana K. Davydova, Tatyana M.Sivtseva, Svetlana Limborska, Oleg Balanovsky, Vladimir Osakovsky, Alexey Novozhilov, Valery Puzyrev, Stephen J.O'Brien
+short_authors: D.V. Zhernakova, ..., <strong>E. Noskova</strong>, ..., S.J. O'Brien
 journal: Genomics
-journal_url: "https://www.sciencedirect.com/science/article/pii/S0888754318307419"
+doi: "https://www.sciencedirect.com/science/article/pii/S0888754318307419"
 ---
 
 ### Abstract

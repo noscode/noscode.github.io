@@ -1,0 +1,64 @@
+<!-- Get the color from the include, or default to 'dark' -->
+{% assign color = include.btn_color | default: "dark" %}
+{% assign btn_class = "btn btn-sm btn-outline-" | append: color %}
+{% assign btn_style = "font-size: 0.75em; padding: 0.15rem 0.5rem;" %}
+
+<!-- Sleek, Minimalist Buttons -->
+<div style="display: flex; gap: 6px; flex-wrap: wrap;">
+  
+  {% if include.post_variable.pdf %}
+    <a class="{{ btn_class }}" style="{{ btn_style }}" href="{{ include.post_variable.pdf }}" target="_blank">PDF</a>
+  {% endif %}
+  
+  {% if include.post_variable.doi %}
+    <a class="{{ btn_class }}" style="{{ btn_style }}" href="{{ include.post_variable.doi }}" target="_blank">Link</a>
+  {% endif %}
+  
+  {% if include.post_variable.link %}
+    <a class="{{ btn_class }}" style="{{ btn_style }}" href="{{ include.post_variable.link }}" target="_blank">Link</a>
+  {% endif %}
+  
+  {% if include.post_variable.entry %}
+    <a class="{{ btn_class }}" style="{{ btn_style }}" href="{{ include.post_variable.entry }}" target="_blank">Entry</a>
+  {% endif %}
+  
+  {% if include.post_variable.code %}
+    <a class="{{ btn_class }}" style="{{ btn_style }}" href="{{ include.post_variable.code }}" target="_blank">Code</a>
+  {% endif %}
+
+  {% if include.post_variable.materials %}
+    <a class="{{ btn_class }}" style="{{ btn_style }}" href="{{ include.post_variable.materials }}" target="_blank">Materials</a>
+  {% endif %}
+  
+  {% if include.post_variable.slides %}
+    <a class="{{ btn_class }}" style="{{ btn_style }}" href="{{ include.post_variable.slides }}" target="_blank">Slides</a>
+  {% endif %}
+  
+  {% if include.post_variable.slides_in_russian %}
+    <a class="{{ btn_class }}" style="{{ btn_style }}" href="{{ include.post_variable.slides_in_russian }}" target="_blank">Slides (RU)</a>
+  {% endif %}
+  
+  {% if include.post_variable.poster %}
+    <a class="{{ btn_class }}" style="{{ btn_style }}" href="{{ include.post_variable.poster }}" target="_blank">Poster</a>
+  {% endif %}
+  
+  {% if include.post_variable.poster_in_russian %}
+    <a class="{{ btn_class }}" style="{{ btn_style }}" href="{{ include.post_variable.poster_in_russian }}" target="_blank">Poster (RU)</a>
+  {% endif %}
+  
+  {% if include.post_variable.video %}
+    <a class="{{ btn_class }}" style="{{ btn_style }}" href="{{ include.post_variable.video }}" target="_blank">Video</a>
+  {% endif %}
+  
+  {% if include.post_variable.video_in_russian %}
+    <a class="{{ btn_class }}" style="{{ btn_style }}" href="{{ include.post_variable.video_in_russian }}" target="_blank">Video (RU)</a>
+  {% endif %}
+
+  <!-- Achievement Highlight (Faded UI Tag Style) -->
+  {% if include.post_variable.highlight %}
+    <span style="display: inline-block; padding: 0.2rem 0.5rem; font-size: 0.8em; color: #6c757d; background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 4px; font-weight: 500;">
+      {{ include.post_variable.highlight }}
+    </span>
+  {% endif %}
+
+</div>

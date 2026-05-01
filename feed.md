@@ -1,5 +1,5 @@
 ---
 layout: allposts
-title: Feed
-permalink: /feed/
+title: News
+permalink: /news/
 ---
