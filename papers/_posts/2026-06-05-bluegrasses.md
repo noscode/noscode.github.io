@@ -3,6 +3,7 @@ layout: paper
 news_title: "New collaborative paper is now published in Communications Biology"
 title: "Genomic and palaeoclimatic data reveal Pleistocene adaptation and diversification of non-model bluegrasses (<i>Poa sect. Stenopoa</i>) in cold, arid environments"
 authors: Evgenii Baiakhmetov, Sirilak Radbouchoom, <strong>Ekaterina Noskova</strong>, Kyle W. Tomlinson, Roman S. Romanets & Marina V. Olonova
+short_authors: E. Baiakhmetov, ..., <strong>E. Noskova</strong>, ..., M.V. Olonova
 journal: "Communications Biology"
 doi: "https://doi.org/10.1038/s42003-026-10395-6"
 pdf: "https://www.nature.com/articles/s42003-026-10395-6.pdf"
