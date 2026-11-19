@@ -1,4 +1,5 @@
 title: Ekaterina Noskova
 description: personal page
 remote_theme: noscode/minima-reboot
-
+plugins:
+  - jekyll-remote-theme
